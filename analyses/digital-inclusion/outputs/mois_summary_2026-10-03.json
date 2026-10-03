@@ -1,0 +1,319 @@
+{
+  "snapshot_date_kst": "2026-10-03",
+  "analysis": "MOIS current snapshot: feature-specific descriptive statistics",
+  "unit": "API records keyed by OPN_ATMY_GRP_CD and MNG_NO; not all physical devices",
+  "source_url": "https://www.data.go.kr/data/15154774/openapi.do",
+  "endpoint": "https://apis.data.go.kr/1741000/kiosk_info/installation_info",
+  "collection_started_at_utc": "2026-10-02T16:41:13.556280+00:00",
+  "collection_finished_at_utc": "2026-10-02T16:41:24.951941+00:00",
+  "source_dataset": "data/mois_devices_2026-10-03.csv",
+  "source_dataset_sha256": "8c94e0ddf294e2392b9ffb13cc1aaa7cf1204358a15d7b311cddcb5d97bfba52",
+  "source_manifest": "data/mois_manifest_2026-10-03.json",
+  "source_manifest_sha256": "38418e18da8be4de75e70910e7416bca2eeec190c57e68bda6b24ce279a02788",
+  "integrity": {
+    "collection_scope": "complete_partition_union",
+    "dataset_sha256_verified": true,
+    "initial_page_sequence_verified": true,
+    "initial_expected_pages": 59,
+    "manifest_reports_consistent_page_counts": true,
+    "manifest_reports_unchanged_first_page": true,
+    "initial_paginated_unique_keys": 5768,
+    "initial_repeated_rows": 35,
+    "initial_pagination_used_as_final_dataset": false,
+    "authority_partition_groups": 230,
+    "partition_queries_including_split_parents": 232,
+    "leaf_partition_queries": 231,
+    "partition_ranges_and_counts_verified": true,
+    "global_total_rechecked": 5803,
+    "expected_raw_evidence_files": 232,
+    "raw_pages_locally_verified": 232,
+    "raw_pages_not_present": 0,
+    "all_raw_pages_locally_verified": true,
+    "transactionally_consistent_snapshot_guaranteed": false
+  },
+  "region_label_metadata": {
+    "path": "data/mois_region_labels_2026-10-03.json",
+    "sha256": "e7639215757f55cf8ececbfccaabfe6136e2631ea48d2be1c2d4b19b9550b22b",
+    "source_manifest_sha256": "38418e18da8be4de75e70910e7416bca2eeec190c57e68bda6b24ce279a02788",
+    "display_label_method": "Most frequent nonmissing address first token within each prefix; lexical tie break. Other observed tokens are retained in frequencies.",
+    "official_code_table_verified": false
+  },
+  "record_flow": {
+    "received_rows": 5803,
+    "missing_key_rows_excluded": 0,
+    "distinct_nonempty_keys": 5803,
+    "exact_duplicate_rows_removed": 0,
+    "conflicting_duplicate_keys_excluded": 0,
+    "conflicting_duplicate_rows_excluded": 0,
+    "unique_nonconflicting_records": 5803,
+    "update_code_D_quarantined": 0,
+    "remaining_unique_records": 5803,
+    "explicitly_in_use_records": 5800,
+    "explicitly_not_in_use_records": 3,
+    "unknown_use_records": 0
+  },
+  "denominator_policy": "After unique-key validation and D-code quarantine, only USE_YN_NM=사용 records enter feature rates. Missing/unrecognized feature values stay in N and are also reported as unknown.",
+  "enum_mapping": {
+    "FRBLND_KPD": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "FRBLND_VOICE_GD": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "FRDEAF_SCRN_GD": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "BRL_LBL_ATCMNT": {
+      "부착": "yes",
+      "미부착": "no",
+      "all_other_values": "unknown"
+    },
+    "EPHN_SCKT": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "TCTL_ELCTNC_MONITOR": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "SCRN_EXPSN_FWK": {
+      "제공": "yes",
+      "미제공": "no",
+      "all_other_values": "unknown"
+    },
+    "WHCHR_USER_MNPLT": {
+      "가능": "yes",
+      "불가능": "no",
+      "all_other_values": "unknown"
+    }
+  },
+  "update_code_policy": "D is quarantined separately without asserting a verified deletion meaning. No other update code is interpreted as an installation event. All original codes are retained in frequency output.",
+  "national_features": [
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "FRBLND_KPD",
+      "feature_label": "시각장애인용 키패드",
+      "in_use_records_n": 5800,
+      "yes": 5800,
+      "no": 0,
+      "unknown": 0,
+      "yes_pct_all": 100.0,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 100.0
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "FRBLND_VOICE_GD",
+      "feature_label": "시각장애인용 음성안내",
+      "in_use_records_n": 5800,
+      "yes": 5800,
+      "no": 0,
+      "unknown": 0,
+      "yes_pct_all": 100.0,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 100.0
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "FRDEAF_SCRN_GD",
+      "feature_label": "청각장애인용 화면안내",
+      "in_use_records_n": 5800,
+      "yes": 5800,
+      "no": 0,
+      "unknown": 0,
+      "yes_pct_all": 100.0,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 100.0
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "BRL_LBL_ATCMNT",
+      "feature_label": "점자라벨 부착",
+      "in_use_records_n": 5800,
+      "yes": 5800,
+      "no": 0,
+      "unknown": 0,
+      "yes_pct_all": 100.0,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 100.0
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "EPHN_SCKT",
+      "feature_label": "이어폰 소켓",
+      "in_use_records_n": 5800,
+      "yes": 5799,
+      "no": 1,
+      "unknown": 0,
+      "yes_pct_all": 99.982759,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 99.982759
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "TCTL_ELCTNC_MONITOR",
+      "feature_label": "촉각(전자)모니터",
+      "in_use_records_n": 5800,
+      "yes": 1550,
+      "no": 4250,
+      "unknown": 0,
+      "yes_pct_all": 26.724138,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 26.724138
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "SCRN_EXPSN_FWK",
+      "feature_label": "화면 확대 기능",
+      "in_use_records_n": 5800,
+      "yes": 5799,
+      "no": 1,
+      "unknown": 0,
+      "yes_pct_all": 99.982759,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 99.982759
+    },
+    {
+      "snapshot_date": "2026-10-03",
+      "geography_level": "national",
+      "geography_code": "all",
+      "feature": "WHCHR_USER_MNPLT",
+      "feature_label": "휠체어 사용자 조작",
+      "in_use_records_n": 5800,
+      "yes": 5238,
+      "no": 562,
+      "unknown": 0,
+      "yes_pct_all": 90.310345,
+      "unknown_pct_all": 0.0,
+      "known_n": 5800,
+      "yes_pct_known": 90.310345
+    }
+  ],
+  "data_quality": {
+    "unknown_use_pct_remaining": 0.0,
+    "unrecognized_update_code_n": 0,
+    "in_use_missing_or_malformed_installation_code_n": 0,
+    "in_use_missing_or_malformed_installation_code_pct": 0.0,
+    "installation_code_membership_verification": "not_performed; syntactic validity does not establish a current official region code",
+    "observed_installation_sgg_codes_n": 259,
+    "observed_installation_province_prefixes_n": 16,
+    "date_fields_all_received": {
+      "LAST_MDFCN_PNT": {
+        "records_n": 5803,
+        "valid_n": 5803,
+        "missing_n": 0,
+        "invalid_n": 0,
+        "unknown_pct": 0.0,
+        "earliest": "2023-07-14 17:37:55",
+        "latest": "2026-09-30 17:58:17",
+        "older_than_365_days_n": 23,
+        "future_calendar_date_n": 0,
+        "not_installation_or_feature_adoption_date": true
+      },
+      "DAT_UPDT_PNT": {
+        "records_n": 5803,
+        "valid_n": 5803,
+        "missing_n": 0,
+        "invalid_n": 0,
+        "unknown_pct": 0.0,
+        "earliest": "2026-01-16 18:04:52",
+        "latest": "2026-10-01 23:00:49",
+        "older_than_365_days_n": 0,
+        "future_calendar_date_n": 0,
+        "not_installation_or_feature_adoption_date": true
+      }
+    },
+    "date_fields_in_use": {
+      "LAST_MDFCN_PNT": {
+        "records_n": 5800,
+        "valid_n": 5800,
+        "missing_n": 0,
+        "invalid_n": 0,
+        "unknown_pct": 0.0,
+        "earliest": "2023-07-14 17:37:55",
+        "latest": "2026-09-30 17:58:17",
+        "older_than_365_days_n": 23,
+        "future_calendar_date_n": 0,
+        "not_installation_or_feature_adoption_date": true
+      },
+      "DAT_UPDT_PNT": {
+        "records_n": 5800,
+        "valid_n": 5800,
+        "missing_n": 0,
+        "invalid_n": 0,
+        "unknown_pct": 0.0,
+        "earliest": "2026-01-16 18:04:52",
+        "latest": "2026-10-01 23:00:49",
+        "older_than_365_days_n": 0,
+        "future_calendar_date_n": 0,
+        "not_installation_or_feature_adoption_date": true
+      }
+    }
+  },
+  "geographic_definition": {
+    "installation_sgg_code": "ROAD_SGG_CD; syntactically valid five-digit nonzero codes; official code membership/name not validated",
+    "installation_province_prefix": "First two digits of ROAD_SGG_CD; display labels use the most frequent observed address first token, not an official code-name table",
+    "CTPV_CD": "Preserved only as raw frequencies; not used to infer installation geography"
+  },
+  "limitations": [
+    "The denominator covers API records, not a census of every physically installed device or every kiosk category.",
+    "Feature availability is an administrative data value, not an on-site usability test or a legal-compliance judgment.",
+    "The eight fields are not combined into a legal-compliance or accessibility score.",
+    "A current snapshot contains no same-device before/after history. Modification/update timestamps are not installation or feature-adoption dates.",
+    "Regional rates use currently recorded installation codes, unadjusted for device model, agency, age or sample composition. Counts accompany each rate.",
+    "Region display names are derived from observed address first tokens; the complete legal administrative code table has not been validated.",
+    "Complete partition counts and an unchanged global total do not establish transactional consistency across all server queries.",
+    "If raw pages are absent from a later checkout, the CSV hash and collection manifest can be checked but raw-page validation cannot be repeated until originals are restored."
+  ],
+  "output_tables": [
+    {
+      "path": "outputs/mois_features_2026-10-03.csv",
+      "rows": 2208,
+      "sha256": "2617187f6f59340cecc83d871c8075089be2af0984501b0989f7061c777599df"
+    },
+    {
+      "path": "outputs/mois_region_comparison_2026-10-03.csv",
+      "rows": 16,
+      "sha256": "7232bee2406fed573666fb900e940b88e443412df00db940edbb091c7d842ffe"
+    },
+    {
+      "path": "outputs/mois_raw_value_frequencies_2026-10-03.csv",
+      "rows": 12293,
+      "sha256": "55b9fd6d9a57f42b38398aa195ed7a5b3b25059a9110827e8db8a28683ac1036"
+    },
+    {
+      "path": "outputs/mois_record_flow_2026-10-03.csv",
+      "rows": 12,
+      "sha256": "49ada11f427f71ce2d0aa98e83ec7fff5a43afe0a7ca747825b743c5c2e8e6c5"
+    }
+  ]
+}

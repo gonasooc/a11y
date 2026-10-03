@@ -1,0 +1,3476 @@
+{
+  "source_id": "15154774",
+  "source_url": "https://www.data.go.kr/data/15154774/openapi.do",
+  "endpoint": "https://apis.data.go.kr/1741000/kiosk_info/installation_info",
+  "snapshot_date_kst": "2026-10-03",
+  "collection_started_at_utc": "2026-10-02T16:41:13.556280+00:00",
+  "collection_finished_at_utc": "2026-10-02T16:41:24.951941+00:00",
+  "authentication": "succeeded",
+  "environment_variable": "MOIS_KIOSK_INFO_SERVICE_KEY",
+  "key_handling": "URL-encoded input is decoded once in memory; key omitted from artifacts",
+  "request_parameters": {
+    "numOfRows": 100,
+    "returnType": "JSON"
+  },
+  "reported_total": 5803,
+  "received_rows": 5803,
+  "unique_device_keys": 5803,
+  "key_columns": [
+    "OPN_ATMY_GRP_CD",
+    "MNG_NO"
+  ],
+  "page_count": 59,
+  "all_page_counts_consistent": true,
+  "first_page_sentinel_unchanged": true,
+  "global_total_rechecked": 5803,
+  "collection_strategy": "single-page disjoint authority/time partitions",
+  "initial_paginated_unique_keys": 5768,
+  "initial_repeated_rows": 35,
+  "partition_counts_and_unique_keys_reconciled": true,
+  "partitions": [
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3000000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-3000000-start-end.json",
+      "sha256": "82b17127f6b1eb4c93ebe9fab1eeec039931d5131bc57e315d1362a49454f926",
+      "saved_at_utc": "2026-10-02T16:41:13.740763+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3010000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3010000-start-end.json",
+      "sha256": "653b0a5ed27fcdaa8e7ccae6f9ec9261fa813df741b4d84c653bcc295f1b85ba",
+      "saved_at_utc": "2026-10-02T16:41:13.754673+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3020000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-3020000-start-end.json",
+      "sha256": "9f6f71639596c2eecbdd85a9dd2a5b6b1c6d3d54bf5ad5bd3c38b039b35d4872",
+      "saved_at_utc": "2026-10-02T16:41:13.775740+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3030000"
+      },
+      "total": 30,
+      "received_rows": 30,
+      "raw_path": "raw/mois/2026-10-03/authority-3030000-start-end.json",
+      "sha256": "ae76fe47f09f239b4fffabb7efe22f336d87159440f1c143d97c2f6fe8c65c84",
+      "saved_at_utc": "2026-10-02T16:41:13.854918+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3040000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3040000-start-end.json",
+      "sha256": "2249636ffd944fd0e6dfb2d6379d36633562637c25051c065fffd1c05e72aebe",
+      "saved_at_utc": "2026-10-02T16:41:13.874585+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3050000"
+      },
+      "total": 36,
+      "received_rows": 36,
+      "raw_path": "raw/mois/2026-10-03/authority-3050000-start-end.json",
+      "sha256": "f79ab4c10427fce93e6afe5ead82c666fdefe1493f2c1d2a4dcf0ce8d17df30d",
+      "saved_at_utc": "2026-10-02T16:41:13.923102+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3060000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3060000-start-end.json",
+      "sha256": "f75a4316f4b1416ab8449223ed5c33cec2f7ed64161004cc58d1963fbdb283b6",
+      "saved_at_utc": "2026-10-02T16:41:13.981291+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3070000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3070000-start-end.json",
+      "sha256": "e620c019cc227f50a126cdec0183b3d193884731fdaa9c1003186e94d0ea9002",
+      "saved_at_utc": "2026-10-02T16:41:13.984397+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3080000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-3080000-start-end.json",
+      "sha256": "128ba42815808354e986c2f618ea5507a676a106d1afc9bdd552c0a1098ea257",
+      "saved_at_utc": "2026-10-02T16:41:14.044458+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3090000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-3090000-start-end.json",
+      "sha256": "4e8a81b9e9de0c3cd686e79ce70a1b3cb447abc12ef9e15c3890703b98caec5f",
+      "saved_at_utc": "2026-10-02T16:41:14.094515+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3100000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3100000-start-end.json",
+      "sha256": "4dc99b553f73e7b4ee8d391eb51adfb78db98b66847192dc986a7889de76d083",
+      "saved_at_utc": "2026-10-02T16:41:14.104655+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3130000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-3130000-start-end.json",
+      "sha256": "62b4d956ec45e60f3c29bf49cfc38b722d82a045bd00445bb467926138d89645",
+      "saved_at_utc": "2026-10-02T16:41:14.374499+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3110000"
+      },
+      "total": 35,
+      "received_rows": 35,
+      "raw_path": "raw/mois/2026-10-03/authority-3110000-start-end.json",
+      "sha256": "99917b19654962c4de097b1b4a68784188cedee477750e116acf836b5aaeb169",
+      "saved_at_utc": "2026-10-02T16:41:14.465216+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3140000"
+      },
+      "total": 38,
+      "received_rows": 38,
+      "raw_path": "raw/mois/2026-10-03/authority-3140000-start-end.json",
+      "sha256": "98955992d456e5299772587d5edf7978e7502feaaa4b696d7b14ae98d8387e78",
+      "saved_at_utc": "2026-10-02T16:41:14.496394+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3120000"
+      },
+      "total": 33,
+      "received_rows": 33,
+      "raw_path": "raw/mois/2026-10-03/authority-3120000-start-end.json",
+      "sha256": "72698b551b83bd5516bac0b23977dc9715ce001594b07db3b866e694e4320664",
+      "saved_at_utc": "2026-10-02T16:41:14.504765+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3150000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3150000-start-end.json",
+      "sha256": "a91885279ba8a99f19e6277a2084f0a107298e004e2a8d4facf6b352fd077e3a",
+      "saved_at_utc": "2026-10-02T16:41:14.584702+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3160000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3160000-start-end.json",
+      "sha256": "c687a3a1449af0ca0dd1401e01b457690de478efb7c2fde1e9e16d7d86a672e8",
+      "saved_at_utc": "2026-10-02T16:41:14.642623+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3170000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-3170000-start-end.json",
+      "sha256": "f36f2bf8c600260aa748d4485f6b94c10484a309759053c032bf4824ca8f4cb8",
+      "saved_at_utc": "2026-10-02T16:41:14.664786+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3180000"
+      },
+      "total": 44,
+      "received_rows": 44,
+      "raw_path": "raw/mois/2026-10-03/authority-3180000-start-end.json",
+      "sha256": "a0d62518a06dd5f69f1af4f70e6cd7ed225ee4bdfa1311076ac1046f65e48932",
+      "saved_at_utc": "2026-10-02T16:41:14.744653+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3190000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-3190000-start-end.json",
+      "sha256": "50987ce4658eb79e19698b0149311b3f4173445c3a99bc8861d9b4e82f6031f3",
+      "saved_at_utc": "2026-10-02T16:41:14.764595+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3200000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-3200000-start-end.json",
+      "sha256": "b78977acb0042dc1b02228842d55af1cf71f1643028709bfafaf0178d2d215c0",
+      "saved_at_utc": "2026-10-02T16:41:14.804897+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3210000"
+      },
+      "total": 34,
+      "received_rows": 34,
+      "raw_path": "raw/mois/2026-10-03/authority-3210000-start-end.json",
+      "sha256": "870fabb69d16868e9dc9afe3ef463e97c96510e34399fc69330f9d41c3ff34d0",
+      "saved_at_utc": "2026-10-02T16:41:14.883543+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3230000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-3230000-start-end.json",
+      "sha256": "69ad59ba32c9b4b0dc6b04410447d8ecd5ce3bad749c744bbaa5e16950e1a8b5",
+      "saved_at_utc": "2026-10-02T16:41:14.944707+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3220000"
+      },
+      "total": 57,
+      "received_rows": 57,
+      "raw_path": "raw/mois/2026-10-03/authority-3220000-start-end.json",
+      "sha256": "ff91a0191bd8d5aaef4963f33e9331e86a100bffc9a2a997e7d05696dc4cb372",
+      "saved_at_utc": "2026-10-02T16:41:14.963768+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3240000"
+      },
+      "total": 35,
+      "received_rows": 35,
+      "raw_path": "raw/mois/2026-10-03/authority-3240000-start-end.json",
+      "sha256": "065aecf6e45d14ae2c0a908784c8fa14ccb51feeb85adf224224579abcb61c9e",
+      "saved_at_utc": "2026-10-02T16:41:15.024635+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3260000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-3260000-start-end.json",
+      "sha256": "4cfc3498f8ae0a44e5f8d2442b5beea4f4e2e640990fee421453fb8e0d3ee860",
+      "saved_at_utc": "2026-10-02T16:41:15.070596+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3250000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-3250000-start-end.json",
+      "sha256": "894d8a8ac03f054225bb9c40b22f313f075fd63246ca5d9c87da652acf610c98",
+      "saved_at_utc": "2026-10-02T16:41:15.073405+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3270000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-3270000-start-end.json",
+      "sha256": "a9e017037a60fba4a84cba6ff626261b4a410780ff40f69e54195bad1188be65",
+      "saved_at_utc": "2026-10-02T16:41:15.114405+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3280000"
+      },
+      "total": 6,
+      "received_rows": 6,
+      "raw_path": "raw/mois/2026-10-03/authority-3280000-start-end.json",
+      "sha256": "32f830ccedb23ddb0b0857a48687d5ecec51cef38da67a857d48fb5a4f748d77",
+      "saved_at_utc": "2026-10-02T16:41:15.194808+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3290000"
+      },
+      "total": 27,
+      "received_rows": 27,
+      "raw_path": "raw/mois/2026-10-03/authority-3290000-start-end.json",
+      "sha256": "45576248eb8ddc43905a51c2f595cc5c63bc733705b422f0b28514b3731b0bdd",
+      "saved_at_utc": "2026-10-02T16:41:15.224677+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3300000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-3300000-start-end.json",
+      "sha256": "eeeacb96495a45b455612dc11744d11cfabf52d58785c6e1d18adac01792e649",
+      "saved_at_utc": "2026-10-02T16:41:15.234559+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3310000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-3310000-start-end.json",
+      "sha256": "343d9dc5c2adc49f17c525055e6e09b0ede3b4f6b8bd03eb6f11a990d084f311",
+      "saved_at_utc": "2026-10-02T16:41:15.314845+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3320000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-3320000-start-end.json",
+      "sha256": "c7588eadb509e058b43d66daf5202e6d17dff905c35053309093f5ea4cfdbfe6",
+      "saved_at_utc": "2026-10-02T16:41:15.333066+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3330000"
+      },
+      "total": 24,
+      "received_rows": 24,
+      "raw_path": "raw/mois/2026-10-03/authority-3330000-start-end.json",
+      "sha256": "4a1d6967421cf48097dfb693faaaccc9e59e094e1aa3a984089ce998d33c1411",
+      "saved_at_utc": "2026-10-02T16:41:15.354661+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3340000"
+      },
+      "total": 20,
+      "received_rows": 20,
+      "raw_path": "raw/mois/2026-10-03/authority-3340000-start-end.json",
+      "sha256": "fb3bb9bc487b99826728cfaebb497fad084e2b7103b311b838b7ee90f2033e48",
+      "saved_at_utc": "2026-10-02T16:41:15.443856+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3350000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-3350000-start-end.json",
+      "sha256": "d4840da97664cfd45d28044e055d19f5d05fd9017a39890eb61e54d91702a563",
+      "saved_at_utc": "2026-10-02T16:41:15.463490+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3360000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3360000-start-end.json",
+      "sha256": "93f05baa12ae028d7b9a288f84d91476e53afafe14cd96a3234c85693d53896e",
+      "saved_at_utc": "2026-10-02T16:41:15.494801+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3370000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3370000-start-end.json",
+      "sha256": "05f095339cd5d38590394d407b2b9981f3d82d24d428654c51b618b2fceed654",
+      "saved_at_utc": "2026-10-02T16:41:15.563422+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3400000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-3400000-start-end.json",
+      "sha256": "82c96ce2b3397d86863e059e56b2bef7053ebcb83d44ac6f9c1d2063eb35bfc0",
+      "saved_at_utc": "2026-10-02T16:41:15.728108+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3380000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-3380000-start-end.json",
+      "sha256": "c7741d1e354f1fbdb773bec9c394c1f50bd3387dae8986580cfa4baee98313bf",
+      "saved_at_utc": "2026-10-02T16:41:15.832681+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3410000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-3410000-start-end.json",
+      "sha256": "19d84aec9db09e29e7e4971f9e287ccb5be6f8614257ff3257c95320c3a66044",
+      "saved_at_utc": "2026-10-02T16:41:15.853647+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3420000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-3420000-start-end.json",
+      "sha256": "5cceb35a82679e90c4664600978002188e1156c8931f368c8178f41fb60f904b",
+      "saved_at_utc": "2026-10-02T16:41:15.938609+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3390000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-3390000-start-end.json",
+      "sha256": "f3f067ac41e2241e52ae68db7ff326ac0ed7debe340e590be39d5a1718cc0757",
+      "saved_at_utc": "2026-10-02T16:41:15.943175+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3430000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-3430000-start-end.json",
+      "sha256": "727a01e9d4befa7992045d84085b46f3c507876f8c9c64aba39437aa7cbfe553",
+      "saved_at_utc": "2026-10-02T16:41:15.983105+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3440000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-3440000-start-end.json",
+      "sha256": "43954e318bbd8c5f95ba1c5939822327b733b11f83adfe5ed81302000e20f482",
+      "saved_at_utc": "2026-10-02T16:41:16.044297+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3450000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-3450000-start-end.json",
+      "sha256": "251e0999099b08f685f00aea8f373819b90af56d6ec12044b299db9f857d0667",
+      "saved_at_utc": "2026-10-02T16:41:16.074554+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3460000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-3460000-start-end.json",
+      "sha256": "7ad2a69f30b14e5308142a1e903e00a98d0869aaba27259b07fc1579b79d0675",
+      "saved_at_utc": "2026-10-02T16:41:16.104774+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3470000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-3470000-start-end.json",
+      "sha256": "37f8367449f077b6f77516389f7bb6727544baaf46e19b59061a35dc7f6e909c",
+      "saved_at_utc": "2026-10-02T16:41:16.174647+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3480000"
+      },
+      "total": 29,
+      "received_rows": 29,
+      "raw_path": "raw/mois/2026-10-03/authority-3480000-start-end.json",
+      "sha256": "bf168a68322b69400ba9dfbaf297b974defbd968a05a1e244894e051d36011f8",
+      "saved_at_utc": "2026-10-02T16:41:16.213464+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3491000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-3491000-start-end.json",
+      "sha256": "02fd3dddc3dbed2505f3b911193dd27e09141fcf036fb6f9c48ac2e8cd59030c",
+      "saved_at_utc": "2026-10-02T16:41:16.214622+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3501000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-3501000-start-end.json",
+      "sha256": "d60eabe8bcec951b3312f7c8c218638c03282fa830524dafa12787287bc19f1c",
+      "saved_at_utc": "2026-10-02T16:41:16.274751+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3510500"
+      },
+      "total": 27,
+      "received_rows": 27,
+      "raw_path": "raw/mois/2026-10-03/authority-3510500-start-end.json",
+      "sha256": "05478ff77f948cd407ac4985a0e1f323267ecddc99396ac4867ac18b5e3b1be5",
+      "saved_at_utc": "2026-10-02T16:41:16.354213+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3520000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3520000-start-end.json",
+      "sha256": "cae083379e439bd77cc3d9fb8c999f50473301b86d0acfed9e2f1cb6646b9386",
+      "saved_at_utc": "2026-10-02T16:41:16.373842+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3530000"
+      },
+      "total": 33,
+      "received_rows": 33,
+      "raw_path": "raw/mois/2026-10-03/authority-3530000-start-end.json",
+      "sha256": "e9e7b0f23fac918b23e52b80e8429d3ff6000f5ed5bc48ea1044d27d2894c796",
+      "saved_at_utc": "2026-10-02T16:41:16.414512+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3540000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-3540000-start-end.json",
+      "sha256": "ec157c5351e14364e8f31def541c2dde55dc30c7020ba049223b98543c34f56c",
+      "saved_at_utc": "2026-10-02T16:41:16.464603+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3550000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-3550000-start-end.json",
+      "sha256": "666cf409d9ed05195de5815d51827a4f6c5f2dd1a2628efa19ac21e3a0781b06",
+      "saved_at_utc": "2026-10-02T16:41:16.504754+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3561000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-3561000-start-end.json",
+      "sha256": "fe04d27bc3719c99e2bbcb420be3aaa5e514b70c2e18065c2a1040f98911bf68",
+      "saved_at_utc": "2026-10-02T16:41:16.555023+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3565000"
+      },
+      "total": 13,
+      "received_rows": 13,
+      "raw_path": "raw/mois/2026-10-03/authority-3565000-start-end.json",
+      "sha256": "ff58f37b47a5c51145547f89fce7b20a7133914f30bce0f1efc1378bce8a01db",
+      "saved_at_utc": "2026-10-02T16:41:16.593957+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3570000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-3570000-start-end.json",
+      "sha256": "7e9da1fd77347d73daac2d4c20c1590d7ae67874eb3ac86018c05239d383cc7b",
+      "saved_at_utc": "2026-10-02T16:41:16.663046+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3580000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-3580000-start-end.json",
+      "sha256": "77ba0c9ff21cd97901f67b5f3f7d1752941f809e1f66dd92100729df7c7ee4d7",
+      "saved_at_utc": "2026-10-02T16:41:16.673557+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3640000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-3640000-start-end.json",
+      "sha256": "653e0a56f24c5221b338364426e588faf6b8c729a0c3817bebb26e091aa1e353",
+      "saved_at_utc": "2026-10-02T16:41:16.734664+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3650000"
+      },
+      "total": 13,
+      "received_rows": 13,
+      "raw_path": "raw/mois/2026-10-03/authority-3650000-start-end.json",
+      "sha256": "aa62ed9d0ff1bceccc3d5f2a4a0dee5d5a7becbe57149d1257cd21832485086c",
+      "saved_at_utc": "2026-10-02T16:41:16.774898+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3660000"
+      },
+      "total": 43,
+      "received_rows": 43,
+      "raw_path": "raw/mois/2026-10-03/authority-3660000-start-end.json",
+      "sha256": "88aa83b46a3524ea6dccf0da8a343302b468c05b4bae53011948d8928cc5554b",
+      "saved_at_utc": "2026-10-02T16:41:16.804916+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3670000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-3670000-start-end.json",
+      "sha256": "253829264d1e75f3b66c0cdf1063cd619e720e33e251196b5ef051758ee0d4f5",
+      "saved_at_utc": "2026-10-02T16:41:16.863060+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3690000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-3690000-start-end.json",
+      "sha256": "2bde8dd49d5bf7cd684ec2a60015902adc069da431540b52ee0c5344d46fb74b",
+      "saved_at_utc": "2026-10-02T16:41:16.937001+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3680000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-3680000-start-end.json",
+      "sha256": "6f5f5b74ae1a0e5009ff1238d23489dbead94f60ae047c425ad20f7c43319785",
+      "saved_at_utc": "2026-10-02T16:41:16.937277+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3700000"
+      },
+      "total": 35,
+      "received_rows": 35,
+      "raw_path": "raw/mois/2026-10-03/authority-3700000-start-end.json",
+      "sha256": "69185696982607c8ee34949441d02b3e39b8d16116140ef8c07f553a255c8309",
+      "saved_at_utc": "2026-10-02T16:41:17.050368+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3710000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-3710000-start-end.json",
+      "sha256": "757da2ffcdf174bd56caab55079e0636397962f5e20f1e1ebec9760ca6cb5554",
+      "saved_at_utc": "2026-10-02T16:41:17.054567+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3720000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-3720000-start-end.json",
+      "sha256": "2696e28c3b3ec296fe9b43a1e40e34455a207116060b5e7cf9b85faef9418fc8",
+      "saved_at_utc": "2026-10-02T16:41:17.094645+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3730000"
+      },
+      "total": 40,
+      "received_rows": 40,
+      "raw_path": "raw/mois/2026-10-03/authority-3730000-start-end.json",
+      "sha256": "059123220b113b55ec77d6afc31f5e1427a24673b90adb1006e90e1a46fa0c1c",
+      "saved_at_utc": "2026-10-02T16:41:17.174766+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3740000"
+      },
+      "total": 86,
+      "received_rows": 86,
+      "raw_path": "raw/mois/2026-10-03/authority-3740000-start-end.json",
+      "sha256": "683f58e088554a69eadffb7803620815ba8f110ebbeeaf718a94d0020c4d8bd3",
+      "saved_at_utc": "2026-10-02T16:41:17.225115+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3780000"
+      },
+      "total": 64,
+      "received_rows": 64,
+      "raw_path": "raw/mois/2026-10-03/authority-3780000-start-end.json",
+      "sha256": "259fa522ec493dfa400f5b2ebd12207fcc06837d19f0c5aa6706f300ca1eeb30",
+      "saved_at_utc": "2026-10-02T16:41:17.243703+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3820000"
+      },
+      "total": 36,
+      "received_rows": 36,
+      "raw_path": "raw/mois/2026-10-03/authority-3820000-start-end.json",
+      "sha256": "03430eedf0bac536d4adb1bac3023bc6bc8275a1d3274a9b0661a6e98deda75f",
+      "saved_at_utc": "2026-10-02T16:41:17.313616+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3830000"
+      },
+      "total": 36,
+      "received_rows": 36,
+      "raw_path": "raw/mois/2026-10-03/authority-3830000-start-end.json",
+      "sha256": "b42c1fed4310aa5a8c70a0de2d9be6e4b3e71954ee4c95d412b38a8744c4921f",
+      "saved_at_utc": "2026-10-02T16:41:17.354767+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3860000"
+      },
+      "total": 48,
+      "received_rows": 48,
+      "raw_path": "raw/mois/2026-10-03/authority-3860000-start-end.json",
+      "sha256": "342882135ea609ad3894f22a10e544e65b5fb1fe2c6183a4a0235207b51ed388",
+      "saved_at_utc": "2026-10-02T16:41:17.394914+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3900000"
+      },
+      "total": 40,
+      "received_rows": 40,
+      "raw_path": "raw/mois/2026-10-03/authority-3900000-start-end.json",
+      "sha256": "4697593f416331d179bd7dc11c97f69f0bd1d6655780d0aa2eed35f265ffeb19",
+      "saved_at_utc": "2026-10-02T16:41:17.463852+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3920000"
+      },
+      "total": 9,
+      "received_rows": 9,
+      "raw_path": "raw/mois/2026-10-03/authority-3920000-start-end.json",
+      "sha256": "355c2c48f7e68b2ebfed7d0493e378df777c48206cacf73897072f2191220ee8",
+      "saved_at_utc": "2026-10-02T16:41:17.506249+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3910000"
+      },
+      "total": 48,
+      "received_rows": 48,
+      "raw_path": "raw/mois/2026-10-03/authority-3910000-start-end.json",
+      "sha256": "18d58b8443033354da87b7c877303fe8d7f08c86b312a7703c49366de005c260",
+      "saved_at_utc": "2026-10-02T16:41:17.514895+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3930000"
+      },
+      "total": 51,
+      "received_rows": 51,
+      "raw_path": "raw/mois/2026-10-03/authority-3930000-start-end.json",
+      "sha256": "81957252ffa18d7f744ce8f8f7e85a6356791c0c9de9126095d009b5c6f55115",
+      "saved_at_utc": "2026-10-02T16:41:17.604927+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3970000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-3970000-start-end.json",
+      "sha256": "d9850d9bc665b3fc55d3c3d120e81382e8de8c6f6544e2347c83a0e36b6b6f3d",
+      "saved_at_utc": "2026-10-02T16:41:17.634462+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3940000"
+      },
+      "total": 54,
+      "received_rows": 54,
+      "raw_path": "raw/mois/2026-10-03/authority-3940000-start-end.json",
+      "sha256": "da7c4163f8c2f01a06c6392d9f695118cecd29bbbe2bc64a2e19a49747671598",
+      "saved_at_utc": "2026-10-02T16:41:17.654271+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3980000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-3980000-start-end.json",
+      "sha256": "4d38eaedf1ecdff564487f547c15a8317207f3c2d4597c32f4e9be90c2fecf30",
+      "saved_at_utc": "2026-10-02T16:41:17.733492+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4000000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-4000000-start-end.json",
+      "sha256": "30bb49608fb8a8015fde0cc8adb31ef1ac461110c3300c2f002596c358bc3786",
+      "saved_at_utc": "2026-10-02T16:41:17.792351+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "3990000"
+      },
+      "total": 55,
+      "received_rows": 55,
+      "raw_path": "raw/mois/2026-10-03/authority-3990000-start-end.json",
+      "sha256": "0046f51d658c112db15c03a9ed504198274639c3ce17916000a1741d1aa32d75",
+      "saved_at_utc": "2026-10-02T16:41:17.813645+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4010000"
+      },
+      "total": 40,
+      "received_rows": 40,
+      "raw_path": "raw/mois/2026-10-03/authority-4010000-start-end.json",
+      "sha256": "aec7502c2920f8b8bd874710b166cfddd8bcefa4cf9bc7234bf4a9f44a1b85b9",
+      "saved_at_utc": "2026-10-02T16:41:17.884754+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4020000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-4020000-start-end.json",
+      "sha256": "70263f495268aa844eec4394906e61c6596f669d5e12b79d89990d594707f76a",
+      "saved_at_utc": "2026-10-02T16:41:17.901754+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4030000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-4030000-start-end.json",
+      "sha256": "c65257c3520cc293bfd022b4d3a28fa8da5991809b11c2f80459b2f3970f1586",
+      "saved_at_utc": "2026-10-02T16:41:17.943733+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4040000"
+      },
+      "total": 35,
+      "received_rows": 35,
+      "raw_path": "raw/mois/2026-10-03/authority-4040000-start-end.json",
+      "sha256": "b5cd53a6c699d6079e07b6b3c2a0391d1cb52effc1e3d9e4426e3b137ba98ffd",
+      "saved_at_utc": "2026-10-02T16:41:18.004629+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4050000"
+      },
+      "total": 57,
+      "received_rows": 57,
+      "raw_path": "raw/mois/2026-10-03/authority-4050000-start-end.json",
+      "sha256": "7e290bb15c4f7d49ba860c006b277b3015dddcf9bbe547c488e0c58bd6048cd8",
+      "saved_at_utc": "2026-10-02T16:41:18.041693+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4060000"
+      },
+      "total": 45,
+      "received_rows": 45,
+      "raw_path": "raw/mois/2026-10-03/authority-4060000-start-end.json",
+      "sha256": "4adcc8996ce7de19045aadf301e732a274ecf7a4cb227c89ca3a537457cdaf16",
+      "saved_at_utc": "2026-10-02T16:41:18.074796+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4070000"
+      },
+      "total": 36,
+      "received_rows": 36,
+      "raw_path": "raw/mois/2026-10-03/authority-4070000-start-end.json",
+      "sha256": "552c76e230af2961260649f8d12254d5599618e72b256189acdc1d8ad78a0f6d",
+      "saved_at_utc": "2026-10-02T16:41:18.114897+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4080000"
+      },
+      "total": 29,
+      "received_rows": 29,
+      "raw_path": "raw/mois/2026-10-03/authority-4080000-start-end.json",
+      "sha256": "8b14353dea14a2e10d3206f95549b5824e5a5d40afa8ef85f9cba58ae9ff106d",
+      "saved_at_utc": "2026-10-02T16:41:18.163853+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4090000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-4090000-start-end.json",
+      "sha256": "dd7ae8a0ea41390751071673b1b93a16f274f5ee6dce682aa2f7a4ee53d34752",
+      "saved_at_utc": "2026-10-02T16:41:18.214927+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4160000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-4160000-start-end.json",
+      "sha256": "bd5c08d391c6253635ebaf33ced18dd9a602a1b8c7c43aab3dbd557f541a1df7",
+      "saved_at_utc": "2026-10-02T16:41:18.284711+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4140000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4140000-start-end.json",
+      "sha256": "d2d07c33045f086b604cd1daf3faa3112bc3cb6fb36f5ec5818347086c6f8841",
+      "saved_at_utc": "2026-10-02T16:41:18.294565+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4170000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-4170000-start-end.json",
+      "sha256": "7ffcec29dcd9b091d4e3e2c84de6063732a1777a3051900ff047f5ec12fbf58a",
+      "saved_at_utc": "2026-10-02T16:41:18.347385+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4191000"
+      },
+      "total": 29,
+      "received_rows": 29,
+      "raw_path": "raw/mois/2026-10-03/authority-4191000-start-end.json",
+      "sha256": "d11fdfd9b72ec8b11ea1b258321f757619a3a88c343de10a4904a77f46ce8432",
+      "saved_at_utc": "2026-10-02T16:41:18.409719+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4181000"
+      },
+      "total": 34,
+      "received_rows": 34,
+      "raw_path": "raw/mois/2026-10-03/authority-4181000-start-end.json",
+      "sha256": "6eec6634d6dae6ded35a8fc285685f17bec8cfafaa8c4f657c2e7ac78a4fc74a",
+      "saved_at_utc": "2026-10-02T16:41:18.424626+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4201000"
+      },
+      "total": 32,
+      "received_rows": 32,
+      "raw_path": "raw/mois/2026-10-03/authority-4201000-start-end.json",
+      "sha256": "f1b57121927be3ae0e3f8169d0739d9102533f224525f12cabce1018e468201b",
+      "saved_at_utc": "2026-10-02T16:41:18.462239+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4211000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-4211000-start-end.json",
+      "sha256": "405e5c7ce5ce671744d970e60229a50779d69cede418b6ee82837f372f22cbd7",
+      "saved_at_utc": "2026-10-02T16:41:18.524547+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4221000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-4221000-start-end.json",
+      "sha256": "4a724a12d15fbd1be1ffdeefd02b8d146fb7c92adb22b2d80ccda85c2a78a53a",
+      "saved_at_utc": "2026-10-02T16:41:18.534594+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4231000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-4231000-start-end.json",
+      "sha256": "37ab418734de65edf0dacbd4366c9e6b6e3b18f06fbee07f6f4621eea6787b4f",
+      "saved_at_utc": "2026-10-02T16:41:18.592906+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4241000"
+      },
+      "total": 13,
+      "received_rows": 13,
+      "raw_path": "raw/mois/2026-10-03/authority-4241000-start-end.json",
+      "sha256": "aa98abed90cce382caa9cb4b22f73d7ccd976abc8d339a35d7026ca96486b12a",
+      "saved_at_utc": "2026-10-02T16:41:18.634251+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4251000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-4251000-start-end.json",
+      "sha256": "bfa4d8c8ff645a0bb532f2be891f8c1e53d4cd0bc7a6e396a2d33830b439f0f2",
+      "saved_at_utc": "2026-10-02T16:41:18.664783+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4261000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-4261000-start-end.json",
+      "sha256": "17bb7f6d35ced4f923fa81c6b6afa0007335fe0b7f36b6219cf9c1b62d98081a",
+      "saved_at_utc": "2026-10-02T16:41:18.724768+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4271000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-4271000-start-end.json",
+      "sha256": "e62bd30cfe74ad1f75d4aca72a4cde6fc14711e1ba24603e5f2ca7ee8f3054aa",
+      "saved_at_utc": "2026-10-02T16:41:18.764776+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4281000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-4281000-start-end.json",
+      "sha256": "9acff401b25f832badf015139b53ed34538f6e4d2d1ea73d880dc85ce6eb21d1",
+      "saved_at_utc": "2026-10-02T16:41:18.773615+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4291000"
+      },
+      "total": 15,
+      "received_rows": 15,
+      "raw_path": "raw/mois/2026-10-03/authority-4291000-start-end.json",
+      "sha256": "47f6055809198b3ae14d80147f4d14da01ca4b33ac433f701aa06157eff0985c",
+      "saved_at_utc": "2026-10-02T16:41:18.844496+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4311000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-4311000-start-end.json",
+      "sha256": "88c1b83a0f8577ba878d2a7c5b0a8983f155df54d93995adea3f058b8ea329d9",
+      "saved_at_utc": "2026-10-02T16:41:18.894169+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4301000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-4301000-start-end.json",
+      "sha256": "682fba44f5d95943af01eedad9551bea08555dcec403a331172952132143d508",
+      "saved_at_utc": "2026-10-02T16:41:18.894222+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4321000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-4321000-start-end.json",
+      "sha256": "e29991d838241fca915f9e0ff5dddcbd8dadbce91e4440b1654e683a326d7b7c",
+      "saved_at_utc": "2026-10-02T16:41:18.945496+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4331000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-4331000-start-end.json",
+      "sha256": "c188b790392c6c19280897f658864acbe5d4de78c032c3e79d7d0108b10f1e94",
+      "saved_at_utc": "2026-10-02T16:41:19.224726+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4341000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-4341000-start-end.json",
+      "sha256": "b4089f2dded3663ae5bf1ea47b29cd51511e549316bcb675d2143f4b75271bc6",
+      "saved_at_utc": "2026-10-02T16:41:19.264847+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4351000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-4351000-start-end.json",
+      "sha256": "521e8c23b3557aaa075578a1049ca5e11cf896c15e8e2f15f091a93d0b3f20e3",
+      "saved_at_utc": "2026-10-02T16:41:19.274683+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4390000"
+      },
+      "total": 29,
+      "received_rows": 29,
+      "raw_path": "raw/mois/2026-10-03/authority-4390000-start-end.json",
+      "sha256": "56cc4e8d23448367b3f4b708a013c47f9b3cb244a6934cb546ba747ccf8c83b3",
+      "saved_at_utc": "2026-10-02T16:41:19.355024+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4420000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4420000-start-end.json",
+      "sha256": "98c3bdfd131457653c568b375a22f468966481dfecc97e455fd0e1f474258cf4",
+      "saved_at_utc": "2026-10-02T16:41:19.393198+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4400000"
+      },
+      "total": 32,
+      "received_rows": 32,
+      "raw_path": "raw/mois/2026-10-03/authority-4400000-start-end.json",
+      "sha256": "a556c358d3fc0b3d32493787034c4d27549308ecf0fb2f3fc72b200ffc05980e",
+      "saved_at_utc": "2026-10-02T16:41:19.424935+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4430000"
+      },
+      "total": 15,
+      "received_rows": 15,
+      "raw_path": "raw/mois/2026-10-03/authority-4430000-start-end.json",
+      "sha256": "6f2b58fbfb8962e5384a8a00268cdcd369ef6df7d3f2435b1abdb5dadd19126d",
+      "saved_at_utc": "2026-10-02T16:41:19.463130+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4440000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4440000-start-end.json",
+      "sha256": "38b94fe63c7c7cdf9a167c9f37b1b323209d400a262ab421d08a27c2ce803044",
+      "saved_at_utc": "2026-10-02T16:41:19.534708+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4450000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4450000-start-end.json",
+      "sha256": "faadec8c273ca615af3b7160188b8a1353f2910abf22f1d8ec4381a896f7ed2c",
+      "saved_at_utc": "2026-10-02T16:41:19.556936+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4460000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-4460000-start-end.json",
+      "sha256": "ca4d5b17b4a37677a93dcecd873c4de9aea7a93c7dd7be80b63b175a0f29e118",
+      "saved_at_utc": "2026-10-02T16:41:19.563352+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4470000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-4470000-start-end.json",
+      "sha256": "44ea96e7b831056cf204111e1bdf277f43552542431cca967c9145611bd7dd35",
+      "saved_at_utc": "2026-10-02T16:41:19.673477+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4480000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-4480000-start-end.json",
+      "sha256": "c0c4ec1960c7a9150e49f2a66d576fb79790bdb0804ad118aff904af87041032",
+      "saved_at_utc": "2026-10-02T16:41:19.674499+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4490000"
+      },
+      "total": 68,
+      "received_rows": 68,
+      "raw_path": "raw/mois/2026-10-03/authority-4490000-start-end.json",
+      "sha256": "4095cbfd3590c2d980854568e111ee1a23ce2edc71f1562145fc060af00297ee",
+      "saved_at_utc": "2026-10-02T16:41:19.745233+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4510000"
+      },
+      "total": 32,
+      "received_rows": 32,
+      "raw_path": "raw/mois/2026-10-03/authority-4510000-start-end.json",
+      "sha256": "8d419f6edece5fe5e50399345486ee31932e24507b263105ca44c48c0aefcf55",
+      "saved_at_utc": "2026-10-02T16:41:19.804943+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4500000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-4500000-start-end.json",
+      "sha256": "99b877be9433c17b64d4916e7681bbb4e06b9903765072aaa4bcbfd20dd35006",
+      "saved_at_utc": "2026-10-02T16:41:19.813655+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4520000"
+      },
+      "total": 69,
+      "received_rows": 69,
+      "raw_path": "raw/mois/2026-10-03/authority-4520000-start-end.json",
+      "sha256": "3533622df6d9a7603f825f24272c5e8b0fa2015b077a4d919951d984f3d05a76",
+      "saved_at_utc": "2026-10-02T16:41:19.915521+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4540000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-4540000-start-end.json",
+      "sha256": "9f56b13941fe247e2b86f706f41e911d939b0c78e614dd4c0e13c00c7e8292e4",
+      "saved_at_utc": "2026-10-02T16:41:19.944631+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4530000"
+      },
+      "total": 27,
+      "received_rows": 27,
+      "raw_path": "raw/mois/2026-10-03/authority-4530000-start-end.json",
+      "sha256": "bb42cdac2fedcc20ce636377ff771012332b9fcec14c0c4632d1f90408dda980",
+      "saved_at_utc": "2026-10-02T16:41:19.956398+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4550000"
+      },
+      "total": 13,
+      "received_rows": 13,
+      "raw_path": "raw/mois/2026-10-03/authority-4550000-start-end.json",
+      "sha256": "57a291b8d2a81e80cbf5fc299a7243a4395ae272a784bfd3b3710117261a3af5",
+      "saved_at_utc": "2026-10-02T16:41:20.035643+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4570000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-4570000-start-end.json",
+      "sha256": "d81a2447310bcf3be002209cdcb20ada0d5103f1394f530ab30b4b183fc46f10",
+      "saved_at_utc": "2026-10-02T16:41:20.064752+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4580000"
+      },
+      "total": 11,
+      "received_rows": 11,
+      "raw_path": "raw/mois/2026-10-03/authority-4580000-start-end.json",
+      "sha256": "f73a862e38c151ca25740daefa8833885922e6de4ccc1429b149d0f4fe9b6d34",
+      "saved_at_utc": "2026-10-02T16:41:20.081648+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4590000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4590000-start-end.json",
+      "sha256": "1bad7c991a097228d99f3db9019e0b7582861fa459ef72a6f5d2e11825b906ed",
+      "saved_at_utc": "2026-10-02T16:41:20.164713+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4600000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-4600000-start-end.json",
+      "sha256": "8346b3835fde7d8e1aba8c063a8e460cd79eca79181e3851768462f31811738f",
+      "saved_at_utc": "2026-10-02T16:41:20.183376+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4610000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-4610000-start-end.json",
+      "sha256": "9f1ebbca53e5465525b417c48632a69dede9c9d4841c3e2b7b7c4dec7e592589",
+      "saved_at_utc": "2026-10-02T16:41:20.215412+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4620000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4620000-start-end.json",
+      "sha256": "1d095d57c97f73e486e242cd9fa64c804529ead762aaa6bf77d37e28d06f6f1a",
+      "saved_at_utc": "2026-10-02T16:41:20.285501+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4641000"
+      },
+      "total": 53,
+      "received_rows": 53,
+      "raw_path": "raw/mois/2026-10-03/authority-4641000-start-end.json",
+      "sha256": "a348be14afae42e6581765b61836027e6c0330492702b63e5e2f03c5190883af",
+      "saved_at_utc": "2026-10-02T16:41:20.342233+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4671000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-4671000-start-end.json",
+      "sha256": "5bbfdacfc0a762392a9894bbed6f81171fdef24b6bb4907343aa9a52db4ba01d",
+      "saved_at_utc": "2026-10-02T16:41:20.344763+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4681000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-4681000-start-end.json",
+      "sha256": "e1870cf5d1fecbe432319cc46c6ce870aaf1034cd2983fbcb20a95ec403ffbd7",
+      "saved_at_utc": "2026-10-02T16:41:20.415087+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4691000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-4691000-start-end.json",
+      "sha256": "80d2d717a5a29666fb87c6d33be24405e44824cb401e901922457a4e86906159",
+      "saved_at_utc": "2026-10-02T16:41:20.454788+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4701000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-4701000-start-end.json",
+      "sha256": "a65019b16328e2efdf5c80ab44e309ff3723d4a61e8a521c0e276d4a2d79a15e",
+      "saved_at_utc": "2026-10-02T16:41:20.494816+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4711000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-4711000-start-end.json",
+      "sha256": "efdb394ae3694b287f2e01bd6a2945f6e0226da7b91786bd4d8e78e2aeaa4865",
+      "saved_at_utc": "2026-10-02T16:41:20.524719+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4721000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-4721000-start-end.json",
+      "sha256": "700b3423d52b346623789e5467f1b0d8233a80f4201e0a2cd4523c6d5bba6327",
+      "saved_at_utc": "2026-10-02T16:41:20.581321+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4731000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-4731000-start-end.json",
+      "sha256": "6678fa6be8957ce7c56c8b334cb3169a2d1c4976225834470d630ce7d2848b34",
+      "saved_at_utc": "2026-10-02T16:41:20.604768+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4741000"
+      },
+      "total": 9,
+      "received_rows": 9,
+      "raw_path": "raw/mois/2026-10-03/authority-4741000-start-end.json",
+      "sha256": "895c1f258265cf3ff235e21fc5f08346cb7fd55a476f0b7204b221bdfa5bda3b",
+      "saved_at_utc": "2026-10-02T16:41:20.644819+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4751000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-4751000-start-end.json",
+      "sha256": "769125c64fb226e3f1c2cac482c82cf329de7cb760ebb2404236a4191413c667",
+      "saved_at_utc": "2026-10-02T16:41:20.704904+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4761000"
+      },
+      "total": 4,
+      "received_rows": 4,
+      "raw_path": "raw/mois/2026-10-03/authority-4761000-start-end.json",
+      "sha256": "c2fe854e6d486ab1e38648c5559b4195193bcb071fa92bc46ff9c20d2d071737",
+      "saved_at_utc": "2026-10-02T16:41:20.724097+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4771000"
+      },
+      "total": 8,
+      "received_rows": 8,
+      "raw_path": "raw/mois/2026-10-03/authority-4771000-start-end.json",
+      "sha256": "9f0bb88e3b574948fd83512b0badbfcb40b94eabb60d3dbb55b2d350a6d03c5e",
+      "saved_at_utc": "2026-10-02T16:41:20.825110+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4781000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-4781000-start-end.json",
+      "sha256": "a1f4e77a27f36bb48a5909efa66b38742d77864ffb2a70309749ca5e01f86bc4",
+      "saved_at_utc": "2026-10-02T16:41:20.904820+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "4791000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-4791000-start-end.json",
+      "sha256": "4b1e8ef4c28cb20354ee0b8037bfd2e16963a80c2b67ecfe4978ce6f4697590b",
+      "saved_at_utc": "2026-10-02T16:41:20.934517+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5020000"
+      },
+      "total": 57,
+      "received_rows": 57,
+      "raw_path": "raw/mois/2026-10-03/authority-5020000-start-end.json",
+      "sha256": "ace9f99a73e2c533a4fd1e86e816fafa85cff0d3aee6993c0413c7a5c19201f8",
+      "saved_at_utc": "2026-10-02T16:41:21.005024+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5060000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-5060000-start-end.json",
+      "sha256": "6ddc4fc17d8e622d4800e5ea4e1b4da06b2f84a457be8d55e4a2381b72c49e37",
+      "saved_at_utc": "2026-10-02T16:41:21.054522+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5050000"
+      },
+      "total": 39,
+      "received_rows": 39,
+      "raw_path": "raw/mois/2026-10-03/authority-5050000-start-end.json",
+      "sha256": "f8d071f81c0d2c937e4a6c73ac3e248bc668a649dc96403c0e9f88c0c642d4c1",
+      "saved_at_utc": "2026-10-02T16:41:21.095015+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5070000"
+      },
+      "total": 35,
+      "received_rows": 35,
+      "raw_path": "raw/mois/2026-10-03/authority-5070000-start-end.json",
+      "sha256": "934ddc55e65bf31e9968484b539f6dadce6b7ccebc575f1c9e57acd21ed0c842",
+      "saved_at_utc": "2026-10-02T16:41:21.134331+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5080000"
+      },
+      "total": 40,
+      "received_rows": 40,
+      "raw_path": "raw/mois/2026-10-03/authority-5080000-start-end.json",
+      "sha256": "b3037e18bf282ccd0f7cdbb165400d098d2816b9e29ddcbab5b8cb264c78329d",
+      "saved_at_utc": "2026-10-02T16:41:21.203449+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5090000"
+      },
+      "total": 27,
+      "received_rows": 27,
+      "raw_path": "raw/mois/2026-10-03/authority-5090000-start-end.json",
+      "sha256": "c65de08be7f86945ef35cc71e0f0c5c39394acad0fa6472d1b2e25cd76c3b252",
+      "saved_at_utc": "2026-10-02T16:41:21.233504+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5100000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-5100000-start-end.json",
+      "sha256": "ebc9803f62d3f192df9847a0f1fe79ffda1549420ba11e2cae49e01c520372f4",
+      "saved_at_utc": "2026-10-02T16:41:21.263663+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5110000"
+      },
+      "total": 30,
+      "received_rows": 30,
+      "raw_path": "raw/mois/2026-10-03/authority-5110000-start-end.json",
+      "sha256": "66270c9144d80ad505ac16c44eb729052a209495aebf40fd805da56c6562e5de",
+      "saved_at_utc": "2026-10-02T16:41:21.324890+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5130000"
+      },
+      "total": 27,
+      "received_rows": 27,
+      "raw_path": "raw/mois/2026-10-03/authority-5130000-start-end.json",
+      "sha256": "272891aa091e714b2c13c20ab672e76e7111ead410a7fe5ad41a6086e4faf7aa",
+      "saved_at_utc": "2026-10-02T16:41:21.369643+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5120000"
+      },
+      "total": 26,
+      "received_rows": 26,
+      "raw_path": "raw/mois/2026-10-03/authority-5120000-start-end.json",
+      "sha256": "cd318d85578bb72ac5ad0235a23edad78f13932cffa4828c17a8a0c355447b77",
+      "saved_at_utc": "2026-10-02T16:41:21.373513+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5141000"
+      },
+      "total": 9,
+      "received_rows": 9,
+      "raw_path": "raw/mois/2026-10-03/authority-5141000-start-end.json",
+      "sha256": "fdb2428ab1bb08f006f8f0154d73497d7b788b413e4cee38371f6ecc24cce92f",
+      "saved_at_utc": "2026-10-02T16:41:21.445112+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5160000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-5160000-start-end.json",
+      "sha256": "cb8b00197406ef9140da17a0fc62c7afe8066b5417908d1bfa4f3635e57c5c48",
+      "saved_at_utc": "2026-10-02T16:41:21.493968+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5150000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-5150000-start-end.json",
+      "sha256": "8d5166dd8babfa71b8f8454d5c753f7b34565edf8f6a2e6787576a75276ec44a",
+      "saved_at_utc": "2026-10-02T16:41:21.505048+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5170000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-5170000-start-end.json",
+      "sha256": "caece1c75c85e347fde924a0cb52fa0d1c0439ba1839847d029cb8568875110b",
+      "saved_at_utc": "2026-10-02T16:41:21.563454+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5180000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-5180000-start-end.json",
+      "sha256": "fd8a4cd36b3932ed0858bed04174590807a3d8c154d0d0a809ddc6dcc0e6a7e6",
+      "saved_at_utc": "2026-10-02T16:41:21.604779+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5190000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-5190000-start-end.json",
+      "sha256": "f47cb7b3e0c6b69f21316091ac8df92454c71650125013d5fa55616aefb1c929",
+      "saved_at_utc": "2026-10-02T16:41:21.614768+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5200000"
+      },
+      "total": 9,
+      "received_rows": 9,
+      "raw_path": "raw/mois/2026-10-03/authority-5200000-start-end.json",
+      "sha256": "1992fe11ddd3942bbf5046a6471e4b050ad56a78857d2047af9eecb493192d16",
+      "saved_at_utc": "2026-10-02T16:41:21.679237+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5220000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-5220000-start-end.json",
+      "sha256": "edeb7d73709607ebfb03fe5d4b70cd28ca175535824e678b8903bb378b9730c8",
+      "saved_at_utc": "2026-10-02T16:41:21.723907+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5210000"
+      },
+      "total": 15,
+      "received_rows": 15,
+      "raw_path": "raw/mois/2026-10-03/authority-5210000-start-end.json",
+      "sha256": "22a9ece639a085facdfc4e177a94ff60ec981b868780616935871b5644c21698",
+      "saved_at_utc": "2026-10-02T16:41:21.723990+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5230000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-5230000-start-end.json",
+      "sha256": "6c619ab4b646fb59e4cfb23d5222bc58f783d4f690dcf1cd47b884be18184bd8",
+      "saved_at_utc": "2026-10-02T16:41:21.814724+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5250000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-5250000-start-end.json",
+      "sha256": "70c2f4b54e23935f53ad82e3bbb6d5d00d82a837d4c87b6c45a7261f33e4bbf8",
+      "saved_at_utc": "2026-10-02T16:41:21.854768+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5240000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-5240000-start-end.json",
+      "sha256": "ab7c0cb358490373c9d831f64d278ba4a345d3743cdeaa39b870d50039f1b48a",
+      "saved_at_utc": "2026-10-02T16:41:21.863566+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5260000"
+      },
+      "total": 4,
+      "received_rows": 4,
+      "raw_path": "raw/mois/2026-10-03/authority-5260000-start-end.json",
+      "sha256": "d71b3abe37e5c3517c9598d645d7be57a5db066a9d2e8cba97ec1e277fb3867f",
+      "saved_at_utc": "2026-10-02T16:41:21.934716+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5310000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-5310000-start-end.json",
+      "sha256": "8d44260849ec69f932b36e7b8c5183f213c2fb8773e3b8a03755ff61c8a5b5c5",
+      "saved_at_utc": "2026-10-02T16:41:21.994308+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5330000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-5330000-start-end.json",
+      "sha256": "890e6cf5770688c41f220094da862865e7e5df7019fd79b4193340493840194f",
+      "saved_at_utc": "2026-10-02T16:41:22.004699+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5340000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-5340000-start-end.json",
+      "sha256": "9f5ae9fba063b3fbf1bacb5c98f822e277becef6e0c6ebffd61d74235fe12c43",
+      "saved_at_utc": "2026-10-02T16:41:22.044541+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5350000"
+      },
+      "total": 33,
+      "received_rows": 33,
+      "raw_path": "raw/mois/2026-10-03/authority-5350000-start-end.json",
+      "sha256": "95f70904e58d1b76d7e9ee820b9646629111eabd606fa318833c56cfb1da88bb",
+      "saved_at_utc": "2026-10-02T16:41:22.129682+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5360000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-5360000-start-end.json",
+      "sha256": "cad406ab5da0f0cdcabadf3c29411ccb03956579d7b05cdf0d8da3f71a8ad972",
+      "saved_at_utc": "2026-10-02T16:41:22.144874+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5370000"
+      },
+      "total": 49,
+      "received_rows": 49,
+      "raw_path": "raw/mois/2026-10-03/authority-5370000-start-end.json",
+      "sha256": "bb0ff5cbd8be7a273e4b04f7ffb1dc67289fc6ea63b593b05187d90a74b0aacf",
+      "saved_at_utc": "2026-10-02T16:41:22.215165+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5380000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-5380000-start-end.json",
+      "sha256": "a28da578f2032a4975056f542c6f2d6fd87272c3adb62a8e798641e2b735d1e0",
+      "saved_at_utc": "2026-10-02T16:41:22.254923+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5390000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-5390000-start-end.json",
+      "sha256": "efe6e07a8c0d113ccb3b4b50d1012d19704573205b2386ec2ebb312876c10182",
+      "saved_at_utc": "2026-10-02T16:41:22.284972+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5400000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-5400000-start-end.json",
+      "sha256": "455d9d7708a90dfb4805426833361c08e66a26c23e1d6a1d8fef7eeaf49d4dcc",
+      "saved_at_utc": "2026-10-02T16:41:22.334137+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5410000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-5410000-start-end.json",
+      "sha256": "7c717d1b13b4ebdcfbf2f9399c078901adc64a4628eea91753865b9843ba4212",
+      "saved_at_utc": "2026-10-02T16:41:22.354651+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5420000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-5420000-start-end.json",
+      "sha256": "0926ecf73d11c1a5f295e2161951805ea4c2939773e6befd46551e13990bf803",
+      "saved_at_utc": "2026-10-02T16:41:22.403352+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5430000"
+      },
+      "total": 13,
+      "received_rows": 13,
+      "raw_path": "raw/mois/2026-10-03/authority-5430000-start-end.json",
+      "sha256": "43f630d36f6bef77d87fc7ed621e4bc7b8ba231a5b1b853caccc07851cd308a3",
+      "saved_at_utc": "2026-10-02T16:41:22.464974+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5440000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-5440000-start-end.json",
+      "sha256": "0e64b88009042653fc2f8bdb664a652029464d53cde66039d919e67b5610d6dc",
+      "saved_at_utc": "2026-10-02T16:41:22.484747+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5450000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-5450000-start-end.json",
+      "sha256": "6f7526acd0cde66989d80ad489f06a7f77b18b53c8364f658a8ac2f74f9f74cc",
+      "saved_at_utc": "2026-10-02T16:41:22.524877+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5460000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-5460000-start-end.json",
+      "sha256": "a180cc60cbd9a44ba520762a12d0b4eb235b3745430fc143e6329a407caf35cd",
+      "saved_at_utc": "2026-10-02T16:41:22.564765+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5470000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-5470000-start-end.json",
+      "sha256": "47bff9ef308d71ffabea9e00043e9738767d0c337127ae3d858be0a7390f87d3",
+      "saved_at_utc": "2026-10-02T16:41:22.615098+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5480000"
+      },
+      "total": 22,
+      "received_rows": 22,
+      "raw_path": "raw/mois/2026-10-03/authority-5480000-start-end.json",
+      "sha256": "856e6e216dbbba2cc80be42d809ed2ed7e38e36ab4aab0d1c61fc2f0e151ea0c",
+      "saved_at_utc": "2026-10-02T16:41:22.654710+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5530000"
+      },
+      "total": 91,
+      "received_rows": 91,
+      "raw_path": "raw/mois/2026-10-03/authority-5530000-start-end.json",
+      "sha256": "96e3c9d5c579278ec1c7302615b13ab25f7f841047be8ac255d7c4ae6895e34f",
+      "saved_at_utc": "2026-10-02T16:41:22.705580+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5570000"
+      },
+      "total": 5,
+      "received_rows": 5,
+      "raw_path": "raw/mois/2026-10-03/authority-5570000-start-end.json",
+      "sha256": "f41f970f27e636a22ae5ba59bb8b5636adb7fdb1dd061de957eb400e52216cb9",
+      "saved_at_utc": "2026-10-02T16:41:23.067605+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5580000"
+      },
+      "total": 7,
+      "received_rows": 7,
+      "raw_path": "raw/mois/2026-10-03/authority-5580000-start-end.json",
+      "sha256": "a637631337445d4ed21820990cdb9edf03655b3128261074eaf0f979e0c9ee1f",
+      "saved_at_utc": "2026-10-02T16:41:23.085052+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5540000"
+      },
+      "total": 38,
+      "received_rows": 38,
+      "raw_path": "raw/mois/2026-10-03/authority-5540000-start-end.json",
+      "sha256": "48b8b248dde73a837b9e26d83357eec20681f4b59907f9e5fa31bd5639387a0a",
+      "saved_at_utc": "2026-10-02T16:41:23.095116+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5590000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-5590000-start-end.json",
+      "sha256": "0305996f94a48295703fcfdd9ca187f1372f1c0d7e137bd2b82898406cbe8dd6",
+      "saved_at_utc": "2026-10-02T16:41:23.214893+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5600000"
+      },
+      "total": 31,
+      "received_rows": 31,
+      "raw_path": "raw/mois/2026-10-03/authority-5600000-start-end.json",
+      "sha256": "81cb191b6e41999a09c79fe0f2e6db2b976f8ab4cbc496c1e6afa79ddb3585d9",
+      "saved_at_utc": "2026-10-02T16:41:23.241381+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5680000"
+      },
+      "total": 39,
+      "received_rows": 39,
+      "raw_path": "raw/mois/2026-10-03/authority-5680000-start-end.json",
+      "sha256": "31c0b29eba682a2248f15e5114694f7bb7d30505e1eb3b8be8feb690911a2955",
+      "saved_at_utc": "2026-10-02T16:41:23.355026+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5690000"
+      },
+      "total": 46,
+      "received_rows": 46,
+      "raw_path": "raw/mois/2026-10-03/authority-5690000-start-end.json",
+      "sha256": "8cf01ca9a4f21e7041d71bbac6aec8a62aa8c7e818fe3f797633999701167bfa",
+      "saved_at_utc": "2026-10-02T16:41:23.394555+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5700000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-5700000-start-end.json",
+      "sha256": "d03402e10f68d2aece7c855f5d19b53bc2d63736f9690fdc38a84e589596add9",
+      "saved_at_utc": "2026-10-02T16:41:23.494836+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5670000"
+      },
+      "total": 137,
+      "received_rows": 100,
+      "raw_path": "raw/mois/2026-10-03/authority-5670000-start-end.json",
+      "sha256": "328ea2f5fe0c3c0d352727c80e00e257be8a924578bba6935b8bce2f202a6ab2",
+      "saved_at_utc": "2026-10-02T16:41:23.255923+00:00",
+      "split_parent_only": true
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5670000",
+        "cond[DAT_UPDT_PNT::LT]": "20260719215725"
+      },
+      "total": 97,
+      "received_rows": 97,
+      "raw_path": "raw/mois/2026-10-03/authority-5670000-start-20260719215725.json",
+      "sha256": "0600e33859eea3d5cc23234543c30c4e31378c8270a9f3c942b27df4346e6b81",
+      "saved_at_utc": "2026-10-02T16:41:23.415392+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5670000",
+        "cond[DAT_UPDT_PNT::GTE]": "20260719215725"
+      },
+      "total": 40,
+      "received_rows": 40,
+      "raw_path": "raw/mois/2026-10-03/authority-5670000-20260719215725-end.json",
+      "sha256": "e144eb0a7f0f61d26a1744a3672dd68828019f52a3ff1425d68b52809bf932aa",
+      "saved_at_utc": "2026-10-02T16:41:23.535200+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5710000"
+      },
+      "total": 99,
+      "received_rows": 99,
+      "raw_path": "raw/mois/2026-10-03/authority-5710000-start-end.json",
+      "sha256": "53a34d06c73d08a8cd10c4bd5966d04bd6a7652cf60649cc7a97ac3e7f078dd3",
+      "saved_at_utc": "2026-10-02T16:41:23.567126+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5780000"
+      },
+      "total": 30,
+      "received_rows": 30,
+      "raw_path": "raw/mois/2026-10-03/authority-5780000-start-end.json",
+      "sha256": "14c07c1a5dab2f68676aa793f280ac69fdd47f118873e361c33c1fde26dc6b97",
+      "saved_at_utc": "2026-10-02T16:41:23.634707+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5785000"
+      },
+      "total": 42,
+      "received_rows": 42,
+      "raw_path": "raw/mois/2026-10-03/authority-5785000-start-end.json",
+      "sha256": "9e3b85cbbe053eaf3d0dddde2d46a8959f81e945a6182c3a5fffa86fd574febf",
+      "saved_at_utc": "2026-10-02T16:41:23.675142+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5790000"
+      },
+      "total": 47,
+      "received_rows": 47,
+      "raw_path": "raw/mois/2026-10-03/authority-5790000-start-end.json",
+      "sha256": "3a8723ce42d4d3f108e3cdf78e33182b87f60fd483bcd2f3437ef3f328b1df26",
+      "saved_at_utc": "2026-10-02T16:41:23.723678+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5795000"
+      },
+      "total": 25,
+      "received_rows": 25,
+      "raw_path": "raw/mois/2026-10-03/authority-5795000-start-end.json",
+      "sha256": "e3d60d2a37a117a1fe37e3deedee459152981ee46cc06826c709fd651d5d227e",
+      "saved_at_utc": "2026-10-02T16:41:23.773664+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5800000"
+      },
+      "total": 24,
+      "received_rows": 24,
+      "raw_path": "raw/mois/2026-10-03/authority-5800000-start-end.json",
+      "sha256": "591b6d2e217b9f13834eaf826312ca0c8479bcc7e1a4256c98bd07b3862d44b4",
+      "saved_at_utc": "2026-10-02T16:41:23.804698+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5805000"
+      },
+      "total": 21,
+      "received_rows": 21,
+      "raw_path": "raw/mois/2026-10-03/authority-5805000-start-end.json",
+      "sha256": "c694162e5fe4619a940aadd59936c996910a2d060e74c16281b8e9015238fc7f",
+      "saved_at_utc": "2026-10-02T16:41:23.844886+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5810000"
+      },
+      "total": 34,
+      "received_rows": 34,
+      "raw_path": "raw/mois/2026-10-03/authority-5810000-start-end.json",
+      "sha256": "7c74eec2022870bcfc8f1ae2d72b6ea9dd4a1cbfe3f006303bab0149ae6a956b",
+      "saved_at_utc": "2026-10-02T16:41:23.915242+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5815000"
+      },
+      "total": 28,
+      "received_rows": 28,
+      "raw_path": "raw/mois/2026-10-03/authority-5815000-start-end.json",
+      "sha256": "90d7f3c9f53fbb4291aaec066266b545b39ce48865454df5ceaaa16f1268a157",
+      "saved_at_utc": "2026-10-02T16:41:23.934691+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5820000"
+      },
+      "total": 50,
+      "received_rows": 50,
+      "raw_path": "raw/mois/2026-10-03/authority-5820000-start-end.json",
+      "sha256": "8c9954fab36fb57baca914e3c18f3d2580a9642b2d1ec3c5d1686bbff6e90e65",
+      "saved_at_utc": "2026-10-02T16:41:23.984845+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5825000"
+      },
+      "total": 45,
+      "received_rows": 45,
+      "raw_path": "raw/mois/2026-10-03/authority-5825000-start-end.json",
+      "sha256": "f72e0082cd3deab1143f0ab7b99aa2620bf883d189443959d4c0e484d6dce553",
+      "saved_at_utc": "2026-10-02T16:41:24.044923+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5830000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-5830000-start-end.json",
+      "sha256": "1ed835614a52bffd69e0c4a9a40b1d5b529fd8db09a03ae12776bf87c506ac65",
+      "saved_at_utc": "2026-10-02T16:41:24.054652+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5835000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-5835000-start-end.json",
+      "sha256": "bae89ba4514e0f8a19deb0b883f61b250a2e01122287efcb8edea8148beee4b5",
+      "saved_at_utc": "2026-10-02T16:41:24.074142+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5840000"
+      },
+      "total": 5,
+      "received_rows": 5,
+      "raw_path": "raw/mois/2026-10-03/authority-5840000-start-end.json",
+      "sha256": "f2ed7f8678cd6b55b6d5743f1784c67439f1f763360f3dbf2a548e6b6655cc03",
+      "saved_at_utc": "2026-10-02T16:41:24.153833+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5845000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-5845000-start-end.json",
+      "sha256": "aa0143e9a5152f01dc831d4473e0f0ed2e268e99766ae2b1931a4e12f261ad02",
+      "saved_at_utc": "2026-10-02T16:41:24.165021+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5850000"
+      },
+      "total": 16,
+      "received_rows": 16,
+      "raw_path": "raw/mois/2026-10-03/authority-5850000-start-end.json",
+      "sha256": "482917a2cd8da27623a0a296400bc18426c8151780bc414260966049e24ae60b",
+      "saved_at_utc": "2026-10-02T16:41:24.212151+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5860000"
+      },
+      "total": 12,
+      "received_rows": 12,
+      "raw_path": "raw/mois/2026-10-03/authority-5860000-start-end.json",
+      "sha256": "501aec86b3fd62c62f6797a020bf625934c2ab26d24fa94cb0040204a55f4983",
+      "saved_at_utc": "2026-10-02T16:41:24.275451+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5855000"
+      },
+      "total": 24,
+      "received_rows": 24,
+      "raw_path": "raw/mois/2026-10-03/authority-5855000-start-end.json",
+      "sha256": "3e854a2a2c6cb209f1adcefa3de4c2a3ae5339d8b6dbfeb06369edf67aa616ef",
+      "saved_at_utc": "2026-10-02T16:41:24.278258+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5865000"
+      },
+      "total": 6,
+      "received_rows": 6,
+      "raw_path": "raw/mois/2026-10-03/authority-5865000-start-end.json",
+      "sha256": "4a4a9ba0c75e72b4ae446d51f43bd109b90a3f0c850a6c6dda43278cff998e98",
+      "saved_at_utc": "2026-10-02T16:41:24.324864+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5875000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-5875000-start-end.json",
+      "sha256": "5770822a7a6e976d1dc27c222b5165f90d982d8997bbb65834000c3d7b691997",
+      "saved_at_utc": "2026-10-02T16:41:24.396411+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5870000"
+      },
+      "total": 23,
+      "received_rows": 23,
+      "raw_path": "raw/mois/2026-10-03/authority-5870000-start-end.json",
+      "sha256": "df124a968386e857d0c57f58006408e0ca6960b93c781902126b365ec3aee149",
+      "saved_at_utc": "2026-10-02T16:41:24.414978+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5880000"
+      },
+      "total": 19,
+      "received_rows": 19,
+      "raw_path": "raw/mois/2026-10-03/authority-5880000-start-end.json",
+      "sha256": "c7efa7c6d331139465ca8e1cd9566f0783b425205a30c11c690e5707f3381850",
+      "saved_at_utc": "2026-10-02T16:41:24.435521+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5885000"
+      },
+      "total": 11,
+      "received_rows": 11,
+      "raw_path": "raw/mois/2026-10-03/authority-5885000-start-end.json",
+      "sha256": "57a6daed5a46c2ad9a29c9b002b822561fb5aa4e0067fc07256bad0ac5ddebd1",
+      "saved_at_utc": "2026-10-02T16:41:24.517276+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5890000"
+      },
+      "total": 18,
+      "received_rows": 18,
+      "raw_path": "raw/mois/2026-10-03/authority-5890000-start-end.json",
+      "sha256": "8bb19a12976e8553b5c05247613f8d7499405da986960c5135e6aa7456e3bd37",
+      "saved_at_utc": "2026-10-02T16:41:24.517353+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5895000"
+      },
+      "total": 10,
+      "received_rows": 10,
+      "raw_path": "raw/mois/2026-10-03/authority-5895000-start-end.json",
+      "sha256": "cf2c20ddce0b5bcab0793473a53752f97464b73942ae37e07fff16d82f598d67",
+      "saved_at_utc": "2026-10-02T16:41:24.565105+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5900000"
+      },
+      "total": 17,
+      "received_rows": 17,
+      "raw_path": "raw/mois/2026-10-03/authority-5900000-start-end.json",
+      "sha256": "0f370023489b17c09959f3f42be7d89632727e67612941fa2cf0b9d52485ddbc",
+      "saved_at_utc": "2026-10-02T16:41:24.625127+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5905000"
+      },
+      "total": 14,
+      "received_rows": 14,
+      "raw_path": "raw/mois/2026-10-03/authority-5905000-start-end.json",
+      "sha256": "5e5b657812dee40aaec69ba92b6ffc1f0fb99c2daab1fe069d1f11172d67ba64",
+      "saved_at_utc": "2026-10-02T16:41:24.633586+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "5910000"
+      },
+      "total": 11,
+      "received_rows": 11,
+      "raw_path": "raw/mois/2026-10-03/authority-5910000-start-end.json",
+      "sha256": "66f43e95ff41cf37b67cc20574b31562af9f57568ef9952282578a05691e9196",
+      "saved_at_utc": "2026-10-02T16:41:24.664987+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "6520000"
+      },
+      "total": 32,
+      "received_rows": 32,
+      "raw_path": "raw/mois/2026-10-03/authority-6520000-start-end.json",
+      "sha256": "ef2dfb8d9582c494e7c439468c15df7c1ed8d88437c9e4d6bfc4cb153c5f8809",
+      "saved_at_utc": "2026-10-02T16:41:24.744597+00:00"
+    },
+    {
+      "request_parameters": {
+        "pageNo": 1,
+        "numOfRows": 100,
+        "returnType": "JSON",
+        "cond[OPN_ATMY_GRP_CD::EQ]": "6510000"
+      },
+      "total": 53,
+      "received_rows": 53,
+      "raw_path": "raw/mois/2026-10-03/authority-6510000-start-end.json",
+      "sha256": "52311cb1f31a841a6c84f39d40b3cb77bce081afc2141b6fcb6f0defaf791971",
+      "saved_at_utc": "2026-10-02T16:41:24.765103+00:00"
+    }
+  ],
+  "transactionally_consistent_snapshot_guaranteed": false,
+  "dataset_path": "data/mois_devices_2026-10-03.csv",
+  "dataset_sha256": "8c94e0ddf294e2392b9ffb13cc1aaa7cf1204358a15d7b311cddcb5d97bfba52",
+  "pages": [
+    {
+      "page": 1,
+      "total": 5803,
+      "sha256": "209bc655b7d7586b74b974aa7bf28d5e6d9abc0f416236d5f15d4a2829e854e1",
+      "bytes": 114992,
+      "raw_path": "raw/mois/2026-10-03/page-0001.json"
+    },
+    {
+      "page": 2,
+      "total": 5803,
+      "sha256": "3db55907db3ca141bab497d1ac20039d626e93a04260331db8fcb28d1812eee2",
+      "bytes": 116617,
+      "raw_path": "raw/mois/2026-10-03/page-0002.json"
+    },
+    {
+      "page": 3,
+      "total": 5803,
+      "sha256": "8838debbd03a01cac1c8d402099941fe7983322ceaec6d14217c212d55ead647",
+      "bytes": 115342,
+      "raw_path": "raw/mois/2026-10-03/page-0003.json"
+    },
+    {
+      "page": 4,
+      "total": 5803,
+      "sha256": "af9d758119b39fd5fadc71d90fe6d94cdf9d9b393235262359ea6ee29e142f48",
+      "bytes": 115562,
+      "raw_path": "raw/mois/2026-10-03/page-0004.json"
+    },
+    {
+      "page": 5,
+      "total": 5803,
+      "sha256": "73f6ea5b4554ab3261192c36388439679c829ca915b681664aab6fbadc4d08f3",
+      "bytes": 115692,
+      "raw_path": "raw/mois/2026-10-03/page-0005.json"
+    },
+    {
+      "page": 6,
+      "total": 5803,
+      "sha256": "847d9daba4aa19b0c348869e7c7e75c5466711bf8dabef9d7fad1e9ed75337be",
+      "bytes": 117207,
+      "raw_path": "raw/mois/2026-10-03/page-0006.json"
+    },
+    {
+      "page": 7,
+      "total": 5803,
+      "sha256": "756b97e894e9f4ccf452e5b6118f1143361a4439c504d894ead4b48ee36e7358",
+      "bytes": 115066,
+      "raw_path": "raw/mois/2026-10-03/page-0007.json"
+    },
+    {
+      "page": 8,
+      "total": 5803,
+      "sha256": "2205714f1ba475da7e3e50e631aa68fce5b2e9a8260de086aebd1da18cd361b8",
+      "bytes": 113781,
+      "raw_path": "raw/mois/2026-10-03/page-0008.json"
+    },
+    {
+      "page": 9,
+      "total": 5803,
+      "sha256": "9a7f3b626425ad49831d230ac52dbcfbbfd61f1b50b8dc01cd909c16dc9b7ce1",
+      "bytes": 115447,
+      "raw_path": "raw/mois/2026-10-03/page-0009.json"
+    },
+    {
+      "page": 10,
+      "total": 5803,
+      "sha256": "96436fa8ab3999bb3af582d4cc5c07ec4fb1edbbc21365288f569db785351775",
+      "bytes": 114317,
+      "raw_path": "raw/mois/2026-10-03/page-0010.json"
+    },
+    {
+      "page": 11,
+      "total": 5803,
+      "sha256": "427ffcbcf131d41a8808eebbf3569cd1715f7446945e091187e8bad3e6657014",
+      "bytes": 114140,
+      "raw_path": "raw/mois/2026-10-03/page-0011.json"
+    },
+    {
+      "page": 12,
+      "total": 5803,
+      "sha256": "3aa8aa7cc462d5f39a4e74a43bea2a1bb719f5b7c6ec6cac6047527d3729f1ea",
+      "bytes": 114230,
+      "raw_path": "raw/mois/2026-10-03/page-0012.json"
+    },
+    {
+      "page": 13,
+      "total": 5803,
+      "sha256": "6256c496a7cf7bc86fb9aa97cec2a9f2d8967f2a2329cab988dcdb7acbad7221",
+      "bytes": 116605,
+      "raw_path": "raw/mois/2026-10-03/page-0013.json"
+    },
+    {
+      "page": 14,
+      "total": 5803,
+      "sha256": "d10bb87055c3bb188845246b42d9a5636d77f6677ff9e34bdec48d6951dd62d1",
+      "bytes": 112940,
+      "raw_path": "raw/mois/2026-10-03/page-0014.json"
+    },
+    {
+      "page": 15,
+      "total": 5803,
+      "sha256": "171d22236eab831e2d98b4688fb26d2cecf2c5418963cdba9bb3e6dce35f83b3",
+      "bytes": 116046,
+      "raw_path": "raw/mois/2026-10-03/page-0015.json"
+    },
+    {
+      "page": 16,
+      "total": 5803,
+      "sha256": "a05e6841d0ae3b1b889fd0e40b5629552f82223fed7c4c60ca960a8222458b76",
+      "bytes": 115140,
+      "raw_path": "raw/mois/2026-10-03/page-0016.json"
+    },
+    {
+      "page": 17,
+      "total": 5803,
+      "sha256": "3b23ec9756541da405970645511d18b0400aea4d5a97b8c21367654558cd6a7a",
+      "bytes": 114692,
+      "raw_path": "raw/mois/2026-10-03/page-0017.json"
+    },
+    {
+      "page": 18,
+      "total": 5803,
+      "sha256": "d4d61d250edeb25376cb2bedf2cb420635704fada9ad806cc7da05ad97183aec",
+      "bytes": 116325,
+      "raw_path": "raw/mois/2026-10-03/page-0018.json"
+    },
+    {
+      "page": 19,
+      "total": 5803,
+      "sha256": "500291c66222d5c158f88b735e5a6cd224163a2b27be1bac32acdd406bd3d1f9",
+      "bytes": 116719,
+      "raw_path": "raw/mois/2026-10-03/page-0019.json"
+    },
+    {
+      "page": 20,
+      "total": 5803,
+      "sha256": "9989d12d60f70746c5377126de0fc19b61d22db784b736aa0fed2bd12b2341f2",
+      "bytes": 116617,
+      "raw_path": "raw/mois/2026-10-03/page-0020.json"
+    },
+    {
+      "page": 21,
+      "total": 5803,
+      "sha256": "9178f4903b699c01c9087d0b93391eebc966992018e9cce0c4406d0607635895",
+      "bytes": 113901,
+      "raw_path": "raw/mois/2026-10-03/page-0021.json"
+    },
+    {
+      "page": 22,
+      "total": 5803,
+      "sha256": "1b968b9ded7e0b963f3653d68f2d5c4244e72f6ef356d87d3f72b57caecea39b",
+      "bytes": 115684,
+      "raw_path": "raw/mois/2026-10-03/page-0022.json"
+    },
+    {
+      "page": 23,
+      "total": 5803,
+      "sha256": "790cd8d56bd8ce7cee7dc4855dc5f735a4b5b0a4ca8c5fb3ec7064cf1b2d030a",
+      "bytes": 114346,
+      "raw_path": "raw/mois/2026-10-03/page-0023.json"
+    },
+    {
+      "page": 24,
+      "total": 5803,
+      "sha256": "d50e3e7c7685de4a4d88db83a1768e5a28c1d99314d0caa3b278bc64bb7c8bd4",
+      "bytes": 112961,
+      "raw_path": "raw/mois/2026-10-03/page-0024.json"
+    },
+    {
+      "page": 25,
+      "total": 5803,
+      "sha256": "f0664df694c761c25d17302e15a8eb92ff6c1d5b6cecafe6a679d2b1c0eec267",
+      "bytes": 113807,
+      "raw_path": "raw/mois/2026-10-03/page-0025.json"
+    },
+    {
+      "page": 26,
+      "total": 5803,
+      "sha256": "2d4380035b2c5d046eb7a116abf5bcbbb72eb802948bce0114d834e75b8bb012",
+      "bytes": 114613,
+      "raw_path": "raw/mois/2026-10-03/page-0026.json"
+    },
+    {
+      "page": 27,
+      "total": 5803,
+      "sha256": "9aa8edb119c1cd6ad6d9497b06a8866c72a88ac055036348c3a95aa9f95238d5",
+      "bytes": 113889,
+      "raw_path": "raw/mois/2026-10-03/page-0027.json"
+    },
+    {
+      "page": 28,
+      "total": 5803,
+      "sha256": "c146bef983767ccfd0ffbc3075e1c469364c88ece067d0306538f8d72920b324",
+      "bytes": 114841,
+      "raw_path": "raw/mois/2026-10-03/page-0028.json"
+    },
+    {
+      "page": 29,
+      "total": 5803,
+      "sha256": "ad220733de93d8afc304b89fe3c5d0a8ffab49b73cf6cf157cbb5b773d2c8d85",
+      "bytes": 113827,
+      "raw_path": "raw/mois/2026-10-03/page-0029.json"
+    },
+    {
+      "page": 30,
+      "total": 5803,
+      "sha256": "54fe125ea8ad4a657dbc043412f49298088457baa2b86d7591fe4012a238a6d9",
+      "bytes": 117607,
+      "raw_path": "raw/mois/2026-10-03/page-0030.json"
+    },
+    {
+      "page": 31,
+      "total": 5803,
+      "sha256": "9d48c4921e2a1a82058a38d49076583a0170efd0391da5e8e205915120d3a4de",
+      "bytes": 115013,
+      "raw_path": "raw/mois/2026-10-03/page-0031.json"
+    },
+    {
+      "page": 32,
+      "total": 5803,
+      "sha256": "72e770848a535994c0cbbe773f5a301a7da9fb21b2b8bcacd5b3ab8dc0f174ca",
+      "bytes": 115875,
+      "raw_path": "raw/mois/2026-10-03/page-0032.json"
+    },
+    {
+      "page": 33,
+      "total": 5803,
+      "sha256": "92a6db4683240ecf7bf889a39fe2266eb99d33c9a52d1b95e4bb3e784927cb86",
+      "bytes": 116392,
+      "raw_path": "raw/mois/2026-10-03/page-0033.json"
+    },
+    {
+      "page": 34,
+      "total": 5803,
+      "sha256": "0169b69b4eb10c218e0a34ef96e4d782ec7d90a1b8ce9b0852fcce9923edfbac",
+      "bytes": 114236,
+      "raw_path": "raw/mois/2026-10-03/page-0034.json"
+    },
+    {
+      "page": 35,
+      "total": 5803,
+      "sha256": "635af643ba9eb02176e8001dd7a6f20f4f3998271bb0a6471359bb415136833d",
+      "bytes": 114806,
+      "raw_path": "raw/mois/2026-10-03/page-0035.json"
+    },
+    {
+      "page": 36,
+      "total": 5803,
+      "sha256": "a968f600f4ab148a57ff5751dfc1504b703d6dcb85c97f4375489a596da2f8b3",
+      "bytes": 116143,
+      "raw_path": "raw/mois/2026-10-03/page-0036.json"
+    },
+    {
+      "page": 37,
+      "total": 5803,
+      "sha256": "573f645c6d678dfdd769f56eb3f0662e9589488f53c25f14b1db720f7e23229f",
+      "bytes": 115982,
+      "raw_path": "raw/mois/2026-10-03/page-0037.json"
+    },
+    {
+      "page": 38,
+      "total": 5803,
+      "sha256": "243cdb55940a5555bc15701f543fb595a2073f07e3b5c1aefcfc624147a422c3",
+      "bytes": 116228,
+      "raw_path": "raw/mois/2026-10-03/page-0038.json"
+    },
+    {
+      "page": 39,
+      "total": 5803,
+      "sha256": "0a9b878f1e7b649e83ad8abcea5770f61d71fe3b19e0d1c06992095e46477353",
+      "bytes": 114545,
+      "raw_path": "raw/mois/2026-10-03/page-0039.json"
+    },
+    {
+      "page": 40,
+      "total": 5803,
+      "sha256": "3d61531d0945a749357bcf825b97ab331389d10792826346ee1bc3564b10218f",
+      "bytes": 117031,
+      "raw_path": "raw/mois/2026-10-03/page-0040.json"
+    },
+    {
+      "page": 41,
+      "total": 5803,
+      "sha256": "eccbb5482ba60e15427e3c71f617c6927146b14dcc4ca5e11ea3c17ecaca9775",
+      "bytes": 116222,
+      "raw_path": "raw/mois/2026-10-03/page-0041.json"
+    },
+    {
+      "page": 42,
+      "total": 5803,
+      "sha256": "56f0fa5161f8bd0de1b3885ac519ef930e8c0e4bf160d9d399866a33f37d03f8",
+      "bytes": 115859,
+      "raw_path": "raw/mois/2026-10-03/page-0042.json"
+    },
+    {
+      "page": 43,
+      "total": 5803,
+      "sha256": "446a6e285f20b946424d4d34489d99e11eb6a94559ca27e732813df4b5eb4d11",
+      "bytes": 114297,
+      "raw_path": "raw/mois/2026-10-03/page-0043.json"
+    },
+    {
+      "page": 44,
+      "total": 5803,
+      "sha256": "7c81dbd9638342a12a15faddf3675087c5f1d9c0046707ffec00bc4502457770",
+      "bytes": 114428,
+      "raw_path": "raw/mois/2026-10-03/page-0044.json"
+    },
+    {
+      "page": 45,
+      "total": 5803,
+      "sha256": "edc1e5b895ae05fadca7a6f21ac995306cbf9d8881ccd22424a831f0e94e4e4c",
+      "bytes": 114791,
+      "raw_path": "raw/mois/2026-10-03/page-0045.json"
+    },
+    {
+      "page": 46,
+      "total": 5803,
+      "sha256": "59100b1e872107c68adf069956e7f238ba8d2237bdc757acd0bb04f873ca5e25",
+      "bytes": 115132,
+      "raw_path": "raw/mois/2026-10-03/page-0046.json"
+    },
+    {
+      "page": 47,
+      "total": 5803,
+      "sha256": "4bae42a2cb521a735426360f2849eb6dd3c69a982517b7c4e55d5b90ae8539a1",
+      "bytes": 115653,
+      "raw_path": "raw/mois/2026-10-03/page-0047.json"
+    },
+    {
+      "page": 48,
+      "total": 5803,
+      "sha256": "d011ece93a22fae5db774b23dada0b474dacd38d253dad3799130e997cbdb996",
+      "bytes": 115262,
+      "raw_path": "raw/mois/2026-10-03/page-0048.json"
+    },
+    {
+      "page": 49,
+      "total": 5803,
+      "sha256": "2531dc7b8794cbdb4377deee14b332ab0ea6b68408a594d739d02d4829236e5e",
+      "bytes": 115459,
+      "raw_path": "raw/mois/2026-10-03/page-0049.json"
+    },
+    {
+      "page": 50,
+      "total": 5803,
+      "sha256": "0c48e2c80b678aea78262fc570c23dd715a1ff1c7d642419247c6d6e6b518a6e",
+      "bytes": 115471,
+      "raw_path": "raw/mois/2026-10-03/page-0050.json"
+    },
+    {
+      "page": 51,
+      "total": 5803,
+      "sha256": "3bafe2c7c3a55fbc96c5459d9b6d53369c58151afdd1d380b94a3ee26294ad82",
+      "bytes": 112933,
+      "raw_path": "raw/mois/2026-10-03/page-0051.json"
+    },
+    {
+      "page": 52,
+      "total": 5803,
+      "sha256": "8498f6edaba747d0c4c2cbe1dc8951e91a5dea7844fd765d2839dea97a81f55c",
+      "bytes": 114102,
+      "raw_path": "raw/mois/2026-10-03/page-0052.json"
+    },
+    {
+      "page": 53,
+      "total": 5803,
+      "sha256": "e9dc1d78f855d50b57661ec6c13adda0eefda51a1080f82c5d3cd5a3bd4ab118",
+      "bytes": 115020,
+      "raw_path": "raw/mois/2026-10-03/page-0053.json"
+    },
+    {
+      "page": 54,
+      "total": 5803,
+      "sha256": "d9adf759e7403927b73cc23e51726a7554311ebc8e9abd722b2cd4912476c0e8",
+      "bytes": 117270,
+      "raw_path": "raw/mois/2026-10-03/page-0054.json"
+    },
+    {
+      "page": 55,
+      "total": 5803,
+      "sha256": "18528ec24496521f55e6d8fe50b74f6d3280f455ef98f63659d0479d07481752",
+      "bytes": 116320,
+      "raw_path": "raw/mois/2026-10-03/page-0055.json"
+    },
+    {
+      "page": 56,
+      "total": 5803,
+      "sha256": "677078cccf2cbf71479c2a4edccc64734d0102a39a358f117ac2539a629066af",
+      "bytes": 112998,
+      "raw_path": "raw/mois/2026-10-03/page-0056.json"
+    },
+    {
+      "page": 57,
+      "total": 5803,
+      "sha256": "f551cc2378fc796709575d332a262b40a8da1798846411bbbad10695cc2dd680",
+      "bytes": 115415,
+      "raw_path": "raw/mois/2026-10-03/page-0057.json"
+    },
+    {
+      "page": 58,
+      "total": 5803,
+      "sha256": "dc87ad9fba6ca19da26930cc1a38ece8b7ac447650d7664a8fc303cd5fc702ea",
+      "bytes": 111628,
+      "raw_path": "raw/mois/2026-10-03/page-0058.json"
+    },
+    {
+      "page": 59,
+      "total": 5803,
+      "sha256": "176a46c63f43ad8910e2b5d06272650905a45e8725bab186b444354194ee9899",
+      "bytes": 3356,
+      "raw_path": "raw/mois/2026-10-03/page-0059.json"
+    }
+  ],
+  "limitations": [
+    "API current rows, not a census of every physically installed device",
+    "Modification/update dates are not installation or feature-adoption dates",
+    "Server-side ordering and transactional consistency are not guaranteed"
+  ],
+  "earliest_raw_saved_at_utc": "2026-10-02T16:33:47.952275+00:00",
+  "latest_raw_saved_at_utc": "2026-10-02T16:41:24.765103+00:00"
+}

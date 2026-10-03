@@ -1,0 +1,10 @@
+event_date,event,role,source_url,verification_status,notes
+2025-01-21,디지털포용법 제정·공포,anticipation,https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=268533,official_source_checked,시행 전 선행 대응이 가능하다
+2025-03-27,설치·운영 의무 도입,preceding_policy,https://www.korea.kr/news/policyNewsView.do?newsId=148958373,official_source_checked,기존 지능정보화 기본법 의무이며 1년 계도는 디지털포용법 시행 후에도 이어진다
+2025-10-20,키오스크 검증기준 개정,competing_event,https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000266100,official_source_checked,실제 정책 사건이므로 무처치 가짜 시작일로 취급하지 않는다
+2026-01-22,디지털포용법 시행 및 대기업·중견기업 제조·임대 의무,treatment,https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=268533,official_source_checked,1월 전체를 사후로 코딩하지 않는다
+2026-01-28,장애인차별금지법 키오스크 편의 조치 전면 적용,competing_event,https://www.mohw.go.kr/board.es?act=view&bid=0027&list_no=1487865&mid=a10503000000,official_source_checked,제조·임대 신설 의무와 별개의 설치·운영 측 사건
+2026-04-20,구 검증기준 적용 가능한 검증 신청 마감,competing_event,https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000273422,official_source_checked,신청 마감이지 발급 마감이 아니다
+2026-04-22,대기업·중견기업 계도기간 종료,enforcement,https://www.korea.kr/news/policyNewsView.do?newsId=148958373,official_source_checked,법정 시행일과 구분
+2026-07-22,중기업 제조·임대 의무,staggered_treatment,https://www.law.go.kr/lsInfoP.do?lsiSeq=282439,official_source_checked,중소기업 전체가 아닌 중기업
+2027-01-22,소기업·소상공인 제조·임대 의무,planned_treatment,https://www.law.go.kr/lsInfoP.do?lsiSeq=282439,official_source_checked,분석일 현재 미래의 예정 사건

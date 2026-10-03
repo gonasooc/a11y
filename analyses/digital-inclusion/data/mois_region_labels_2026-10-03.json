@@ -1,0 +1,195 @@
+{
+  "snapshot_date_kst": "2026-10-03",
+  "source_id": "15154774",
+  "source_url": "https://www.data.go.kr/data/15154774/openapi.do",
+  "source_manifest": "data/mois_manifest_2026-10-03.json",
+  "source_manifest_sha256": "38418e18da8be4de75e70910e7416bca2eeec190c57e68bda6b24ce279a02788",
+  "source_dataset_sha256": "8c94e0ddf294e2392b9ffb13cc1aaa7cf1204358a15d7b311cddcb5d97bfba52",
+  "source_records_n": 5803,
+  "frequency_scope": "all_received_unique_records_including_not_in_use",
+  "source_address_field": "INSTL_PLC_ADDR",
+  "retained_address_component": "First whitespace-delimited token only; no detailed address or contact details retained",
+  "code_basis": "First two digits of ROAD_SGG_CD; original prefix remains the grouping key",
+  "display_label_method": "Most frequent nonmissing address first token within each prefix; lexical tie break. Other observed tokens are retained in frequencies.",
+  "official_code_table_verified": false,
+  "interpretation": "원자료 주소 첫 토큰을 관측해 붙인 표시명이다. 법정 표준코드표나 전체 행정구역 코드 검증 결과가 아니며, 다른 첫 토큰을 가진 행의 행정구역을 개별 재판정하지 않는다.",
+  "regions": [
+    {
+      "geography_code": "11",
+      "display_label": "서울특별시",
+      "records_n": 772,
+      "address_first_token_frequencies": {
+        "서울특별시": 772
+      },
+      "ctpv_code_frequencies": {
+        "6110000": 772
+      }
+    },
+    {
+      "geography_code": "12",
+      "display_label": "전남광주통합특별시",
+      "records_n": 601,
+      "address_first_token_frequencies": {
+        "강진군": 1,
+        "전남광주통합특별시": 600
+      },
+      "ctpv_code_frequencies": {
+        "6130000": 601
+      }
+    },
+    {
+      "geography_code": "26",
+      "display_label": "부산광역시",
+      "records_n": 264,
+      "address_first_token_frequencies": {
+        "부산광역시": 264
+      },
+      "ctpv_code_frequencies": {
+        "6260000": 264
+      }
+    },
+    {
+      "geography_code": "27",
+      "display_label": "대구광역시",
+      "records_n": 148,
+      "address_first_token_frequencies": {
+        "대구광역시": 148
+      },
+      "ctpv_code_frequencies": {
+        "6270000": 148
+      }
+    },
+    {
+      "geography_code": "28",
+      "display_label": "인천광역시",
+      "records_n": 225,
+      "address_first_token_frequencies": {
+        "인천광역시": 225
+      },
+      "ctpv_code_frequencies": {
+        "6280000": 225
+      }
+    },
+    {
+      "geography_code": "30",
+      "display_label": "대전광역시",
+      "records_n": 120,
+      "address_first_token_frequencies": {
+        "대전광역시": 120
+      },
+      "ctpv_code_frequencies": {
+        "6300000": 120
+      }
+    },
+    {
+      "geography_code": "31",
+      "display_label": "울산광역시",
+      "records_n": 145,
+      "address_first_token_frequencies": {
+        "울산광역시": 145
+      },
+      "ctpv_code_frequencies": {
+        "6310000": 145
+      }
+    },
+    {
+      "geography_code": "36",
+      "display_label": "세종특별자치시",
+      "records_n": 46,
+      "address_first_token_frequencies": {
+        "세종특별자치시": 46
+      },
+      "ctpv_code_frequencies": {
+        "6200000": 46
+      }
+    },
+    {
+      "geography_code": "41",
+      "display_label": "경기도",
+      "records_n": 1147,
+      "address_first_token_frequencies": {
+        "경기도": 1147
+      },
+      "ctpv_code_frequencies": {
+        "6410000": 1147
+      }
+    },
+    {
+      "geography_code": "43",
+      "display_label": "충청북도",
+      "records_n": 277,
+      "address_first_token_frequencies": {
+        "충청북도": 277
+      },
+      "ctpv_code_frequencies": {
+        "6430000": 277
+      }
+    },
+    {
+      "geography_code": "44",
+      "display_label": "충청남도",
+      "records_n": 426,
+      "address_first_token_frequencies": {
+        "충청남도": 426
+      },
+      "ctpv_code_frequencies": {
+        "6440000": 426
+      }
+    },
+    {
+      "geography_code": "47",
+      "display_label": "경상북도",
+      "records_n": 493,
+      "address_first_token_frequencies": {
+        "경상북도": 493
+      },
+      "ctpv_code_frequencies": {
+        "6470000": 493
+      }
+    },
+    {
+      "geography_code": "48",
+      "display_label": "경상남도",
+      "records_n": 490,
+      "address_first_token_frequencies": {
+        "경상남도": 490
+      },
+      "ctpv_code_frequencies": {
+        "6480000": 490
+      }
+    },
+    {
+      "geography_code": "50",
+      "display_label": "제주특별자치도",
+      "records_n": 85,
+      "address_first_token_frequencies": {
+        "제주특별자치도": 85
+      },
+      "ctpv_code_frequencies": {
+        "6500000": 85
+      }
+    },
+    {
+      "geography_code": "51",
+      "display_label": "강원특별자치도",
+      "records_n": 303,
+      "address_first_token_frequencies": {
+        "강원특별자치도": 303
+      },
+      "ctpv_code_frequencies": {
+        "6530000": 303
+      }
+    },
+    {
+      "geography_code": "52",
+      "display_label": "전북특별자치도",
+      "records_n": 261,
+      "address_first_token_frequencies": {
+        "전북특별자치도": 261
+      },
+      "ctpv_code_frequencies": {
+        "6540000": 261
+      }
+    }
+  ]
+}

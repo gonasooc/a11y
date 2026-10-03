@@ -1,0 +1,490 @@
+{
+  "verified_on": "2026-10-03",
+  "scope": "official_documentation_and_selected_authenticated_data",
+  "services": [
+    {
+      "id": "15154774",
+      "name": "행정안전부_무인민원발급기정보 조회서비스",
+      "source_url": "https://www.data.go.kr/data/15154774/openapi.do",
+      "verification": "official_html_embedded_swagger",
+      "source_html_sha256": "60aef6e78cdf48dec1324a166b1f4ebaeb330e2d48eb6192a61cfa3d91134e5d",
+      "authenticated_data_checked": true,
+      "environment_variable": "MOIS_KIOSK_INFO_SERVICE_KEY",
+      "operations": [
+        {
+          "endpoint": "https://apis.data.go.kr/1741000/kiosk_info/installation_info",
+          "summary": "무인민원발급기정보 데이터 설치정보조회",
+          "parameters": [
+            {
+              "name": "serviceKey",
+              "description": "공공데이터포털에서 받은 인증키",
+              "required": true
+            },
+            {
+              "name": "pageNo",
+              "description": "페이지번호",
+              "required": true
+            },
+            {
+              "name": "numOfRows",
+              "description": "한 페이지 결과 수(max: 100)",
+              "required": true
+            },
+            {
+              "name": "returnType",
+              "description": "응답의 데이터 타입",
+              "required": false
+            },
+            {
+              "name": "cond[CTPV_CD::EQ]",
+              "description": "시도코드 와 일치하는 값",
+              "required": false
+            },
+            {
+              "name": "cond[ROAD_CD::EQ]",
+              "description": "도로코드 와 일치하는 값",
+              "required": false
+            },
+            {
+              "name": "cond[DAT_UPDT_PNT::GTE]",
+              "description": "데이터갱신시점 이상의 값(YYYYMMDDHHMMSS)",
+              "required": false
+            },
+            {
+              "name": "cond[DAT_UPDT_PNT::LT]",
+              "description": "데이터갱신시점 미만의 값(YYYYMMDDHHMMSS)",
+              "required": false
+            },
+            {
+              "name": "cond[OPN_ATMY_GRP_CD::EQ]",
+              "description": "개방자치단체코드",
+              "required": false
+            },
+            {
+              "name": "cond[FRBLND_KPD::EQ]",
+              "description": "시각장애인용키패드(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[FRBLND_VOICE_GD::EQ]",
+              "description": "시각장애인용음성안내(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[FRDEAF_SCRN_GD::EQ]",
+              "description": "청각장애인용화면안내(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[BRL_LBL_ATCMNT::EQ]",
+              "description": "점자라벨부착(부착/미부착)",
+              "required": false
+            },
+            {
+              "name": "cond[EPHN_SCKT::EQ]",
+              "description": "이어폰소켓(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[TCTL_ELCTNC_MONITOR::EQ]",
+              "description": "촉각(전자)모니터(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[SCRN_EXPSN_FWK::EQ]",
+              "description": "화면확대기능(제공/미제공)",
+              "required": false
+            },
+            {
+              "name": "cond[WHCHR_USER_MNPLT::EQ]",
+              "description": "휠체어사용자조작(가능/불가능)",
+              "required": false
+            }
+          ],
+          "response_fields": {
+            "resultCode": "응답의 결과 코드",
+            "resultMsg": "응답의 결과 메세지",
+            "dataType": "응답의 데이터 타입",
+            "numOfRows": "한 페이지 결과 수",
+            "pageNo": "페이지번호",
+            "totalCount": "응답 데이터의 수",
+            "ROAD_BLDGMNO": "도로건물본번호",
+            "OPN_ATMY_GRP_CD": "개방자치단체코드",
+            "MNG_NO": "관리번호",
+            "MNG_INST_NM": "관리기관명",
+            "ISSUMCHN_NM": "발급기명",
+            "INSTL_PLC_ADDR": "설치장소주소",
+            "INSTL_PLC_DTL_PSTN": "설치장소상세위치",
+            "WKDY_OPER_BGNG_TM": "평일운영시작시각",
+            "WKDY_OPER_END_TM": "평일운영종료시각",
+            "LHLDY_OPER_BGNG_TM": "공휴일운영시작시각",
+            "LHLDY_OPER_END_TM": "공휴일운영종료시각",
+            "OPER_HR_REF_CN": "운영시간참고내용",
+            "INSTL_OPER_URL": "설치운영URL",
+            "USE_YN_NM": "사용여부명",
+            "PWDBS_CVN_ISSUMCHN_SHP": "장애인편의기능정보",
+            "FRBLND_KPD": "시각장애인용키패드(제공/미제공)",
+            "FRBLND_VOICE_GD": "시각장애인용음성안내(제공/미제공)",
+            "FRDEAF_SCRN_GD": "청각장애인용화면안내(제공/미제공)",
+            "BRL_LBL_ATCMNT": "점자라벨부착(부착/미부착)",
+            "EPHN_SCKT": "이어폰소켓(제공/미제공)",
+            "TCTL_ELCTNC_MONITOR": "촉각(전자)모니터(제공/미제공)",
+            "SCRN_EXPSN_FWK": "화면확대기능(제공/미제공)",
+            "WHCHR_USER_MNPLT": "휠체어사용자조작(가능/불가능)",
+            "LAST_MDFCN_PNT": "최종수정시점(YYYYMMDDHHMMSS)",
+            "CTPV_CD": "시도코드",
+            "INSTL_PLC_PSTN": "설치장소위치",
+            "ROAD_SGG_CD": "도로시군구코드",
+            "ROAD_CD": "도로코드",
+            "ROAD_NM_EMD_NO": "도로명읍면동번호",
+            "ROAD_BLDG_FLR_SE": "도로건물층구분",
+            "ROAD_BLDGSNO": "도로건물부번호",
+            "RG_MTTR_PRDOC_ISSU_SE": "등기사항증명서발급구분",
+            "FAM_REL_DEL_ISSU_SE": "가족관계삭제발급구분",
+            "DAT_UPDT_SE": "데이터갱신구분",
+            "DAT_UPDT_PNT": "데이터갱신시점(YYYYMMDDHHMMSS)"
+          }
+        }
+      ],
+      "authenticated_on": "2026-10-03",
+      "authenticated_evidence": "authentication_check_2026-10-03.json",
+      "operations_checked_with_credentials": [
+        "installation_info"
+      ]
+    },
+    {
+      "id": "15129471",
+      "name": "조달청_나라장터쇼핑몰 품목정보 서비스",
+      "source_url": "https://www.data.go.kr/data/15129471/openapi.do",
+      "verification": "official_html_embedded_swagger",
+      "source_html_sha256": "fdc11db671d10368e8b5ace6cfdd2d9bee35c7e2cddc1751872e903f9a9e4cd4",
+      "authenticated_data_checked": true,
+      "environment_variable": "PPS_SHOPPING_MALL_SERVICE_KEY",
+      "operations": [
+        {
+          "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+          "summary": "나라장터쇼핑몰 품목 등록 내역 조회",
+          "parameters": [
+            {
+              "name": "serviceKey",
+              "description": "공공데이터포털에서 받은 인증키",
+              "required": true
+            },
+            {
+              "name": "pageNo",
+              "description": "페이지번호",
+              "required": true
+            },
+            {
+              "name": "numOfRows",
+              "description": "한 페이지 결과 수",
+              "required": true
+            },
+            {
+              "name": "type",
+              "description": "타입",
+              "required": false
+            },
+            {
+              "name": "inqryBgnDate",
+              "description": "조회기준시작일자",
+              "required": false
+            },
+            {
+              "name": "inqryEndDate",
+              "description": "조회기준종료일자",
+              "required": false
+            },
+            {
+              "name": "dtilPrdctClsfcNoNm",
+              "description": "세부품명",
+              "required": false
+            },
+            {
+              "name": "exclcProdctYn",
+              "description": "우수제품여부",
+              "required": false
+            },
+            {
+              "name": "prodctCertYn",
+              "description": "제품인증여부",
+              "required": false
+            },
+            {
+              "name": "masYn",
+              "description": "다수공급경쟁자여부",
+              "required": false
+            },
+            {
+              "name": "prdctClsfcNoNm",
+              "description": "품명",
+              "required": false
+            },
+            {
+              "name": "inqryDiv",
+              "description": "조회구분",
+              "required": true
+            },
+            {
+              "name": "shopngCntrctNo",
+              "description": "쇼핑계약번호",
+              "required": false
+            },
+            {
+              "name": "regtCncelYn",
+              "description": "등록해지여부",
+              "required": false
+            },
+            {
+              "name": "prdctIdntNoNm",
+              "description": "물품규격명",
+              "required": false
+            }
+          ],
+          "response_fields": {
+            "resultCode": "결과코드",
+            "resultMsg": "결과메세지",
+            "numOfRows": "한 페이지 결과 수",
+            "pageNo": "페이지번호",
+            "totalCount": "전체 결과 수",
+            "rgstDt": "등록일시",
+            "shopngCntrctNo": "쇼핑계약번호",
+            "cntrctCorpBizno": "계약업체 사업자등록번호",
+            "prdctImgUrl": "상품이미지URL",
+            "cntrctCorpNm": "계약업체명",
+            "entrprsDivNm": "기업구분명",
+            "cntrctMthdNm": "계약방법명",
+            "exclncPrcrmntPrdctYn": "우수조달물품여부",
+            "masYn": "다수공급경쟁자여부",
+            "smetprCmptProdctYn": "중소기업자간경쟁제품여부",
+            "cntrctPrceAmt": "계약가격금액",
+            "prdctUnit": "물품단위",
+            "prdctMakrNm": "물품제조사명",
+            "prdctDlvrPlceNm": "물품납품장소명",
+            "prdctDlvryCndtnNm": "물품인도조건명",
+            "dlvrTmlmtDaynum": "납품기한일수",
+            "prdctLrgclsfcCd": "물품대분류코드",
+            "prdctLrgclsfcNm": "물품대분류명",
+            "prdctMidclsfcCd": "물품중분류코드",
+            "prdctMidclsfcNm": "물품중분류명",
+            "prdctClsfcNo": "물품분류번호",
+            "prdctClsfcNoNm": "품명",
+            "dtilPrdctClsfcNo": "세부품명번호",
+            "prdctIdntNo": "물품식별번호",
+            "prdctSpecNm": "물품규격명",
+            "shopngCntrctSno": "쇼핑계약순번",
+            "cntrctDate": "계약일자",
+            "cntrctBgnDate": "계약시작일자",
+            "cntrctEndDate": "계약종료일자",
+            "cntrctDeptNm": "계약부서명",
+            "prodctCertList": "제품인증목록",
+            "prdctSplyRgnNm": "물품공급지역명",
+            "dtilPrdctClsfcNoNm": "세부품명"
+          }
+        },
+        {
+          "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getDlvrReqDtlInfoList",
+          "summary": "나라장터쇼핑몰 납품요구상세 현황 목록조회",
+          "parameters": [
+            {
+              "name": "serviceKey",
+              "description": "공공데이터포털에서 받은 인증키",
+              "required": true
+            },
+            {
+              "name": "pageNo",
+              "description": "페이지번호",
+              "required": true
+            },
+            {
+              "name": "numOfRows",
+              "description": "한 페이지 결과 수",
+              "required": true
+            },
+            {
+              "name": "type",
+              "description": "타입",
+              "required": false
+            },
+            {
+              "name": "inqryDiv",
+              "description": "조회구분",
+              "required": true
+            },
+            {
+              "name": "inqryBgnDate",
+              "description": "조회기준시작일자",
+              "required": false
+            },
+            {
+              "name": "inqryEndDate",
+              "description": "조회기준종료일자",
+              "required": false
+            },
+            {
+              "name": "dlvrReqNo",
+              "description": "납품요구번호",
+              "required": false
+            },
+            {
+              "name": "dtilPrdctClsfcNoNm",
+              "description": "세부품명",
+              "required": false
+            },
+            {
+              "name": "prdctClsfcNoNm",
+              "description": "품명",
+              "required": false
+            },
+            {
+              "name": "prdctIdntNoNm",
+              "description": "물품규격명",
+              "required": false
+            },
+            {
+              "name": "cntrctNo",
+              "description": "계약번호",
+              "required": false
+            }
+          ],
+          "response_fields": {
+            "resultCode": "결과코드",
+            "resultMsg": "결과메세지",
+            "pageNo": "페이지번호",
+            "totalCount": "전체 결과 수",
+            "numOfRows": "한 페이지 결과 수",
+            "cnstwkMtrlDrctPurchsObjYn": "공사용자재직접구매대상여부",
+            "corpEntrprsDivNmNm": "업체기업구분명",
+            "dlvrReqQty": "납품요구수량",
+            "dlvrReqAmt": "납품요구금액",
+            "IntlCntrctDlvrReqDate": "최초계약(납품요구)일자",
+            "cntrctNo": "계약번호",
+            "dlvrReqChgOrd": "납품요구변경차수",
+            "dlvrReqRcptDate": "납품요구접수일자",
+            "prdctSno": "물품순번",
+            "prdctClsfcNo": "물품분류번호",
+            "dtilPrdctClsfcNo": "세부품명번호",
+            "prdctIdntNo": "물품식별번호",
+            "prdctUprc": "물품단가",
+            "prdctUnit": "물품단위",
+            "prdctQty": "물품수량",
+            "prdctAmt": "물품금액",
+            "dlvrTmlmtDate": "납품기한일자",
+            "cntrctCnclsStleNm": "계약체결형태명",
+            "exclcProdctYn": "우수제품여부",
+            "optnDivCdNm": "옵션구분코드명",
+            "dminsttCd": "수요기관코드",
+            "dminsttNm": "수요기관명",
+            "dmndInsttDivNm": "수요기관구분명",
+            "dminsttRgnNm": "수요기관지역명",
+            "corpNm": "업체명",
+            "dlvrReqNo": "납품요구번호",
+            "dtilPrdctClsfcNoNm": "세부품명",
+            "prdctClsfcNoNm": "품명",
+            "fnlDlvrReqYn": "최종납품요구여부",
+            "incdecQty": "증감수량",
+            "incdecAmt": "증감금액",
+            "cntrctCorpBizno": "계약업체 사업자등록번호",
+            "prdctIdntNoNm": "물품규격명",
+            "dlvrReqNm": "납품요구건명",
+            "cntrctChgOrd": "계약변경차수",
+            "masYn": "다수공급자계약여부",
+            "smetprCmptProdctYn": "중소기업자간경쟁제품여부",
+            "brnofceNm": "지청명"
+          }
+        }
+      ],
+      "authenticated_on": "2026-10-03",
+      "authenticated_evidence": "authentication_check_2026-10-03.json",
+      "operations_checked_with_credentials": [
+        "getShoppingMallPrdctInfoList",
+        "getDlvrReqDtlInfoList"
+      ]
+    },
+    {
+      "id": "kosis-digital-divide",
+      "name": "KOSIS 디지털정보격차실태조사",
+      "source_url": "https://kosis.kr/openapi/devGuide/devGuide_0201List.do",
+      "verification": "official_table_html_tblNm_and_api_documentation",
+      "authenticated_data_checked": true,
+      "environment_variable": "KOSIS_DIGITAL_DIVIDE_API_KEY",
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "org_id": "127",
+      "tables": [
+        {
+          "table_id": "DT_12017N008",
+          "name": "일반국민 대비 취약계층 디지털정보화 수준",
+          "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_12017N008"
+        },
+        {
+          "table_id": "DT_12017N009",
+          "name": "일반국민 대비 취약계층 디지털정보화 접근 수준",
+          "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_12017N009"
+        },
+        {
+          "table_id": "DT_12017N0010",
+          "name": "일반국민 대비 취약계층 디지털정보화 역량 수준",
+          "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_12017N0010"
+        },
+        {
+          "table_id": "DT_12017N0011",
+          "name": "일반국민 대비 취약계층 디지털정보화 활용 수준",
+          "source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_12017N0011"
+        }
+      ],
+      "unverified": [
+        "reason_for_report_api_difference",
+        "full_historical_sample_design_consistency"
+      ],
+      "authenticated_on": "2026-10-03",
+      "authenticated_evidence": "authentication_check_kosis_2026-10-03.json",
+      "method": "getList",
+      "metadata_endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "metadata_method": "getMeta",
+      "metadata_types_checked": [
+        "TBL",
+        "PRD",
+        "ITM",
+        "CMMT"
+      ],
+      "format": "json",
+      "jsonVD": "Y",
+      "item_id": "1",
+      "classification_dimension": "15110BK8",
+      "classification_codes": {
+        "15110BK8AE": "취약계층 평균",
+        "15110BK8AA": "장애인",
+        "15110BK8AD": "고령층",
+        "15110BK8AB": "저소득층",
+        "15110BK8AC": "농어민"
+      },
+      "available_survey_years": [
+        2014,
+        2025
+      ],
+      "request_frequency": "Y",
+      "observed_response_frequency": "A"
+    },
+    {
+      "id": "15157403",
+      "name": "한국지능정보사회진흥원_배리어프리 키오스크 위치 정보 조회 데이터",
+      "source_url": "https://www.data.go.kr/data/15157403/openapi.do",
+      "verification": "catalog_metadata_and_official_link_lookup_only",
+      "api_type": "LINK",
+      "guide_url": "https://www.kioskui.or.kr/index.do?menu_id=00001559",
+      "guide_http_status": 400,
+      "endpoint": null,
+      "authentication": null,
+      "unverified": [
+        "endpoint",
+        "authentication",
+        "installation_date",
+        "registration_date",
+        "historical_query",
+        "response_fields",
+        "live_data"
+      ]
+    }
+  ],
+  "documentation_verified_on": "2026-10-02"
+}

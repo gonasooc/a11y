@@ -1,0 +1,21 @@
+{
+  "verified_on": "2026-10-03",
+  "source_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003701083&fileDetailSn=1",
+  "version": "1.3",
+  "sha256": "e88a9c9df196b6903deebdd3c1a4cfe7dd03448971d730ca9e898806936caa6c",
+  "local_raw_path": "raw/pps/reference_v1.3.docx",
+  "confirmed_rules": {
+    "registration_inqryDiv_1": "registration date search, maximum 12 months",
+    "regtCncelYn_Y": "include deregistered products; missing/N includes only currently listed products",
+    "delivery_inqryDiv_1": "receipt date search, maximum 1 month",
+    "incdecQty_incdecAmt": "change versus previous order version, representing quantity/amount changes within query period",
+    "fnlDlvrReqYn": "whether the row belongs to the final delivery request revision",
+    "dlvrReqQty_dlvrReqAmt": "request-level totals; repeat across detail rows and must not be summed as product-level totals",
+    "enterprise_types": [
+      "대기업",
+      "중소기업",
+      "비영리법인및기타",
+      "중견기업"
+    ]
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "collected_on_local": "2026-10-03",
+  "timezone": "Asia/Seoul",
+  "service_id": "15129471",
+  "authentication": "successful_resultCode_00",
+  "key_source": "PPS_SHOPPING_MALL_SERVICE_KEY",
+  "key_value_recorded": false,
+  "unique_successful_response_cache_files": 58,
+  "final_registration_requests": 21,
+  "final_delivery_requests": 26,
+  "final_monthly_probe_requests": 6,
+  "earlier_exploratory_successful_requests": 5,
+  "outgoing_timeouts_not_retried_with_same_long_range": 2,
+  "collection_changes": [
+    "Two nine-month broad name searches timed out. Subsequent probes used one month and all dataset collection used complete calendar months.",
+    "The upper class 컴퓨터키오스크 includes bus/vehicle information devices. The exploratory core scope excludes those and retains certificate dispensers and unattended information systems.",
+    "Registration queries include deregistered products via regtCncelYn=Y."
+  ],
+  "cache_behavior": "Default cache is scoped to local collection date. --refresh preserves changed older bytes under a content-hash suffix. Raw files are gitignored.",
+  "all_final_dataset_queries_complete": true,
+  "shared_contract": "Public outputs exclude service keys, raw URLs with credentials, contact persons, telephone/email and company business numbers."
+}

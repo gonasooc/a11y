@@ -1,0 +1,417 @@
+{
+  "analysis_type": "exploratory_descriptive_not_causal",
+  "input_sha256": {
+    "pps_registrations.csv": "c2e492e3a4654f1552a2e287fece84972fb049585411e78a51f0c24be0d8effe",
+    "pps_deliveries.csv": "7594527b58f84d140d561de3d7645f956b35ee10db3136f4116d47c43d884f24"
+  },
+  "period": [
+    "2025-01-01",
+    "2026-09-30"
+  ],
+  "core_product_codes": {
+    "4321151401": "증명발급기",
+    "4321151402": "무인안내시스템"
+  },
+  "excluded_from_core": {
+    "4321151403": "버스및차량정보안내장치"
+  },
+  "metric_definition": "Sum signed incdecQty/incdecAmt in receipt month across all change orders. Quantity is restricted to representative items with unit 대. No delivery/installation/compliance inference.",
+  "same_month_comparisons": {
+    "feb_sep_primary": {
+      "months": [
+        2,
+        9
+      ],
+      "before_2025": {
+        "change_rows": 406,
+        "request_ids_with_changes": 389,
+        "suppliers_with_changes": 7,
+        "requesting_institutions": 246,
+        "net_request_amount_krw": "14711068400",
+        "representative_device_change_rows": 406,
+        "representative_device_net_quantity": "872",
+        "representative_device_net_amount_krw": "14711068400",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "after_2026": {
+        "change_rows": 343,
+        "request_ids_with_changes": 327,
+        "suppliers_with_changes": 6,
+        "requesting_institutions": 206,
+        "net_request_amount_krw": "9345412000",
+        "representative_device_change_rows": 343,
+        "representative_device_net_quantity": "597",
+        "representative_device_net_amount_krw": "9345412000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "changes": {
+        "net_request_amount_krw": {
+          "difference": "-5365656400",
+          "percent_change": "-36.5"
+        },
+        "representative_device_net_quantity": {
+          "difference": "-275",
+          "percent_change": "-31.5"
+        },
+        "representative_device_net_amount_krw": {
+          "difference": "-5365656400",
+          "percent_change": "-36.5"
+        }
+      }
+    },
+    "jan_sep_including_transition_month": {
+      "months": [
+        1,
+        9
+      ],
+      "before_2025": {
+        "change_rows": 511,
+        "request_ids_with_changes": 492,
+        "suppliers_with_changes": 7,
+        "requesting_institutions": 297,
+        "net_request_amount_krw": "17008368400",
+        "representative_device_change_rows": 511,
+        "representative_device_net_quantity": "1051",
+        "representative_device_net_amount_krw": "17008368400",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "after_2026": {
+        "change_rows": 531,
+        "request_ids_with_changes": 510,
+        "suppliers_with_changes": 6,
+        "requesting_institutions": 308,
+        "net_request_amount_krw": "14834300000",
+        "representative_device_change_rows": 531,
+        "representative_device_net_quantity": "928",
+        "representative_device_net_amount_krw": "14834300000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "changes": {
+        "net_request_amount_krw": {
+          "difference": "-2174068400",
+          "percent_change": "-12.8"
+        },
+        "representative_device_net_quantity": {
+          "difference": "-123",
+          "percent_change": "-11.7"
+        },
+        "representative_device_net_amount_krw": {
+          "difference": "-2174068400",
+          "percent_change": "-12.8"
+        }
+      }
+    },
+    "feb_jun_before_medium_firm_phase": {
+      "months": [
+        2,
+        6
+      ],
+      "before_2025": {
+        "change_rows": 337,
+        "request_ids_with_changes": 320,
+        "suppliers_with_changes": 7,
+        "requesting_institutions": 215,
+        "net_request_amount_krw": "12876618400",
+        "representative_device_change_rows": 337,
+        "representative_device_net_quantity": "733",
+        "representative_device_net_amount_krw": "12876618400",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "after_2026": {
+        "change_rows": 289,
+        "request_ids_with_changes": 274,
+        "suppliers_with_changes": 6,
+        "requesting_institutions": 177,
+        "net_request_amount_krw": "8332812000",
+        "representative_device_change_rows": 289,
+        "representative_device_net_quantity": "524",
+        "representative_device_net_amount_krw": "8332812000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "changes": {
+        "net_request_amount_krw": {
+          "difference": "-4543806400",
+          "percent_change": "-35.3"
+        },
+        "representative_device_net_quantity": {
+          "difference": "-209",
+          "percent_change": "-28.5"
+        },
+        "representative_device_net_amount_krw": {
+          "difference": "-4543806400",
+          "percent_change": "-35.3"
+        }
+      }
+    }
+  },
+  "same_calendar_dates_from_legal_start": {
+    "month_day_range": [
+      "01-22",
+      "09-30"
+    ],
+    "before_2025": {
+      "change_rows": 437,
+      "request_ids_with_changes": 420,
+      "suppliers_with_changes": 7,
+      "requesting_institutions": 256,
+      "net_request_amount_krw": "15515578400",
+      "representative_device_change_rows": 437,
+      "representative_device_net_quantity": "930",
+      "representative_device_net_amount_krw": "15515578400",
+      "other_unit_or_option_rows": 0,
+      "other_unit_or_option_net_amount_krw": "0"
+    },
+    "after_2026": {
+      "change_rows": 407,
+      "request_ids_with_changes": 390,
+      "suppliers_with_changes": 6,
+      "requesting_institutions": 235,
+      "net_request_amount_krw": "11203082000",
+      "representative_device_change_rows": 407,
+      "representative_device_net_quantity": "716",
+      "representative_device_net_amount_krw": "11203082000",
+      "other_unit_or_option_rows": 0,
+      "other_unit_or_option_net_amount_krw": "0"
+    },
+    "changes": {
+      "net_request_amount_krw": {
+        "difference": "-4312496400",
+        "percent_change": "-27.8"
+      },
+      "representative_device_net_quantity": {
+        "difference": "-214",
+        "percent_change": "-23"
+      },
+      "representative_device_net_amount_krw": {
+        "difference": "-4312496400",
+        "percent_change": "-27.8"
+      }
+    }
+  },
+  "january_transition_detail": {
+    "2025": {
+      "days_01_21": {
+        "change_rows": 74,
+        "request_ids_with_changes": 73,
+        "suppliers_with_changes": 5,
+        "requesting_institutions": 61,
+        "net_request_amount_krw": "1492790000",
+        "representative_device_change_rows": 74,
+        "representative_device_net_quantity": "121",
+        "representative_device_net_amount_krw": "1492790000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "days_22_31": {
+        "change_rows": 31,
+        "request_ids_with_changes": 31,
+        "suppliers_with_changes": 4,
+        "requesting_institutions": 25,
+        "net_request_amount_krw": "804510000",
+        "representative_device_change_rows": 31,
+        "representative_device_net_quantity": "58",
+        "representative_device_net_amount_krw": "804510000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      }
+    },
+    "2026": {
+      "days_01_21": {
+        "change_rows": 124,
+        "request_ids_with_changes": 121,
+        "suppliers_with_changes": 4,
+        "requesting_institutions": 102,
+        "net_request_amount_krw": "3631218000",
+        "representative_device_change_rows": 124,
+        "representative_device_net_quantity": "212",
+        "representative_device_net_amount_krw": "3631218000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "days_22_31": {
+        "change_rows": 64,
+        "request_ids_with_changes": 63,
+        "suppliers_with_changes": 4,
+        "requesting_institutions": 50,
+        "net_request_amount_krw": "1857670000",
+        "representative_device_change_rows": 64,
+        "representative_device_net_quantity": "119",
+        "representative_device_net_amount_krw": "1857670000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      }
+    }
+  },
+  "category_feb_sep_comparisons": {
+    "증명발급기": {
+      "months": [
+        2,
+        9
+      ],
+      "before_2025": {
+        "change_rows": 405,
+        "request_ids_with_changes": 388,
+        "suppliers_with_changes": 6,
+        "requesting_institutions": 246,
+        "net_request_amount_krw": "14654188400",
+        "representative_device_change_rows": 405,
+        "representative_device_net_quantity": "870",
+        "representative_device_net_amount_krw": "14654188400",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "after_2026": {
+        "change_rows": 342,
+        "request_ids_with_changes": 326,
+        "suppliers_with_changes": 5,
+        "requesting_institutions": 206,
+        "net_request_amount_krw": "9313412000",
+        "representative_device_change_rows": 342,
+        "representative_device_net_quantity": "596",
+        "representative_device_net_amount_krw": "9313412000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "changes": {
+        "net_request_amount_krw": {
+          "difference": "-5340776400",
+          "percent_change": "-36.4"
+        },
+        "representative_device_net_quantity": {
+          "difference": "-274",
+          "percent_change": "-31.5"
+        },
+        "representative_device_net_amount_krw": {
+          "difference": "-5340776400",
+          "percent_change": "-36.4"
+        }
+      }
+    },
+    "무인안내시스템": {
+      "months": [
+        2,
+        9
+      ],
+      "before_2025": {
+        "change_rows": 1,
+        "request_ids_with_changes": 1,
+        "suppliers_with_changes": 1,
+        "requesting_institutions": 1,
+        "net_request_amount_krw": "56880000",
+        "representative_device_change_rows": 1,
+        "representative_device_net_quantity": "2",
+        "representative_device_net_amount_krw": "56880000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "after_2026": {
+        "change_rows": 1,
+        "request_ids_with_changes": 1,
+        "suppliers_with_changes": 1,
+        "requesting_institutions": 1,
+        "net_request_amount_krw": "32000000",
+        "representative_device_change_rows": 1,
+        "representative_device_net_quantity": "1",
+        "representative_device_net_amount_krw": "32000000",
+        "other_unit_or_option_rows": 0,
+        "other_unit_or_option_net_amount_krw": "0"
+      },
+      "changes": {
+        "net_request_amount_krw": {
+          "difference": "-24880000",
+          "percent_change": "-43.7"
+        },
+        "representative_device_net_quantity": {
+          "difference": "-1",
+          "percent_change": "-50"
+        },
+        "representative_device_net_amount_krw": {
+          "difference": "-24880000",
+          "percent_change": "-43.7"
+        }
+      }
+    }
+  },
+  "registrations": {
+    "all_class": {
+      "contract_product_registration_rows": 397,
+      "distinct_product_ids": 104,
+      "distinct_supplier_names": 11,
+      "distinct_manufacturer_names": 11
+    },
+    "core": {
+      "contract_product_registration_rows": 103,
+      "distinct_product_ids": 36,
+      "distinct_supplier_names": 8,
+      "distinct_manufacturer_names": 8
+    },
+    "by_product_category": {
+      "증명발급기": {
+        "contract_product_registration_rows": 91,
+        "distinct_product_ids": 32,
+        "distinct_supplier_names": 7,
+        "distinct_manufacturer_names": 6
+      },
+      "무인안내시스템": {
+        "contract_product_registration_rows": 12,
+        "distinct_product_ids": 4,
+        "distinct_supplier_names": 1,
+        "distinct_manufacturer_names": 2
+      },
+      "버스및차량정보안내장치": {
+        "contract_product_registration_rows": 294,
+        "distinct_product_ids": 68,
+        "distinct_supplier_names": 3,
+        "distinct_manufacturer_names": 3
+      }
+    },
+    "core_feb_sep_by_year": {
+      "2025": {
+        "contract_product_registration_rows": 21,
+        "distinct_product_ids": 17,
+        "distinct_supplier_names": 5,
+        "distinct_manufacturer_names": 5
+      },
+      "2026": {
+        "contract_product_registration_rows": 40,
+        "distinct_product_ids": 30,
+        "distinct_supplier_names": 6,
+        "distinct_manufacturer_names": 7
+      }
+    },
+    "enterprise_types": {
+      "중소기업": 103
+    }
+  },
+  "quality": {
+    "delivery_rows": 1494,
+    "core_delivery_rows": 1150,
+    "negative_amount_change_rows": 34,
+    "negative_quantity_change_rows": 34,
+    "noninitial_change_rows": 62,
+    "final_flag_counts": {
+      "Y": 1437,
+      "N": 57
+    },
+    "missing_initial_date_rows": 0,
+    "initial_request_before_window_rows": 3,
+    "registration_calls": 21,
+    "delivery_calls": 26,
+    "all_pages_complete": true,
+    "record_id_duplicates": 0
+  },
+  "limitations": [
+    "A signed procurement request flow includes amendments and cancellations of earlier requests; it is not installed units or actual expenditure.",
+    "Core scope is certificate dispensers and unattended information systems, not every kiosk category or the private market.",
+    "Registration rows repeat product IDs across contracts. No NIA certification, first-ever model entry, or legal compliance inference is made.",
+    "Current enterprise classification does not identify size on the policy date, and 중소기업 does not separate medium and small firms.",
+    "Data availability and historical revisions are those of this API snapshot; even fully paged API data does not prove population completeness.",
+    "January 2026 is a transition month. Adjacent disability law changes, demand composition, procurement budgets and certification rules confound attribution."
+  ]
+}

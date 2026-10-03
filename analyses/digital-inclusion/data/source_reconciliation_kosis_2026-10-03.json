@@ -1,0 +1,45 @@
+{
+  "checked_on": "2026-10-03",
+  "compared_cells": 100,
+  "numeric_matches": 99,
+  "discrepancies": [
+    {
+      "indicator": "digital_informatization_access",
+      "population": "farmers_fishers",
+      "survey_year": "2021",
+      "report_value": "94.8",
+      "api_raw_value": "94.9",
+      "api_value": "94.9",
+      "api_minus_report_index_points": "0.1",
+      "status": "numeric_difference",
+      "report_source_url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=81623&bcIdx=29168&parentSeq=29168",
+      "report_source_locator": "2025 디지털정보격차 실태조사, p.23 표3 (PDF p.49)",
+      "api_source_url": "https://kosis.kr/statHtml/statHtml.do?orgId=127&tblId=DT_12017N009",
+      "api_table_id": "DT_12017N009",
+      "api_last_modified": "2023-06-26",
+      "classification": "unresolved_difference_between_primary_sources",
+      "report_text_rechecked": true,
+      "report_rendered_page_rechecked": true,
+      "transcription_error_detected": false,
+      "official_correction_found": false,
+      "report_pdf_path": "raw/nia-2025-digital-divide.pdf",
+      "report_pdf_sha256": "78d00572c61fe51f4b331e6ba680c4cc6f533254a8fafa085e28c8b074c5339c",
+      "local_page_image": "raw/kosis/nia-2025-report-page49-review.png",
+      "resolution": "Keep both versions. KOSIS analysis uses the separately preserved API series; report baseline is unchanged.",
+      "affected_comparisons": "Farmers/fishers access changes involving 2021 differ by 0.1 index point. 2016-to-2025 endpoints and 2025 levels are unaffected.",
+      "additional_primary_evidence": {
+        "title": "2021 디지털정보격차 실태조사 현재 공식 첨부파일",
+        "page_url": "https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?bcIdx=24287&cbIdx=81623",
+        "download_url": "https://www.nia.or.kr/common/board/Download.do?bcIdx=24287&cbIdx=81623&fileNo=2",
+        "raw_path": "raw/nia-2021-digital-divide.pdf",
+        "sha256": "c3ebf2b0135ce3ec4e53758f2df2b06e8faa07dde86d4884a4b0b8ecfa6f9dfc",
+        "bytes": 55209847,
+        "source_locator": "PDF p.44 table 3; additional text pp.176–177",
+        "farmers_access_2020": "94.8",
+        "farmers_access_2021": "94.9",
+        "rendered_page_checked": true,
+        "same_as_initially_published_attachment_verified": false
+      }
+    }
+  ]
+}

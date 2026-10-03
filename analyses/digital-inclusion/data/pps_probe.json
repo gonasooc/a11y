@@ -1,0 +1,238 @@
+{
+  "exploratory": true,
+  "probe_complete": true,
+  "probes": [
+    {
+      "field": "dtilPrdctClsfcNoNm",
+      "term": "키오스크",
+      "total_count": 0,
+      "sample": []
+    },
+    {
+      "field": "dtilPrdctClsfcNoNm",
+      "term": "무인민원발급기",
+      "total_count": 0,
+      "sample": []
+    },
+    {
+      "field": "dtilPrdctClsfcNoNm",
+      "term": "무인안내시스템",
+      "total_count": 4,
+      "sample": [
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-55S2FC, 키오스크",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-55S2F, 옥외용비접촉키오스크",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SafeTouch(I)-46S2C, 비접촉터치키오스크/포토존",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-46",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        }
+      ]
+    },
+    {
+      "field": "dtilPrdctClsfcNoNm",
+      "term": "무인발권기",
+      "total_count": 0,
+      "sample": []
+    },
+    {
+      "field": "dtilPrdctClsfcNoNm",
+      "term": "무인주문기",
+      "total_count": 0,
+      "sample": []
+    },
+    {
+      "field": "prdctClsfcNoNm",
+      "term": "컴퓨터키오스크",
+      "total_count": 7,
+      "sample": [
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-55S2FC, 키오스크",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-55S2F, 옥외용비접촉키오스크",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SafeTouch(I)-46S2C, 비접촉터치키오스크/포토존",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151402",
+          "dtilPrdctClsfcNoNm": "무인안내시스템",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "무인안내시스템, 아이티고, SAFETOUCH(O)-46",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260909"
+        },
+        {
+          "dtilPrdctClsfcNo": "4321151401",
+          "dtilPrdctClsfcNoNm": "증명발급기",
+          "prdctClsfcNoNm": "컴퓨터키오스크",
+          "prdctSpecNm": "증명발급기, 본시스, BON-7100S, 통합민원발급기",
+          "entrprsDivNm": "중소기업",
+          "rgstDt": "20260915"
+        }
+      ]
+    }
+  ],
+  "requests": [
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "dtilPrdctClsfcNoNm": "키오스크",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "f19bad8ad4949965a40f9bb6392aa51e8293ae7dec46804a3194a5a333ec47be",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_0985c9f01839c34b8a09.json",
+      "fetched_at_utc": "2026-10-02T16:47:13.944455+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "dtilPrdctClsfcNoNm": "무인민원발급기",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "f19bad8ad4949965a40f9bb6392aa51e8293ae7dec46804a3194a5a333ec47be",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_0cc69bf2be91ec0cc065.json",
+      "fetched_at_utc": "2026-10-02T16:47:14.064372+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "dtilPrdctClsfcNoNm": "무인안내시스템",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "52ee363b0b1cc54a4f8ed00f20db1ec9cefc59bf6b9323f094f81c04839cfa6f",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_11dde54663b8cd946839.json",
+      "fetched_at_utc": "2026-10-02T16:47:14.182610+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 4,
+      "received_count": 4
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "dtilPrdctClsfcNoNm": "무인발권기",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "f19bad8ad4949965a40f9bb6392aa51e8293ae7dec46804a3194a5a333ec47be",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_a59e7498cfae0f64e679.json",
+      "fetched_at_utc": "2026-10-02T16:47:14.282906+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "dtilPrdctClsfcNoNm": "무인주문기",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "f19bad8ad4949965a40f9bb6392aa51e8293ae7dec46804a3194a5a333ec47be",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_bf699d20dc3c494f4b64.json",
+      "fetched_at_utc": "2026-10-02T16:47:14.404156+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "regtCncelYn": "Y",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "pageNo": 1,
+        "numOfRows": 5
+      },
+      "response_sha256": "90f64fdf15076ac787526bd660f4d1253df958f8df8c5b3fb94aa14bf9b27c9d",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_fa23d15444a4b0d390c6.json",
+      "fetched_at_utc": "2026-10-02T16:47:15.707172+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 7,
+      "received_count": 5
+    }
+  ]
+}

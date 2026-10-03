@@ -1,0 +1,38 @@
+{
+  "verified_on_kst": "2026-10-03",
+  "verification_basis": "Authenticated API responses collected during this task; no new request during final offline verification",
+  "env_file_modified": false,
+  "key_values_recorded": false,
+  "services": [
+    {
+      "service_id": "15129471",
+      "environment_variable": "PPS_SHOPPING_MALL_SERVICE_KEY",
+      "configured": true,
+      "input_format": "url_encoded",
+      "normalization": "unquote once, then encode request parameters",
+      "authentication": "succeeded",
+      "result_code": "00",
+      "source_manifest": "data/pps_registrations_manifest.json",
+      "source_manifest_sha256": "a6f3ce752fa143429a194facbec518b402b99b837acd8578a3d22034bf952bcb",
+      "evidence_first_fetched_at_utc": "2026-10-02T16:37:30.239355+00:00"
+    },
+    {
+      "service_id": "15154774",
+      "environment_variable": "MOIS_KIOSK_INFO_SERVICE_KEY",
+      "configured": true,
+      "input_format": "url_encoded",
+      "normalization": "unquote once, then encode request parameters",
+      "authentication": "succeeded",
+      "result_code": "0",
+      "source_manifest": "data/mois_manifest_2026-10-03.json",
+      "source_manifest_sha256": "38418e18da8be4de75e70910e7416bca2eeec190c57e68bda6b24ce279a02788",
+      "evidence_first_fetched_at_utc": "2026-10-02T16:33:47.952275+00:00"
+    },
+    {
+      "service_id": "KOSIS",
+      "environment_variable": "KOSIS_DIGITAL_DIVIDE_API_KEY",
+      "configured": false,
+      "authentication": "not_tested"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "dataset": "registrations_by_registration_number_year_in_snapshot",
+  "source_document": "docs/05-policy-effect-case-proposals.md",
+  "source_revision": "c29288ed8116fc374559f24143e7fc72031718b0",
+  "source_sections": ["4.2 우선구매 검증 목록 세부", "8 주의"],
+  "upstream_url": "https://kioskui.or.kr/index.do?menu_id=00000830&pageIndex=1&pageUnit=1000",
+  "source_observed_on": "2026-09-30",
+  "analysis_date": "2026-10-02",
+  "upstream_refetched": false,
+  "raw_snapshot_available": false,
+  "evidence_status": "prior_document_not_refetched",
+  "total_models": 771,
+  "reported_distinct_owners": 241,
+  "latest_issue_date_reported_by_source": "2026-07-30",
+  "coverage_warning": "2026년 표기 464건은 부분집계이며 1월 1~21일을 포함할 수 있다. 최신 일자는 문서가 보고한 값이지 이번에 확인한 자료 완결 시점이 아니다.",
+  "unit_warning": "검증 모델 수이다. 업체 수·판매 대수·설치 대수·준수율이 아니다. 등록번호 연도별 현재 목록 구성이며 완전한 최초 발급 흐름으로 검증되지 않았다.",
+  "attempts": [
+    {"checked_on": "2026-10-02", "url": "https://kioskui.or.kr/index.do?menu_id=00000830&pageIndex=1&pageUnit=1000", "result": "HTTP 400; network access retried outside sandbox"},
+    {"checked_on": "2026-10-02", "url": "https://kioskui.or.kr/index.do?menu_id=00000830", "result": "HTTP 400; body Request Blocked"},
+    {"checked_on": "2026-10-02", "url": "https://www.kioskui.or.kr/index.do?menu_id=00000830&pageIndex=1&pageUnit=1000", "result": "HTTP 400"}
+  ],
+  "reuse_terms": "원 사이트의 별도 이용조건은 미확인. HTML 원문은 재배포하지 않는다."
+}

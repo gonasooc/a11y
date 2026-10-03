@@ -1,0 +1,15 @@
+dimension,label,count,unit,evidence_status,source_section
+registration_number_year,2023,3,models,prior_document_not_refetched,docs/05 §4.2
+registration_number_year,2024,39,models,prior_document_not_refetched,docs/05 §4.2
+registration_number_year,2025,265,models,prior_document_not_refetched,docs/05 §4.2
+registration_number_year,2026,464,models,prior_document_not_refetched,docs/05 §4.2
+company_type,large,79,models,prior_document_not_refetched,docs/05 §4.2
+company_type,mid_sized,83,models,prior_document_not_refetched,docs/05 §4.2
+company_type,sme,591,models,prior_document_not_refetched,docs/05 §4.2
+company_type,nonprofit_other,1,models,prior_document_not_refetched,docs/05 §4.2
+company_type,unclassified,17,models,prior_document_not_refetched,docs/05 §4.2
+product_class,parking_payment,349,models,prior_document_not_refetched,docs/05 §4.2
+product_class,ordering,93,models,prior_document_not_refetched,docs/05 §4.2
+product_class,financial,71,models,prior_document_not_refetched,docs/05 §4.2
+product_class,library,56,models,prior_document_not_refetched,docs/05 §4.2
+product_class,civil_service,32,models,prior_document_not_refetched,docs/05 §4.2

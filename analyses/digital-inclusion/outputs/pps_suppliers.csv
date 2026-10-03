@@ -1,0 +1,9 @@
+supplier_name,manufacturer_names,enterprise_types_at_retrieval,first_registration_in_collected_window,contract_product_registration_rows,distinct_product_ids,distinct_supplier_names,distinct_manufacturer_names
+(주)본시스,(주)본시스,중소기업,20251028,8,3,1,1
+(주)씨아이테크,주식회사 앤로보틱스,중소기업,20250210,1,1,1,1
+(주)에니텍시스,(주)에니텍시스,중소기업,20251124,21,7,1,1
+(주)한국에임,(주)한국에임,중소기업,20251016,7,3,1,1
+"아이티고 주식회사 (ITGO Co., Ltd.)","아이티고 주식회사 | 아이티고 주식회사 (ITGO Co., Ltd.)",중소기업,20250314,12,4,1,2
+주식회사 앤로보틱스,주식회사 앤로보틱스,중소기업,20250402,2,1,1,1
+주식회사광명테크,주식회사광명테크,중소기업,20250424,20,8,1,1
+한국타피(주),한국타피(주),중소기업,20250430,32,10,1,1

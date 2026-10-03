@@ -1,0 +1,5 @@
+scope,unit,option,rows,net_quantity_in_stated_unit,net_amount_krw
+core_kiosks,대,대표품목,1150,2444,39515615400
+computer_kiosk_class_all,대,대표품목,1369,3733,48713012000
+computer_kiosk_class_all,식,대표품목,117,912,7262786200
+computer_kiosk_class_all,식,별도구매,8,153,39168000

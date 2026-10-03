@@ -1,0 +1,441 @@
+{
+  "source_url": "https://www.data.go.kr/data/15129471/openapi.do",
+  "reference_document_url": "https://www.data.go.kr/cmm/cmm/fileDownload.do?atchFileId=FILE_000000003701083&fileDetailSn=1",
+  "reference_version": "1.3",
+  "exploratory": true,
+  "collection_complete": true,
+  "start": "2025-01-01",
+  "end": "2026-09-30",
+  "operation": "getShoppingMallPrdctInfoList",
+  "query_field": "prdctClsfcNoNm",
+  "terms": [
+    "컴퓨터키오스크"
+  ],
+  "rows": 397,
+  "identical_query_overlap_rows": 0,
+  "csv_sha256": "c2e492e3a4654f1552a2e287fece84972fb049585411e78a51f0c24be0d8effe",
+  "credentials_excluded": true,
+  "unselected_fields_omitted": true,
+  "requests": [
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250101",
+        "inqryEndDate": "20250131",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_96ee64ef14ccd5ac1bac.json",
+      "fetched_at_utc": "2026-10-02T16:37:30.239355+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250201",
+        "inqryEndDate": "20250228",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "21f610fbc36b2ef16bd3e07111187632c70bd225f442c006fb8baa27adc781b2",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_323a68f6cdeb0623e95d.json",
+      "fetched_at_utc": "2026-10-02T16:37:51.570355+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 1,
+      "received_count": 1
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250301",
+        "inqryEndDate": "20250331",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "9efa4c07451408bed6db4f191e988fdf5457c3d61154461be47584b2ee83d24b",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_5724223bfe74e01852fe.json",
+      "fetched_at_utc": "2026-10-02T16:38:07.250163+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 32,
+      "received_count": 32
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250401",
+        "inqryEndDate": "20250430",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "a1d33780035b0c667f2f4d453f063f1dcccaf31e134d6a8215fce2be6e7f2cc1",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_0e653295e0f4e28a6698.json",
+      "fetched_at_utc": "2026-10-02T16:38:23.020196+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 12,
+      "received_count": 12
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250501",
+        "inqryEndDate": "20250531",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_4323dfe47e5d7c8df1df.json",
+      "fetched_at_utc": "2026-10-02T16:38:28.281126+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250601",
+        "inqryEndDate": "20250630",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "80d887b766dae68c5a07093e766d5d72ecb535f6f095b69c884f086283aafdf6",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_c93613abc93e0c5d5d18.json",
+      "fetched_at_utc": "2026-10-02T16:38:33.405714+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 11,
+      "received_count": 11
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250701",
+        "inqryEndDate": "20250731",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_7a57fe48ab1f0c2895e9.json",
+      "fetched_at_utc": "2026-10-02T16:38:38.070919+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250801",
+        "inqryEndDate": "20250831",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_9057bf790acee67add24.json",
+      "fetched_at_utc": "2026-10-02T16:38:40.710906+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20250901",
+        "inqryEndDate": "20250930",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "94035854d126ed1fe963dbb93e606c815c02ef6e1b74e14d982bc80fd09d1243",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_93d0c3cdbaab0b616b0a.json",
+      "fetched_at_utc": "2026-10-02T16:38:44.340759+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 31,
+      "received_count": 31
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20251001",
+        "inqryEndDate": "20251031",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "0c2a0619ab0e5da83530065164cb8da82c6ad5a56e7d156908b2281adc53afb8",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_7ef63dd658540a934600.json",
+      "fetched_at_utc": "2026-10-02T16:38:47.212256+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 10,
+      "received_count": 10
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20251101",
+        "inqryEndDate": "20251130",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "3c3f16e74df7fce4867f4aff0561934f072dc1db3ad76dd433c8ae3fb915535c",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_c1be7120f1fd071cec0f.json",
+      "fetched_at_utc": "2026-10-02T16:38:50.379491+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 26,
+      "received_count": 26
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20251201",
+        "inqryEndDate": "20251231",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "602adbf031085ad6241e8e30cb1ce774f7b739474277d6ffad9d4fe3a68e750a",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_9093372ac14a5747b356.json",
+      "fetched_at_utc": "2026-10-02T16:38:53.782917+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 3,
+      "received_count": 3
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260101",
+        "inqryEndDate": "20260131",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "bdb1adea1033bf4a08e4a605169ea3acf6ee0962ad8589124fdf00ebd4b74741",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_ad28f078e41a1bee691c.json",
+      "fetched_at_utc": "2026-10-02T16:38:55.522987+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 3,
+      "received_count": 3
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260201",
+        "inqryEndDate": "20260228",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_77759ff86f68569dd991.json",
+      "fetched_at_utc": "2026-10-02T16:38:56.220944+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260301",
+        "inqryEndDate": "20260331",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "66c6756dab923cc9e75e82282a660adf73a01a6fb98d1f9f655a99986d7955d7",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_6292c03777836103bacc.json",
+      "fetched_at_utc": "2026-10-02T16:38:57.851509+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 15,
+      "received_count": 15
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260401",
+        "inqryEndDate": "20260430",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "1dac3f8568edbdac3cbdbcee0d4abd744f9cf2988891243dac34fb10279f2e59",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_8912b0691cf95af1dbbf.json",
+      "fetched_at_utc": "2026-10-02T16:38:58.710066+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 0,
+      "received_count": 0
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260501",
+        "inqryEndDate": "20260531",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "6d6c975cda902bc8558f2dfeb6547719d08476edc51f7359e871202243976cf7",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_eea8fbcc00e7bb8ada34.json",
+      "fetched_at_utc": "2026-10-02T16:39:00.755079+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 92,
+      "received_count": 92
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260601",
+        "inqryEndDate": "20260630",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "4eb911a16c5db914df671a6eb4c4f1491b27fb2fa6372dda639a60b926d93721",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_a83e4bf8a938a97f4dc4.json",
+      "fetched_at_utc": "2026-10-02T16:39:03.081067+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 92,
+      "received_count": 92
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260701",
+        "inqryEndDate": "20260731",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "82bdadf43edb3c85c55bb6450dc0b327e4618878cb194a36fd51d58356190d7c",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_7f185f5045f66ffc2345.json",
+      "fetched_at_utc": "2026-10-02T16:39:04.500664+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 53,
+      "received_count": 53
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260801",
+        "inqryEndDate": "20260831",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "0419f828f6fa299717edca9aa6e4ca47af5a02e79b64660f73ee6053fdc98dd5",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_ea70a729c56d03ab8242.json",
+      "fetched_at_utc": "2026-10-02T16:39:05.829933+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 9,
+      "received_count": 9
+    },
+    {
+      "endpoint": "https://apis.data.go.kr/1230000/at/ShoppingMallPrdctInfoService/getShoppingMallPrdctInfoList",
+      "parameters": {
+        "type": "json",
+        "inqryDiv": 1,
+        "inqryBgnDate": "20260901",
+        "inqryEndDate": "20260930",
+        "prdctClsfcNoNm": "컴퓨터키오스크",
+        "regtCncelYn": "Y",
+        "pageNo": 1,
+        "numOfRows": 100
+      },
+      "response_sha256": "7ab3136b146585162a23710c50bb878cec474fc6bef46ba125849f15d7c73db6",
+      "raw_path": "raw/pps/2026-10-03/getShoppingMallPrdctInfoList_74701e1c85167256c3e8.json",
+      "fetched_at_utc": "2026-10-02T16:39:07.131534+00:00",
+      "cache_reused": false,
+      "result_code": "00",
+      "total_count": 7,
+      "received_count": 7
+    }
+  ]
+}

@@ -1,0 +1,17 @@
+{
+  "verified_on_kst": "2026-10-03",
+  "service": "KOSIS 디지털정보격차실태조사",
+  "environment_variable": "KOSIS_DIGITAL_DIVIDE_API_KEY",
+  "configured": true,
+  "authentication": "succeeded",
+  "evidence": "Four metadata sets and four statistical data responses returned; all declared cells received",
+  "input_format": "not_url_encoded",
+  "key_values_recorded": false,
+  "env_file_modified": false,
+  "source_manifest": "data/kosis_manifest_2026-10-03.json",
+  "source_manifest_sha256": "0d43a57cb359291ddee9a933bfd010b83c32400c641d03e8864588018f0dad46",
+  "data_rows": 240,
+  "successful_responses": 20,
+  "earliest_response_at_utc": "2026-10-02T22:27:55.734338+00:00",
+  "latest_response_at_utc": "2026-10-02T22:35:23.432760+00:00"
+}

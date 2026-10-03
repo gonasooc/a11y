@@ -1,0 +1,13 @@
+snapshot_date,stage,records_or_keys_n
+2026-10-03,received_rows,5803
+2026-10-03,missing_key_rows_excluded,0
+2026-10-03,distinct_nonempty_keys,5803
+2026-10-03,exact_duplicate_rows_removed,0
+2026-10-03,conflicting_duplicate_keys_excluded,0
+2026-10-03,conflicting_duplicate_rows_excluded,0
+2026-10-03,unique_nonconflicting_records,5803
+2026-10-03,update_code_D_quarantined,0
+2026-10-03,remaining_unique_records,5803
+2026-10-03,explicitly_in_use_records,5800
+2026-10-03,explicitly_not_in_use_records,3
+2026-10-03,unknown_use_records,0

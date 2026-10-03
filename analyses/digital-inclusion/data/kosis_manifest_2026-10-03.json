@@ -1,0 +1,515 @@
+{
+  "source": "KOSIS 디지털정보격차실태조사 orgId=127",
+  "snapshot": "2026-10-03",
+  "authentication": "successful",
+  "csv_path": "data/kosis_digital_divide_2026-10-03.csv",
+  "csv_sha256": "8ed2bcc2587f82dd6eb5fa0ed1fe305398a5c7690e171087af1530439f726cd4",
+  "rows": 240,
+  "collection_complete": true,
+  "tables": {
+    "DT_12017N008": {
+      "table_id": "DT_12017N008",
+      "table_name": "일반국민 대비 취약계층 디지털정보화 수준",
+      "periods": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "item_id": "1",
+      "item_name": "비율",
+      "unit_source": "%",
+      "classification_dimension": "15110BK8",
+      "classifications": {
+        "15110BK8AE": "취약계층 평균",
+        "15110BK8AA": "장애인",
+        "15110BK8AD": "고령층",
+        "15110BK8AB": "저소득층",
+        "15110BK8AC": "농어민"
+      },
+      "expected_cells": 60,
+      "observed_cells": 60,
+      "missing_or_symbol_cells": 0
+    },
+    "DT_12017N009": {
+      "table_id": "DT_12017N009",
+      "table_name": "일반국민 대비 취약계층 디지털정보화 접근 수준",
+      "periods": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "item_id": "1",
+      "item_name": "비율",
+      "unit_source": "%",
+      "classification_dimension": "15110BK8",
+      "classifications": {
+        "15110BK8AE": "취약계층 평균",
+        "15110BK8AA": "장애인",
+        "15110BK8AD": "고령층",
+        "15110BK8AB": "저소득층",
+        "15110BK8AC": "농어민"
+      },
+      "expected_cells": 60,
+      "observed_cells": 60,
+      "missing_or_symbol_cells": 0
+    },
+    "DT_12017N0010": {
+      "table_id": "DT_12017N0010",
+      "table_name": "일반국민 대비 취약계층 디지털정보화 역량 수준",
+      "periods": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "item_id": "1",
+      "item_name": "비율",
+      "unit_source": "%",
+      "classification_dimension": "15110BK8",
+      "classifications": {
+        "15110BK8AE": "취약계층 평균",
+        "15110BK8AA": "장애인",
+        "15110BK8AD": "고령층",
+        "15110BK8AB": "저소득층",
+        "15110BK8AC": "농어민"
+      },
+      "expected_cells": 60,
+      "observed_cells": 60,
+      "missing_or_symbol_cells": 0
+    },
+    "DT_12017N0011": {
+      "table_id": "DT_12017N0011",
+      "table_name": "일반국민 대비 취약계층 디지털정보화 활용 수준",
+      "periods": [
+        "2014",
+        "2015",
+        "2016",
+        "2017",
+        "2018",
+        "2019",
+        "2020",
+        "2021",
+        "2022",
+        "2023",
+        "2024",
+        "2025"
+      ],
+      "item_id": "1",
+      "item_name": "비율",
+      "unit_source": "%",
+      "classification_dimension": "15110BK8",
+      "classifications": {
+        "15110BK8AE": "취약계층 평균",
+        "15110BK8AA": "장애인",
+        "15110BK8AD": "고령층",
+        "15110BK8AB": "저소득층",
+        "15110BK8AC": "농어민"
+      },
+      "expected_cells": 60,
+      "observed_cells": 60,
+      "missing_or_symbol_cells": 0
+    }
+  },
+  "requests": [
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "TBL",
+        "orgId": "127",
+        "tblId": "DT_12017N008",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:27:55.734338+00:00",
+      "response_sha256": "e26afe058d90ec2e31ccf5cd252a21e9be600bb425210ce48200f181fd1f844f",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N008_TBL_68267136ff83b9308f8e.json",
+      "cache_reused": true,
+      "row_count": 1,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "PRD",
+        "orgId": "127",
+        "tblId": "DT_12017N008",
+        "format": "json",
+        "jsonVD": "Y",
+        "detail": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:27:58.865683+00:00",
+      "response_sha256": "8e6413bc491a1c72c5c2772ded24b105b24a495cfc3b55238e66f6879b53333b",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N008_PRD_2ff92ae91945918e3817.json",
+      "cache_reused": true,
+      "row_count": 13,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "ITM",
+        "orgId": "127",
+        "tblId": "DT_12017N008",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:28:01.954280+00:00",
+      "response_sha256": "a73689eda25b9b913875265a01b8404c55d710035ecc2f35e90921d7542b32d8",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N008_ITM_5c45ed7dbaa9b131fc20.json",
+      "cache_reused": true,
+      "row_count": 6,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "CMMT",
+        "orgId": "127",
+        "tblId": "DT_12017N008",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:28:05.567051+00:00",
+      "response_sha256": "08ccea6e1e228af7381f114309bec26399cefe795915c0850374c96cc0f820e3",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N008_CMMT_c9bdae97321abc5ded30.json",
+      "cache_reused": true,
+      "row_count": 5,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "127",
+        "tblId": "DT_12017N008",
+        "format": "json",
+        "jsonVD": "Y",
+        "objL1": "ALL",
+        "itmId": "1",
+        "prdSe": "Y",
+        "startPrdDe": "2014",
+        "endPrdDe": "2025",
+        "smblChk": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:33:57.109889+00:00",
+      "response_sha256": "d75a63868438ed31ef8a39229a7c953967c6a5c1b5cd75e3e34736ea7c8ef3f7",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N008_data_06c1d724307a430c6715.json",
+      "cache_reused": true,
+      "row_count": 60,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "TBL",
+        "orgId": "127",
+        "tblId": "DT_12017N009",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:39.959170+00:00",
+      "response_sha256": "83641c39e7d487e9987091414704b727c16338669f59dafc3731e9dfc21f8a40",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N009_TBL_e151768e6c199c25c32b.json",
+      "cache_reused": false,
+      "row_count": 1,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "PRD",
+        "orgId": "127",
+        "tblId": "DT_12017N009",
+        "format": "json",
+        "jsonVD": "Y",
+        "detail": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:43.070210+00:00",
+      "response_sha256": "8e6413bc491a1c72c5c2772ded24b105b24a495cfc3b55238e66f6879b53333b",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N009_PRD_4d7ea36a783ca0a5d70d.json",
+      "cache_reused": false,
+      "row_count": 13,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "ITM",
+        "orgId": "127",
+        "tblId": "DT_12017N009",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:46.160136+00:00",
+      "response_sha256": "fb7a4c0762be2b818d9d91a4eafb08fcdea02da841f0f85ccb2b843273cfcef4",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N009_ITM_aa5ca1f30196d429a0bf.json",
+      "cache_reused": false,
+      "row_count": 6,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "CMMT",
+        "orgId": "127",
+        "tblId": "DT_12017N009",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:49.266256+00:00",
+      "response_sha256": "36f5ac0b09b7ffa45b3472be03d4df2fa26554430557c1b59cd0e7647e480845",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N009_CMMT_45ed25e454c7f2a67927.json",
+      "cache_reused": false,
+      "row_count": 5,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "127",
+        "tblId": "DT_12017N009",
+        "format": "json",
+        "jsonVD": "Y",
+        "objL1": "ALL",
+        "itmId": "1",
+        "prdSe": "Y",
+        "startPrdDe": "2014",
+        "endPrdDe": "2025",
+        "smblChk": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:52.578917+00:00",
+      "response_sha256": "b63bdb9fe45be66de2d95a7d916073477bb05415c43a08e7441bbd5100b8862c",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N009_data_23aca99abfaefd5ef949.json",
+      "cache_reused": false,
+      "row_count": 60,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "TBL",
+        "orgId": "127",
+        "tblId": "DT_12017N0010",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:55.468987+00:00",
+      "response_sha256": "03e9b6dc9552a80e3bb1cac62b261a7fd28041db2162380fc8c321563de5b405",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0010_TBL_0f76bb0addc6f5545f76.json",
+      "cache_reused": false,
+      "row_count": 1,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "PRD",
+        "orgId": "127",
+        "tblId": "DT_12017N0010",
+        "format": "json",
+        "jsonVD": "Y",
+        "detail": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:34:58.569344+00:00",
+      "response_sha256": "8e6413bc491a1c72c5c2772ded24b105b24a495cfc3b55238e66f6879b53333b",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0010_PRD_ac475feb361d58066d4f.json",
+      "cache_reused": false,
+      "row_count": 13,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "ITM",
+        "orgId": "127",
+        "tblId": "DT_12017N0010",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:02.200496+00:00",
+      "response_sha256": "d723277c392e949d161c08003222467b8d488a698798b87069df240114687f2e",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0010_ITM_8c4c40c8b370aaf1ee3b.json",
+      "cache_reused": false,
+      "row_count": 6,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "CMMT",
+        "orgId": "127",
+        "tblId": "DT_12017N0010",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:04.779085+00:00",
+      "response_sha256": "37cd6d6352df1c9d2f536f04796928edeadb00f7dbad56b17b7bc9e0b2dfd9a8",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0010_CMMT_fb1df48294dae38bd22d.json",
+      "cache_reused": false,
+      "row_count": 5,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "127",
+        "tblId": "DT_12017N0010",
+        "format": "json",
+        "jsonVD": "Y",
+        "objL1": "ALL",
+        "itmId": "1",
+        "prdSe": "Y",
+        "startPrdDe": "2014",
+        "endPrdDe": "2025",
+        "smblChk": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:07.909267+00:00",
+      "response_sha256": "9ad229f639404ef73db107d3911e1ca4b16bbeb6d1ec1ed37ed2eea2460c183b",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0010_data_3a54fec3f8249ec702ea.json",
+      "cache_reused": false,
+      "row_count": 60,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "TBL",
+        "orgId": "127",
+        "tblId": "DT_12017N0011",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:10.970741+00:00",
+      "response_sha256": "dc34b7b47b60606f79c0afeb9e4ccabf073f5aaffe573e601c54930e1f3c42cb",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0011_TBL_fef1b1dea97b4c6f93c8.json",
+      "cache_reused": false,
+      "row_count": 1,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "PRD",
+        "orgId": "127",
+        "tblId": "DT_12017N0011",
+        "format": "json",
+        "jsonVD": "Y",
+        "detail": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:14.096679+00:00",
+      "response_sha256": "8e6413bc491a1c72c5c2772ded24b105b24a495cfc3b55238e66f6879b53333b",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0011_PRD_4eaac2a5853b83f32e61.json",
+      "cache_reused": false,
+      "row_count": 13,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "ITM",
+        "orgId": "127",
+        "tblId": "DT_12017N0011",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:17.190928+00:00",
+      "response_sha256": "ab4bc7e530b7e7d57cdc442cd256271e0a797ec4a3c4ae40ec2f74c2137f7598",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0011_ITM_1f4abf3a67dc1ab528cc.json",
+      "cache_reused": false,
+      "row_count": 6,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "CMMT",
+        "orgId": "127",
+        "tblId": "DT_12017N0011",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:20.265615+00:00",
+      "response_sha256": "65aca1929535f1a57d4040b04bbfe6d825255b60cf4ed99281254697ce8e9613",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0011_CMMT_cd3efb3c5bfea6b82aa4.json",
+      "cache_reused": false,
+      "row_count": 5,
+      "response_status": "success"
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "127",
+        "tblId": "DT_12017N0011",
+        "format": "json",
+        "jsonVD": "Y",
+        "objL1": "ALL",
+        "itmId": "1",
+        "prdSe": "Y",
+        "startPrdDe": "2014",
+        "endPrdDe": "2025",
+        "smblChk": "Y"
+      },
+      "fetched_at_utc": "2026-10-02T22:35:23.432760+00:00",
+      "response_sha256": "fcfba9599e178936c6396dd68af8fb9062027d5592b4987c749c63ff539f9a09",
+      "raw_path": "raw/kosis/2026-10-03/DT_12017N0011_data_4b3224428c5fb818b4e6.json",
+      "cache_reused": false,
+      "row_count": 60,
+      "response_status": "success"
+    }
+  ],
+  "completeness_rule": "Every period × item × classification cell declared in metadata is present exactly once; symbols are preserved and not replaced with zero.",
+  "numeric_cells": 240,
+  "symbol_or_missing_cells": 0,
+  "credentials_excluded": true,
+  "reference_documents": [
+    "https://kosis.kr/openapi/devGuide/devGuide_0201List.do",
+    "https://kosis.kr/openapi/devGuide/devGuide_060103List.do",
+    "https://kosis.kr/openapi/devGuide/devGuide_060104List.do",
+    "https://kosis.kr/openapi/devGuide/devGuide_060105List.do"
+  ]
+}
