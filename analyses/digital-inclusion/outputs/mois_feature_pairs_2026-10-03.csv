@@ -1,0 +1,10 @@
+wheelchair,tactile,count,denominator
+yes,yes,1539,5800
+yes,no,3699,5800
+yes,unknown,0,5800
+no,yes,11,5800
+no,no,551,5800
+no,unknown,0,5800
+unknown,yes,0,5800
+unknown,no,0,5800
+unknown,unknown,0,5800

@@ -342,3 +342,63 @@ KOSIS 원자료가 로컬에 있으면 20개 응답의 해시와 240개 셀의 �
 설계·출처 선택 규칙은 [analyses/digital-inclusion/plan.json](../analyses/digital-inclusion/plan.json), [analyses/digital-inclusion/kosis_analysis_plan.json](../analyses/digital-inclusion/kosis_analysis_plan.json)에 있다. 기존 집계를 이미 본 탐색 분석이므로 사전 등록으로 부르지 않는다. 결측을 0으로 채우거나 100 초과 지수를 잘라내지 않았고, 관측 자료의 산술 집계에 표본 신뢰구간·p값을 붙이지 않았다.
 
 수집 실행법과 전체 출력 목록은 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md), 인증 분석 작업 기록은 [docs/work/W-002-main-digital-inclusion-api.md](work/W-002-main-digital-inclusion-api.md), 추가 자료 작업 기록은 [docs/work/W-003-main-additional-data.md](work/W-003-main-additional-data.md)에 있다. 입력과 계산 출력을 분리해 후속 분석 페이지에서도 같은 결과를 사용할 수 있도록 했다.
+
+
+<a id="followup-decomposition"></a>
+## 10. 기관·제품별 조달 변화와 기능 조합 — 2026-10-04 추가
+
+기존 2026-10-03 수집본을 재분석했다. API를 새로 수집하거나 비교 대상을 사전 등록한 분석은 아니다. 조달 비교 기간은 두 해 모두 2~9월, 품목 범위·변경 및 취소의 부호·단위 처리 기준은 §5와 같다. 수량은 대표품목·단위 `대`의 순증이며 금액은 해당 품목 범위의 옵션·기타 단위까지 포함한다.
+
+### 조달 감소의 구성
+
+기관 코드별로 기간 내 변경 기록의 존재를 비교했다. 이름이 바뀐 동일 코드는 함께 집계하고 관측 명칭을 모두 남겼다. 코드가 달라진 기관의 통폐합은 연결하지 않았다.
+
+| 기간 내 기록 존재 | 기관 수 | 2025년 순증 수량 | 2026년 순증 수량 | 차이 |
+|---|---:|---:|---:|---:|
+| 두 해 모두 | 101 | 612 | 395 | -217 |
+| 2025년에만 | 145 | 260 | 0 | -260 |
+| 2026년에만 | 105 | 0 | 202 | +202 |
+| 전체 | 351개 코드의 합집합 | 872 | 597 | -275 |
+
+**감소는 기관 수 변화만의 결과가 아니다.** 양쪽에 기록이 있는 기관에서도 217대 감소했다. 다만 이 분류는 해당 기간의 조달 변경 기록 유무이며 신규 구매기관·구매 중단·기관 폐쇄를 뜻하지 않는다. 0은 완전 수집한 조회 범위에 기록이 없다는 뜻이다. 취소로 순증이 0이 되어도 기록이 있으면 관측 기관이다.
+
+| 감소 상위 기관 | 2025년 | 2026년 | 차이 |
+|---|---:|---:|---:|
+| 강남구 | 40 | 4 | -36 |
+| 영등포구 | 33 | 5 | -28 |
+| 성동구 | 25 | 1 | -24 |
+| 마포구 | 24 | 2 | -22 |
+| 은평구 | 21 | 2 | -19 |
+
+이 다섯 기관은 합계 129대 감소했다. 전체 감소 기관의 감소분은 600대, 증가 기관의 증가분은 325대다. 따라서 다섯 기관은 감소분 600대의 21.5%이며, 순감소 275대를 분모로 하면 46.9%다. 서로 다른 분모를 혼동하지 않는다. 증가 사례는 남양주시 1→15대, 성남시 수정구 0→13대 등이다.
+
+제품 식별번호별 감소 상위는 `24422601` 142→69대(-73), `24362786` 131→61대(-70), `24362785` 82→39대(-43)다. 원자료 이름은 각각 TAPI-9320B, AT-K300E, AT-K300이며 모두 시청각장애인겸용 무인민원발급기라는 명칭을 포함한다. **제품명은 검증·법 준수 여부의 증거가 아니다.** 같은 품목 분류에는 IS-2000L 통합민원발급기(195→154대)도 포함돼 있어 전체 조달량을 배리어프리 무인기만의 수량으로 해석하지 않는다. 제품 ID 변경·후속 모델 대체 여부는 확인하지 않았다.
+
+전체 기관·제품과 금액 분해: [analyses/digital-inclusion/outputs/pps_institutions_comparison.csv](../analyses/digital-inclusion/outputs/pps_institutions_comparison.csv), [analyses/digital-inclusion/outputs/pps_products_comparison.csv](../analyses/digital-inclusion/outputs/pps_products_comparison.csv), [analyses/digital-inclusion/outputs/pps_institution_cohorts.csv](../analyses/digital-inclusion/outputs/pps_institution_cohorts.csv).
+
+### 감소 상위 기관의 공식 이력 대조
+
+감소 상위 다섯 기관을 사후 선택한 탐색 조사이며 대표 표본이 아니다. 공식 본문을 확인한 자료와 검색 결과만 있는 후보를 구분했다.
+
+- **강남구:** 2025-05-12 공지는 5월 15·16·19·20일 역삼세무서·신사역·강남세무서·구청의 교체 및 설치 작업을 예고한다. [정부24 공식 공지](https://www.gov.kr/portal/ntcItm/115093?srchTxt=&srchType=muin)
+- **마포구:** 2025-04-28 공지는 5월 1·2·7일 동주민센터·역사·세무서의 교체 및 설치 작업을 예고한다. 장소 명칭 수를 기기 수로 바꾸지 않았다. [정부24 공식 공지](https://www.gov.kr/portal/ntcItm/114850?pageIndex=2&srchType=muin)
+- **영등포·성동구:** 관련 교체·구매 자료의 검색 발췌를 찾았으나 원문 열람이 실패해 확정 근거에서 제외했다. **은평구:** 대응 원문 미확보.
+
+확인된 사실은 두 기관에 **시행 전 교체·설치 예정 기록이 존재한다**는 것이다. 이로부터 전년도 교체 수요가 이후 조달 흐름에 영향을 줬을 가능성을 제안할 수 있으나, 공지는 완료 실적이 아니며 조달 요구서·제품 ID·기기 관리번호와 연결되지 않았다. 2026년 감소가 접근성 악화나 특정 법의 효과라는 결론은 낼 수 없다. 출처·확인 수준·미확인 범위는 [analyses/digital-inclusion/data/local_history_sources_2026-10-04.json](../analyses/digital-inclusion/data/local_history_sources_2026-10-04.json)에 남겼다.
+
+### 행안부 접근성 기능의 동시 기재
+
+사용 중으로 기재된 5,800건을 분모로 두 기능을 교차 집계했다. 미상은 별도 범주로 유지했으며 이번 두 필드에는 0건이었다.
+
+| 휠체어 사용자 조작 | 촉각 모니터 | 기록 수 | 전체 대비 |
+|---|---|---:|---:|
+| 가능 | 제공 | 1,539 | 26.5% |
+| 가능 | 미제공 | 3,699 | 63.8% |
+| 불가능 | 제공 | 11 | 0.2% |
+| 불가능 | 미제공 | 551 | 9.5% |
+
+두 기능이 동시에 부족하게 기재된 551건은 현장 점검 후보를 찾는 데 쓸 수 있다. 8개 필드가 모두 긍정으로 기재된 기록도 1,539건이지만 **법 준수율·종합 접근성 점수·실제 이용 성공률이 아니다.** 이어폰 소켓·화면 확대가 함께 미제공인 1건도 별도 조합으로 보존했다. 시점 비교가 아닌 현황 분석이다.
+
+출력: [analyses/digital-inclusion/outputs/mois_feature_pairs_2026-10-03.csv](../analyses/digital-inclusion/outputs/mois_feature_pairs_2026-10-03.csv), [analyses/digital-inclusion/outputs/mois_feature_patterns_2026-10-03.csv](../analyses/digital-inclusion/outputs/mois_feature_patterns_2026-10-03.csv).
+
+재현 명령은 `python3 analyses/digital-inclusion/followup_analyze.py`다. 기존 입력 해시·수집 완전성·행안부 원문 232개를 검증하고, 기관별·제품별 합계가 원자료 합계와 같은지 확인한다. [analyses/digital-inclusion/outputs/followup_summary.json](../analyses/digital-inclusion/outputs/followup_summary.json)에 입력·출력 해시와 한계를 기록한다.

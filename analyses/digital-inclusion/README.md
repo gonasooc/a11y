@@ -131,3 +131,10 @@ KOSIS 경계 검증은 통계부호와 숫자 0의 구분, 기대 셀 누락·�
 ## 후속 자료
 
 NIA 목록을 다시 확보하면 과거 집계를 새 원자료로 덮어쓰지 않고 수집일·출처를 별도로 보존한다. 검증 이력, 조달 흐름, 기기 기능 이력, 이용자 연간 통계는 관측 단위가 다르므로 각각 분석한다.
+
+
+## 기관·제품별 후속 분석
+
+`python3 analyses/digital-inclusion/followup_analyze.py`는 기존 검증 함수를 재사용해 2025·2026년 2~9월 조달을 기관 코드·제품 ID·기관 관측 집합별로 분해하고, 2026-10-03 행안부 자료의 기능 조합을 계산한다. 네트워크와 키가 필요 없다. 기관의 한 해 미관측을 폐쇄·구매 중단으로 해석하지 않으며, 기능 조합을 접근성 점수로 만들지 않는다.
+
+결과는 [analyses/digital-inclusion/outputs/followup_summary.json](outputs/followup_summary.json)과 여기서 해시로 연결한 CSV 5개에 저장한다. 공개 문서 조사의 확인 수준은 [analyses/digital-inclusion/data/local_history_sources_2026-10-04.json](data/local_history_sources_2026-10-04.json), 해석은 [docs/digital-inclusion-analysis.md](../../docs/digital-inclusion-analysis.md#followup-decomposition)에 있다. 변경·취소·미상 경계 검증은 기존 `python3 -m unittest discover -s analyses/digital-inclusion/tests -v`에 포함된다.

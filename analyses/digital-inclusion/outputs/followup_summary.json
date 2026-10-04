@@ -1,0 +1,162 @@
+{
+  "analysis_type": "exploratory_descriptive_not_causal",
+  "comparison": "February–September 2025 vs February–September 2026",
+  "input_sha256": {
+    "pps_deliveries.csv": "7594527b58f84d140d561de3d7645f956b35ee10db3136f4116d47c43d884f24",
+    "mois_devices_2026-10-03.csv": "8c94e0ddf294e2392b9ffb13cc1aaa7cf1204358a15d7b311cddcb5d97bfba52",
+    "mois_manifest_2026-10-03.json": "38418e18da8be4de75e70910e7416bca2eeec190c57e68bda6b24ce279a02788"
+  },
+  "mois_integrity": {
+    "collection_scope": "complete_partition_union",
+    "dataset_sha256_verified": true,
+    "initial_page_sequence_verified": true,
+    "initial_expected_pages": 59,
+    "manifest_reports_consistent_page_counts": true,
+    "manifest_reports_unchanged_first_page": true,
+    "initial_paginated_unique_keys": 5768,
+    "initial_repeated_rows": 35,
+    "initial_pagination_used_as_final_dataset": false,
+    "authority_partition_groups": 230,
+    "partition_queries_including_split_parents": 232,
+    "leaf_partition_queries": 231,
+    "partition_ranges_and_counts_verified": true,
+    "global_total_rechecked": 5803,
+    "expected_raw_evidence_files": 232,
+    "raw_pages_locally_verified": 232,
+    "raw_pages_not_present": 0,
+    "all_raw_pages_locally_verified": true,
+    "transactionally_consistent_snapshot_guaranteed": false
+  },
+  "mois_record_flow": {
+    "received_rows": 5803,
+    "missing_key_rows_excluded": 0,
+    "distinct_nonempty_keys": 5803,
+    "exact_duplicate_rows_removed": 0,
+    "conflicting_duplicate_keys_excluded": 0,
+    "conflicting_duplicate_rows_excluded": 0,
+    "unique_nonconflicting_records": 5803,
+    "update_code_D_quarantined": 0,
+    "remaining_unique_records": 5803,
+    "explicitly_in_use_records": 5800,
+    "explicitly_not_in_use_records": 3,
+    "unknown_use_records": 0
+  },
+  "cohorts": [
+    {
+      "presence": "both",
+      "institutions": 101,
+      "quantity_2025": "612",
+      "quantity_2026": "395",
+      "quantity_difference": "-217",
+      "amount_2025": "10711678400",
+      "amount_2026": "5982232000",
+      "amount_difference": "-4729446400"
+    },
+    {
+      "presence": "2025_only",
+      "institutions": 145,
+      "quantity_2025": "260",
+      "quantity_2026": "0",
+      "quantity_difference": "-260",
+      "amount_2025": "3999390000",
+      "amount_2026": "0",
+      "amount_difference": "-3999390000"
+    },
+    {
+      "presence": "2026_only",
+      "institutions": 105,
+      "quantity_2025": "0",
+      "quantity_2026": "202",
+      "quantity_difference": "202",
+      "amount_2025": "0",
+      "amount_2026": "3363180000",
+      "amount_difference": "3363180000"
+    }
+  ],
+  "feature_pairs": [
+    {
+      "wheelchair": "yes",
+      "tactile": "yes",
+      "count": 1539,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "yes",
+      "tactile": "no",
+      "count": 3699,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "yes",
+      "tactile": "unknown",
+      "count": 0,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "no",
+      "tactile": "yes",
+      "count": 11,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "no",
+      "tactile": "no",
+      "count": 551,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "no",
+      "tactile": "unknown",
+      "count": 0,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "unknown",
+      "tactile": "yes",
+      "count": 0,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "unknown",
+      "tactile": "no",
+      "count": 0,
+      "denominator": 5800
+    },
+    {
+      "wheelchair": "unknown",
+      "tactile": "unknown",
+      "count": 0,
+      "denominator": 5800
+    }
+  ],
+  "limits": [
+    "Presence means at least one change record in the selected window, not institutional entry/exit or first purchase.",
+    "Zeros for absent groups refer only to the complete queried procurement scope, not all purchases.",
+    "Institution IDs and product IDs are not linked across mergers or reassignments; names are retained as observed.",
+    "Signed quantity includes only representative items in units of devices; amounts include all selected options/units.",
+    "Feature combinations are administrative records, not compliance or usability scores; unknown is separate from no.",
+    "No device-level link between procurement rows and MOIS records; no causal effect estimated."
+  ],
+  "outputs": {
+    "pps_institutions_comparison.csv": {
+      "rows": 351,
+      "sha256": "6dcd3a587dd49c7ab6066e5cf326356005bb36b703e1b82c48aebdc093bb5fb5"
+    },
+    "pps_products_comparison.csv": {
+      "rows": 30,
+      "sha256": "6efcf9ac52e43bb32153a68464997f171a551c21afb1b9193fbd9aedbed77f77"
+    },
+    "pps_institution_cohorts.csv": {
+      "rows": 3,
+      "sha256": "a90a7f40233efc2db3cdd2f44590e51ddf152b654df0ffb5d526344eaaac0b13"
+    },
+    "mois_feature_pairs_2026-10-03.csv": {
+      "rows": 9,
+      "sha256": "bbadecb17a0e4cd14cfcd0b3df83f0166e70fa41865955ca266ddcea7505c4a7"
+    },
+    "mois_feature_patterns_2026-10-03.csv": {
+      "rows": 5,
+      "sha256": "3f54d33582ff316230d54db4bbfa2963658e2ceebc2c1f8cd86ff01a0d10decf"
+    }
+  }
+}

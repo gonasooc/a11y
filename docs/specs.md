@@ -41,6 +41,7 @@
 | 분석 실행 | `python3 analyses/digital-inclusion/analyze.py` | 저장소 루트에서 실행. 입력 데이터와 `plan.json` 필요 |
 | 행안부 분석 | `python3 analyses/digital-inclusion/mois_analyze.py --snapshot 2026-10-03` | CSV·수집 명세·지역 표시명 파일. 키 불필요 |
 | 조달청 분석 | `python3 analyses/digital-inclusion/pps_analyze.py` | 등록·납품요구 CSV와 수집 명세. 키 불필요 |
+| 기관·제품별 후속 분석 | `python3 analyses/digital-inclusion/followup_analyze.py` | 기존 조달 CSV·명세와 2026-10-03 행안부 자료. 키 불필요 |
 | KOSIS 분석 | `python3 analyses/digital-inclusion/kosis_analyze.py --snapshot 2026-10-03` | CSV·메타데이터·수집 명세·기존 보고서 기준선. 키 불필요 |
 | 계산 결과 재현 | 실행 전후 `outputs/` 3개 파일의 SHA256 비교 | 같은 입력·코드로 재실행하고 해시가 동일한지 확인 |
 | 문서 검증 | 상대경로 링크 대상 존재 확인, `git diff --check` | 문서 변경 시 수행. 코드블록의 예시와 실제 링크를 구분 |

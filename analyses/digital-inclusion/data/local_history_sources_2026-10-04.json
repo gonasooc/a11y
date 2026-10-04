@@ -1,0 +1,60 @@
+{
+  "checked_date": "2026-10-04",
+  "selection": "Feb–Sep net quantity decrease top five institutions; purposive selection, not representative sample",
+  "method": "Public web pages/search; no authentication, no NIA location API. Web-extracted text, original HTML bytes not archived.",
+  "sources": [
+    {
+      "institution": "서울특별시 강남구",
+      "institution_code": "3220000",
+      "url": "https://www.gov.kr/portal/ntcItm/115093?srchTxt=&srchType=muin",
+      "publication_date": "2025-05-12",
+      "event_dates": [
+        "2025-05-15",
+        "2025-05-16",
+        "2025-05-19",
+        "2025-05-20"
+      ],
+      "verification": "official_page_body_read",
+      "finding": "역삼세무서·신사역·강남세무서·강남구청 1~3의 교체 및 설치 작업 예정에 따른 서비스 중단 공지",
+      "limit": "예정 공지이며 완료·접근성 기능·조달 건 연결 미확인"
+    },
+    {
+      "institution": "서울특별시 마포구",
+      "institution_code": "3130000",
+      "url": "https://www.gov.kr/portal/ntcItm/114850?pageIndex=2&srchType=muin",
+      "publication_date": "2025-04-28",
+      "event_dates": [
+        "2025-05-01",
+        "2025-05-02",
+        "2025-05-07"
+      ],
+      "verification": "official_page_body_read",
+      "finding": "동주민센터·역사·세무서 12개 명칭의 교체 및 설치 작업 예정에 따른 중단 공지",
+      "limit": "장소 명칭 수를 기기 수로 변환하지 않음. 완료·기능·조달 건 연결 미확인"
+    },
+    {
+      "institution": "서울특별시 영등포구",
+      "institution_code": "3180000",
+      "url": "https://www.ydpc.go.kr/record/appendixDownload.do?key=1698d1eef12cefe0a8e6e8f00a460e4a6973f17bcc193cae8566a6ff9580333f2cda424371a007d4",
+      "verification": "search_snippet_only_open_failed",
+      "finding": "검색 발췌에 33대 교체와 추가 2대 예정 언급",
+      "limit": "원문 확보 실패. 시점·범위 미확정으로 확정 근거와 정량 분석에서 제외"
+    },
+    {
+      "institution": "서울특별시 성동구",
+      "institution_code": "3030000",
+      "url": "https://www.sd.go.kr/main/newselectContractWebList.do?key=5046&menuIdx=5372&pageIndex=44&searchEndDate=20250702&searchStartDate=20240702",
+      "verification": "search_snippet_only_open_failed",
+      "finding": "2025-04-09 무인민원발급기 구매 관련 대가지급 목록 검색됨",
+      "limit": "원문 확보 실패. 교체·설치 완료 근거로 사용하지 않음"
+    },
+    {
+      "institution": "서울특별시 은평구",
+      "institution_code": "3110000",
+      "url": null,
+      "verification": "not_verified",
+      "finding": "이번 조사에서 대응 원문 미확보",
+      "limit": "조달 감소 원인 미정"
+    }
+  ]
+}
