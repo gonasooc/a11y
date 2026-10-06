@@ -6,11 +6,10 @@
 
 | 진입점 | 내용 |
 |---|---|
-| [site/README.md](site/README.md) | 웹 사이트: 메인 허브와 디지털포용법 시각화 보고서. Pages 설정 후 `https://gonasooc.github.io/a11y/`에서 열린다 |
+| [site/README.md](site/README.md) | 웹 사이트: 메인 허브와 디지털포용법 시각화 보고서. `https://gonasooc.github.io/a11y/`에서 열린다 |
 | [docs/digital-inclusion-analysis.md](docs/digital-inclusion-analysis.md) | 디지털포용법 통합 보고서: 이용자 기준선·웹 접근성·기기 현황·조달 변화·해석 한계 |
-| [docs/ideas.md](docs/ideas.md) | 접근성 도구 아이디어 28개와 하위 제안, 공통 근거·조건별 우선순위 |
 | [후속 분석용 API 안내](docs/10-digital-inclusion-api-guide.md) | 발급할 API, 확인한 필드와 호출 방법, 과거 데이터의 한계 |
 | [분석 재현](analyses/digital-inclusion/README.md) | 입력 CSV, 분석 코드, 기계 판독용 결과 |
-| [접근성 조사와 도구 아이디어](docs/README.md) | 기존 법·제도 조사 및 도구 제안 |
+| [docs/README.md](docs/README.md) | 접근성 조사 문서 홈: 장애인 디지털 이용 환경, 민간 웹 접근성 법·제도 조사 |
 
 프로젝트 현황과 다음 작업은 [docs/README.md](docs/README.md)에서 확인합니다. 제품 기획·구조·기술 명세와 작업 기록을 한국어로 관리하며, 에이전트 작업 규칙은 [AGENTS.md](AGENTS.md)에 있습니다.

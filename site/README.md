@@ -50,6 +50,7 @@ site/
 2. 다른 페이지로 가는 링크는 상대경로로 `index.html`까지 적는다(`../../index.html`). 파일로 열었을 때도 이동하고, `https://<계정>.github.io/a11y/` 같은 하위 경로에서도 맞는다.
 3. 허브 `site/index.html`의 페이지 목록에 항목을 하나 더한다.
 4. 분석 출력이 필요하면 페이지 폴더에 `report.config.mjs`를 두고 `build({ repoRoot, repoUrl })`가 `{ data, tables, fragments, facts }`를 돌려주게 한 뒤 `node site/scripts/generate.mjs`를 실행한다.
+5. 자료 출처와 분석 재현 링크는 페이지 안에 둔다. 허브에는 따로 모으지 않는다. 기준은 [docs/design.md](../docs/design.md)에 있다.
 
 ## 접근성 기준
 

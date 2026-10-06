@@ -52,13 +52,6 @@
   font-size: clamp(1.4rem, 1.1rem + 1vw, 1.85rem);
 }
 
-.hub-sub {
-  max-width: var(--measure);
-  margin: -0.25rem 0 1.25rem;
-  color: var(--muted);
-  font-size: 0.9375rem;
-}
-
 /* 페이지 목록: 번호가 붙은 등록부처럼 */
 .entries {
   margin: 0;
@@ -163,42 +156,4 @@
   color: var(--muted);
   font-size: 0.8125rem;
   font-variant-numeric: tabular-nums;
-}
-
-/* 원문 문서 */
-.refs {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
-  gap: 0.75rem;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.refs > li {
-  margin: 0;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-}
-
-.refs a {
-  font-weight: 600;
-}
-
-.ref__path {
-  display: block;
-  margin: 0.15rem 0 0.4rem;
-  color: var(--muted);
-  font-variant-numeric: tabular-nums;
-  font-size: 0.75rem;
-  overflow-wrap: anywhere;
-}
-
-.refs p {
-  margin: 0;
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-  line-height: 1.6;
 }

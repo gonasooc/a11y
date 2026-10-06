@@ -57,7 +57,7 @@
 | 보고서 생성 구역 갱신 | `node site/scripts/generate.mjs` | 분석 출력이 바뀌었을 때 실행한다. 본문 숫자·출력 사이 합계가 다르면 실패한다 |
 | 생성 구역 최신 여부 검사 | `node site/scripts/generate.mjs --check` | 파일을 바꾸지 않는다. CI가 쓴다 |
 | 웹 접근성 확인 | axe-core, 키보드 탐색, 320px 화면, 운영체제 어두운 모드에서도 밝은 화면 유지 | 기준은 [docs/design.md](design.md). CI 자동 검사는 없다 |
-| 웹 배포 | `main`에 `site/`·`analyses/` 변경이 반영되면 GitHub Actions가 검사 후 배포 | 저장소 Settings → Pages의 Source를 GitHub Actions로 설정해야 한다 |
+| 웹 배포 | `main`에 `site/`·`analyses/` 변경이 반영되면 GitHub Actions가 검사 후 배포 | 저장소 Pages의 Source는 GitHub Actions로 설정돼 있다(2026-10-06). 공개 주소는 `https://gonasooc.github.io/a11y/` |
 | 인증 API 수집 | 서비스별 실행 명령은 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md) 참고 | 서비스별 키·승인·네트워크 필요. 저장된 자료 재분석에는 수집 불필요 |
 
 개별 작업에서 실행한 환경·명령·통과 범위는 작업 문서에 기록한다. 이번 문서 적용에서 수행한 검증은 [docs/work/W-001-main-docs-starter.md](work/W-001-main-docs-starter.md)에 있다.
