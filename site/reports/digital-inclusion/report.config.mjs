@@ -701,7 +701,7 @@ ${policyEvents
 
   /* 이 페이지가 읽은 파일 */
   tables.provenance = {
-    caption: '이 페이지가 빌드 시점에 읽은 분석 파일',
+    caption: '이 페이지를 생성할 때 읽은 분석 파일',
     columns: [{ label: '파일' }, { label: '형식' }, { label: 'SHA-256 앞 12자리' }],
     rows: provenance.map((p) => [{ text: p.path, href: p.href }, p.shape, p.sha256.slice(0, 12)]),
   };

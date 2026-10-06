@@ -236,57 +236,6 @@ hr {
   text-decoration: underline;
 }
 
-/* 화면 테마 선택 */
-.theme-switch {
-  display: inline-flex;
-  margin: 0;
-  padding: 2px;
-  border: 1px solid var(--hairline);
-  border-radius: 999px;
-  background: var(--surface);
-}
-
-.theme-switch legend {
-  /* visually-hidden과 같다 */
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  white-space: nowrap;
-}
-
-.theme-switch label {
-  position: relative;
-  display: inline-flex;
-  align-items: center;
-  min-height: 32px;
-  padding: 0 0.7rem;
-  border-radius: 999px;
-  color: var(--ink-2);
-  font-size: 0.8125rem;
-  cursor: pointer;
-}
-
-.theme-switch input {
-  position: absolute;
-  inset: 0;
-  margin: 0;
-  opacity: 0;
-  cursor: pointer;
-}
-
-.theme-switch label:has(input:checked) {
-  background: var(--ink);
-  color: var(--page);
-  font-weight: 600;
-}
-
-.theme-switch label:has(input:focus-visible) {
-  outline: 3px solid var(--focus);
-  outline-offset: 1px;
-}
-
 /* 바닥글 */
 .site-footer {
   margin-top: 5rem;
@@ -412,9 +361,6 @@ details > summary::-webkit-details-marker {
 }
 
 @media (forced-colors: active) {
-  .theme-switch label:has(input:checked) {
-    border: 2px solid Highlight;
-  }
   .note {
     border-left-color: CanvasText;
   }
@@ -422,8 +368,7 @@ details > summary::-webkit-details-marker {
 
 @media print {
   .site-header,
-  .skip-link,
-  .theme-switch {
+  .skip-link {
     display: none !important;
   }
   body {

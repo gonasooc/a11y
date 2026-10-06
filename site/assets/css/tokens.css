@@ -1,7 +1,8 @@
 /*
  * 디자인 토큰. 글꼴은 Pretendard 하나만 쓴다.
- * 차트 색은 dataviz 기준 팔레트를 그대로 쓰고 validate_palette.js로 카드 면(#ffffff, #171a1f)에서 검사했다.
- * 밝은 화면의 3~5번 계열은 3:1 미만이라 모든 차트에 직접 라벨이나 표 보기를 함께 둔다.
+ * 화면은 밝은 버전 하나뿐이다. 운영체제가 어두운 모드여도 color-scheme: light로 밝게 보인다.
+ * 차트 색은 dataviz 기준 팔레트를 그대로 쓰고 validate_palette.js로 카드 면(#ffffff)에서 검사했다.
+ * 3~5번 계열은 카드 면 대비가 3:1 미만이라 모든 차트에 직접 라벨이나 표 보기를 함께 둔다.
  */
 :root {
   color-scheme: light;
@@ -63,83 +64,4 @@
   --radius-sm: 8px;
   --shadow: 0 1px 2px rgb(20 23 28 / 0.06), 0 6px 20px rgb(20 23 28 / 0.08);
   --measure: 70ch;
-}
-
-/* 어두운 화면: 같은 색상환의 다른 단계를 #171a1f 면에서 다시 검사했다. */
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme='light'])) {
-    color-scheme: dark;
-    --page: #0f1115;
-    --surface: #171a1f;
-    --surface-sunk: #1f232a;
-    --surface-raised: #252a32;
-    --ink: #f2f4f7;
-    --ink-2: #c5cad2;
-    --muted: #9aa1ad;
-    --hairline: #2a2f37;
-    --rule: #3d434d;
-    --ref: #868e99;
-    --link: #86b6ef;
-    --focus: #cde2fb;
-    --s1: #3987e5;
-    --s2: #d95926;
-    --s3: #199e70;
-    --s4: #c98500;
-    --s5: #d55181;
-    --deemph: #6e7581;
-    --before: #256abf;
-    --after: #9ec5f4;
-    --seq-1: #102f57;
-    --seq-2: #184f95;
-    --seq-3: #3987e5;
-    --seq-4: #9ec5f4;
-    --seq-ink-1: #f2f4f7;
-    --seq-ink-2: #f2f4f7;
-    --seq-ink-3: #14171c;
-    --seq-ink-4: #14171c;
-    --dec: #e66767;
-    --inc: #3987e5;
-    --total: #9aa1ad;
-    --warning: #fab219;
-    --warning-ink: #1a1408;
-    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.35);
-  }
-}
-
-:root[data-theme='dark'] {
-  color-scheme: dark;
-  --page: #0f1115;
-  --surface: #171a1f;
-  --surface-sunk: #1f232a;
-  --surface-raised: #252a32;
-  --ink: #f2f4f7;
-  --ink-2: #c5cad2;
-  --muted: #9aa1ad;
-  --hairline: #2a2f37;
-  --rule: #3d434d;
-  --ref: #868e99;
-  --link: #86b6ef;
-  --focus: #cde2fb;
-  --s1: #3987e5;
-  --s2: #d95926;
-  --s3: #199e70;
-  --s4: #c98500;
-  --s5: #d55181;
-  --deemph: #6e7581;
-  --before: #256abf;
-  --after: #9ec5f4;
-  --seq-1: #102f57;
-  --seq-2: #184f95;
-  --seq-3: #3987e5;
-  --seq-4: #9ec5f4;
-  --seq-ink-1: #f2f4f7;
-  --seq-ink-2: #f2f4f7;
-  --seq-ink-3: #14171c;
-  --seq-ink-4: #14171c;
-  --dec: #e66767;
-  --inc: #3987e5;
-  --total: #9aa1ad;
-  --warning: #fab219;
-  --warning-ink: #1a1408;
-  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.35);
 }

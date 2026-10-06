@@ -56,7 +56,7 @@
 | 사이트 보기 | `site/index.html`을 브라우저로 연다. 또는 `python3 -m http.server 8000 -d site` | 빌드·설치가 필요 없다. 글꼴은 인터넷 연결 시 적용된다 |
 | 보고서 생성 구역 갱신 | `node site/scripts/generate.mjs` | 분석 출력이 바뀌었을 때 실행한다. 본문 숫자·출력 사이 합계가 다르면 실패한다 |
 | 생성 구역 최신 여부 검사 | `node site/scripts/generate.mjs --check` | 파일을 바꾸지 않는다. CI가 쓴다 |
-| 웹 접근성 확인 | axe-core, 키보드 탐색, 320px 화면, 밝은·어두운 테마 | 기준은 [docs/design.md](design.md). CI 자동 검사는 없다 |
+| 웹 접근성 확인 | axe-core, 키보드 탐색, 320px 화면, 운영체제 어두운 모드에서도 밝은 화면 유지 | 기준은 [docs/design.md](design.md). CI 자동 검사는 없다 |
 | 웹 배포 | `main`에 `site/`·`analyses/` 변경이 반영되면 GitHub Actions가 검사 후 배포 | 저장소 Settings → Pages의 Source를 GitHub Actions로 설정해야 한다 |
 | 인증 API 수집 | 서비스별 실행 명령은 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md) 참고 | 서비스별 키·승인·네트워크 필요. 저장된 자료 재분석에는 수집 불필요 |
 
@@ -83,5 +83,5 @@
 - 현재 스크립트의 분석일·기준연도와 검증 조건은 초기 분석 자료에 맞춰져 있다. 새로운 조사연도·등록 이력을 넣으면 기존 조건을 먼저 검토해야 한다.
 - CSV만으로 숫자 계산을 재현할 수 있으나, 원문 추출·전사는 자동화되지 않았다. 원문 확인과 코드 재현은 검증 범위가 다르다.
 - Python 3.14.2에서 실행을 확인했다. 다른 OS·Python 버전의 실제 동작은 미확인이다.
-- 생성 스크립트는 macOS·Node 20.19.0에서만 확인했다. CI는 Node 24로 설정했고 아직 실행하지 않았다.
+- 생성 스크립트 검사는 macOS·Node 20.19.0과 GitHub Actions(ubuntu-24.04·Node 24.21.0)에서 통과했다(2026-10-06). 그 밖의 OS·Node 버전은 미확인이다.
 - `raw/` 원본·`.env`·가상환경 등은 Git에서 제외한다. 분석 출력은 현재 저장소 파일로 관리하며, 향후 대용량 데이터 보관 방식은 미정이다.

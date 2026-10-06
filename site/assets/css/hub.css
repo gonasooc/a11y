@@ -202,23 +202,3 @@
   font-size: 0.9375rem;
   line-height: 1.6;
 }
-
-.principles {
-  display: grid;
-  gap: 0.75rem;
-  max-width: var(--measure);
-  margin: 0 0 1.25rem;
-  padding: 0;
-  list-style: none;
-}
-
-.principles li {
-  margin: 0;
-  padding-left: 1rem;
-  border-left: 3px solid var(--rule);
-  color: var(--ink-2);
-}
-
-.principles strong {
-  color: var(--ink);
-}

@@ -5,14 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>디지털포용법 시행 전후 데이터 분석 · a11y</title>
     <meta name="description" content="디지털포용법 시행 전후의 이용자 지수, 무인민원발급기 접근성 기능, 조달 요청 흐름을 공개 자료로 정리한 탐색적 기술통계. 정책 인과효과 판정은 판단 불가." />
-    <meta name="color-scheme" content="light dark" />
+    <meta name="color-scheme" content="light" />
     <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
-    <script>
-      try {
-        const saved = localStorage.getItem('a11y-theme');
-        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
-      } catch (error) {}
-    </script>
     <link rel="stylesheet" href="../../assets/css/tokens.css" />
     <link rel="stylesheet" href="../../assets/css/base.css" />
     <link rel="stylesheet" href="../../assets/css/chart.css" />
@@ -22,7 +16,6 @@
     <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" />
     <!-- 일반 스크립트(defer)라서 파일을 더블클릭해 열어도 동작한다. 순서를 바꾸지 않는다. -->
     <script defer src="../../assets/js/format.js"></script>
-    <script defer src="../../assets/js/theme.js"></script>
     <script defer src="../../assets/js/chart/core.js"></script>
     <script defer src="../../assets/js/chart/line.js"></script>
     <script defer src="../../assets/js/chart/multiples.js"></script>
@@ -45,12 +38,6 @@
           <li><a href="../../index.html">전체 목록</a></li>
           <li><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">원문 Markdown<span class="visually-hidden"> (GitHub에서 열림)</span></a></li>
         </ul>
-        <fieldset class="theme-switch" data-theme-switch>
-          <legend>화면 테마</legend>
-          <label><input type="radio" name="theme" value="auto" checked />자동</label>
-          <label><input type="radio" name="theme" value="light" />밝게</label>
-          <label><input type="radio" name="theme" value="dark" />어둡게</label>
-        </fieldset>
       </div>
     </header>
 
@@ -1144,12 +1131,12 @@ python3 analyses/digital-inclusion/kosis_analyze.py --snapshot 2026-10-03
 python3 analyses/digital-inclusion/mois_analyze.py --snapshot 2026-10-03
 python3 analyses/digital-inclusion/pps_analyze.py
 python3 analyses/digital-inclusion/followup_analyze.py</code></pre>
-              <p>이 페이지의 차트와 표는 빌드할 때 아래 파일에서 직접 계산한다. 본문에 쓴 숫자도 빌드 중 같은 계산값과 대조하며, 하나라도 다르면 빌드가 멈춘다. 분석 출력이 바뀌면 문장을 사람이 다시 읽고 고치게 하기 위해서다.</p>
+              <p>이 페이지의 차트와 표는 생성 스크립트(<code>node site/scripts/generate.mjs</code>)가 아래 파일에서 계산해 넣는다. 본문에 쓴 숫자도 같은 계산값과 대조하며, 하나라도 다르면 검사가 실패해 배포되지 않는다. 분석 출력이 바뀌면 문장을 사람이 다시 읽고 고치게 하기 위해서다.</p>
             </div>
             <!--table:provenance-->
-<div class="table-scroll" role="region" aria-label="이 페이지가 빌드 시점에 읽은 분석 파일" tabindex="0">
+<div class="table-scroll" role="region" aria-label="이 페이지를 생성할 때 읽은 분석 파일" tabindex="0">
 <table class="data-table">
-<caption>이 페이지가 빌드 시점에 읽은 분석 파일</caption>
+<caption>이 페이지를 생성할 때 읽은 분석 파일</caption>
 <thead><tr><th scope="col">파일</th><th scope="col">형식</th><th scope="col">SHA-256 앞 12자리</th></tr></thead>
 <tbody>
 <tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/kosis_digital_divide_2026-10-03.csv">analyses/digital-inclusion/data/kosis_digital_divide_2026-10-03.csv</a></th><td>240행</td><td>8ed2bcc2587f</td></tr>
@@ -1182,8 +1169,9 @@ python3 analyses/digital-inclusion/followup_analyze.py</code></pre>
 
     <footer class="site-footer">
       <div class="site-footer__inner">
-        <p>이 페이지는 <a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">docs/digital-inclusion-analysis.md</a>의 내용을 차트로 옮긴 것이다. 차트와 표의 값은 빌드할 때 <a href="https://github.com/gonasooc/a11y/tree/main/analyses/digital-inclusion">analyses/digital-inclusion</a>의 출력에서 직접 계산한다. 공개 자료의 탐색적 기술통계이며 법률 자문이 아니다.</p>
-        <p><a href="../../index.html">a11y 전체 목록</a> · <a href="https://github.com/gonasooc/a11y">GitHub 저장소</a></p>
+        <p>원문: <a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">docs/digital-inclusion-analysis.md</a> · 데이터: <a href="https://github.com/gonasooc/a11y/tree/main/analyses/digital-inclusion">analyses/digital-inclusion</a> 분석 출력</p>
+        <p>공개 자료의 탐색적 기술통계로, 법률 자문에 해당하지 않음</p>
+        <p><a href="../../index.html">a11y 전체 목록</a> · 소스 코드: <a href="https://github.com/gonasooc/a11y">gonasooc/a11y</a></p>
       </div>
       <!--report:data-->
 <script type="application/json" id="report-data">{"kosis":{"years":[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"overall":[{"key":"disabled","label":"장애인","values":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1]},{"key":"older_adults","label":"고령층","values":[54,58.3,63.1,64.3,68.6,69.1,69.9,70.7,71.4,71.8]},{"key":"low_income","label":"저소득층","values":[77.3,81.4,86.8,87.8,95.1,95.4,95.6,96.1,96.5,97]},{"key":"farmers_fishers","label":"농어민","values":[61.1,64.8,69.8,70.6,77.3,78.1,78.9,79.5,80,80.6]},{"key":"vulnerable_weighted","label":"취약계층 가중평균","values":[58.6,65.1,68.9,69.9,72.7,75.4,76.2,76.9,77.5,77.9]}],"disabled":[{"key":"overall","label":"종합","values":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1]},{"key":"access","label":"접근","values":[88.1,91.6,92,92.6,95.4,95.6,96.7,98,98.1,98.1]},{"key":"capability","label":"역량","values":[49.8,57.7,66.9,67.8,74.2,74.9,75.2,75.6,76.1,77]},{"key":"utilization","label":"활용","values":[64.6,71.5,73.6,74,81.4,81.5,82,82.5,83.7,84.3]}],"gaps":[{"key":"disabled","label":"장애인","access":98.1,"capability":77,"utilization":84.3},{"key":"older_adults","label":"고령층","access":95.4,"capability":56.2,"utilization":75.6},{"key":"low_income","label":"저소득층","access":99.8,"capability":94.1,"utilization":98.5},{"key":"farmers_fishers","label":"농어민","access":97.2,"capability":72.4,"utilization":80.5},{"key":"vulnerable_weighted","label":"취약계층 가중평균","access":96.6,"capability":65.9,"utilization":80.5}]},"web":[{"year":2019,"value":53.7},{"year":2020,"value":60.7},{"year":2021,"value":60.8},{"year":2022,"value":60.9},{"year":2023,"value":65.8},{"year":2024,"value":66.7},{"year":2025,"value":70.4}],"pps":{"months":[{"month":"2025-01","qty":179,"eok":22.97,"requests":103,"institutions":83},{"month":"2025-02","qty":207,"eok":30.85,"requests":113,"institutions":95},{"month":"2025-03","qty":262,"eok":50.28,"requests":89,"institutions":68},{"month":"2025-04","qty":155,"eok":30.54,"requests":53,"institutions":38},{"month":"2025-05","qty":68,"eok":11,"requests":46,"institutions":44},{"month":"2025-06","qty":41,"eok":6.1,"requests":22,"institutions":20},{"month":"2025-07","qty":49,"eok":6.41,"requests":21,"institutions":19},{"month":"2025-08","qty":21,"eok":3.24,"requests":11,"institutions":10},{"month":"2025-09","qty":69,"eok":8.69,"requests":37,"institutions":32},{"month":"2025-10","qty":47,"eok":8.7,"requests":30,"institutions":25},{"month":"2025-11","qty":58,"eok":9.05,"requests":37,"institutions":29},{"month":"2025-12","qty":360,"eok":58.98,"requests":40,"institutions":32},{"month":"2026-01","qty":331,"eok":54.89,"requests":183,"institutions":147},{"month":"2026-02","qty":166,"eok":27.02,"requests":88,"institutions":71},{"month":"2026-03","qty":183,"eok":29.29,"requests":99,"institutions":74},{"month":"2026-04","qty":71,"eok":10.34,"requests":38,"institutions":33},{"month":"2026-05","qty":52,"eok":10.1,"requests":22,"institutions":21},{"month":"2026-06","qty":52,"eok":6.59,"requests":30,"institutions":20},{"month":"2026-07","qty":13,"eok":1.84,"requests":11,"institutions":9},{"month":"2026-08","qty":26,"eok":3.82,"requests":20,"institutions":18},{"month":"2026-09","qty":34,"eok":4.47,"requests":22,"institutions":20}],"windows":[{"key":"febSep","label":"2~9월 · 주 비교","note":"전환월(1월) 제외","q2025":872,"q2026":597,"pct":-31.5},{"key":"sameDates","label":"1/22~9/30 · 같은 날짜 범위","note":"법정 시행일부터","q2025":930,"q2026":716,"pct":-23},{"key":"janSep","label":"1~9월 · 전환월 포함","note":"1월 전체 포함","q2025":1051,"q2026":928,"pct":-11.7},{"key":"febJun","label":"2~6월 · 중기업 의무 적용 전","note":"7/22 이전 구간","q2025":733,"q2026":524,"pct":-28.5}],"january":[{"year":"2025","early":121,"late":58,"total":179},{"year":"2026","early":212,"late":119,"total":331}],"events":[{"n":1,"date":"2025-01-21","label":"법 제정·공포","role":"anticipation","roleLabel":"공포"},{"n":2,"date":"2025-03-27","label":"기존 지능정보화 기본법의 설치·운영 의무 도입","role":"preceding_policy","roleLabel":"선행 정책"},{"n":3,"date":"2025-10-20","label":"검증기준 개정","role":"competing_event","roleLabel":"경쟁 사건"},{"n":4,"date":"2026-01-22","label":"법 시행, 대기업·중견기업 제조·임대 의무","role":"treatment","roleLabel":"시행"},{"n":5,"date":"2026-01-28","label":"장애인차별금지법의 키오스크 편의 조치 전면 적용","role":"competing_event","roleLabel":"경쟁 사건"},{"n":6,"date":"2026-04-20","label":"구 검증기준 적용 가능한 신청 마감","role":"competing_event","roleLabel":"경쟁 사건"},{"n":7,"date":"2026-04-22","label":"대기업·중견기업 계도 종료","role":"enforcement","roleLabel":"집행 일정"},{"n":8,"date":"2026-07-22","label":"중기업 제조·임대 의무","role":"staggered_treatment","roleLabel":"시차 적용"}]},"cohorts":{"start":872,"end":597,"steps":[{"key":"both","label":"두 해 모두 기록","institutions":101,"diff":-217},{"key":"2025_only","label":"2025년에만 기록","institutions":145,"diff":-260},{"key":"2026_only","label":"2026년에만 기록","institutions":105,"diff":202}]},"institutions":{"decreases":[{"label":"강남구","full":"서울특별시 강남구","q2025":40,"q2026":4},{"label":"영등포구","full":"서울특별시 영등포구","q2025":33,"q2026":5},{"label":"성동구","full":"서울특별시 성동구","q2025":25,"q2026":1},{"label":"마포구","full":"서울특별시 마포구","q2025":24,"q2026":2},{"label":"은평구","full":"서울특별시 은평구","q2025":21,"q2026":2}],"increases":[{"label":"남양주시","full":"경기도 남양주시","q2025":1,"q2026":15},{"label":"성남시 수정구","full":"경기도 성남시 수정구","q2025":0,"q2026":13}]},"products":[{"label":"TAPI-9320B","sub":"한국타피 · 무인민원발급기/시청각장애인겸용","q2025":142,"q2026":69},{"label":"AT-K300E","sub":"에니텍시스 · 무인민원발급기/시청각장애인겸용","q2025":131,"q2026":61},{"label":"AT-K300","sub":"에니텍시스 · 무인민원발급기/시청각장애인겸용","q2025":82,"q2026":39},{"label":"IS-2000L","sub":"에니텍시스 · 통합민원발급기","q2025":195,"q2026":154}],"registry":{"years":[{"label":"2023","value":3,"partial":false},{"label":"2024","value":39,"partial":false},{"label":"2025","value":265,"partial":false},{"label":"2026","value":464,"partial":true}]},"coverage":{"law":{"date":"2026-01-22","label":"디지털포용법 시행 2026-01-22"},"domain":["2016-01-01","2027-01-01"],"rows":[{"label":"KOSIS 디지털정보격차","years":[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"span":"조사연도 2016~2025, 연 1회","after":"없음"},{"label":"민간 웹 접근성 실태조사","years":[2019,2020,2021,2022,2023,2024,2025],"span":"조사연도 2019~2025, 연 1회","after":"없음"},{"label":"과거 NIA 검증 목록","start":"2023-01-01","end":"2026-07-30","partial":true,"point":"2026-09-30","span":"등록번호 연도 2023~2026(2026년은 7/30 발급분까지), 2026-09-30 기록","after":"2026년 표기 부분집계, 최초 발급 이력 미검증"},{"label":"조달청 납품요구","start":"2025-01-01","end":"2026-09-30","span":"2025-01~2026-09 접수월","after":"있음 (구매 요청·변경 기록)"},{"label":"행안부 무인민원발급기","point":"2026-10-03","span":"2026-10-03 수집, 현재 상태 1회","after":"현재 상태만, 과거 이력 없음"}]},"hero":{"disabledOverall":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1],"wheelchairNoShare":9.689655172413794,"months":[{"month":"2025-01","qty":179},{"month":"2025-02","qty":207},{"month":"2025-03","qty":262},{"month":"2025-04","qty":155},{"month":"2025-05","qty":68},{"month":"2025-06","qty":41},{"month":"2025-07","qty":49},{"month":"2025-08","qty":21},{"month":"2025-09","qty":69},{"month":"2025-10","qty":47},{"month":"2025-11","qty":58},{"month":"2025-12","qty":360},{"month":"2026-01","qty":331},{"month":"2026-02","qty":166},{"month":"2026-03","qty":183},{"month":"2026-04","qty":71},{"month":"2026-05","qty":52},{"month":"2026-06","qty":52},{"month":"2026-07","qty":13},{"month":"2026-08","qty":26},{"month":"2026-09","qty":34}]},"meta":{"repoUrl":"https://github.com/gonasooc/a11y"}}</script>

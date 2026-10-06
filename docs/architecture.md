@@ -41,7 +41,7 @@
 ├── site/                      # GitHub Pages 정적 사이트(빌드 없음)
 │   ├── index.html             # 메인 허브, 각 페이지 링크
 │   ├── reports/<주제>/        # 보고서 페이지와 데이터 설정(report.config.mjs)
-│   ├── assets/                # 공통 스타일·테마·차트 스크립트
+│   ├── assets/                # 공통 스타일·차트 스크립트
 │   └── scripts/               # 생성 구역 채우기·숫자 검사(Node)
 └── analyses/digital-inclusion/
     ├── README.md              # 분석 재현 안내
@@ -65,7 +65,7 @@
 
 웹 보고서는 `outputs/`·`data/` → `site/scripts/generate.mjs`가 `site/reports/<주제>/report.config.mjs`로 표·차트 JSON·검사값 계산 → HTML의 생성 구역에 기록하고 본문 숫자를 대조 → 브라우저가 생성 구역의 JSON으로 차트를 그리는 흐름이다. 생성 결과를 HTML에 커밋하므로 사이트를 보는 데는 빌드가 필요 없다. Python 분석 코드는 이 과정에 참여하지 않으며, 웹은 저장소에 커밋된 출력만 읽는다.
 
-[analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py)는 초기 입력 파일만 해시로 기록하므로 후속 API 데이터 추가가 기준선의 입력 목록에 섞이지 않는다. 수집과 분석은 별도 명령이며, 오프라인 분석에는 인증키가 필요 없다. 데이터베이스와 웹 서버는 없고, 브라우저 코드는 정적 사이트의 차트 그리기와 화면 설정뿐이다.
+[analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py)는 초기 입력 파일만 해시로 기록하므로 후속 API 데이터 추가가 기준선의 입력 목록에 섞이지 않는다. 수집과 분석은 별도 명령이며, 오프라인 분석에는 인증키가 필요 없다. 데이터베이스와 웹 서버는 없고, 브라우저 코드는 정적 사이트의 차트 그리기뿐이다.
 
 ## 지켜야 할 구조 규칙
 

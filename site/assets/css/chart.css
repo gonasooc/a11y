@@ -133,23 +133,6 @@
   fill: #ffffff;
 }
 
-:root[data-theme='dark'] .label--inside.on-before {
-  fill: #ffffff;
-}
-
-:root[data-theme='dark'] .label--inside.on-after {
-  fill: #14171c;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:where(:not([data-theme='light'])) .label--inside.on-before {
-    fill: #ffffff;
-  }
-  :root:where(:not([data-theme='light'])) .label--inside.on-after {
-    fill: #14171c;
-  }
-}
-
 .leader {
   fill: none;
   stroke: var(--rule);
