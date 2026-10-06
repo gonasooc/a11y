@@ -1,0 +1,722 @@
+/* 분석 보고서 페이지 */
+.report {
+  max-width: 1240px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow span + span::before {
+  content: '·';
+  margin: 0 0.5em;
+  color: var(--rule);
+}
+
+/* 첫 화면 */
+.report-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 2rem;
+  padding: clamp(2.25rem, 6vw, 4.5rem) 0 2rem;
+}
+
+@media (min-width: 60rem) {
+  .report-hero {
+    grid-template-columns: minmax(0, 1.65fr) minmax(17rem, 1fr);
+    align-items: start;
+    gap: 3rem;
+  }
+}
+
+.report-hero h1 {
+  margin: 0.75rem 0 1.25rem;
+  font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
+  line-height: 1.25;
+}
+
+.lede {
+  max-width: 38em;
+  margin: 0 0 1rem;
+  color: var(--ink-2);
+  font-size: clamp(1.0625rem, 1rem + 0.35vw, 1.25rem);
+  line-height: 1.7;
+}
+
+.lede strong {
+  color: var(--ink);
+}
+
+.hero-meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* 판정: 장식 없이 상태와 근거만 보여 준다. */
+.verdict {
+  padding: 1.25rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.verdict__label {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.verdict__value {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 0 0 1rem;
+  color: var(--ink);
+  font-size: clamp(1.6rem, 1.3rem + 1vw, 2rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+}
+
+.verdict__icon {
+  flex: none;
+  width: 1.6rem;
+  height: 1.6rem;
+  color: var(--ink-2);
+}
+
+.verdict__scale {
+  display: flex;
+  gap: 0.35rem;
+  margin: 0 0 0.9rem;
+  padding: 0;
+  list-style: none;
+  font-size: 0.8125rem;
+}
+
+.verdict__scale li {
+  flex: 1;
+  margin: 0;
+  padding: 0.4rem;
+  border-radius: 6px;
+  background: var(--surface-sunk);
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.35;
+}
+
+.verdict__scale li[aria-current='true'] {
+  background: var(--ink);
+  color: var(--surface);
+  font-weight: 600;
+}
+
+.verdict__why {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+/* 핵심 수치 카드 */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
+  gap: 1rem;
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.kpis > li + li {
+  margin-top: 0;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  padding: 1.1rem 1.2rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.kpi__label {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.kpi__value {
+  margin: 0.4rem 0 0.2rem;
+  font-size: clamp(1.7rem, 1.35rem + 1.2vw, 2.25rem);
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  line-height: 1.15;
+}
+
+.kpi__value .arrow {
+  margin: 0 0.2em;
+  color: var(--muted);
+  font-weight: 400;
+}
+
+.kpi__value .unit {
+  margin-left: 0.1em;
+  color: var(--ink-2);
+  font-size: 0.55em;
+  font-weight: 400;
+}
+
+.kpi__delta {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.kpi__viz {
+  margin: 0.75rem 0 0.25rem;
+}
+
+.kpi__desc {
+  margin: 0.5rem 0 0;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.kpi__caveat {
+  margin: auto 0 0;
+  padding-top: 0.6rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.55;
+}
+
+.hero-note {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+/* 본문 배치 */
+.report-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem;
+}
+
+@media (min-width: 74rem) {
+  .report-body {
+    grid-template-columns: 13.5rem minmax(0, 1fr);
+    gap: 3rem;
+  }
+  .toc {
+    position: sticky;
+    top: 4.25rem;
+    align-self: start;
+    max-height: calc(100vh - 5.5rem);
+    overflow: auto;
+  }
+  .toc > summary {
+    display: none;
+  }
+}
+
+.toc {
+  padding: 0.75rem 0.9rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+  font-size: 0.875rem;
+}
+
+@media (min-width: 74rem) {
+  .toc {
+    padding: 0;
+    border: 0;
+    background: none;
+  }
+}
+
+.toc > summary {
+  list-style: none;
+  font-weight: 600;
+}
+
+.toc > summary::before {
+  content: '▸ ';
+  color: var(--muted);
+}
+
+.toc[open] > summary::before {
+  content: '▾ ';
+}
+
+.toc__title {
+  margin: 0 0 0.5rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.toc ol {
+  margin: 0.5rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.toc li + li {
+  margin-top: 0.1rem;
+}
+
+.toc a {
+  display: flex;
+  gap: 0.55rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 6px;
+  color: var(--ink-2);
+  line-height: 1.45;
+  text-decoration: none;
+}
+
+.toc a:hover {
+  color: var(--link);
+  text-decoration: underline;
+}
+
+.toc a[aria-current='true'] {
+  background: var(--surface-sunk);
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.toc__n {
+  flex: none;
+  min-width: 1.4rem;
+  padding-top: 0.1rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+}
+
+/* 절 */
+.report-section {
+  padding: 3.25rem 0 0.5rem;
+  border-top: 1px solid var(--hairline);
+  scroll-margin-top: 4rem;
+}
+
+.report-section:first-child {
+  border-top: 0;
+  padding-top: 0.5rem;
+}
+
+.section-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.section-head__n {
+  flex: none;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.8125rem;
+  letter-spacing: 0.04em;
+}
+
+.section-head h2 {
+  flex: 1 1 16rem;
+  font-size: clamp(1.5rem, 1.15rem + 1.3vw, 2.1rem);
+}
+
+.section-head__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.9rem;
+  font-size: 0.8125rem;
+}
+
+.added {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.05em 0.55em;
+  border-radius: 999px;
+  background: var(--surface-sunk);
+  color: var(--ink-2);
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  vertical-align: 0.35em;
+}
+
+.section-lead {
+  max-width: 38em;
+  margin: 0 0 1.25rem;
+  color: var(--ink);
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.65;
+}
+
+.prose {
+  max-width: var(--measure);
+}
+
+.prose h3 {
+  margin: 2rem 0 0.6rem;
+  font-size: 1.1875rem;
+  font-weight: 600;
+}
+
+/* 그림 */
+.figure {
+  margin: 1.75rem 0 2.25rem;
+  padding: clamp(1rem, 2.6vw, 1.5rem);
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius);
+  background: var(--surface);
+}
+
+.figure__head {
+  margin-bottom: 1rem;
+}
+
+.figure__kicker {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  letter-spacing: 0.04em;
+}
+
+.figure__title {
+  margin: 0 0 0.35rem;
+  font-family: var(--font-sans);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+.figure__takeaway {
+  max-width: 48em;
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.figure__foot {
+  margin-top: 1rem;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.figure__foot p {
+  margin: 0 0 0.35rem;
+}
+
+.kbd-hint {
+  margin: 0.5rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.figure:focus-within .kbd-hint {
+  opacity: 1;
+}
+
+.figure-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 21rem), 1fr));
+  gap: 1.5rem 2rem;
+}
+
+.figure-grid h4 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.table-view {
+  margin-top: 0.85rem;
+}
+
+.table-view > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  list-style: none;
+}
+
+.table-view > summary:hover {
+  border-color: var(--ink-2);
+}
+
+.table-view > summary::before {
+  content: '+';
+  width: 0.8em;
+  font-variant-numeric: tabular-nums;
+  text-align: center;
+}
+
+.table-view[open] > summary::before {
+  content: '−';
+}
+
+.table-view[open] > summary {
+  margin-bottom: 0.85rem;
+}
+
+/* 1장: 자료와 일정 */
+.unit-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.unit-grid > li + li {
+  margin-top: 0;
+}
+
+.unit-card {
+  height: 100%;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.unit-card h3 {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.unit-card p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.unit-card .unit {
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.timeline__item {
+  position: relative;
+  display: grid;
+  grid-template-columns: 2rem minmax(0, 1fr);
+  gap: 0 0.9rem;
+  margin: 0;
+  padding-bottom: 1.1rem;
+}
+
+.timeline__item + .timeline__item {
+  margin-top: 0;
+}
+
+.timeline__item::before {
+  content: '';
+  position: absolute;
+  top: 2.1rem;
+  bottom: 0.1rem;
+  left: calc(1rem - 1px);
+  width: 2px;
+  background: var(--hairline);
+}
+
+.timeline__item:last-child::before {
+  display: none;
+}
+
+.timeline__n {
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border: 1.5px solid var(--ink-2);
+  border-radius: 50%;
+  background: var(--surface);
+  font-size: 0.875rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline__item--treatment .timeline__n {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--page);
+}
+
+.timeline__item--planned_treatment .timeline__n {
+  border-style: dashed;
+}
+
+.timeline__head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.25rem 0.5rem;
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.timeline__head time {
+  color: var(--ink-2);
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline__event {
+  margin: 0.1rem 0;
+  font-weight: 600;
+}
+
+.timeline__impact {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.tag--treatment {
+  border-color: var(--ink);
+  background: var(--ink);
+  color: var(--page);
+}
+
+/* 8장: 남은 조건 */
+.limits {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 1rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.limits > li + li {
+  margin-top: 0;
+}
+
+.limit {
+  height: 100%;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.limit h3 {
+  margin: 0 0 0.6rem;
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.limit dl {
+  margin: 0;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.limit dt {
+  color: var(--muted);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.limit dd {
+  margin: 0 0 0.6rem;
+  color: var(--ink-2);
+}
+
+.limit dd:last-child {
+  margin-bottom: 0;
+}
+
+.limit--key {
+  border: 2px solid var(--ink);
+}
+
+.limit--key h3 {
+  color: var(--ink);
+}
+
+.cmd {
+  margin: 0 0 1rem;
+}
+
+.source-list {
+  margin: 0;
+  padding-left: 1.1rem;
+  font-size: 0.9375rem;
+}
+
+@media print {
+  .toc,
+  .table-view > summary {
+    display: none;
+  }
+  .report-body {
+    display: block;
+  }
+  .figure {
+    break-inside: avoid;
+  }
+}
+
+.toc__title {
+  display: none;
+}
+
+@media (min-width: 74rem) {
+  .toc__title {
+    display: block;
+  }
+}

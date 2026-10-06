@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>a11y · 접근성 도구와 데이터 분석</title>
+    <meta name="description" content="접근성 도구와 데이터 분석 페이지를 하나씩 추가하는 a11y 저장소의 공개 페이지." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const saved = localStorage.getItem('a11y-theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (error) {}
+    </script>
+    <link rel="stylesheet" href="assets/css/tokens.css" />
+    <link rel="stylesheet" href="assets/css/base.css" />
+    <link rel="stylesheet" href="assets/css/hub.css" />
+    <!-- 글꼴은 Pretendard 하나만 쓴다. 첫 화면을 막지 않도록 늦게 적용하고, 도착 전에는 시스템 글꼴로 보인다. -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" />
+    <script defer src="assets/js/theme.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-mark" href="index.html" aria-current="page">a11y <span>접근성 도구와 분석</span></a>
+        <ul class="site-nav" role="list">
+          <li><a href="https://github.com/gonasooc/a11y">GitHub 저장소</a></li>
+        </ul>
+        <fieldset class="theme-switch" data-theme-switch>
+          <legend>화면 테마</legend>
+          <label><input type="radio" name="theme" value="auto" checked />자동</label>
+          <label><input type="radio" name="theme" value="light" />밝게</label>
+          <label><input type="radio" name="theme" value="dark" />어둡게</label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main id="main" class="hub" tabindex="-1">
+      <section class="hub-hero" aria-labelledby="hub-title">
+        <p class="eyebrow"><span>a11y</span><span>공개 페이지 1개</span></p>
+        <h1 id="hub-title">접근성 도구와<br />데이터 분석</h1>
+        <p class="lede">접근성과 관련된 도구와 데이터 분석을 하나씩 추가한다. 각 페이지는 공개 자료와 이 저장소의 재현 가능한 코드에서 만든다.</p>
+      </section>
+
+      <section class="hub-section" aria-labelledby="entries-title">
+        <h2 id="entries-title">페이지</h2>
+        <!-- 새 페이지는 아래 목록에 항목을 하나 더한다. 링크는 index.html까지 적어야 파일로 열어도 이동한다. -->
+        <ol class="entries" role="list">
+          <li class="entry entry--analysis">
+            <article class="entry__body" aria-labelledby="entry-digital-inclusion">
+              <p class="entry__kind">데이터 분석</p>
+              <h3 class="entry__title" id="entry-digital-inclusion"><a href="reports/digital-inclusion/index.html">디지털포용법 시행 전후 데이터 분석</a></h3>
+              <p class="entry__summary">이용자 지수, 무인민원발급기 접근성 기능, 조달 요청 흐름을 차트로 정리했다. 공개 자료의 탐색적 기술통계이며, 정책 인과효과는 판단 불가로 표시했다.</p>
+              <ul class="entry__tags" aria-label="다루는 자료">
+                <li>KOSIS 디지털정보격차</li>
+                <li>행안부 무인민원발급기</li>
+                <li>조달청 나라장터쇼핑몰</li>
+              </ul>
+              <p class="entry__meta">최근 갱신 <time datetime="2026-10-06">2026-10-06</time></p>
+            </article>
+          </li>
+        </ol>
+      </section>
+
+      <section class="hub-section" aria-labelledby="refs-title">
+        <h2 id="refs-title">원문과 조사 문서</h2>
+        <p class="hub-sub">저장소의 Markdown 문서다. 링크는 GitHub에서 열린다.</p>
+        <ul class="refs" role="list">
+          <li>
+            <a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">디지털포용법 통합 보고서 원문<span class="visually-hidden"> (GitHub에서 열림)</span></a>
+            <span class="ref__path">docs/digital-inclusion-analysis.md</span>
+            <p>분석 페이지의 원문. 표와 출처 링크, 재현 명령을 모두 담았다.</p>
+          </li>
+          <li>
+            <a href="https://github.com/gonasooc/a11y/blob/main/docs/ideas.md">접근성 도구 아이디어<span class="visually-hidden"> (GitHub에서 열림)</span></a>
+            <span class="ref__path">docs/ideas.md</span>
+            <p>도구 아이디어 28개와 하위 제안, 공통 근거와 조건별 우선순위.</p>
+          </li>
+          <li>
+            <a href="https://github.com/gonasooc/a11y/blob/main/docs/README.md">접근성 조사 문서 홈<span class="visually-hidden"> (GitHub에서 열림)</span></a>
+            <span class="ref__path">docs/README.md</span>
+            <p>장애인 디지털 이용 환경, 민간 웹 접근성 법제, 연표와 출처 검증 노트.</p>
+          </li>
+          <li>
+            <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/README.md">분석 재현 안내<span class="visually-hidden"> (GitHub에서 열림)</span></a>
+            <span class="ref__path">analyses/digital-inclusion/README.md</span>
+            <p>입력 CSV, 분석 코드, 기계 판독용 결과와 실행 명령.</p>
+          </li>
+        </ul>
+      </section>
+
+      <section class="hub-section hub-about" aria-labelledby="about-title">
+        <h2 id="about-title">이 사이트를 만드는 방식</h2>
+        <ul class="principles" role="list">
+          <li><strong>모든 차트는 표로도 읽는다.</strong> 각 차트 아래의 ‘표로 보기’에 같은 값을 둔다. 차트 안에서는 키보드 화살표로 값을 하나씩 확인할 수 있다.</li>
+          <li><strong>숫자는 분석 출력에서 가져온다.</strong> 차트와 표는 분석 결과 파일에서 계산하고, 본문 숫자가 그 값과 다르면 검사가 실패한다.</li>
+          <li><strong>관찰과 효과를 구분한다.</strong> 자료로 정책 효과를 식별할 수 없으면 판단 불가로 표시한다.</li>
+        </ul>
+        <p class="hub-sub">이용하면서 접근성 문제를 발견하면 <a href="https://github.com/gonasooc/a11y/issues">GitHub 이슈</a>로 알려 주기 바란다.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>공개 자료를 조사·정리한 것이며 법률 자문이 아니다. 소스는 <a href="https://github.com/gonasooc/a11y">gonasooc/a11y</a>에 있다.</p>
+      </div>
+    </footer>
+  </body>
+</html>

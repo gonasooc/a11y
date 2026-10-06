@@ -1,6 +1,6 @@
 # 기술 명세
 
-> 초기 작성: 2026-10-02 · 인증 수집·검증 반영: 2026-10-03. 웹 기술 스택은 미정이다.
+> 초기 작성: 2026-10-02 · 인증 수집·검증 반영: 2026-10-03 · 웹 사이트 추가: 2026-10-06.
 
 기술 구성, 구현·검증 규칙과 실행 방법을 다룬다. 폴더 책임과 의존 관계는 [docs/architecture.md](architecture.md)에 있다.
 
@@ -13,9 +13,11 @@
 | 입력·출력 형식 | UTF-8 CSV·JSON, 문서는 Markdown | 코드의 읽기·쓰기와 입력 파일 |
 | 계산 | Decimal 차이 계산, 구성비는 소수점 첫째 자리 ROUND_HALF_UP | [analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py)의 `rounded` |
 | 의존성 관리 | 현재 분석에는 외부 패키지가 필요 없다 | 패키지·잠금·Python 프로젝트 설정 파일은 현재 저장소에서 확인되지 않는다 |
-| 웹 언어·프레임워크·패키지 관리자 | 미정 | 웹 구현과 관련 설정 파일이 없다 |
+| 웹 사이트 | 빌드 도구 없는 정적 HTML·CSS·JavaScript. 브라우저 스크립트는 모듈이 아닌 일반 스크립트라 파일로 열어도 동작한다 | [site/README.md](../site/README.md). 근거: [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md) |
+| 웹 의존성 | 설치할 패키지가 없다. 글꼴은 Pretendard(jsDelivr CDN, OFL), 눈금 계산은 d3-array 3.2.4에서 옮긴 함수(ISC) | 차트 라이브러리는 쓰지 않고 [site/assets/js/chart/](../site/assets/js/chart/)에 직접 구현했다 |
+| 보고서 데이터 생성 | Node 20 이상, 외부 패키지 없음 | [site/scripts/generate.mjs](../site/scripts/generate.mjs) |
 | API 인증·HTTP | 표준 라이브러리 urllib, 환경변수 또는 `.env` | [analyses/digital-inclusion/api_common.py](../analyses/digital-inclusion/api_common.py) |
-| 데이터베이스·웹 인증·배포·CI | 미정 | 관련 구현·설정 파일이 없다 |
+| 배포·CI | GitHub Actions가 생성 구역 검사 후 `site/`를 그대로 GitHub Pages에 올린다. PR에서는 검사만 한다 | [.github/workflows/pages.yml](../.github/workflows/pages.yml). 데이터베이스·웹 인증은 미정 |
 
 ## 지켜야 할 구현 규칙
 
@@ -29,6 +31,8 @@
 - 인증 수집기는 키가 들어간 URL·오류 메시지를 출력하지 않는다. 인증키는 허용된 공식 HTTPS 호스트에만 전송하고 예상치 못한 리다이렉트는 중단한다.
 - 현재 행안부 분석은 고유키 수·수신 행수·API 총건수 일치를 강제한다. 조달청 분석은 변경·취소의 부호와 품목 단위를 보존한다. 세부 기준은 [docs/digital-inclusion-analysis.md](digital-inclusion-analysis.md)에 있다.
 - KOSIS는 메타데이터의 수록연도·항목·분류 조합과 실제 셀을 대조한다. `PRD_SE=Y`로 요청한 연간 자료가 응답에서 `A`로 표기되는 것을 확인했고 원값을 보존한다. `jsonVD=Y`로 정상 JSON을 요청한다.
+- 웹 보고서의 표·차트 데이터는 생성 스크립트가 분석 출력에서 계산해 HTML의 생성 구역에 넣는다. 본문 숫자는 `data-check`로 그 값과 대조하고, 다르면 스크립트가 실패한다. 수집 원자료(`raw/`)는 읽지 않는다. 방법은 [site/README.md](../site/README.md)에 있다.
+- 웹 페이지 사이 링크와 자산은 상대경로로 쓰고, 페이지 링크는 `index.html`까지 적는다. 파일로 열어도 이동하고 `/<저장소>/` 하위 경로에서도 맞는다.
 - KOSIS와 보고서가 다르면 원문을 재확인하고 양쪽 값을 남긴다. 2016년 지표·고령층 기준 변경 이전 자료는 장기 주 비교에서 분리한다. 기준은 [analyses/digital-inclusion/kosis_analysis_plan.json](../analyses/digital-inclusion/kosis_analysis_plan.json)에 있다.
 
 문서 작성·갱신은 [AGENTS.md](../AGENTS.md)를 따른다. Context7에 관한 기존 지침도 보존돼 있다.
@@ -48,8 +52,12 @@
 | 인증 처리 테스트 | `python3 -m unittest discover -s analyses/digital-inclusion/tests -v` | 가짜 키·모의 응답만 사용, 네트워크 불필요 |
 | 조달 계산 경계 검증 | `python3 analyses/digital-inclusion/pps_analyze.py --self-test` | 변경·취소·단위·결측 처리, 네트워크 불필요 |
 | KOSIS 수집 경계 검증 | `python3 analyses/digital-inclusion/kosis_collect.py --self-test` | 기호·0·누락·중복·연간 주기 검증, 키·네트워크 불필요 |
-| 정적 검사·빌드 | `git diff --check` 외 전용 설정 없음 | 린터·빌드 도구는 미정 |
-| 웹 실행·배포 | 미정 | 웹 스택과 배포 방식 결정 필요 |
+| 정적 검사 | `git diff --check` | 린터는 미정 |
+| 사이트 보기 | `site/index.html`을 브라우저로 연다. 또는 `python3 -m http.server 8000 -d site` | 빌드·설치가 필요 없다. 글꼴은 인터넷 연결 시 적용된다 |
+| 보고서 생성 구역 갱신 | `node site/scripts/generate.mjs` | 분석 출력이 바뀌었을 때 실행한다. 본문 숫자·출력 사이 합계가 다르면 실패한다 |
+| 생성 구역 최신 여부 검사 | `node site/scripts/generate.mjs --check` | 파일을 바꾸지 않는다. CI가 쓴다 |
+| 웹 접근성 확인 | axe-core, 키보드 탐색, 320px 화면, 밝은·어두운 테마 | 기준은 [docs/design.md](design.md). CI 자동 검사는 없다 |
+| 웹 배포 | `main`에 `site/`·`analyses/` 변경이 반영되면 GitHub Actions가 검사 후 배포 | 저장소 Settings → Pages의 Source를 GitHub Actions로 설정해야 한다 |
 | 인증 API 수집 | 서비스별 실행 명령은 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md) 참고 | 서비스별 키·승인·네트워크 필요. 저장된 자료 재분석에는 수집 불필요 |
 
 개별 작업에서 실행한 환경·명령·통과 범위는 작업 문서에 기록한다. 이번 문서 적용에서 수행한 검증은 [docs/work/W-001-main-docs-starter.md](work/W-001-main-docs-starter.md)에 있다.
@@ -75,4 +83,5 @@
 - 현재 스크립트의 분석일·기준연도와 검증 조건은 초기 분석 자료에 맞춰져 있다. 새로운 조사연도·등록 이력을 넣으면 기존 조건을 먼저 검토해야 한다.
 - CSV만으로 숫자 계산을 재현할 수 있으나, 원문 추출·전사는 자동화되지 않았다. 원문 확인과 코드 재현은 검증 범위가 다르다.
 - Python 3.14.2에서 실행을 확인했다. 다른 OS·Python 버전의 실제 동작은 미확인이다.
+- 생성 스크립트는 macOS·Node 20.19.0에서만 확인했다. CI는 Node 24로 설정했고 아직 실행하지 않았다.
 - `raw/` 원본·`.env`·가상환경 등은 Git에서 제외한다. 분석 출력은 현재 저장소 파일로 관리하며, 향후 대용량 데이터 보관 방식은 미정이다.

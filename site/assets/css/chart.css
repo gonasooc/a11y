@@ -1,0 +1,731 @@
+/* 차트 공통: 표식은 가늘게, 격자는 머리카락 선, 글자는 글자 색 토큰만 쓴다. */
+.viz {
+  position: relative;
+}
+
+.viz-plot {
+  position: relative;
+}
+
+.viz-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  font-family: var(--font-sans);
+}
+
+.viz-svg text {
+  font-family: var(--font-sans);
+  pointer-events: none;
+}
+
+/* 계열 색 */
+.s1 { --c: var(--s1); }
+.s2 { --c: var(--s2); }
+.s3 { --c: var(--s3); }
+.s4 { --c: var(--s4); }
+.s5 { --c: var(--s5); }
+.muted { --c: var(--deemph); }
+.before { --c: var(--before); }
+.after { --c: var(--after); }
+.total { --c: var(--total); }
+.dec { --c: var(--dec); }
+.inc { --c: var(--inc); }
+.partial { --c: var(--before); }
+.bar--muted { --c: var(--deemph); }
+.bar--partial { --c: var(--before); }
+
+/* 격자·축 */
+.grid {
+  stroke: var(--hairline);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.baseline {
+  stroke: var(--rule);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.ref-line {
+  stroke: var(--ref);
+  stroke-width: 1.25;
+}
+
+.axis-label {
+  fill: var(--muted);
+  font-size: 12px;
+  font-variant-numeric: tabular-nums;
+}
+
+.axis-label--strong {
+  fill: var(--ink-2);
+  font-weight: 600;
+}
+
+.axis-label--compact {
+  font-size: 10.5px;
+  font-weight: 400;
+}
+
+.ref-label {
+  fill: var(--muted);
+  font-size: 12px;
+}
+
+.row-label {
+  fill: var(--ink);
+  font-size: 13px;
+  font-weight: 400;
+}
+
+.row-sub {
+  fill: var(--muted);
+  font-size: 11.5px;
+}
+
+.group-label {
+  fill: var(--ink-2);
+  font-size: 12.5px;
+  font-weight: 600;
+}
+
+.label {
+  fill: var(--ink-2);
+  font-size: 12.5px;
+  font-variant-numeric: tabular-nums;
+}
+
+.label--value {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.label--diff {
+  fill: var(--ink);
+  font-weight: 600;
+}
+
+.label--series {
+  fill: var(--ink-2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.label--note {
+  fill: var(--muted);
+  font-size: 11.5px;
+}
+
+.label--inside {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* 조각 안 숫자: 배경 단계마다 4.5:1 이상인 글자 색을 고른다. */
+.label--inside.on-before {
+  fill: #14171c;
+}
+
+.label--inside.on-after {
+  fill: #ffffff;
+}
+
+:root[data-theme='dark'] .label--inside.on-before {
+  fill: #ffffff;
+}
+
+:root[data-theme='dark'] .label--inside.on-after {
+  fill: #14171c;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) .label--inside.on-before {
+    fill: #ffffff;
+  }
+  :root:where(:not([data-theme='light'])) .label--inside.on-after {
+    fill: #14171c;
+  }
+}
+
+.leader {
+  fill: none;
+  stroke: var(--rule);
+  stroke-width: 1;
+}
+
+/* 표식 */
+.line {
+  fill: none;
+  stroke: var(--c);
+  stroke-width: 2;
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
+.area {
+  fill: var(--c);
+  opacity: 0.1;
+}
+
+.dot {
+  fill: var(--c);
+  stroke: var(--surface);
+  stroke-width: 2;
+}
+
+.dot--hover {
+  opacity: 0;
+}
+
+.bar {
+  fill: var(--c);
+}
+
+.range,
+.dumbbell-bar {
+  stroke: var(--rule);
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
+.dumbbell-bar {
+  stroke-width: 3;
+}
+
+.connector {
+  stroke: var(--ref);
+  stroke-width: 1;
+  shape-rendering: crispEdges;
+}
+
+.window-band {
+  fill: var(--surface-sunk);
+}
+
+.window-label {
+  fill: var(--ink-2);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.event-tick {
+  stroke: var(--ref);
+  stroke-width: 1;
+}
+
+.event-tick--main {
+  stroke: var(--ink);
+  stroke-width: 1.5;
+}
+
+.event-dot {
+  fill: var(--surface);
+  stroke: var(--ink-2);
+  stroke-width: 1.25;
+}
+
+.event-dot--main {
+  fill: var(--ink);
+  stroke: var(--ink);
+}
+
+.event-num {
+  fill: var(--ink);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.event-num--main {
+  fill: var(--surface);
+}
+
+/* 상호작용: 맞힘 영역은 표식보다 넓고, 키보드 초점은 둥근 고리로 보인다. */
+.datum {
+  outline: none;
+  cursor: default;
+}
+
+.datum .hit {
+  fill: transparent;
+}
+
+.datum .crosshair {
+  stroke: var(--ink-2);
+  stroke-width: 1;
+  opacity: 0;
+}
+
+.datum.is-active .crosshair,
+.datum.is-active .dot--hover {
+  opacity: 1;
+}
+
+.datum.is-active .bar {
+  opacity: 0.78;
+}
+
+.datum .focus-ring {
+  fill: none;
+  stroke: var(--focus);
+  stroke-width: 2.5;
+  opacity: 0;
+}
+
+.datum:focus-visible .focus-ring,
+.datum:focus .focus-ring {
+  opacity: 1;
+}
+
+/* 범례 */
+.viz-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1.1rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+}
+
+.viz-legend li + li {
+  margin-top: 0;
+}
+
+.viz-legend__item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.key {
+  display: inline-block;
+  flex: none;
+  background: var(--c);
+}
+
+.key--box {
+  width: 12px;
+  height: 12px;
+  border-radius: 3px;
+}
+
+.key--line {
+  width: 18px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+.key--dot {
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+}
+
+/* 툴팁: 값이 먼저, 이름이 뒤 */
+.viz-tip {
+  position: absolute;
+  z-index: 5;
+  min-width: 9rem;
+  max-width: 17rem;
+  padding: 0.6rem 0.75rem;
+  border: 1px solid var(--hairline);
+  border-radius: 10px;
+  background: var(--surface-raised);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+  font-size: 0.8125rem;
+  line-height: 1.45;
+  pointer-events: none;
+}
+
+.viz-tip__title {
+  margin: 0 0 0.35rem;
+  color: var(--ink-2);
+  font-weight: 600;
+}
+
+.viz-tip__rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viz-tip__rows li + li {
+  margin-top: 0.2rem;
+}
+
+.viz-tip__row {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.viz-tip__row strong {
+  font-size: 0.9375rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.viz-tip__label {
+  color: var(--muted);
+}
+
+.viz-tip__note {
+  margin: 0.4rem 0 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+/* 작은 여러 차트 */
+.viz:has(> .viz-multiples) {
+  container-type: inline-size;
+}
+
+.viz-multiples {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.viz-multiples > li + li {
+  margin-top: 0;
+}
+
+@container (min-width: 30rem) {
+  .viz-multiples {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@container (min-width: 50rem) {
+  .viz-multiples {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+.viz-panel__title {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: 0.9375rem;
+  font-weight: 600;
+}
+
+.viz-panel__summary {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.5;
+}
+
+.viz-footnote {
+  margin: 0.75rem 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* 차트 아래 정책 일정 목록 */
+.viz-events {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1rem;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.viz-events li + li {
+  margin-top: 0;
+}
+
+.viz-events li.is-main {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+.viz-events__n {
+  margin-right: 0.15rem;
+}
+
+.viz-events time {
+  font-variant-numeric: tabular-nums;
+}
+
+/* HTML 막대: 기능별 제공 비율, 구성비 */
+.meter-list {
+  display: grid;
+  gap: 0.15rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  container-type: inline-size;
+}
+
+.meter-list li + li {
+  margin-top: 0;
+}
+
+.meter {
+  display: grid;
+  grid-template-columns: minmax(8.5rem, 13rem) minmax(4rem, 1fr) 10.5rem;
+  align-items: center;
+  gap: 0.25rem 1rem;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid var(--hairline);
+  font-size: 0.9375rem;
+}
+
+.meter__label {
+  color: var(--ink);
+}
+
+.meter__track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--seq-1);
+  overflow: hidden;
+}
+
+.meter__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: 999px;
+  background: var(--s1);
+}
+
+.meter__value {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.meter__count {
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+.meter--emphasis .meter__label {
+  font-weight: 600;
+}
+
+/* 좁은 자리(반쪽 패널, 휴대폰)에서는 막대를 둘째 줄에 길게 둔다. */
+@container (max-width: 34rem) {
+  .meter {
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.35rem 0.75rem;
+  }
+  .meter__track {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+}
+
+/* 표 안 막대: 지역별 비교 */
+.bar-table th[scope='row'] {
+  white-space: nowrap;
+}
+
+.bar-table .cell-sub {
+  display: inline;
+  margin-left: 0.35rem;
+}
+
+.bar-td {
+  min-width: 9rem;
+}
+
+.bar-cell {
+  display: grid;
+  grid-template-columns: minmax(3.5rem, 1fr) auto;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.bar-cell__track {
+  position: relative;
+  height: 12px;
+  border-radius: 999px;
+  background: var(--seq-1);
+}
+
+.bar-cell__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: 999px;
+  background: var(--s1);
+}
+
+.bar-cell__ref {
+  position: absolute;
+  top: -4px;
+  bottom: -4px;
+  left: var(--v);
+  width: 2px;
+  margin-left: -1px;
+  background: var(--ink);
+}
+
+.bar-cell__value {
+  min-width: 4.2rem;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 열지도 표 */
+.heat-table {
+  width: auto;
+  min-width: min(100%, 30rem);
+}
+
+.heat-table th,
+.heat-table td {
+  padding: 0.75rem 1rem;
+}
+
+@media (max-width: 30rem) {
+  .heat-table th,
+  .heat-table td {
+    padding: 0.6rem 0.6rem;
+  }
+  .heat-table .cell-main {
+    font-size: 1rem;
+  }
+}
+
+.heat-table td {
+  min-width: 6.5rem;
+  border: 2px solid var(--surface);
+  border-radius: 4px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.heat-table .cell-main {
+  display: block;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.heat-table .cell-sub {
+  color: inherit;
+}
+
+.heat-1 { background: var(--seq-1); color: var(--seq-ink-1); }
+.heat-2 { background: var(--seq-2); color: var(--seq-ink-2); }
+.heat-3 { background: var(--seq-3); color: var(--seq-ink-3); }
+.heat-4 { background: var(--seq-4); color: var(--seq-ink-4); }
+
+.heat--flag {
+  outline: 3px solid var(--ink);
+  outline-offset: -3px;
+}
+
+/* 출처 대조 행렬 */
+.rc-matrix td {
+  padding: 0.3rem 0.6rem;
+  border: 2px solid var(--surface);
+  font-size: 0.8125rem;
+}
+
+.rc-matrix .rc--match {
+  background: var(--surface-sunk);
+  color: var(--muted);
+}
+
+.rc-matrix .rc--diff {
+  background: var(--warning);
+  color: var(--warning-ink);
+  font-weight: 600;
+}
+
+.rc-matrix .rc--diff .cell-main::before {
+  content: '! ';
+}
+
+.rc-matrix .rc--diff .cell-sub {
+  color: inherit;
+}
+
+.rc-matrix tbody tr:nth-child(5n) th,
+.rc-matrix tbody tr:nth-child(5n) td {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* 작은 그림 */
+.spark {
+  display: block;
+  width: 100%;
+  height: 44px;
+  overflow: visible;
+}
+
+.spark-meter {
+  position: relative;
+  display: block;
+  height: 10px;
+  margin: 1rem 0 0.9rem;
+  border-radius: 999px;
+  background: var(--seq-1);
+  overflow: hidden;
+}
+
+.spark-meter__fill {
+  position: absolute;
+  inset: 0 auto 0 0;
+  width: var(--v);
+  border-radius: 999px;
+  background: var(--s1);
+}
+
+/* 강제 색상 모드: 시스템 색으로 표식을 다시 칠한다. */
+@media (forced-colors: active) {
+  .line,
+  .range,
+  .dumbbell-bar,
+  .connector,
+  .leader {
+    stroke: CanvasText;
+  }
+  .bar,
+  .dot,
+  .key {
+    fill: CanvasText;
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+  .area,
+  .window-band {
+    fill: transparent;
+  }
+  .datum .focus-ring,
+  .datum .crosshair {
+    stroke: Highlight;
+  }
+  .meter__fill,
+  .bar-cell__fill,
+  .spark-meter__fill {
+    background: CanvasText;
+    forced-color-adjust: none;
+  }
+  .meter__track,
+  .bar-cell__track,
+  .spark-meter {
+    border: 1px solid CanvasText;
+    background: Canvas;
+    forced-color-adjust: none;
+  }
+  .heat--flag,
+  .rc-matrix .rc--diff {
+    outline: 3px solid Highlight;
+  }
+}

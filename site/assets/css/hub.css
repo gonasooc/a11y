@@ -1,0 +1,224 @@
+/* 메인 허브 */
+.hub {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.hub-hero {
+  padding: clamp(3rem, 9vw, 7rem) 0 clamp(2rem, 5vw, 3.5rem);
+  border-bottom: 1px solid var(--hairline);
+}
+
+.hub-hero h1 {
+  margin: 0.9rem 0 1.25rem;
+  font-size: clamp(2.25rem, 1.5rem + 3vw, 3.5rem);
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.025em;
+}
+
+.hub-hero .lede {
+  max-width: 34em;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.eyebrow span + span::before {
+  content: '·';
+  margin: 0 0.5em;
+  color: var(--rule);
+}
+
+.lede {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.3rem);
+  line-height: 1.7;
+}
+
+.hub-section {
+  padding: 3rem 0 0.5rem;
+}
+
+.hub-section > h2 {
+  margin-bottom: 1rem;
+  font-size: clamp(1.4rem, 1.1rem + 1vw, 1.85rem);
+}
+
+.hub-sub {
+  max-width: var(--measure);
+  margin: -0.25rem 0 1.25rem;
+  color: var(--muted);
+  font-size: 0.9375rem;
+}
+
+/* 페이지 목록: 번호가 붙은 등록부처럼 */
+.entries {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: entry;
+}
+
+.entry {
+  position: relative;
+  counter-increment: entry;
+  display: grid;
+  grid-template-columns: 3.25rem minmax(0, 1fr);
+  gap: 0 1rem;
+  margin: 0;
+  padding: 1.5rem 0;
+  border-top: 1px solid var(--hairline);
+}
+
+.entry:last-child {
+  border-bottom: 1px solid var(--hairline);
+}
+
+.entry::before {
+  content: counter(entry, decimal-leading-zero);
+  padding-top: 0.35rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.875rem;
+}
+
+.entry__kind {
+  margin: 0 0 0.35rem;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-weight: 600;
+}
+
+.entry__title {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.65rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.35;
+}
+
+.entry__title a {
+  color: var(--ink);
+  text-decoration: none;
+}
+
+/* 제목 링크의 누를 수 있는 영역을 항목 전체로 넓힌다(링크 이름은 제목 그대로). */
+.entry__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-sm);
+}
+
+.entry:hover .entry__title a,
+.entry__title a:focus-visible {
+  color: var(--link);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.entry__title a:focus-visible {
+  outline: none;
+}
+
+.entry__title a:focus-visible::after {
+  outline: 3px solid var(--focus);
+  outline-offset: 4px;
+}
+
+.entry__summary {
+  max-width: 44em;
+  margin: 0 0 0.75rem;
+  color: var(--ink-2);
+}
+
+.entry__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin: 0 0 0.75rem;
+  padding: 0;
+  list-style: none;
+}
+
+.entry__tags li {
+  margin: 0;
+  padding: 0.1rem 0.6rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+}
+
+.entry__meta {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+}
+
+/* 원문 문서 */
+.refs {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.75rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.refs > li {
+  margin: 0;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.refs a {
+  font-weight: 600;
+}
+
+.ref__path {
+  display: block;
+  margin: 0.15rem 0 0.4rem;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  font-size: 0.75rem;
+  overflow-wrap: anywhere;
+}
+
+.refs p {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.principles {
+  display: grid;
+  gap: 0.75rem;
+  max-width: var(--measure);
+  margin: 0 0 1.25rem;
+  padding: 0;
+  list-style: none;
+}
+
+.principles li {
+  margin: 0;
+  padding-left: 1rem;
+  border-left: 3px solid var(--rule);
+  color: var(--ink-2);
+}
+
+.principles strong {
+  color: var(--ink);
+}

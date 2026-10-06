@@ -1,0 +1,1193 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>디지털포용법 시행 전후 데이터 분석 · a11y</title>
+    <meta name="description" content="디지털포용법 시행 전후의 이용자 지수, 무인민원발급기 접근성 기능, 조달 요청 흐름을 공개 자료로 정리한 탐색적 기술통계. 정책 인과효과 판정은 판단 불가." />
+    <meta name="color-scheme" content="light dark" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <script>
+      try {
+        const saved = localStorage.getItem('a11y-theme');
+        if (saved === 'light' || saved === 'dark') document.documentElement.dataset.theme = saved;
+      } catch (error) {}
+    </script>
+    <link rel="stylesheet" href="../../assets/css/tokens.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/chart.css" />
+    <link rel="stylesheet" href="../../assets/css/report.css" />
+    <!-- 글꼴은 Pretendard 하나만 쓴다. 첫 화면을 막지 않도록 늦게 적용하고, 도착 전에는 시스템 글꼴로 보인다. -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" />
+    <!-- 일반 스크립트(defer)라서 파일을 더블클릭해 열어도 동작한다. 순서를 바꾸지 않는다. -->
+    <script defer src="../../assets/js/format.js"></script>
+    <script defer src="../../assets/js/theme.js"></script>
+    <script defer src="../../assets/js/chart/core.js"></script>
+    <script defer src="../../assets/js/chart/line.js"></script>
+    <script defer src="../../assets/js/chart/multiples.js"></script>
+    <script defer src="../../assets/js/chart/dots.js"></script>
+    <script defer src="../../assets/js/chart/columns.js"></script>
+    <script defer src="../../assets/js/chart/monthly.js"></script>
+    <script defer src="../../assets/js/chart/dumbbell.js"></script>
+    <script defer src="../../assets/js/chart/waterfall.js"></script>
+    <script defer src="../../assets/js/chart/split.js"></script>
+    <script defer src="../../assets/js/chart/spark.js"></script>
+    <script defer src="../../assets/js/chart/coverage.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-mark" href="../../index.html">a11y <span>접근성 도구와 분석</span></a>
+        <ul class="site-nav" role="list">
+          <li><a href="../../index.html">전체 목록</a></li>
+          <li><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">원문 Markdown<span class="visually-hidden"> (GitHub에서 열림)</span></a></li>
+        </ul>
+        <fieldset class="theme-switch" data-theme-switch>
+          <legend>화면 테마</legend>
+          <label><input type="radio" name="theme" value="auto" checked />자동</label>
+          <label><input type="radio" name="theme" value="light" />밝게</label>
+          <label><input type="radio" name="theme" value="dark" />어둡게</label>
+        </fieldset>
+      </div>
+    </header>
+
+    <main id="main" class="report" tabindex="-1">
+      <section class="report-hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span>데이터 분석</span><span>탐색적 기술통계</span><span>수집·분석 기준 2026-10-03</span></p>
+          <h1 id="page-title">디지털포용법 시행 전후 데이터 분석</h1>
+          <p class="lede">
+            <strong>시행 전 이용자 지수의 상승, 현재 발급기의 기능 차이, 시행 전후 조달 요청의 변화를 확인했다. 그러나 디지털포용법이 접근성을 얼마나 개선했는지는 아직 판단할 수 없다.</strong>
+            자료마다 관측 단위와 기간이 다르고, 같은 시기에 다른 접근성 정책도 시행됐기 때문이다.
+          </p>
+          <p class="hero-meta">초기 보고서·과거 집계 재계산 2026-10-02 · 기관·제품별 분해 2026-10-04 추가 · 이 페이지는 <a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">docs/digital-inclusion-analysis.md<span class="visually-hidden"> (GitHub에서 열림)</span></a>를 시각화했다.</p>
+        </div>
+        <div class="verdict" role="group" aria-labelledby="verdict-label">
+          <p class="verdict__label" id="verdict-label">정책 인과효과 판정</p>
+          <p class="verdict__value"><svg class="verdict__icon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="2" /><path d="M9.5 9.3a2.6 2.6 0 1 1 3.7 2.3c-.8.4-1.2.9-1.2 1.7v.5" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" /><circle cx="12" cy="17.2" r="1.2" fill="currentColor" /></svg>판단 불가</p>
+          <ol class="verdict__scale" aria-label="판정 3단계">
+            <li>효과 근거 있음</li>
+            <li>조건부</li>
+            <li aria-current="true">판단 불가</li>
+          </ol>
+          <p class="verdict__why">관찰한 변화와 정책의 인과효과를 구분했다. 자료로 효과를 식별할 수 없어 판단 불가로 표시한다. <a href="#limits">판정을 막는 조건</a></p>
+        </div>
+      </section>
+
+      <h2 class="visually-hidden" id="kpi-heading">핵심 수치</h2>
+      <ul class="kpis" role="list" aria-labelledby="kpi-heading">
+        <li>
+          <article class="kpi" aria-labelledby="kpi-1">
+            <h3 class="kpi__label" id="kpi-1">이용자 · 장애인 디지털정보화 종합지수</h3>
+            <p class="kpi__value"><span data-check="kosis.disabled.overall.2016">65.4</span><span class="arrow" aria-hidden="true">→</span><span class="visually-hidden">에서 </span><span data-check="kosis.disabled.overall.2025">84.1</span></p>
+            <p class="kpi__delta">역량지수 <span data-check="kosis.disabled.capability.2016">49.8</span> → <span data-check="kosis.disabled.capability.2025">77.0</span></p>
+            <div class="kpi__viz" data-viz="heroKosis"></div>
+            <p class="kpi__desc">2016년에서 2025년 조사연도까지. 해당 연도 일반국민을 100으로 둔 상대지수다.</p>
+            <p class="kpi__caveat">최신 조사연도가 2025년이어서 모두 법 시행 전 기준선이다.</p>
+          </article>
+        </li>
+        <li>
+          <article class="kpi" aria-labelledby="kpi-2">
+            <h3 class="kpi__label" id="kpi-2">현장 기기 · 휠체어 사용자 조작 불가 표시</h3>
+            <p class="kpi__value"><span data-check="mois.f.wheelchair.no">562</span><span class="unit">건</span></p>
+            <p class="kpi__delta">사용 중으로 기재된 무인민원발급기 <span data-check="mois.inUse">5,800</span>건 중</p>
+            <div class="kpi__viz" data-viz="heroMois"></div>
+            <p class="kpi__desc">행정안전부 무인민원발급기정보, 2026-10-03 수집.</p>
+            <p class="kpi__caveat">표시된 값이다. 실제 작동이나 이용 경험은 별도 확인이 필요하다.</p>
+          </article>
+        </li>
+        <li>
+          <article class="kpi" aria-labelledby="kpi-3">
+            <h3 class="kpi__label" id="kpi-3">조달 · 증명발급기·무인안내시스템 납품요구 순증</h3>
+            <p class="kpi__value"><span data-check="pps.febSep.q2025">872</span><span class="arrow" aria-hidden="true">→</span><span class="visually-hidden">에서 </span><span data-check="pps.febSep.q2026">597</span><span class="unit">대</span></p>
+            <p class="kpi__delta"><span data-check="pps.febSep.pct">−31.5%</span> · 2025년과 2026년의 같은 2~9월</p>
+            <div class="kpi__viz" data-viz="heroPps"></div>
+            <p class="kpi__desc">법정 시행일과 같은 1/22~9/30끼리 비교하면 <span data-check="pps.sameDates.q2025">930</span>대 → <span data-check="pps.sameDates.q2026">716</span>대, <span data-check="pps.sameDates.pct">−23.0%</span>다.</p>
+            <p class="kpi__caveat">구매 요청·변경의 흐름이며 설치 대수나 접근성 개선량은 아니다.</p>
+          </article>
+        </li>
+      </ul>
+      <p class="hero-note">아래 수치는 실제 수집·계산한 기술통계다. 신뢰구간·p값·정책효과 추정치는 산출하지 않았다.</p>
+      <noscript><p class="note">차트는 자바스크립트로 그린다. 본문과 표는 자바스크립트 없이도 읽을 수 있다.</p></noscript>
+
+      <div class="report-body">
+        <details class="toc" open data-toc>
+          <summary>목차</summary>
+          <nav aria-label="보고서 목차">
+            <p class="toc__title" aria-hidden="true">목차</p>
+            <ol>
+              <li><a href="#scope"><span class="toc__n">01</span>자료 범위와 정책 시점</a></li>
+              <li><a href="#users"><span class="toc__n">02</span>이용자 측의 시행 전 기준선</a></li>
+              <li><a href="#web"><span class="toc__n">03</span>민간 웹 접근성 공표점수</a></li>
+              <li><a href="#kiosks"><span class="toc__n">04</span>무인민원발급기의 접근성 기능</a></li>
+              <li><a href="#procurement"><span class="toc__n">05</span>시행 전후 조달 요청</a></li>
+              <li><a href="#decomposition"><span class="toc__n">06</span>조달 감소의 구성</a></li>
+              <li><a href="#registry"><span class="toc__n">07</span>과거 NIA 검증 목록</a></li>
+              <li><a href="#limits"><span class="toc__n">08</span>효과 판단에 남은 조건</a></li>
+              <li><a href="#reconciliation"><span class="toc__n">09</span>보고서와 KOSIS 대조</a></li>
+              <li><a href="#reproduce"><span class="toc__n">10</span>재현과 검증</a></li>
+            </ol>
+          </nav>
+        </details>
+
+        <article class="report-article" aria-labelledby="page-title">
+          <section class="report-section" id="scope" aria-labelledby="scope-title">
+            <header class="section-head">
+              <span class="section-head__n">01</span>
+              <h2 id="scope-title">자료 범위와 정책 시점</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#data-scope">원문 §1<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">자료마다 관측 단위가 다르다. 검증 모델 수, 설치 기기 수, 납품요구 수, 이용자 연간 지수를 하나의 패널로 합치지 않고 각각 분석했다.</p>
+            <ul class="unit-grid" role="list">
+              <li class="unit-card">
+                <span class="unit">계층·집계 × 연도 상대지수</span>
+                <h3>KOSIS 디지털정보격차 4개 통계표</h3>
+                <p>2014~2025년 <span data-check="kosis.cells">240</span>개 값. 주 비교는 2016~2025년 <span data-check="kosis.primaryCells">200</span>개.</p>
+              </li>
+              <li class="unit-card">
+                <span class="unit">공표 평균</span>
+                <h3>NIA 공식 조사 보고서</h3>
+                <p>디지털정보화 2021~2025년 100개 값(KOSIS와 대조용), 민간 웹 접근성 2019~2025년 7개 값.</p>
+              </li>
+              <li class="unit-card">
+                <span class="unit">기기 기록</span>
+                <h3>행안부 무인민원발급기정보</h3>
+                <p>2026-10-03 수집, 고유 기기 기록 <span data-check="mois.received">5,803</span>건. 사용 여부와 접근성 기능 제공 표시.</p>
+              </li>
+              <li class="unit-card">
+                <span class="unit">등록 행 · 납품요구 행</span>
+                <h3>조달청 나라장터쇼핑몰 품목정보</h3>
+                <p>2025-01~2026-09 등록 <span data-check="pps.reg.all.rows">397</span>행, 납품요구 상세 <span data-check="pps.deliveryRows">1,494</span>행.</p>
+              </li>
+              <li class="unit-card">
+                <span class="unit">검증 모델</span>
+                <h3>과거 NIA 우선구매 검증 목록 집계</h3>
+                <p>2026-09-30 기록의 <span data-check="registry.total">771</span>개 모델에 관한 집계 14개. 이번에 다시 수집하지 못했다.</p>
+              </li>
+              <li class="unit-card">
+                <span class="unit">보류</span>
+                <h3>NIA 배리어프리 키오스크 위치 API</h3>
+                <p>사용자 결정으로 조회를 보류해 이번 분석에 넣지 않았다. 서비스 번호 15157403.</p>
+              </li>
+            </ul>
+            <div class="prose">
+              <p>보고서의 디지털정보화 100개 값은 KOSIS와 대조하는 자료이므로 240개와 합쳐 독립 관측 수로 세지 않는다. 조달청·행안부·KOSIS는 모두 실제 인증과 수집을 마쳤다. 여기서 ‘전체 수집’은 명시한 조회조건에서 API가 반환하는 자료를 모두 받았다는 뜻이며, 현장의 모든 기기나 전체 시장 거래를 포괄한다는 뜻은 아니다.</p>
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 1</p>
+                <h3 class="figure__title" id="fig-coverage-title">자료별 관측 시점과 법 시행일</h3>
+                <p class="figure__takeaway" id="fig-coverage-desc">두 연간 통계는 2025년 조사가 마지막이라 시행 후 관측이 없다. 시행일을 사이에 두고 이어지는 자료는 조달 요청뿐이고, 발급기 자료는 현재 상태 한 시점이다. 이것이 인과효과를 판단할 수 없는 첫째 이유다.</p>
+              </figcaption>
+              <div class="viz" data-viz="coverage" data-labelledby="fig-coverage-title" data-describedby="fig-coverage-desc"></div>
+              <p class="kbd-hint">차트 안에서 ↑·↓ 키로 자료를 옮기며 읽을 수 있다.</p>
+              <div class="figure__foot">
+                <p>회색 면은 시행일(2026-01-22) 이후. 연 1회 조사의 점은 조사연도를 나타낼 뿐 조사 시점의 날짜가 아니다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:coverage-->
+<div class="table-scroll" role="region" aria-label="자료별 관측 범위와 시행 후 관측 여부" tabindex="0">
+<table class="data-table">
+<caption>자료별 관측 범위와 시행 후 관측 여부</caption>
+<thead><tr><th scope="col">자료</th><th scope="col">관측 범위</th><th scope="col">시행 후 관측</th></tr></thead>
+<tbody>
+<tr><th scope="row">KOSIS 디지털정보격차</th><td>조사연도 2016~2025, 연 1회</td><td>없음</td></tr>
+<tr><th scope="row">민간 웹 접근성 실태조사</th><td>조사연도 2019~2025, 연 1회</td><td>없음</td></tr>
+<tr><th scope="row">과거 NIA 검증 목록</th><td>등록번호 연도 2023~2026(2026년은 7/30 발급분까지), 2026-09-30 기록</td><td>2026년 표기 부분집계, 최초 발급 이력 미검증</td></tr>
+<tr><th scope="row">조달청 납품요구</th><td>2025-01~2026-09 접수월</td><td>있음 (구매 요청·변경 기록)</td></tr>
+<tr><th scope="row">행안부 무인민원발급기</th><td>2026-10-03 수집, 현재 상태 1회</td><td>현재 상태만, 과거 이력 없음</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:coverage--></details>
+              </div>
+            </figure>
+
+            <div class="prose">
+              <h3 id="policy-timeline">어떤 정책의 전후인가</h3>
+              <p>디지털포용법은 <strong>2026-01-22 시행</strong>됐다. 그러나 모든 접근성 의무가 이날 새로 생긴 것은 아니다. 제조·임대 의무, 설치·운영 의무, 민간 웹·앱의 노력의무를 구분해야 한다. 검증 제품 모델 수 역시 법 전체의 효과를 대표하지 않는다. 아래 번호는 5장 조달 차트의 표식 번호와 같다.</p>
+            </div>
+            <!--html:policy-timeline-->
+<ol class="timeline" role="list">
+<li class="timeline__item timeline__item--anticipation">
+  <span class="timeline__n" aria-hidden="true">1</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2025-01-21">2025-01-21</time> <span class="tag tag--anticipation">공포</span></p>
+    <p class="timeline__event">법 제정·공포</p>
+    <p class="timeline__impact">시행 전에도 기업이 대응했을 수 있다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--preceding_policy">
+  <span class="timeline__n" aria-hidden="true">2</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2025-03-27">2025-03-27</time> <span class="tag tag--preceding_policy">선행 정책</span></p>
+    <p class="timeline__event">기존 지능정보화 기본법의 설치·운영 의무 도입</p>
+    <p class="timeline__impact">제조·임대 의무와 별도로 이어지는 정책</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--competing_event">
+  <span class="timeline__n" aria-hidden="true">3</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2025-10-20">2025-10-20</time> <span class="tag tag--competing_event">경쟁 사건</span></p>
+    <p class="timeline__event">검증기준 개정</p>
+    <p class="timeline__impact">등록 수요·처리 일정에 영향을 줄 수 있는 경쟁 사건</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--treatment">
+  <span class="timeline__n" aria-hidden="true">4</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2026-01-22">2026-01-22</time> <span class="tag tag--treatment">시행</span></p>
+    <p class="timeline__event">법 시행, 대기업·중견기업 제조·임대 의무</p>
+    <p class="timeline__impact">1월 전체를 사후로 분류하면 시행 전 21일이 섞인다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--competing_event">
+  <span class="timeline__n" aria-hidden="true">5</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2026-01-28">2026-01-28</time> <span class="tag tag--competing_event">경쟁 사건</span></p>
+    <p class="timeline__event">장애인차별금지법의 키오스크 편의 조치 전면 적용</p>
+    <p class="timeline__impact">제조 의무 6일 뒤 수요 측 정책이 겹친다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--competing_event">
+  <span class="timeline__n" aria-hidden="true">6</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2026-04-20">2026-04-20</time> <span class="tag tag--competing_event">경쟁 사건</span></p>
+    <p class="timeline__event">구 검증기준 적용 가능한 신청 마감</p>
+    <p class="timeline__impact">발급 마감이 아니다. 이후 발급량에도 영향을 줄 수 있다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--enforcement">
+  <span class="timeline__n" aria-hidden="true">7</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2026-04-22">2026-04-22</time> <span class="tag tag--enforcement">집행 일정</span></p>
+    <p class="timeline__event">대기업·중견기업 계도 종료</p>
+    <p class="timeline__impact">법정 시행일과 행정 집행 일정을 구분해야 한다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--staggered_treatment">
+  <span class="timeline__n" aria-hidden="true">8</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2026-07-22">2026-07-22</time> <span class="tag tag--staggered_treatment">시차 적용</span></p>
+    <p class="timeline__event">중기업 제조·임대 의무</p>
+    <p class="timeline__impact">중소기업 전체를 미처치 비교군으로 둘 수 없다</p>
+  </div>
+</li>
+<li class="timeline__item timeline__item--planned_treatment">
+  <span class="timeline__n" aria-hidden="true">9</span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="2027-01-22">2027-01-22</time> <span class="tag tag--planned_treatment">예정</span></p>
+    <p class="timeline__event">소기업·소상공인 제조·임대 의무 예정</p>
+    <p class="timeline__impact">분석 기준일 현재 미래 사건이다</p>
+  </div>
+</li>
+</ol>
+<!--/html:policy-timeline-->
+            <div class="note" role="note">
+              <span class="note__title">검증 모델 증가는 준수율 증가가 아니다</span>
+              제조자는 검증기준 충족 외에 직원 호출·실시간 음성안내 기능 지원 방식으로도 대응할 수 있다. 따라서 검증 모델 증가를 제조 의무 준수율 증가로 해석할 수 없다. 근거: <a href="https://www.law.go.kr/LSW/lsLinkCommonInfo.do?chrClsCd=010202&amp;lspttninfSeq=197967">시행령 제15조제2항</a>.
+            </div>
+            <p class="figure__foot">일정 출처: <a href="https://www.law.go.kr/LSW/lsInfoP.do?lsiSeq=268533">법률 원문</a> · <a href="https://www.law.go.kr/LSW/lsLinkCommonInfo.do?lsJoLnkSeq=1031809803">민간 웹·앱 제19조</a> · <a href="https://www.korea.kr/news/policyNewsView.do?newsId=148958373">정부 발표</a> · <a href="https://www.law.go.kr/lsInfoP.do?lsiSeq=282439">시행령</a> · <a href="https://www.mohw.go.kr/board.es?act=view&amp;bid=0027&amp;list_no=1487865&amp;mid=a10503000000">복지부 발표</a> · <a href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000266100">2025년 고시</a> · <a href="https://www.law.go.kr/LSW/admRulLsInfoP.do?admRulSeq=2100000273422">2026년 고시 부칙</a> · 기계 판독용 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/policy_events.csv">policy_events.csv</a>(<span data-check="events.count">9</span>건)</p>
+          </section>
+
+          <section class="report-section" id="users" aria-labelledby="users-title">
+            <header class="section-head">
+              <span class="section-head__n">02</span>
+              <h2 id="users-title">이용자 측의 시행 전 기준선</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#digital-baseline">원문 §2<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">모든 집단의 종합 공표지수가 시행 전부터 높아졌다. 그래서 2026년 값이 오르더라도 그 전체를 법 효과로 돌릴 수 없다.</p>
+            <div class="prose">
+              <p>각 지수는 <strong>해당 연도 일반국민을 100으로 둔 상대 수준</strong>이다. 100점 만점의 성공률도, 100을 상한으로 하는 점수도 아니며 변화 단위는 지수 포인트다. 일반국민의 수준이 움직여도 상대지수가 달라질 수 있으므로 취약계층의 절대 능력이 같은 폭으로 높아졌다고 해석하지 않는다. 취약계층 평균은 인구 규모를 고려한 가중평균이며, 독립된 다섯 번째 조사집단으로 취급하지 않는다.</p>
+            </div>
+            <div class="note" role="note">
+              <span class="note__title">왜 2016년부터인가</span>
+              네 통계표의 주석에 따르면 2016년부터 기존 정보화·스마트정보화 지표를 디지털정보화 지표로 통합했고, 고령층 기준도 만 50세 이상에서 만 55세 이상으로 바뀌었다. 그래서 주 비교는 2016~2025년 <span data-check="kosis.primaryCells">200</span>개 값으로 제한하고 2014~2015년 <span data-check="kosis.excludedCells">40</span>개 값은 원자료에 보존했다. 아래 변화는 조사구성 변화를 보정하지 않은 공표값의 차이다.
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 2</p>
+                <h3 class="figure__title" id="fig-overall-title">집단별 디지털정보화 종합지수, 2016~2025년</h3>
+                <p class="figure__takeaway" id="fig-overall-desc">다섯 계열 모두 시행 전부터 높아졌다. 2016→2025 차이는 고령층 <span data-check="kosis.overall.older_adults.diff1625">+17.8</span>에서 저소득층 <span data-check="kosis.overall.low_income.diff1625">+19.7</span> 지수 포인트 사이이고, 장애인은 <span data-check="kosis.disabled.overall.diff1625">+18.7</span>이다.</p>
+              </figcaption>
+              <div class="viz" data-viz="kosisOverall" data-labelledby="fig-overall-title" data-describedby="fig-overall-desc"></div>
+              <p class="kbd-hint">차트 안에서 ←·→ 키로 연도를 옮기며 다섯 계열의 값을 읽을 수 있다.</p>
+              <div class="figure__foot">
+                <p>출처: KOSIS <a href="https://kosis.kr/statHtml/statHtml.do?orgId=127&amp;tblId=DT_12017N008">DT_12017N008</a>(종합). 연평균 변화는 (2025년 값 − 2016년 값) ÷ 9년으로, 회귀 추세 계수가 아니다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:kosis-overall-change-->
+<div class="table-scroll" role="region" aria-label="집단별 종합지수의 변화 요약 (지수 포인트)" tabindex="0">
+<table class="data-table">
+<caption>집단별 종합지수의 변화 요약 (지수 포인트)</caption>
+<thead><tr><th scope="col">집단·집계</th><th scope="col" class="num">2016</th><th scope="col" class="num">2021</th><th scope="col" class="num">2024</th><th scope="col" class="num">2025</th><th scope="col" class="num">2016→2025 차이</th><th scope="col" class="num">연평균 포인트 변화</th><th scope="col" class="num">2024→2025 차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">장애인</th><td class="num">65.4</td><td class="num">81.7</td><td class="num">83.5</td><td class="num">84.1</td><td class="num">+18.7</td><td class="num">+2.08</td><td class="num">+0.6</td></tr>
+<tr><th scope="row">고령층</th><td class="num">54.0</td><td class="num">69.1</td><td class="num">71.4</td><td class="num">71.8</td><td class="num">+17.8</td><td class="num">+1.98</td><td class="num">+0.4</td></tr>
+<tr><th scope="row">저소득층</th><td class="num">77.3</td><td class="num">95.4</td><td class="num">96.5</td><td class="num">97.0</td><td class="num">+19.7</td><td class="num">+2.19</td><td class="num">+0.5</td></tr>
+<tr><th scope="row">농어민</th><td class="num">61.1</td><td class="num">78.1</td><td class="num">80.0</td><td class="num">80.6</td><td class="num">+19.5</td><td class="num">+2.17</td><td class="num">+0.6</td></tr>
+<tr><th scope="row">취약계층 가중평균</th><td class="num">58.6</td><td class="num">75.4</td><td class="num">77.5</td><td class="num">77.9</td><td class="num">+19.3</td><td class="num">+2.14</td><td class="num">+0.4</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">연평균 변화 = (2025년 값 − 2016년 값) ÷ 9년. 복리 증가율이나 회귀 추세 계수가 아니다.</p>
+<!--/table:kosis-overall-change--><!--table:kosis-overall-years-->
+<div class="table-scroll" role="region" aria-label="집단별 디지털정보화 종합지수, 2016~2025년 (해당 연도 일반국민 = 100)" tabindex="0">
+<table class="data-table">
+<caption>집단별 디지털정보화 종합지수, 2016~2025년 (해당 연도 일반국민 = 100)</caption>
+<thead><tr><th scope="col">조사연도</th><th scope="col" class="num">장애인</th><th scope="col" class="num">고령층</th><th scope="col" class="num">저소득층</th><th scope="col" class="num">농어민</th><th scope="col" class="num">취약계층 가중평균</th></tr></thead>
+<tbody>
+<tr><th scope="row">2016</th><td class="num">65.4</td><td class="num">54.0</td><td class="num">77.3</td><td class="num">61.1</td><td class="num">58.6</td></tr>
+<tr><th scope="row">2017</th><td class="num">70.0</td><td class="num">58.3</td><td class="num">81.4</td><td class="num">64.8</td><td class="num">65.1</td></tr>
+<tr><th scope="row">2018</th><td class="num">74.6</td><td class="num">63.1</td><td class="num">86.8</td><td class="num">69.8</td><td class="num">68.9</td></tr>
+<tr><th scope="row">2019</th><td class="num">75.2</td><td class="num">64.3</td><td class="num">87.8</td><td class="num">70.6</td><td class="num">69.9</td></tr>
+<tr><th scope="row">2020</th><td class="num">81.3</td><td class="num">68.6</td><td class="num">95.1</td><td class="num">77.3</td><td class="num">72.7</td></tr>
+<tr><th scope="row">2021</th><td class="num">81.7</td><td class="num">69.1</td><td class="num">95.4</td><td class="num">78.1</td><td class="num">75.4</td></tr>
+<tr><th scope="row">2022</th><td class="num">82.2</td><td class="num">69.9</td><td class="num">95.6</td><td class="num">78.9</td><td class="num">76.2</td></tr>
+<tr><th scope="row">2023</th><td class="num">82.8</td><td class="num">70.7</td><td class="num">96.1</td><td class="num">79.5</td><td class="num">76.9</td></tr>
+<tr><th scope="row">2024</th><td class="num">83.5</td><td class="num">71.4</td><td class="num">96.5</td><td class="num">80.0</td><td class="num">77.5</td></tr>
+<tr><th scope="row">2025</th><td class="num">84.1</td><td class="num">71.8</td><td class="num">97.0</td><td class="num">80.6</td><td class="num">77.9</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:kosis-overall-years--></details>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 3</p>
+                <h3 class="figure__title" id="fig-disabled-title">장애인의 종합·접근·역량·활용, 2016~2025년</h3>
+                <p class="figure__takeaway" id="fig-disabled-desc">2025년 일반국민 기준과의 차이는 종합 <span data-check="kosis.gap.disabled.overall">15.9</span>, 접근 <span data-check="kosis.gap.disabled.access">1.9</span>, 역량 <span data-check="kosis.gap.disabled.capability">23.0</span>, 활용 <span data-check="kosis.gap.disabled.utilization">15.7</span> 지수 포인트다. 기기 접근 지수가 높다는 사실만으로 웹·앱·키오스크를 독립적으로 이용할 수 있다고 판단하지 않는다.</p>
+              </figcaption>
+              <div class="viz" data-viz="kosisDisabled"></div>
+              <div class="figure__foot">
+                <p>출처: KOSIS <a href="https://kosis.kr/statHtml/statHtml.do?orgId=127&amp;tblId=DT_12017N008">종합</a> · <a href="https://kosis.kr/statHtml/statHtml.do?orgId=127&amp;tblId=DT_12017N009">접근</a> · <a href="https://kosis.kr/statHtml/statHtml.do?orgId=127&amp;tblId=DT_12017N0010">역량</a> · <a href="https://kosis.kr/statHtml/statHtml.do?orgId=127&amp;tblId=DT_12017N0011">활용</a>, <a href="https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=81623&amp;bcIdx=29168&amp;parentSeq=29168">NIA 2025 디지털정보격차 실태조사</a> 표2~5·본문 21~27쪽.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:kosis-disabled-change-->
+<div class="table-scroll" role="region" aria-label="장애인 지표의 변화 요약 (지수 포인트)" tabindex="0">
+<table class="data-table">
+<caption>장애인 지표의 변화 요약 (지수 포인트)</caption>
+<thead><tr><th scope="col">지표</th><th scope="col" class="num">2016</th><th scope="col" class="num">2021</th><th scope="col" class="num">2024</th><th scope="col" class="num">2025</th><th scope="col" class="num">2016→2025</th><th scope="col" class="num">2021→2025</th><th scope="col" class="num">2024→2025</th></tr></thead>
+<tbody>
+<tr><th scope="row">종합</th><td class="num">65.4</td><td class="num">81.7</td><td class="num">83.5</td><td class="num">84.1</td><td class="num">+18.7</td><td class="num">+2.4</td><td class="num">+0.6</td></tr>
+<tr><th scope="row">접근</th><td class="num">88.1</td><td class="num">95.6</td><td class="num">98.1</td><td class="num">98.1</td><td class="num">+10.0</td><td class="num">+2.5</td><td class="num">0.0</td></tr>
+<tr><th scope="row">역량</th><td class="num">49.8</td><td class="num">74.9</td><td class="num">76.1</td><td class="num">77.0</td><td class="num">+27.2</td><td class="num">+2.1</td><td class="num">+0.9</td></tr>
+<tr><th scope="row">활용</th><td class="num">64.6</td><td class="num">81.5</td><td class="num">83.7</td><td class="num">84.3</td><td class="num">+19.7</td><td class="num">+2.8</td><td class="num">+0.6</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:kosis-disabled-change--><!--table:kosis-disabled-years-->
+<div class="table-scroll" role="region" aria-label="장애인의 디지털정보화 지표, 2016~2025년 (해당 연도 일반국민 = 100)" tabindex="0">
+<table class="data-table">
+<caption>장애인의 디지털정보화 지표, 2016~2025년 (해당 연도 일반국민 = 100)</caption>
+<thead><tr><th scope="col">조사연도</th><th scope="col" class="num">종합</th><th scope="col" class="num">접근</th><th scope="col" class="num">역량</th><th scope="col" class="num">활용</th></tr></thead>
+<tbody>
+<tr><th scope="row">2016</th><td class="num">65.4</td><td class="num">88.1</td><td class="num">49.8</td><td class="num">64.6</td></tr>
+<tr><th scope="row">2017</th><td class="num">70.0</td><td class="num">91.6</td><td class="num">57.7</td><td class="num">71.5</td></tr>
+<tr><th scope="row">2018</th><td class="num">74.6</td><td class="num">92.0</td><td class="num">66.9</td><td class="num">73.6</td></tr>
+<tr><th scope="row">2019</th><td class="num">75.2</td><td class="num">92.6</td><td class="num">67.8</td><td class="num">74.0</td></tr>
+<tr><th scope="row">2020</th><td class="num">81.3</td><td class="num">95.4</td><td class="num">74.2</td><td class="num">81.4</td></tr>
+<tr><th scope="row">2021</th><td class="num">81.7</td><td class="num">95.6</td><td class="num">74.9</td><td class="num">81.5</td></tr>
+<tr><th scope="row">2022</th><td class="num">82.2</td><td class="num">96.7</td><td class="num">75.2</td><td class="num">82.0</td></tr>
+<tr><th scope="row">2023</th><td class="num">82.8</td><td class="num">98.0</td><td class="num">75.6</td><td class="num">82.5</td></tr>
+<tr><th scope="row">2024</th><td class="num">83.5</td><td class="num">98.1</td><td class="num">76.1</td><td class="num">83.7</td></tr>
+<tr><th scope="row">2025</th><td class="num">84.1</td><td class="num">98.1</td><td class="num">77.0</td><td class="num">84.3</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:kosis-disabled-years--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>장애인 역량의 2016→2021 차이는 <span data-check="kosis.disabled.capability.diff1621">+25.1</span>, 2021→2025 차이는 <span data-check="kosis.disabled.capability.diff2125">+2.1</span> 지수 포인트다. 길이가 다른 기간이고 표본·일반국민 분모·정책 기여를 분리하지 않았다. 특정 시점에 개선 속도가 유의하게 바뀌었다는 검정은 하지 않았다.</p>
+            </div>
+            <div class="note" role="note">
+              <span class="note__title">조사 대상의 범위</span>
+              2025년 보고서의 장애인 조사 대상은 7~69세의 지체·뇌병변·시각·청각/언어 장애인이다. 전체 장애인이나 70세 이상을 대표하지 않는다. 반올림된 집계값으로 차이를 계산했으며 통계적 유의성은 판정하지 않았다.
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 4</p>
+                <h3 class="figure__title" id="fig-gaps-title">2025년 집단별 접근·역량·활용 지수</h3>
+                <p class="figure__takeaway" id="fig-gaps-desc">접근 지수는 모든 집단이 <span data-check="kosis.access2025.min">95.4</span> 이상이지만 역량은 집단마다 크게 다르다. 고령층 역량지수는 일반국민 기준과 <span data-check="kosis.gap.older_adults.capability">43.8</span>포인트 차이가 난다. 후속 이용자 분석에서 역량과 과업 수행을 함께 봐야 하는 근거다.</p>
+              </figcaption>
+              <div class="viz" data-viz="kosisGaps" data-labelledby="fig-gaps-title" data-describedby="fig-gaps-desc"></div>
+              <p class="kbd-hint">차트 안에서 ↑·↓ 키로 집단을 옮기며 세 지표를 읽을 수 있다.</p>
+              <div class="figure__foot">
+                <p>집단마다 연령·자격 범위가 다르고 중복도 가능하므로 연령 표준화된 정책 성과 비교나 독립 대조군으로 쓰지 않는다. 모두 포용 정책과 관련된 집단이다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:kosis-gaps-->
+<div class="table-scroll" role="region" aria-label="2025년 집단별 접근·역량·활용 지수와 역량의 일반국민 기준과 차이" tabindex="0">
+<table class="data-table">
+<caption>2025년 집단별 접근·역량·활용 지수와 역량의 일반국민 기준과 차이</caption>
+<thead><tr><th scope="col">집단·집계</th><th scope="col" class="num">접근 지수</th><th scope="col" class="num">역량 지수</th><th scope="col" class="num">활용 지수</th><th scope="col" class="num">역량의 일반국민 기준과 차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">장애인</th><td class="num">98.1</td><td class="num">77.0</td><td class="num">84.3</td><td class="num">23.0</td></tr>
+<tr><th scope="row">고령층</th><td class="num">95.4</td><td class="num">56.2</td><td class="num">75.6</td><td class="num">43.8</td></tr>
+<tr><th scope="row">저소득층</th><td class="num">99.8</td><td class="num">94.1</td><td class="num">98.5</td><td class="num">5.9</td></tr>
+<tr><th scope="row">농어민</th><td class="num">97.2</td><td class="num">72.4</td><td class="num">80.5</td><td class="num">27.6</td></tr>
+<tr><th scope="row">취약계층 가중평균</th><td class="num">96.6</td><td class="num">65.9</td><td class="num">80.5</td><td class="num">34.1</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:kosis-gaps--></details>
+              </div>
+            </figure>
+          </section>
+
+          <section class="report-section" id="web" aria-labelledby="web-title">
+            <header class="section-head">
+              <span class="section-head__n">03</span>
+              <h2 id="web-title">민간 웹 접근성의 시행 전 공표점수</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#web-baseline">원문 §3<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">민간 웹 접근성 평균은 2019년 <span data-check="web.2019">53.7</span>점에서 2025년 <span data-check="web.2025">70.4</span>점으로 높아졌다. 2026년 3월에 발표된 결과라도 조사연도는 2025년이다.</p>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 5</p>
+                <h3 class="figure__title" id="fig-web-title">민간 웹 접근성 실태조사 평균점수, 2019~2025년</h3>
+                <p class="figure__takeaway" id="fig-web-desc">2024→2025 차이는 <span data-check="web.diff2425">+3.7</span>점이다. 같은 사이트의 개선량이 아니라 해마다 다른 표본의 공표 평균점수 차이다.</p>
+              </figcaption>
+              <div class="viz" data-viz="web" data-labelledby="fig-web-title" data-describedby="fig-web-desc"></div>
+              <p class="kbd-hint">차트 안에서 ←·→ 키로 연도를 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>출처: <a href="https://www.nia.or.kr/site/nia_kor/ex/bbs/View.do?cbIdx=99873&amp;bcIdx=29170&amp;parentSeq=29170">NIA 웹 접근성 보고서</a> · <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156681128">2024년 조사 발표</a> · <a href="https://www.korea.kr/briefing/pressReleaseView.do?newsId=156751063">2025년 조사 결과 발표</a></p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:web-scores-->
+<div class="table-scroll" role="region" aria-label="민간 웹 접근성 실태조사 평균점수, 2019~2025년" tabindex="0">
+<table class="data-table">
+<caption>민간 웹 접근성 실태조사 평균점수, 2019~2025년</caption>
+<thead><tr><th scope="col">조사연도</th><th scope="col" class="num">평균점수</th><th scope="col" class="num">전년 대비</th></tr></thead>
+<tbody>
+<tr><th scope="row">2019</th><td class="num">53.7</td><td class="num">—</td></tr>
+<tr><th scope="row">2020</th><td class="num">60.7</td><td class="num">+7.0</td></tr>
+<tr><th scope="row">2021</th><td class="num">60.8</td><td class="num">+0.1</td></tr>
+<tr><th scope="row">2022</th><td class="num">60.9</td><td class="num">+0.1</td></tr>
+<tr><th scope="row">2023</th><td class="num">65.8</td><td class="num">+4.9</td></tr>
+<tr><th scope="row">2024</th><td class="num">66.7</td><td class="num">+0.9</td></tr>
+<tr><th scope="row">2025</th><td class="num">70.4</td><td class="num">+3.7</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:web-scores--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>2025년 표본은 8개 업종의 민간 웹사이트 1,000개이며 PC 환경에서 평가했다. KWCAG 평가기준·배점·표본 변화의 영향을 분리하지 못했으므로 기간 전체를 같은 척도의 추세로 단정하지 않는다. 공공 웹·모바일 앱·키오스크 결과로 일반화할 수도 없다. 이용자·웹 연간 통계에는 시행 후 관측이 없으며, KOSIS의 최종수정일이 2026년인 셀도 조사연도를 기준으로 분류했다.</p>
+            </div>
+          </section>
+
+          <section class="report-section" id="kiosks" aria-labelledby="kiosks-title">
+            <header class="section-head">
+              <span class="section-head__n">04</span>
+              <h2 id="kiosks-title">무인민원발급기의 현재 접근성 기능</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#mois-status">원문 §4<span class="visually-hidden"> (GitHub에서 열림)</span></a><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#followup-decomposition">원문 §10<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">사용 중으로 기재된 <span data-check="mois.inUse">5,800</span>건 중 <span data-check="mois.f.wheelchair.no">562</span>건에 휠체어 사용자 조작이 불가능하다고 표시돼 있다. 촉각 전자모니터 제공 표시는 <span data-check="mois.f.tactile.yes">1,550</span>건(<span data-check="mois.f.tactile.pct">26.72%</span>)이다.</p>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 6</p>
+                <h3 class="figure__title" id="fig-features-title">기능별 제공 표시 비율</h3>
+                <p class="figure__takeaway" id="fig-features-desc"><span data-check="mois.f.full">4</span>개 기능은 사용 기재 기록 모두가 제공으로 기재돼 있다. 이어폰 소켓 <span data-check="mois.f.earphone.no">1</span>건과 화면 확대 <span data-check="mois.f.zoom.no">1</span>건이 미제공이다. 미상은 모든 기능에서 <span data-check="mois.f.unknownTotal">0</span>건이다.</p>
+              </figcaption>
+              <!--html:mois-features-->
+<ul class="meter-list" role="list" aria-label="기능별 제공 표시 비율, 사용 기재 5,800건 기준">
+<li class="meter">
+  <span class="meter__label">시각장애인용 음성안내</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:100.0000%"></span></span>
+  <span class="meter__value"><strong>100.00%</strong> <span class="meter__count">5,800 / 5,800건</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">시각장애인용 키패드</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:100.0000%"></span></span>
+  <span class="meter__value"><strong>100.00%</strong> <span class="meter__count">5,800 / 5,800건</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">점자라벨 부착</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:100.0000%"></span></span>
+  <span class="meter__value"><strong>100.00%</strong> <span class="meter__count">5,800 / 5,800건</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">청각장애인용 화면안내</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:100.0000%"></span></span>
+  <span class="meter__value"><strong>100.00%</strong> <span class="meter__count">5,800 / 5,800건</span></span>
+</li>
+<li class="meter meter--emphasis">
+  <span class="meter__label">이어폰 소켓</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:99.9828%"></span></span>
+  <span class="meter__value"><strong>99.98%</strong> <span class="meter__count">5,799 / 5,800건</span></span>
+</li>
+<li class="meter meter--emphasis">
+  <span class="meter__label">화면 확대</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:99.9828%"></span></span>
+  <span class="meter__value"><strong>99.98%</strong> <span class="meter__count">5,799 / 5,800건</span></span>
+</li>
+<li class="meter meter--emphasis">
+  <span class="meter__label">휠체어 사용자 조작</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:90.3103%"></span></span>
+  <span class="meter__value"><strong>90.31%</strong> <span class="meter__count">5,238 / 5,800건</span></span>
+</li>
+<li class="meter meter--emphasis">
+  <span class="meter__label">촉각 전자모니터</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:26.7241%"></span></span>
+  <span class="meter__value"><strong>26.72%</strong> <span class="meter__count">1,550 / 5,800건</span></span>
+</li>
+</ul>
+<!--/html:mois-features-->
+              <div class="figure__foot">
+                <p>분모는 모두 사용 기재 5,800건이다. ‘제공’과 ‘미제공’은 필드별 정확한 값으로 구분했고 미상을 미제공으로 바꾸지 않았다. 네 기능의 100%는 원응답에 그렇게 기재돼 있음을 확인했으며 조회조건에 기능 제공 여부 필터를 넣지 않았다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:mois-features-->
+<div class="table-scroll" role="region" aria-label="무인민원발급기 기능별 제공 표시 (분모: 사용 기재 기록)" tabindex="0">
+<table class="data-table">
+<caption>무인민원발급기 기능별 제공 표시 (분모: 사용 기재 기록)</caption>
+<thead><tr><th scope="col">기능</th><th scope="col" class="num">제공·가능</th><th scope="col" class="num">미제공·불가능</th><th scope="col" class="num">미상</th><th scope="col" class="num">제공 비율</th></tr></thead>
+<tbody>
+<tr><th scope="row">시각장애인용 키패드</th><td class="num">5,800</td><td class="num">0</td><td class="num">0</td><td class="num">100.00%</td></tr>
+<tr><th scope="row">시각장애인용 음성안내</th><td class="num">5,800</td><td class="num">0</td><td class="num">0</td><td class="num">100.00%</td></tr>
+<tr><th scope="row">청각장애인용 화면안내</th><td class="num">5,800</td><td class="num">0</td><td class="num">0</td><td class="num">100.00%</td></tr>
+<tr><th scope="row">점자라벨 부착</th><td class="num">5,800</td><td class="num">0</td><td class="num">0</td><td class="num">100.00%</td></tr>
+<tr><th scope="row">이어폰 소켓</th><td class="num">5,799</td><td class="num">1</td><td class="num">0</td><td class="num">99.98%</td></tr>
+<tr><th scope="row">촉각 전자모니터</th><td class="num">1,550</td><td class="num">4,250</td><td class="num">0</td><td class="num">26.72%</td></tr>
+<tr><th scope="row">화면 확대</th><td class="num">5,799</td><td class="num">1</td><td class="num">0</td><td class="num">99.98%</td></tr>
+<tr><th scope="row">휠체어 사용자 조작</th><td class="num">5,238</td><td class="num">562</td><td class="num">0</td><td class="num">90.31%</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:mois-features--></details>
+              </div>
+            </figure>
+            <div class="note" role="note">
+              <span class="note__title">불가능 표시는 현장 확인 후보다</span>
+              실제 접근 동선, 높이, 작동 여부, 보조인력은 확인하지 않았다. 촉각 모니터가 없다고 위법·부적합 기기로 판정할 수 없으며, 여덟 기능을 합쳐 법 준수율을 만들지도 않는다.
+            </div>
+
+            <div class="prose">
+              <h3>분모와 수집 완전성</h3>
+              <p>분모는 기기 고유키(<code>OPN_ATMY_GRP_CD + MNG_NO</code>)가 확인되고 사용 여부가 ‘사용’으로 기재된 기록이다. 전체 <span data-check="mois.received">5,803</span>건 중 나머지 <span data-check="mois.notInUse">3</span>건은 ‘미사용’이며 사용 여부 미상은 <span data-check="mois.unknownUse">0</span>건이다.</p>
+              <p>첫 페이지 방식 수집에서는 고유키가 <span data-check="mois.integrity.initialUnique">5,768</span>개뿐이었다. 페이지 경계에서 <span data-check="mois.integrity.repeated">35</span>행이 반복돼 단순 중복 제거로는 누락을 배제할 수 없었다. 그래서 <span data-check="mois.integrity.groups">230</span>개 개방기관으로 나누고, 100건을 넘는 기관은 겹치지 않는 갱신시각 구간으로 나눠 다시 수집했다. 최종 <span data-check="mois.integrity.leaves">231</span>개 분할의 합계·고유키 수·API 총건수가 모두 <span data-check="mois.integrity.total">5,803</span>으로 일치했다. 분할 부모를 포함한 응답 <span data-check="mois.integrity.queries">232</span>개의 해시와 조건도 대조했다. 다만 여러 요청에 걸친 수집이므로 한 시점의 트랜잭션 스냅샷은 아니다.</p>
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 7 <span class="added">2026-10-04 추가</span></p>
+                <h3 class="figure__title" id="fig-pairs-title">휠체어 사용자 조작과 촉각 모니터의 동시 기재</h3>
+                <p class="figure__takeaway" id="fig-pairs-desc">두 기능이 함께 부족하게 기재된 <span data-check="mois.p.nn">551</span>건은 현장 점검 후보를 찾는 데 쓸 수 있다. 8개 필드가 모두 긍정으로 기재된 기록도 <span data-check="mois.allYes">1,539</span>건이지만 법 준수율·종합 접근성 점수·실제 이용 성공률이 아니다.</p>
+              </figcaption>
+              <!--html:mois-pairs-->
+<div class="table-scroll" role="region" aria-label="휠체어 사용자 조작 × 촉각 모니터, 사용 기재 5,800건의 동시 기재" tabindex="0">
+<table class="data-table heat-table">
+<caption>휠체어 사용자 조작 × 촉각 모니터, 사용 기재 5,800건의 동시 기재</caption>
+<thead><tr><th scope="col">휠체어 사용자 조작</th><th scope="col">촉각 모니터 제공</th><th scope="col">촉각 모니터 미제공</th></tr></thead>
+<tbody>
+<tr><th scope="row">가능</th><td class="heat heat-3"><span class="cell-main">1,539건</span><span class="cell-sub">26.5%</span></td><td class="heat heat-4"><span class="cell-main">3,699건</span><span class="cell-sub">63.8%</span></td></tr>
+<tr><th scope="row">불가능</th><td class="heat heat-1"><span class="cell-main">11건</span><span class="cell-sub">0.2%</span></td><td class="heat heat-2 heat--flag"><span class="cell-main">551건</span><span class="cell-sub">9.5%</span></td></tr>
+</tbody>
+</table>
+</div>
+<!--/html:mois-pairs-->
+              <div class="figure__foot">
+                <p>분모는 사용 기재 5,800건. 미상은 별도 범주로 유지했으며 두 필드 모두 <span data-check="mois.p.unknown">0</span>건이다. 굵은 테두리 칸이 두 기능 모두 미제공·불가능인 기록이다. 시점 비교가 아닌 현황 분석이다.</p>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 8</p>
+                <h3 class="figure__title" id="fig-regions-title">지역 표시명 묶음별 휠체어 조작 가능·촉각 모니터 제공</h3>
+                <p class="figure__takeaway" id="fig-regions-desc">세종 표시명 묶음은 휠체어 조작 가능 <span data-check="mois.r.36.wheelchairYes">11</span>건·불가능 <span data-check="mois.r.36.wheelchairNo">35</span>건, 제주 묶음은 가능 <span data-check="mois.r.50.wheelchairYes">48</span>건·불가능 <span data-check="mois.r.50.wheelchairNo">37</span>건으로 기재돼 있다. 전국 평균에 가려지는 현장 확인 후보를 찾는 데 쓸 수 있지만, 지역 정책 성과 순위로 해석하지 않는다.</p>
+              </figcaption>
+              <!--html:mois-regions-->
+<div class="table-scroll" role="region" aria-label="지역 표시명 묶음별 휠체어 사용자 조작 가능·촉각 모니터 제공 표시 비율 (휠체어 조작 가능 비율이 높은 순)" tabindex="0">
+<table class="data-table bar-table">
+<caption>지역 표시명 묶음별 휠체어 사용자 조작 가능·촉각 모니터 제공 표시 비율 (휠체어 조작 가능 비율이 높은 순)</caption>
+<thead><tr><th scope="col">지역 표시명 (사용 기록)</th><th scope="col">휠체어 사용자 조작 가능 · 전국 90.31%</th><th scope="col">촉각 모니터 제공 · 전국 26.72%</th></tr></thead>
+<tbody>
+<tr><th scope="row"><span class="cell-main">대구광역시</span><span class="cell-sub">148건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:100.0000%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">100.00%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:15.5405%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">15.54%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">부산광역시</span><span class="cell-sub">264건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:98.8636%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">98.86%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:7.5758%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">7.58%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">전남광주통합특별시</span><span class="cell-sub">601건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:96.3394%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">96.34%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:32.4459%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">32.45%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">충청남도</span><span class="cell-sub">426건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:93.8967%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">93.90%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:25.5869%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">25.59%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">서울특별시</span><span class="cell-sub">772건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:92.3575%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">92.36%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:33.8083%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">33.81%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">경기도</span><span class="cell-sub">1,146건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:91.5358%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">91.54%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:32.1117%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">32.11%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">경상남도</span><span class="cell-sub">490건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:91.4286%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">91.43%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:17.9592%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">17.96%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">대전광역시</span><span class="cell-sub">120건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:90.0000%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">90.00%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:30.8333%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">30.83%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">강원특별자치도</span><span class="cell-sub">301건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:89.7010%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">89.70%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:29.2359%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">29.24%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">경상북도</span><span class="cell-sub">493건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:89.0467%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">89.05%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:22.9209%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">22.92%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">충청북도</span><span class="cell-sub">277건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:87.7256%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">87.73%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:32.4910%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">32.49%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">인천광역시</span><span class="cell-sub">225건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:87.1111%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">87.11%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:8.8889%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">8.89%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">울산광역시</span><span class="cell-sub">145건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:81.3793%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">81.38%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:48.9655%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">48.97%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">전북특별자치도</span><span class="cell-sub">261건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:79.3103%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">79.31%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:21.8391%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">21.84%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">제주특별자치도</span><span class="cell-sub">85건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:56.4706%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">56.47%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:11.7647%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">11.76%</span></span></td></tr>
+<tr><th scope="row"><span class="cell-main">세종특별자치시</span><span class="cell-sub">46건</span></th><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:23.9130%"></span><span class="bar-cell__ref" style="--v:90.3103%"></span></span><span class="bar-cell__value">23.91%</span></span></td><td class="bar-td"><span class="bar-cell"><span class="bar-cell__track" aria-hidden="true"><span class="bar-cell__fill" style="--v:0.0000%"></span><span class="bar-cell__ref" style="--v:26.7241%"></span></span><span class="bar-cell__value">0.00%</span></span></td></tr>
+</tbody>
+</table>
+</div>
+<!--/html:mois-regions-->
+              <div class="figure__foot">
+                <p>설치 위치의 시군구 코드(<code>ROAD_SGG_CD</code>) 앞 두 자리로 묶고, 원주소에서 가장 많이 나온 첫 행정구역 토큰을 표시명으로 썼다. 전체 법정 코드표와의 일치는 검증하지 않았다. 막대 위 세로선은 전국 비율이다. 기기 구성·관리·갱신 방식의 차이는 보정하지 않았다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:mois-regions-->
+<div class="table-scroll" role="region" aria-label="지역 표시명 묶음별 기능 표시 건수 (설치 시군구 코드 앞 두 자리 기준)" tabindex="0">
+<table class="data-table">
+<caption>지역 표시명 묶음별 기능 표시 건수 (설치 시군구 코드 앞 두 자리 기준)</caption>
+<thead><tr><th scope="col">코드</th><th scope="col">지역 표시명</th><th scope="col" class="num">사용 기록</th><th scope="col" class="num">휠체어 가능</th><th scope="col" class="num">휠체어 불가능</th><th scope="col" class="num">휠체어 가능 비율</th><th scope="col" class="num">촉각 제공</th><th scope="col" class="num">촉각 미제공</th><th scope="col" class="num">촉각 제공 비율</th></tr></thead>
+<tbody>
+<tr><th scope="row">11</th><td>서울특별시</td><td class="num">772</td><td class="num">713</td><td class="num">59</td><td class="num">92.36%</td><td class="num">261</td><td class="num">511</td><td class="num">33.81%</td></tr>
+<tr><th scope="row">12</th><td>전남광주통합특별시</td><td class="num">601</td><td class="num">579</td><td class="num">22</td><td class="num">96.34%</td><td class="num">195</td><td class="num">406</td><td class="num">32.45%</td></tr>
+<tr><th scope="row">26</th><td>부산광역시</td><td class="num">264</td><td class="num">261</td><td class="num">3</td><td class="num">98.86%</td><td class="num">20</td><td class="num">244</td><td class="num">7.58%</td></tr>
+<tr><th scope="row">27</th><td>대구광역시</td><td class="num">148</td><td class="num">148</td><td class="num">0</td><td class="num">100.00%</td><td class="num">23</td><td class="num">125</td><td class="num">15.54%</td></tr>
+<tr><th scope="row">28</th><td>인천광역시</td><td class="num">225</td><td class="num">196</td><td class="num">29</td><td class="num">87.11%</td><td class="num">20</td><td class="num">205</td><td class="num">8.89%</td></tr>
+<tr><th scope="row">30</th><td>대전광역시</td><td class="num">120</td><td class="num">108</td><td class="num">12</td><td class="num">90.00%</td><td class="num">37</td><td class="num">83</td><td class="num">30.83%</td></tr>
+<tr><th scope="row">31</th><td>울산광역시</td><td class="num">145</td><td class="num">118</td><td class="num">27</td><td class="num">81.38%</td><td class="num">71</td><td class="num">74</td><td class="num">48.97%</td></tr>
+<tr><th scope="row">36</th><td>세종특별자치시</td><td class="num">46</td><td class="num">11</td><td class="num">35</td><td class="num">23.91%</td><td class="num">0</td><td class="num">46</td><td class="num">0.00%</td></tr>
+<tr><th scope="row">41</th><td>경기도</td><td class="num">1,146</td><td class="num">1,049</td><td class="num">97</td><td class="num">91.54%</td><td class="num">368</td><td class="num">778</td><td class="num">32.11%</td></tr>
+<tr><th scope="row">43</th><td>충청북도</td><td class="num">277</td><td class="num">243</td><td class="num">34</td><td class="num">87.73%</td><td class="num">90</td><td class="num">187</td><td class="num">32.49%</td></tr>
+<tr><th scope="row">44</th><td>충청남도</td><td class="num">426</td><td class="num">400</td><td class="num">26</td><td class="num">93.90%</td><td class="num">109</td><td class="num">317</td><td class="num">25.59%</td></tr>
+<tr><th scope="row">47</th><td>경상북도</td><td class="num">493</td><td class="num">439</td><td class="num">54</td><td class="num">89.05%</td><td class="num">113</td><td class="num">380</td><td class="num">22.92%</td></tr>
+<tr><th scope="row">48</th><td>경상남도</td><td class="num">490</td><td class="num">448</td><td class="num">42</td><td class="num">91.43%</td><td class="num">88</td><td class="num">402</td><td class="num">17.96%</td></tr>
+<tr><th scope="row">50</th><td>제주특별자치도</td><td class="num">85</td><td class="num">48</td><td class="num">37</td><td class="num">56.47%</td><td class="num">10</td><td class="num">75</td><td class="num">11.76%</td></tr>
+<tr><th scope="row">51</th><td>강원특별자치도</td><td class="num">301</td><td class="num">270</td><td class="num">31</td><td class="num">89.70%</td><td class="num">88</td><td class="num">213</td><td class="num">29.24%</td></tr>
+<tr><th scope="row">52</th><td>전북특별자치도</td><td class="num">261</td><td class="num">207</td><td class="num">54</td><td class="num">79.31%</td><td class="num">57</td><td class="num">204</td><td class="num">21.84%</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">두 기능의 미상은 모든 지역에서 0건이다. 비율의 분모는 지역별 사용 기재 기록이다.</p>
+<!--/table:mois-regions--></details>
+              </div>
+            </figure>
+
+            <div class="note" role="note">
+              <span class="note__title">행정구역 개편</span>
+              <code>12</code> 접두어 기록 <span data-check="mois.r.12.n">601</span>건의 원주소를 보면 600건의 첫 토큰은 ‘전남광주통합특별시’, 1건은 ‘강진군’이었고 모두 같은 광역 기관코드가 기재돼 있었다. 행안부는 <a href="https://www.mois.go.kr/frt/bbs/type010/commonSelectBoardArticle.do?bbsId=BBSMSTR_000000000008&amp;nttId=126845">2026-07-01 전남·광주 통합 출범</a>을 안내한다. 과거의 17개 시도 명칭표를 그대로 적용하면 잘못 분류할 수 있다. 관측한 시군구 코드 <span data-check="mois.sggCodes">259</span>개도 코드값의 종류 수이지 현재 자치단체 수가 아니다.
+            </div>
+            <div class="note" role="note">
+              <span class="note__title">수정·갱신일은 설치일이 아니다</span>
+              최종수정시점은 2023-07-14~2026-09-30이고, 마지막 수정이 수집일보다 365일 넘게 앞선 사용 기록은 <span data-check="mois.date.older365">23</span>건이다. 데이터갱신시점은 2026-01-16~2026-10-01이다. 둘 다 설치일·기능 도입일이 아니므로 시행 전후 비교 축으로 쓰지 않았다. 과거 기능·교체 이력이나 반복 스냅샷이 필요하다.
+            </div>
+          </section>
+
+          <section class="report-section" id="procurement" aria-labelledby="procurement-title">
+            <header class="section-head">
+              <span class="section-head__n">05</span>
+              <h2 id="procurement-title">시행 전후 조달 요청의 흐름</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#pps-flow">원문 §5<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">증명발급기·무인안내시스템의 같은 2~9월 납품요구 순증은 2025년 <span data-check="pps.febSep.q2025">872</span>대에서 2026년 <span data-check="pps.febSep.q2026">597</span>대로 <span data-check="pps.febSep.pct" data-abs>31.5%</span> 감소했다. 법정 시행일과 같은 1/22~9/30끼리 비교하면 <span data-check="pps.sameDates.q2025">930</span>대 → <span data-check="pps.sameDates.q2026">716</span>대, <span data-check="pps.sameDates.pct" data-abs>23.0%</span> 감소다.</p>
+            <div class="prose">
+              <p><strong>품목 범위.</strong> ‘무인민원발급기’라는 자연어 검색만으로는 해당 품목을 찾지 못했다. 실제 응답의 상위 분류 컴퓨터키오스크(<code>43211514</code>)를 수집하고, 증명발급기(<code>4321151401</code>)·무인안내시스템(<code>4321151402</code>)을 주 분석 범위로 삼았다. 버스및차량정보안내장치는 상호작용 키오스크와 같게 취급하기 어려워 뺐다. 범위는 자료를 탐색한 뒤 정했으므로 사전 등록 분석이 아니다.</p>
+              <p><strong>주 지표는 접수월 기준 납품요구 순증</strong>이다. 최초 요구와 이후 변경·취소의 수량·금액을 부호대로 합산한다. 3대 요구 후 2대를 추가하면 5대, 3대 요구를 모두 취소하면 0대다. 구매 요청·변경 기록이므로 실제 납품 완료, 설치, 집행액, 접근성 검증을 측정하지 않는다.</p>
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 9</p>
+                <h3 class="figure__title" id="fig-monthly-title">월별 납품요구 순증과 비교 구간, 2025-01~2026-09</h3>
+                <p class="figure__takeaway" id="fig-monthly-desc">월별 순증은 2025년 12월(<span data-check="pps.peak.qty">360</span>대)과 2026년 1월(<span data-check="pps.second.qty">331</span>대)에 가장 컸다. 주 비교(2~9월)는 이 두 달을 넣지 않는다. 1월은 법 시행일이 끼어 있는 전환월이다.</p>
+              </figcaption>
+              <div class="viz" data-viz="ppsMonthly" data-labelledby="fig-monthly-title" data-describedby="fig-monthly-desc"></div>
+              <p class="kbd-hint">차트 안에서 ←·→ 키로 달을 옮기며 수량·금액·요구번호·수요기관을 읽을 수 있다.</p>
+              <div class="figure__foot">
+                <p>2025-01~2026-09의 21개 월 구간에 대해 등록·해지 포함 조회 <span data-check="pps.callsReg">21</span>회와 납품요구 조회 <span data-check="pps.callsDel">26</span>회가 페이지 검증을 통과했다. 출처: <a href="https://www.data.go.kr/data/15129471/openapi.do">조달청 나라장터쇼핑몰 품목정보 API</a>.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:pps-monthly-->
+<div class="table-scroll" role="region" aria-label="월별 납품요구 순증, 증명발급기·무인안내시스템 (접수월 기준)" tabindex="0">
+<table class="data-table">
+<caption>월별 납품요구 순증, 증명발급기·무인안내시스템 (접수월 기준)</caption>
+<thead><tr><th scope="col">접수월</th><th scope="col" class="num">순증 수량(대)</th><th scope="col" class="num">순증 금액(억원)</th><th scope="col" class="num">변경이 관측된 요구번호</th><th scope="col" class="num">관련 수요기관</th></tr></thead>
+<tbody>
+<tr><th scope="row">2025년 1월</th><td class="num">179</td><td class="num">22.97</td><td class="num">103</td><td class="num">83</td></tr>
+<tr><th scope="row">2025년 2월</th><td class="num">207</td><td class="num">30.85</td><td class="num">113</td><td class="num">95</td></tr>
+<tr><th scope="row">2025년 3월</th><td class="num">262</td><td class="num">50.28</td><td class="num">89</td><td class="num">68</td></tr>
+<tr><th scope="row">2025년 4월</th><td class="num">155</td><td class="num">30.54</td><td class="num">53</td><td class="num">38</td></tr>
+<tr><th scope="row">2025년 5월</th><td class="num">68</td><td class="num">11.00</td><td class="num">46</td><td class="num">44</td></tr>
+<tr><th scope="row">2025년 6월</th><td class="num">41</td><td class="num">6.10</td><td class="num">22</td><td class="num">20</td></tr>
+<tr><th scope="row">2025년 7월</th><td class="num">49</td><td class="num">6.41</td><td class="num">21</td><td class="num">19</td></tr>
+<tr><th scope="row">2025년 8월</th><td class="num">21</td><td class="num">3.24</td><td class="num">11</td><td class="num">10</td></tr>
+<tr><th scope="row">2025년 9월</th><td class="num">69</td><td class="num">8.69</td><td class="num">37</td><td class="num">32</td></tr>
+<tr><th scope="row">2025년 10월</th><td class="num">47</td><td class="num">8.70</td><td class="num">30</td><td class="num">25</td></tr>
+<tr><th scope="row">2025년 11월</th><td class="num">58</td><td class="num">9.05</td><td class="num">37</td><td class="num">29</td></tr>
+<tr><th scope="row">2025년 12월</th><td class="num">360</td><td class="num">58.98</td><td class="num">40</td><td class="num">32</td></tr>
+<tr><th scope="row">2026년 1월</th><td class="num">331</td><td class="num">54.89</td><td class="num">183</td><td class="num">147</td></tr>
+<tr><th scope="row">2026년 2월</th><td class="num">166</td><td class="num">27.02</td><td class="num">88</td><td class="num">71</td></tr>
+<tr><th scope="row">2026년 3월</th><td class="num">183</td><td class="num">29.29</td><td class="num">99</td><td class="num">74</td></tr>
+<tr><th scope="row">2026년 4월</th><td class="num">71</td><td class="num">10.34</td><td class="num">38</td><td class="num">33</td></tr>
+<tr><th scope="row">2026년 5월</th><td class="num">52</td><td class="num">10.10</td><td class="num">22</td><td class="num">21</td></tr>
+<tr><th scope="row">2026년 6월</th><td class="num">52</td><td class="num">6.59</td><td class="num">30</td><td class="num">20</td></tr>
+<tr><th scope="row">2026년 7월</th><td class="num">13</td><td class="num">1.84</td><td class="num">11</td><td class="num">9</td></tr>
+<tr><th scope="row">2026년 8월</th><td class="num">26</td><td class="num">3.82</td><td class="num">20</td><td class="num">18</td></tr>
+<tr><th scope="row">2026년 9월</th><td class="num">34</td><td class="num">4.47</td><td class="num">22</td><td class="num">20</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:pps-monthly--></details>
+              </div>
+            </figure>
+
+            <div class="prose">
+              <h3>같은 2월부터 9월까지 비교</h3>
+            </div>
+            <!--table:pps-main-->
+<div class="table-scroll" role="region" aria-label="같은 2~9월 비교: 증명발급기·무인안내시스템 납품요구" tabindex="0">
+<table class="data-table">
+<caption>같은 2~9월 비교: 증명발급기·무인안내시스템 납품요구</caption>
+<thead><tr><th scope="col">주 분석 품목</th><th scope="col" class="num">2025년 2~9월</th><th scope="col" class="num">2026년 2~9월</th><th scope="col" class="num">차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">납품요구 순증 수량</th><td class="num">872대</td><td class="num">597대</td><td class="num">−275대, −31.5%</td></tr>
+<tr><th scope="row">납품요구 순증 금액</th><td class="num">147.11억원</td><td class="num">93.45억원</td><td class="num">−53.66억원, −36.5%</td></tr>
+<tr><th scope="row">변경이 관측된 요구번호</th><td class="num">389개</td><td class="num">327개</td><td class="num">−62개</td></tr>
+<tr><th scope="row">관련 요구가 있는 수요기관</th><td class="num">246곳</td><td class="num">206곳</td><td class="num">−40곳</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:pps-main-->
+            <div class="prose">
+              <p>금액은 원 단위로 합산한 뒤 억원으로 표시했다. 이 구간의 품목 행은 모두 단위 ‘대’의 대표품목이라 수량과 금액의 범위가 같다. 수량을 나누면 증명발급기 <span data-check="pps.cat.cert2025">870</span>→<span data-check="pps.cat.cert2026">596</span>대, 무인안내시스템 <span data-check="pps.cat.guide2025">2</span>→<span data-check="pps.cat.guide2026">1</span>대로 증명발급기가 대부분이다. 전체 키오스크 시장의 변화로 일반화하기 어렵다.</p>
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 10</p>
+                <h3 class="figure__title" id="fig-windows-title">비교 기간에 따른 차이</h3>
+                <p class="figure__takeaway" id="fig-windows-desc">어느 구간을 고르느냐에 따라 감소율이 <span data-check="pps.janSep.pct">−11.7%</span>에서 <span data-check="pps.febSep.pct">−31.5%</span>까지 달라진다. 한 구간의 변화율만 유일한 결론으로 제시하지 않는다.</p>
+              </figcaption>
+              <div class="viz" data-viz="ppsWindows" data-labelledby="fig-windows-title" data-describedby="fig-windows-desc"></div>
+              <p class="kbd-hint">차트 안에서 ↑·↓ 키로 비교 기간을 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>2~6월은 중기업 제조·임대 의무(2026-07-22) 적용 전 구간이다. 어느 비교도 예산 주기, 기존 수요, 다른 접근성 정책, 검증기준 변경과 법의 영향을 분리한 추정치는 아니다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:pps-windows-->
+<div class="table-scroll" role="region" aria-label="비교 기간별 납품요구 순증 수량" tabindex="0">
+<table class="data-table">
+<caption>비교 기간별 납품요구 순증 수량</caption>
+<thead><tr><th scope="col">비교 기간</th><th scope="col" class="num">2025년 순증 수량</th><th scope="col" class="num">2026년 순증 수량</th><th scope="col" class="num">변화율</th></tr></thead>
+<tbody>
+<tr><th scope="row">2~9월 · 주 비교</th><td class="num">872대</td><td class="num">597대</td><td class="num">−31.5%</td></tr>
+<tr><th scope="row">1/22~9/30 · 같은 날짜 범위</th><td class="num">930대</td><td class="num">716대</td><td class="num">−23.0%</td></tr>
+<tr><th scope="row">1~9월 · 전환월 포함</th><td class="num">1,051대</td><td class="num">928대</td><td class="num">−11.7%</td></tr>
+<tr><th scope="row">2~6월 · 중기업 의무 적용 전</th><td class="num">733대</td><td class="num">524대</td><td class="num">−28.5%</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:pps-windows--></details>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 11</p>
+                <h3 class="figure__title" id="fig-january-title">1월을 전환월로 두는 이유</h3>
+                <p class="figure__takeaway" id="fig-january-desc">2026년 1월 순증 <span data-check="pps.jan.2026.total">331</span>대 중 시행 전인 1~21일이 <span data-check="pps.jan.2026.early">212</span>대, 22~31일이 <span data-check="pps.jan.2026.late">119</span>대였다. 2025년 1월은 <span data-check="pps.jan.2025.total">179</span>대다. 1월을 넣으면 감소 폭이 작아지는 이유이며, 월 전체를 시행 후로 분류해서는 안 된다.</p>
+              </figcaption>
+              <div class="viz" data-viz="ppsJanuary" data-labelledby="fig-january-title" data-describedby="fig-january-desc"></div>
+              <div class="figure__foot">
+                <p>1/22~9/30의 금액은 <span data-check="pps.sameDates.eok2025">155.16</span>억원 → <span data-check="pps.sameDates.eok2026">112.03</span>억원으로 <span data-check="pps.sameDates.eokPct" data-abs>27.8%</span> 감소했다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:pps-january-->
+<div class="table-scroll" role="region" aria-label="1월 납품요구 순증의 날짜별 구분" tabindex="0">
+<table class="data-table">
+<caption>1월 납품요구 순증의 날짜별 구분</caption>
+<thead><tr><th scope="col">연도</th><th scope="col" class="num">1~21일</th><th scope="col" class="num">22~31일</th><th scope="col" class="num">1월 전체</th></tr></thead>
+<tbody>
+<tr><th scope="row">2025년</th><td class="num">121대</td><td class="num">58대</td><td class="num">179대</td></tr>
+<tr><th scope="row">2026년</th><td class="num">212대</td><td class="num">119대</td><td class="num">331대</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:pps-january--></details>
+              </div>
+            </figure>
+
+            <div class="prose">
+              <h3>등록 행과 신규 제품 수의 차이</h3>
+            </div>
+            <!--table:pps-registrations-->
+<div class="table-scroll" role="region" aria-label="2025-01~2026-09 계약·물품 등록 자료" tabindex="0">
+<table class="data-table">
+<caption>2025-01~2026-09 계약·물품 등록 자료</caption>
+<thead><tr><th scope="col">품목</th><th scope="col" class="num">계약·물품 등록 행</th><th scope="col" class="num">고유 물품 ID</th></tr></thead>
+<tbody>
+<tr><th scope="row">컴퓨터키오스크 전체</th><td class="num">397</td><td class="num">104</td></tr>
+<tr><th scope="row">증명발급기</th><td class="num">91</td><td class="num">32</td></tr>
+<tr><th scope="row">무인안내시스템</th><td class="num">12</td><td class="num">4</td></tr>
+<tr><th scope="row">버스및차량정보안내장치</th><td class="num">294</td><td class="num">68</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:pps-registrations-->
+            <div class="prose">
+              <p>주 분석 범위는 등록 <span data-check="pps.reg.core.rows">103</span>행·고유 물품 ID <span data-check="pps.reg.core.ids">36</span>개다. 같은 2~9월에 등록이 관측된 고유 물품 ID는 2025년 <span data-check="pps.reg.febSep.2025">17</span>개, 2026년 <span data-check="pps.reg.febSep.2026">30</span>개였다. 계약 갱신·반복 등록이 섞일 수 있어 최초 출시나 최초 NIA 검증 제품 수로 해석하지 않는다.</p>
+              <p>주 분석 등록 행의 기업구분은 모두 ‘중소기업’이었다. 계약업체와 제조사가 같다고 단정할 수 없고, 중기업·소기업과 시행 당시 규모도 구분하지 못한다. 그래서 대기업·중견기업 대 중소기업 비교를 이 표본만으로 실행할 수 없다.</p>
+            </div>
+          </section>
+          <section class="report-section" id="decomposition" aria-labelledby="decomposition-title">
+            <header class="section-head">
+              <span class="section-head__n">06</span>
+              <h2 id="decomposition-title">조달 감소의 구성 <span class="added">2026-10-04 추가</span></h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#followup-decomposition">원문 §10<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">감소는 기관 수 변화만의 결과가 아니다. 두 해 모두 기록이 있는 <span data-check="cohort.both.institutions">101</span>개 기관에서도 <span data-check="cohort.both.diff" data-abs>217</span>대 감소했다.</p>
+            <div class="prose">
+              <p>2026-10-03 수집본을 다시 분석했다. API를 새로 수집하거나 비교 대상을 사전 등록한 분석은 아니다. 조달 비교 기간은 두 해 모두 2~9월이고 품목 범위와 변경·취소의 부호, 단위 처리 기준은 5장과 같다. 기관 코드별로 기간 내 변경 기록의 존재를 비교했다. 이름이 바뀐 같은 코드는 함께 집계했고, 코드가 달라진 기관의 통폐합은 연결하지 않았다.</p>
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 12</p>
+                <h3 class="figure__title" id="fig-cohorts-title">기관 구분별 순증 수량의 변화, 2~9월</h3>
+                <p class="figure__takeaway" id="fig-cohorts-desc">2025년에만 기록이 있는 <span data-check="cohort.2025_only.institutions">145</span>곳에서 <span data-check="cohort.2025_only.diff" data-abs>260</span>대, 두 해 모두 기록이 있는 101곳에서 217대가 줄었다. 2026년에만 기록이 있는 <span data-check="cohort.2026_only.institutions">105</span>곳이 <span data-check="cohort.2026_only.diff">202</span>대를 더해 합계는 <span data-check="pps.febSep.diff" data-abs>275</span>대 줄었다.</p>
+              </figcaption>
+              <div class="viz" data-viz="cohorts" data-labelledby="fig-cohorts-title" data-describedby="fig-cohorts-desc"></div>
+              <p class="kbd-hint">차트 안에서 ←·→ 키로 막대를 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>이 분류는 해당 기간의 조달 변경 기록 유무다. 신규 구매기관·구매 중단·기관 폐쇄를 뜻하지 않는다. 0은 완전 수집한 조회 범위에 기록이 없다는 뜻이며, 취소로 순증이 0이 되어도 기록이 있으면 관측 기관이다. 전체 기관 코드는 <span data-check="cohort.institutionsTotal">351</span>개다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:cohorts-->
+<div class="table-scroll" role="region" aria-label="기간 내 기록 존재별 기관 수와 순증 수량 (2~9월)" tabindex="0">
+<table class="data-table">
+<caption>기간 내 기록 존재별 기관 수와 순증 수량 (2~9월)</caption>
+<thead><tr><th scope="col">기간 내 기록 존재</th><th scope="col" class="num">기관 수</th><th scope="col" class="num">2025년 순증 수량</th><th scope="col" class="num">2026년 순증 수량</th><th scope="col" class="num">차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">두 해 모두 기록</th><td class="num">101곳</td><td class="num">612</td><td class="num">395</td><td class="num">−217</td></tr>
+<tr><th scope="row">2025년에만 기록</th><td class="num">145곳</td><td class="num">260</td><td class="num">0</td><td class="num">−260</td></tr>
+<tr><th scope="row">2026년에만 기록</th><td class="num">105곳</td><td class="num">0</td><td class="num">202</td><td class="num">+202</td></tr>
+<tr><th scope="row">전체</th><td class="num">351개 코드의 합집합</td><td class="num">872</td><td class="num">597</td><td class="num">−275</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:cohorts--></details>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 13</p>
+                <h3 class="figure__title" id="fig-institutions-title">감소 상위 5개 기관과 증가 사례</h3>
+                <p class="figure__takeaway" id="fig-institutions-desc">강남구 <span data-check="inst.top1.q2025">40</span>→<span data-check="inst.top1.q2026">4</span>대 등 감소 상위 다섯 기관은 합계 <span data-check="inst.top5.sum" data-abs>129</span>대 감소했다. 전체 감소 기관의 감소분 <span data-check="inst.decreaseTotal" data-abs>600</span>대의 <span data-check="inst.top5.shareOfDecrease">21.5%</span>이고, 순감소 275대를 분모로 하면 <span data-check="inst.top5.shareOfNet">46.9%</span>다. 증가 기관의 증가분은 <span data-check="inst.increaseTotal">325</span>대다.</p>
+              </figcaption>
+              <div class="viz" data-viz="institutions" data-labelledby="fig-institutions-title" data-describedby="fig-institutions-desc"></div>
+              <p class="kbd-hint">차트 안에서 ↑·↓ 키로 기관을 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>두 분모(감소분 합계, 순감소)를 혼동하지 않는다. 증가 사례는 남양주시 <span data-check="inst.inc1.q2025">1</span>→<span data-check="inst.inc1.q2026">15</span>대, 성남시 수정구 <span data-check="inst.inc2.q2025">0</span>→<span data-check="inst.inc2.q2026">13</span>대 등이다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:institutions-->
+<div class="table-scroll" role="region" aria-label="순증 수량 감소 상위 5개 기관과 증가 사례 (2~9월)" tabindex="0">
+<table class="data-table">
+<caption>순증 수량 감소 상위 5개 기관과 증가 사례 (2~9월)</caption>
+<thead><tr><th scope="col">기관</th><th scope="col" class="num">2025년</th><th scope="col" class="num">2026년</th><th scope="col" class="num">차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">서울특별시 강남구</th><td class="num">40</td><td class="num">4</td><td class="num">−36</td></tr>
+<tr><th scope="row">서울특별시 영등포구</th><td class="num">33</td><td class="num">5</td><td class="num">−28</td></tr>
+<tr><th scope="row">서울특별시 성동구</th><td class="num">25</td><td class="num">1</td><td class="num">−24</td></tr>
+<tr><th scope="row">서울특별시 마포구</th><td class="num">24</td><td class="num">2</td><td class="num">−22</td></tr>
+<tr><th scope="row">서울특별시 은평구</th><td class="num">21</td><td class="num">2</td><td class="num">−19</td></tr>
+<tr><th scope="row">경기도 남양주시</th><td class="num">1</td><td class="num">15</td><td class="num">+14</td></tr>
+<tr><th scope="row">경기도 성남시 수정구</th><td class="num">0</td><td class="num">13</td><td class="num">+13</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:institutions--></details>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 14</p>
+                <h3 class="figure__title" id="fig-products-title">제품 식별번호별 순증 수량</h3>
+                <p class="figure__takeaway" id="fig-products-desc">감소 상위 세 제품(TAPI-9320B <span data-check="product.24422601.q2025">142</span>→<span data-check="product.24422601.q2026">69</span>대, AT-K300E <span data-check="product.24362786.q2025">131</span>→<span data-check="product.24362786.q2026">61</span>대, AT-K300 <span data-check="product.24362785.q2025">82</span>→<span data-check="product.24362785.q2026">39</span>대)은 모두 ‘시청각장애인겸용 무인민원발급기’라는 명칭을 포함한다. <strong>제품명은 검증·법 준수 여부의 증거가 아니다.</strong></p>
+              </figcaption>
+              <div class="viz" data-viz="products" data-labelledby="fig-products-title" data-describedby="fig-products-desc"></div>
+              <p class="kbd-hint">차트 안에서 ↑·↓ 키로 제품을 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>같은 품목 분류에는 IS-2000L 통합민원발급기(<span data-check="product.25202556.q2025">195</span>→<span data-check="product.25202556.q2026">154</span>대)도 들어 있어 전체 조달량을 배리어프리 무인기만의 수량으로 해석하지 않는다. 제품 ID 변경·후속 모델 대체 여부는 확인하지 않았다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:products-->
+<div class="table-scroll" role="region" aria-label="제품 식별번호별 순증 수량 (2~9월)" tabindex="0">
+<table class="data-table">
+<caption>제품 식별번호별 순증 수량 (2~9월)</caption>
+<thead><tr><th scope="col">제품 식별번호</th><th scope="col">모델 · 제조사</th><th scope="col" class="num">2025년</th><th scope="col" class="num">2026년</th><th scope="col" class="num">차이</th></tr></thead>
+<tbody>
+<tr><th scope="row">24422601</th><td>TAPI-9320B · 한국타피</td><td class="num">142</td><td class="num">69</td><td class="num">−73</td></tr>
+<tr><th scope="row">24362786</th><td>AT-K300E · 에니텍시스</td><td class="num">131</td><td class="num">61</td><td class="num">−70</td></tr>
+<tr><th scope="row">24362785</th><td>AT-K300 · 에니텍시스</td><td class="num">82</td><td class="num">39</td><td class="num">−43</td></tr>
+<tr><th scope="row">25202556</th><td>IS-2000L · 에니텍시스</td><td class="num">195</td><td class="num">154</td><td class="num">−41</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:products--></details>
+              </div>
+            </figure>
+
+            <div class="prose">
+              <h3>감소 상위 기관의 공식 이력 대조</h3>
+              <p>감소 상위 다섯 기관을 사후에 골라 살펴본 탐색 조사이며 대표 표본이 아니다. 공식 본문을 확인한 자료와 검색 결과만 있는 후보를 구분했다.</p>
+              <ul>
+                <li><strong>강남구</strong>: 2025-05-12 공지는 5월 15·16·19·20일 역삼세무서·신사역·강남세무서·구청의 교체 및 설치 작업을 예고한다. <a href="https://www.gov.kr/portal/ntcItm/115093?srchTxt=&amp;srchType=muin">정부24 공식 공지</a></li>
+                <li><strong>마포구</strong>: 2025-04-28 공지는 5월 1·2·7일 동주민센터·역사·세무서의 교체 및 설치 작업을 예고한다. 장소 명칭 수를 기기 수로 바꾸지 않았다. <a href="https://www.gov.kr/portal/ntcItm/114850?pageIndex=2&amp;srchType=muin">정부24 공식 공지</a></li>
+                <li><strong>영등포구·성동구</strong>: 관련 교체·구매 자료의 검색 발췌를 찾았지만 원문 열람에 실패해 확정 근거에서 뺐다. <strong>은평구</strong>: 대응 원문을 확보하지 못했다.</li>
+              </ul>
+              <p>확인된 사실은 두 기관에 <strong>시행 전 교체·설치 예정 기록이 있다</strong>는 것이다. 전년도 교체 수요가 이후 조달 흐름에 영향을 줬을 가능성을 제안할 수 있지만, 공지는 완료 실적이 아니며 조달 요구서·제품 ID·기기 관리번호와 연결되지 않았다. 2026년 감소가 접근성 악화나 특정 법의 효과라는 결론은 낼 수 없다. 출처와 확인 수준은 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/local_history_sources_2026-10-04.json">local_history_sources_2026-10-04.json</a>에 있다.</p>
+            </div>
+          </section>
+
+          <section class="report-section" id="registry" aria-labelledby="registry-title">
+            <header class="section-head">
+              <span class="section-head__n">07</span>
+              <h2 id="registry-title">과거 NIA 검증 제품 목록에서 확인한 구성</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#archived-registry">원문 §6<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">2026년 표기 모델은 2025년 표기보다 <span data-check="registry.diff2526">199</span>건, 산술적으로 <span data-check="registry.pct2526">75.1%</span> 많다. 하지만 2026년은 7월 30일 발급분까지의 부분집계라 같은 기간 증가율도, 정확한 시행 전후 차이도 아니다.</p>
+            <div class="note" role="note">
+              <span class="note__title">다시 수집한 목록이 아니다</span>
+              이 장은 2026-09-30에 작성된 기존 제안 문서의 집계를 2026-10-02에 재계산한 결과다. 당시 공식 사이트의 기본·목록·www 주소 재요청이 모두 HTTP 400을 반환했으므로 신규 수집 완료나 현재 목록으로 표시하지 않는다. 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/05-policy-effect-case-proposals.md#42-우선구매-검증-목록-세부-2026-09-30-조회">docs/05 §4.2</a>, <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/archived_registry_metadata.json">archived_registry_metadata.json</a>.
+            </div>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 15</p>
+                <h3 class="figure__title" id="fig-registry-title">등록번호 연도별 당시 목록의 모델 수</h3>
+                <p class="figure__takeaway" id="fig-registry-desc">2024년 표기 <span data-check="registry.y2024">39</span>건과 2025년 표기 <span data-check="registry.y2025">265</span>건 사이에도 <span data-check="registry.diff2425">226</span>건 차이가 있다. 2026년 값만 떼어 정책 반응으로 해석하면 안 되는 이유다.</p>
+              </figcaption>
+              <div class="viz" data-viz="registryYears" data-labelledby="fig-registry-title" data-describedby="fig-registry-desc"></div>
+              <p class="kbd-hint">차트 안에서 ←·→ 키로 연도를 옮길 수 있다.</p>
+              <div class="figure__foot">
+                <p>* 2026년(<span data-check="registry.y2026">464</span>건)은 7월 30일 발급분까지 확인한 부분집계이고 1월 1~21일도 포함할 수 있다. 옅은 막대로 표시했다. 취소·만료·철회·갱신을 포함한 전체 최초 발급 이력은 검증하지 못했다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:registry-years-->
+<div class="table-scroll" role="region" aria-label="등록번호 연도별 당시 목록의 모델 수 (2026-09-30 기록, 771개 모델)" tabindex="0">
+<table class="data-table">
+<caption>등록번호 연도별 당시 목록의 모델 수 (2026-09-30 기록, 771개 모델)</caption>
+<thead><tr><th scope="col">등록번호의 연도</th><th scope="col" class="num">모델 수</th><th scope="col" class="num">전체 771건 중 비중</th></tr></thead>
+<tbody>
+<tr><th scope="row">2023</th><td class="num">3</td><td class="num">0.4%</td></tr>
+<tr><th scope="row">2024</th><td class="num">39</td><td class="num">5.1%</td></tr>
+<tr><th scope="row">2025</th><td class="num">265</td><td class="num">34.4%</td></tr>
+<tr><th scope="row">2026 (7/30 발급분까지)</th><td class="num">464</td><td class="num">60.2%</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:registry-years--></details>
+              </div>
+            </figure>
+
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 16</p>
+                <h3 class="figure__title" id="fig-composition-title">기업유형과 제품분류의 집중</h3>
+                <p class="figure__takeaway" id="fig-composition-desc">중소기업 보유 모델이 <span data-check="registry.company1.share">76.7%</span>, 무인주차정산기가 <span data-check="registry.product.parking_payment.share">45.3%</span>다. 상위 5개 제품분류가 <span data-check="registry.product.top5">601</span>건(<span data-check="registry.product.top5.share">78.0%</span>)을 차지한다.</p>
+              </figcaption>
+              <div class="figure-grid">
+                <div>
+                  <h4>기업유형</h4>
+                  <!--html:registry-company-->
+<ul class="meter-list" role="list" aria-label="기업유형별 모델 수, 771개 모델 기준">
+<li class="meter">
+  <span class="meter__label">대기업·중견기업</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:21.0117%"></span></span>
+  <span class="meter__value"><strong>21.0%</strong> <span class="meter__count">162개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">중소기업</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:76.6537%"></span></span>
+  <span class="meter__value"><strong>76.7%</strong> <span class="meter__count">591개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">비영리·기타</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:0.1297%"></span></span>
+  <span class="meter__value"><strong>0.1%</strong> <span class="meter__count">1개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">기업유형 미분류</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:2.2049%"></span></span>
+  <span class="meter__value"><strong>2.2%</strong> <span class="meter__count">17개 모델</span></span>
+</li>
+</ul>
+<!--/html:registry-company-->
+                </div>
+                <div>
+                  <h4>제품분류</h4>
+                  <!--html:registry-product-->
+<ul class="meter-list" role="list" aria-label="제품분류별 모델 수, 771개 모델 기준">
+<li class="meter">
+  <span class="meter__label">무인주차정산기</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:45.2659%"></span></span>
+  <span class="meter__value"><strong>45.3%</strong> <span class="meter__count">349개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">무인주문기</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:12.0623%"></span></span>
+  <span class="meter__value"><strong>12.1%</strong> <span class="meter__count">93개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">금융자동화기기</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:9.2088%"></span></span>
+  <span class="meter__value"><strong>9.2%</strong> <span class="meter__count">71개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">무인도서대여반납기</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:7.2633%"></span></span>
+  <span class="meter__value"><strong>7.3%</strong> <span class="meter__count">56개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">무인민원발급기</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:4.1505%"></span></span>
+  <span class="meter__value"><strong>4.2%</strong> <span class="meter__count">32개 모델</span></span>
+</li>
+<li class="meter">
+  <span class="meter__label">나머지 분류</span>
+  <span class="meter__track" aria-hidden="true"><span class="meter__fill" style="--v:22.0493%"></span></span>
+  <span class="meter__value"><strong>22.0%</strong> <span class="meter__count">170개 모델</span></span>
+</li>
+</ul>
+<!--/html:registry-product-->
+                </div>
+              </div>
+              <div class="figure__foot">
+                <p>분모는 모두 771개 모델이다. 기업유형과 제품분류는 별개의 구성이므로 합하지 않는다. 기업 수가 아니라 모델 수이며, 설치 대수로 바꾸거나 전체 키오스크 보급률의 분자로 쓰지 않는다. ‘중소기업’은 중기업과 소기업을 구분할 수 없어 7월 이후 처치가 섞인다. 기업유형 미분류는 규모를 임의로 채우지 않았다. 목록 보유업체가 법상 제조·임대 의무 당사자인지도 확인해야 한다.</p>
+              </div>
+            </figure>
+          </section>
+
+          <section class="report-section" id="limits" aria-labelledby="limits-title">
+            <header class="section-head">
+              <span class="section-head__n">08</span>
+              <h2 id="limits-title">정책 효과를 판단하기 위해 남은 조건</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#interpretation-limits">원문 §7<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">관찰한 변화는 있지만, 현재 자료로는 법이 그 변화를 만들었는지 판단할 수 없다.</p>
+            <ul class="limits" role="list">
+              <li class="limit">
+                <h3>이용자의 디지털 이용 수준이 달라졌나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>2016~2025년 장기 기준선</dd><dt>추가로 필요한 조건</dt><dd>2026년 이후 조사 결과, 측정기준·모집단 변화 확인</dd></dl>
+              </li>
+              <li class="limit">
+                <h3>웹 접근성이 좋아졌나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>시행 전 공표 평균은 상승</dd><dt>추가로 필요한 조건</dt><dd>평가기준·배점·표본의 연결과 시행 후 관측</dd></dl>
+              </li>
+              <li class="limit">
+                <h3>공공 발급기에 어떤 기능이 있나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>사용 5,800건의 8개 기능 제공 표시</dd><dt>추가로 필요한 조건</dt><dd>실제 작동·이용 경험, 기기별 기능·교체·삭제 이력</dd></dl>
+              </li>
+              <li class="limit">
+                <h3>시행 이후 조달 요청이 늘었나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>선택한 두 품목의 비교 구간에서 순증 수량·금액은 감소</dd><dt>추가로 필요한 조건</dt><dd>다른 품목·민간시장·예산 주기 등 비교 자료</dd></dl>
+              </li>
+              <li class="limit">
+                <h3>검증 제품 공급이 늘었나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>과거 목록의 연도·기업·제품 구성 재계산</dd><dt>추가로 필요한 조건</dt><dd>최초 검증일과 갱신·취소·만료·철회 이력</dd></dl>
+              </li>
+              <li class="limit limit--key">
+                <h3>법이 이 변화를 만들었나</h3>
+                <dl><dt>현재 확인한 내용</dt><dd>현재 자료로 인과효과 판단 불가</dd><dt>추가로 필요한 조건</dt><dd>시행 당시 제조사 규모·역할·영업 여부, 독립 모집단, 타당한 비교집단과 경쟁 정책을 구분할 설계</dd></dl>
+              </li>
+            </ul>
+            <div class="prose">
+              <p>기업 규모별 비교는 2026년 6월까지로 제한해 검토할 수 있다. 그러나 독립 모집단·사전 영업 여부·처치 당시 기업규모를 확인하기 전에는 미관측 기업의 사전 값을 0으로 채우지 않는다. 검증 목록 밖의 업체가 빠지는 표본 선택 문제도 남아 있다. 신청일·발급일·적용 검증기준·지원사업 참여 자료가 있어야 정책 반응과 기관 처리 지연을 구분할 수 있다.</p>
+              <p>2025년 검증기준 개정과 시행령 완화는 실제 관련 정책 사건이므로 가짜 시행일 검정으로 부르지 않는다. 사전추세 검정이 기각되지 않아도 평행추세가 입증되는 것은 아니다. 현재 자료로 기업·월 패널이나 이중차분 정책효과를 추정하지 않았다.</p>
+              <p>행안부 기기와 조달청 거래를 잇는 설치·조달 연결키도 확인되지 않았다. 그래서 납품요구 변화가 현재 기능 차이를 만들었다고 해석하지 않는다. 이용자 연간 지수는 관측 단위가 또 다르며, 네 취약계층 모두 정책의 영향을 받을 수 있어 독립적인 미처치 대조군으로 바로 삼을 수 없다.</p>
+              <p>후속 자료의 우선순위는 <strong>기기별 기능·교체 이력, NIA 제품 최초 검증·갱신·철회 이력, 시행 당시 제조사 규모·역할</strong>이다. NIA 위치 API(<code>15157403</code>)의 조회는 사용자가 재개를 요청할 때까지 보류하며 제품 검증 이력 확보와 구분한다. 후속 자료 상태는 <a href="https://github.com/gonasooc/a11y/blob/main/docs/work/W-004-main-history-data.md">docs/work/W-004-main-history-data.md</a>에 기록한다.</p>
+            </div>
+          </section>
+
+          <section class="report-section" id="reconciliation" aria-labelledby="reconciliation-title">
+            <header class="section-head">
+              <span class="section-head__n">09</span>
+              <h2 id="reconciliation-title">보고서와 KOSIS 출처를 대조한 결과</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#source-reconciliation">원문 §8<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <p class="section-lead">NIA 보고서의 디지털정보화 <span data-check="rc.cells">100</span>개 값을 KOSIS와 같은 지표·집단·연도·단위로 대조했다. <span data-check="rc.match">99</span>개가 일치하고 <span data-check="rc.diff">1</span>개 셀에서 <span data-check="rc.delta">0.1</span>포인트 차이가 났다.</p>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 17</p>
+                <h3 class="figure__title" id="fig-rc-title">100개 셀의 대조 결과</h3>
+                <p class="figure__takeaway" id="fig-rc-desc">다른 셀은 2021년 농어민 접근지수 하나다. 2025 NIA 보고서의 과거 수치는 <span data-check="rc.report">94.8</span>, 현재 KOSIS 응답은 <span data-check="rc.api">94.9</span>다.</p>
+              </figcaption>
+              <!--html:rc-matrix-->
+<div class="table-scroll" role="region" aria-label="디지털정보화 지표 100개 셀의 KOSIS 응답값 (2021~2025년, 보고서와 다른 셀은 보고서 값을 함께 표시)" tabindex="0">
+<table class="data-table rc-matrix">
+<caption>디지털정보화 지표 100개 셀의 KOSIS 응답값 (2021~2025년, 보고서와 다른 셀은 보고서 값을 함께 표시)</caption>
+<thead><tr><th scope="col">지표 · 집단</th><th scope="col" class="num">2021</th><th scope="col" class="num">2022</th><th scope="col" class="num">2023</th><th scope="col" class="num">2024</th><th scope="col" class="num">2025</th></tr></thead>
+<tbody>
+<tr><th scope="row">종합 · 장애인</th><td class="num rc rc--match"><span class="cell-main">81.7</span></td><td class="num rc rc--match"><span class="cell-main">82.2</span></td><td class="num rc rc--match"><span class="cell-main">82.8</span></td><td class="num rc rc--match"><span class="cell-main">83.5</span></td><td class="num rc rc--match"><span class="cell-main">84.1</span></td></tr>
+<tr><th scope="row">종합 · 고령층</th><td class="num rc rc--match"><span class="cell-main">69.1</span></td><td class="num rc rc--match"><span class="cell-main">69.9</span></td><td class="num rc rc--match"><span class="cell-main">70.7</span></td><td class="num rc rc--match"><span class="cell-main">71.4</span></td><td class="num rc rc--match"><span class="cell-main">71.8</span></td></tr>
+<tr><th scope="row">종합 · 저소득층</th><td class="num rc rc--match"><span class="cell-main">95.4</span></td><td class="num rc rc--match"><span class="cell-main">95.6</span></td><td class="num rc rc--match"><span class="cell-main">96.1</span></td><td class="num rc rc--match"><span class="cell-main">96.5</span></td><td class="num rc rc--match"><span class="cell-main">97.0</span></td></tr>
+<tr><th scope="row">종합 · 농어민</th><td class="num rc rc--match"><span class="cell-main">78.1</span></td><td class="num rc rc--match"><span class="cell-main">78.9</span></td><td class="num rc rc--match"><span class="cell-main">79.5</span></td><td class="num rc rc--match"><span class="cell-main">80.0</span></td><td class="num rc rc--match"><span class="cell-main">80.6</span></td></tr>
+<tr><th scope="row">종합 · 취약계층 가중평균</th><td class="num rc rc--match"><span class="cell-main">75.4</span></td><td class="num rc rc--match"><span class="cell-main">76.2</span></td><td class="num rc rc--match"><span class="cell-main">76.9</span></td><td class="num rc rc--match"><span class="cell-main">77.5</span></td><td class="num rc rc--match"><span class="cell-main">77.9</span></td></tr>
+<tr><th scope="row">접근 · 장애인</th><td class="num rc rc--match"><span class="cell-main">95.6</span></td><td class="num rc rc--match"><span class="cell-main">96.7</span></td><td class="num rc rc--match"><span class="cell-main">98.0</span></td><td class="num rc rc--match"><span class="cell-main">98.1</span></td><td class="num rc rc--match"><span class="cell-main">98.1</span></td></tr>
+<tr><th scope="row">접근 · 고령층</th><td class="num rc rc--match"><span class="cell-main">93.1</span></td><td class="num rc rc--match"><span class="cell-main">95.1</span></td><td class="num rc rc--match"><span class="cell-main">95.3</span></td><td class="num rc rc--match"><span class="cell-main">95.3</span></td><td class="num rc rc--match"><span class="cell-main">95.4</span></td></tr>
+<tr><th scope="row">접근 · 저소득층</th><td class="num rc rc--match"><span class="cell-main">98.7</span></td><td class="num rc rc--match"><span class="cell-main">99.5</span></td><td class="num rc rc--match"><span class="cell-main">99.6</span></td><td class="num rc rc--match"><span class="cell-main">99.8</span></td><td class="num rc rc--match"><span class="cell-main">99.8</span></td></tr>
+<tr><th scope="row">접근 · 농어민</th><td class="num rc rc--diff"><span class="cell-main">94.9</span><span class="cell-sub">보고서 94.8</span></td><td class="num rc rc--match"><span class="cell-main">95.7</span></td><td class="num rc rc--match"><span class="cell-main">97.0</span></td><td class="num rc rc--match"><span class="cell-main">97.0</span></td><td class="num rc rc--match"><span class="cell-main">97.2</span></td></tr>
+<tr><th scope="row">접근 · 취약계층 가중평균</th><td class="num rc rc--match"><span class="cell-main">94.4</span></td><td class="num rc rc--match"><span class="cell-main">96.0</span></td><td class="num rc rc--match"><span class="cell-main">96.5</span></td><td class="num rc rc--match"><span class="cell-main">96.5</span></td><td class="num rc rc--match"><span class="cell-main">96.6</span></td></tr>
+<tr><th scope="row">역량 · 장애인</th><td class="num rc rc--match"><span class="cell-main">74.9</span></td><td class="num rc rc--match"><span class="cell-main">75.2</span></td><td class="num rc rc--match"><span class="cell-main">75.6</span></td><td class="num rc rc--match"><span class="cell-main">76.1</span></td><td class="num rc rc--match"><span class="cell-main">77.0</span></td></tr>
+<tr><th scope="row">역량 · 고령층</th><td class="num rc rc--match"><span class="cell-main">53.9</span></td><td class="num rc rc--match"><span class="cell-main">54.5</span></td><td class="num rc rc--match"><span class="cell-main">55.3</span></td><td class="num rc rc--match"><span class="cell-main">55.9</span></td><td class="num rc rc--match"><span class="cell-main">56.2</span></td></tr>
+<tr><th scope="row">역량 · 저소득층</th><td class="num rc rc--match"><span class="cell-main">92.9</span></td><td class="num rc rc--match"><span class="cell-main">92.9</span></td><td class="num rc rc--match"><span class="cell-main">93.0</span></td><td class="num rc rc--match"><span class="cell-main">93.3</span></td><td class="num rc rc--match"><span class="cell-main">94.1</span></td></tr>
+<tr><th scope="row">역량 · 농어민</th><td class="num rc rc--match"><span class="cell-main">69.6</span></td><td class="num rc rc--match"><span class="cell-main">70.6</span></td><td class="num rc rc--match"><span class="cell-main">71.0</span></td><td class="num rc rc--match"><span class="cell-main">71.8</span></td><td class="num rc rc--match"><span class="cell-main">72.4</span></td></tr>
+<tr><th scope="row">역량 · 취약계층 가중평균</th><td class="num rc rc--match"><span class="cell-main">63.8</span></td><td class="num rc rc--match"><span class="cell-main">64.5</span></td><td class="num rc rc--match"><span class="cell-main">65.1</span></td><td class="num rc rc--match"><span class="cell-main">65.6</span></td><td class="num rc rc--match"><span class="cell-main">65.9</span></td></tr>
+<tr><th scope="row">활용 · 장애인</th><td class="num rc rc--match"><span class="cell-main">81.5</span></td><td class="num rc rc--match"><span class="cell-main">82.0</span></td><td class="num rc rc--match"><span class="cell-main">82.5</span></td><td class="num rc rc--match"><span class="cell-main">83.7</span></td><td class="num rc rc--match"><span class="cell-main">84.3</span></td></tr>
+<tr><th scope="row">활용 · 고령층</th><td class="num rc rc--match"><span class="cell-main">72.3</span></td><td class="num rc rc--match"><span class="cell-main">72.6</span></td><td class="num rc rc--match"><span class="cell-main">73.8</span></td><td class="num rc rc--match"><span class="cell-main">75.0</span></td><td class="num rc rc--match"><span class="cell-main">75.6</span></td></tr>
+<tr><th scope="row">활용 · 저소득층</th><td class="num rc rc--match"><span class="cell-main">96.3</span></td><td class="num rc rc--match"><span class="cell-main">96.4</span></td><td class="num rc rc--match"><span class="cell-main">97.4</span></td><td class="num rc rc--match"><span class="cell-main">98.0</span></td><td class="num rc rc--match"><span class="cell-main">98.5</span></td></tr>
+<tr><th scope="row">활용 · 농어민</th><td class="num rc rc--match"><span class="cell-main">78.1</span></td><td class="num rc rc--match"><span class="cell-main">78.8</span></td><td class="num rc rc--match"><span class="cell-main">79.2</span></td><td class="num rc rc--match"><span class="cell-main">79.6</span></td><td class="num rc rc--match"><span class="cell-main">80.5</span></td></tr>
+<tr><th scope="row">활용 · 취약계층 가중평균</th><td class="num rc rc--match"><span class="cell-main">77.6</span></td><td class="num rc rc--match"><span class="cell-main">78.0</span></td><td class="num rc rc--match"><span class="cell-main">79.0</span></td><td class="num rc rc--match"><span class="cell-main">80.0</span></td><td class="num rc rc--match"><span class="cell-main">80.5</span></td></tr>
+</tbody>
+</table>
+</div>
+<!--/html:rc-matrix-->
+              <div class="figure__foot">
+                <p>칸의 숫자는 KOSIS 응답값이다. 느낌표가 붙은 칸이 보고서와 다른 셀이며 보고서 값을 함께 적었다. 웹 접근성 7개 값은 네 KOSIS 표의 범위 밖이라 대조에서 뺐다.</p>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>2025 NIA 보고서 본문 23쪽 표3(PDF 49페이지)을 화면으로 다시 확인했고 텍스트 추출도 94.8로 같았다. KOSIS는 94.9이고 해당 셀의 최종수정일은 2023-06-26이다. 2021년 조사 보고서의 현재 공식 첨부파일은 농어민 접근지수를 2021년 94.9로 표시해 KOSIS와 일치한다. 그러나 2025년 보고서의 과거 값에 대한 공식 정정 공지는 찾지 못했고, 현재 첨부파일이 최초 게시 당시와 같은지도 검증하지 않았다.</p>
+              <p><strong>기존 보고서 CSV를 고치지 않고 양쪽 출처를 보존했다.</strong> 장기 비교는 KOSIS 계열만 쓰며 보고서 계열과 이어 붙이지 않는다. 이 차이는 2021년을 포함한 농어민 접근지수 변화량에 0.1포인트 영향을 주지만, 2016→2025 끝점 비교와 2025년 수준에는 영향을 주지 않는다. 별도로 보고서 내부의 활용 <strong>원점수</strong> 불일치도 확인해 원점수 역산을 빼고 공표 상대지수만 사용했다.</p>
+            </div>
+          </section>
+
+          <section class="report-section" id="reproduce" aria-labelledby="reproduce-title">
+            <header class="section-head">
+              <span class="section-head__n">10</span>
+              <h2 id="reproduce-title">재현과 검증</h2>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md#reproduction">원문 §9<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <div class="prose">
+              <p>저장된 CSV·메타데이터·수집 명세로 다시 분석할 수 있으며, 아래 명령에는 API 키와 네트워크가 필요 없다.</p>
+              <pre class="cmd"><code>python3 analyses/digital-inclusion/analyze.py
+python3 analyses/digital-inclusion/kosis_analyze.py --snapshot 2026-10-03
+python3 analyses/digital-inclusion/mois_analyze.py --snapshot 2026-10-03
+python3 analyses/digital-inclusion/pps_analyze.py
+python3 analyses/digital-inclusion/followup_analyze.py</code></pre>
+              <p>이 페이지의 차트와 표는 빌드할 때 아래 파일에서 직접 계산한다. 본문에 쓴 숫자도 빌드 중 같은 계산값과 대조하며, 하나라도 다르면 빌드가 멈춘다. 분석 출력이 바뀌면 문장을 사람이 다시 읽고 고치게 하기 위해서다.</p>
+            </div>
+            <!--table:provenance-->
+<div class="table-scroll" role="region" aria-label="이 페이지가 빌드 시점에 읽은 분석 파일" tabindex="0">
+<table class="data-table">
+<caption>이 페이지가 빌드 시점에 읽은 분석 파일</caption>
+<thead><tr><th scope="col">파일</th><th scope="col">형식</th><th scope="col">SHA-256 앞 12자리</th></tr></thead>
+<tbody>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/kosis_digital_divide_2026-10-03.csv">analyses/digital-inclusion/data/kosis_digital_divide_2026-10-03.csv</a></th><td>240행</td><td>8ed2bcc2587f</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/kosis_latest_gaps_2026-10-03.csv">analyses/digital-inclusion/outputs/kosis_latest_gaps_2026-10-03.csv</a></th><td>20행</td><td>840c7323010f</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/kosis_report_comparison_2026-10-03.csv">analyses/digital-inclusion/outputs/kosis_report_comparison_2026-10-03.csv</a></th><td>100행</td><td>285d6ce4f3d8</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/baseline_indicators.csv">analyses/digital-inclusion/data/baseline_indicators.csv</a></th><td>107행</td><td>6bc4d3b801d5</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/data/policy_events.csv">analyses/digital-inclusion/data/policy_events.csv</a></th><td>9행</td><td>ee637c7fea23</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/mois_summary_2026-10-03.json">analyses/digital-inclusion/outputs/mois_summary_2026-10-03.json</a></th><td>JSON</td><td>9490671f381f</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/mois_region_comparison_2026-10-03.csv">analyses/digital-inclusion/outputs/mois_region_comparison_2026-10-03.csv</a></th><td>16행</td><td>7232bee2406f</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/mois_feature_pairs_2026-10-03.csv">analyses/digital-inclusion/outputs/mois_feature_pairs_2026-10-03.csv</a></th><td>9행</td><td>bbadecb17a0e</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/mois_feature_patterns_2026-10-03.csv">analyses/digital-inclusion/outputs/mois_feature_patterns_2026-10-03.csv</a></th><td>5행</td><td>3f54d33582ff</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/pps_monthly.csv">analyses/digital-inclusion/outputs/pps_monthly.csv</a></th><td>42행</td><td>af994dea565d</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/pps_summary.json">analyses/digital-inclusion/outputs/pps_summary.json</a></th><td>JSON</td><td>f83a82556311</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/pps_institution_cohorts.csv">analyses/digital-inclusion/outputs/pps_institution_cohorts.csv</a></th><td>3행</td><td>a90a7f40233e</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/pps_institutions_comparison.csv">analyses/digital-inclusion/outputs/pps_institutions_comparison.csv</a></th><td>351행</td><td>6dcd3a587dd4</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/pps_products_comparison.csv">analyses/digital-inclusion/outputs/pps_products_comparison.csv</a></th><td>30행</td><td>6efcf9ac52e4</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/registry_composition.csv">analyses/digital-inclusion/outputs/registry_composition.csv</a></th><td>15행</td><td>44ab0051a1e2</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/outputs/summary.json">analyses/digital-inclusion/outputs/summary.json</a></th><td>JSON</td><td>79bd463bfe24</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:provenance-->
+            <div class="prose">
+              <p>기존 집계를 이미 본 탐색 분석이므로 사전 등록으로 부르지 않는다. 결측을 0으로 채우거나 100 초과 지수를 잘라내지 않았고, 관측 자료의 산술 집계에 표본 신뢰구간·p값을 붙이지 않았다. 실제 키·인증 URL은 산출물에 넣지 않았다. 수집 실행법과 전체 출력 목록은 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/README.md">analyses/digital-inclusion/README.md</a>, 설계·출처 선택 규칙은 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/plan.json">plan.json</a>과 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/digital-inclusion/kosis_analysis_plan.json">kosis_analysis_plan.json</a>에 있다.</p>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>이 페이지는 <a href="https://github.com/gonasooc/a11y/blob/main/docs/digital-inclusion-analysis.md">docs/digital-inclusion-analysis.md</a>의 내용을 차트로 옮긴 것이다. 차트와 표의 값은 빌드할 때 <a href="https://github.com/gonasooc/a11y/tree/main/analyses/digital-inclusion">analyses/digital-inclusion</a>의 출력에서 직접 계산한다. 공개 자료의 탐색적 기술통계이며 법률 자문이 아니다.</p>
+        <p><a href="../../index.html">a11y 전체 목록</a> · <a href="https://github.com/gonasooc/a11y">GitHub 저장소</a></p>
+      </div>
+      <!--report:data-->
+<script type="application/json" id="report-data">{"kosis":{"years":[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"overall":[{"key":"disabled","label":"장애인","values":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1]},{"key":"older_adults","label":"고령층","values":[54,58.3,63.1,64.3,68.6,69.1,69.9,70.7,71.4,71.8]},{"key":"low_income","label":"저소득층","values":[77.3,81.4,86.8,87.8,95.1,95.4,95.6,96.1,96.5,97]},{"key":"farmers_fishers","label":"농어민","values":[61.1,64.8,69.8,70.6,77.3,78.1,78.9,79.5,80,80.6]},{"key":"vulnerable_weighted","label":"취약계층 가중평균","values":[58.6,65.1,68.9,69.9,72.7,75.4,76.2,76.9,77.5,77.9]}],"disabled":[{"key":"overall","label":"종합","values":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1]},{"key":"access","label":"접근","values":[88.1,91.6,92,92.6,95.4,95.6,96.7,98,98.1,98.1]},{"key":"capability","label":"역량","values":[49.8,57.7,66.9,67.8,74.2,74.9,75.2,75.6,76.1,77]},{"key":"utilization","label":"활용","values":[64.6,71.5,73.6,74,81.4,81.5,82,82.5,83.7,84.3]}],"gaps":[{"key":"disabled","label":"장애인","access":98.1,"capability":77,"utilization":84.3},{"key":"older_adults","label":"고령층","access":95.4,"capability":56.2,"utilization":75.6},{"key":"low_income","label":"저소득층","access":99.8,"capability":94.1,"utilization":98.5},{"key":"farmers_fishers","label":"농어민","access":97.2,"capability":72.4,"utilization":80.5},{"key":"vulnerable_weighted","label":"취약계층 가중평균","access":96.6,"capability":65.9,"utilization":80.5}]},"web":[{"year":2019,"value":53.7},{"year":2020,"value":60.7},{"year":2021,"value":60.8},{"year":2022,"value":60.9},{"year":2023,"value":65.8},{"year":2024,"value":66.7},{"year":2025,"value":70.4}],"pps":{"months":[{"month":"2025-01","qty":179,"eok":22.97,"requests":103,"institutions":83},{"month":"2025-02","qty":207,"eok":30.85,"requests":113,"institutions":95},{"month":"2025-03","qty":262,"eok":50.28,"requests":89,"institutions":68},{"month":"2025-04","qty":155,"eok":30.54,"requests":53,"institutions":38},{"month":"2025-05","qty":68,"eok":11,"requests":46,"institutions":44},{"month":"2025-06","qty":41,"eok":6.1,"requests":22,"institutions":20},{"month":"2025-07","qty":49,"eok":6.41,"requests":21,"institutions":19},{"month":"2025-08","qty":21,"eok":3.24,"requests":11,"institutions":10},{"month":"2025-09","qty":69,"eok":8.69,"requests":37,"institutions":32},{"month":"2025-10","qty":47,"eok":8.7,"requests":30,"institutions":25},{"month":"2025-11","qty":58,"eok":9.05,"requests":37,"institutions":29},{"month":"2025-12","qty":360,"eok":58.98,"requests":40,"institutions":32},{"month":"2026-01","qty":331,"eok":54.89,"requests":183,"institutions":147},{"month":"2026-02","qty":166,"eok":27.02,"requests":88,"institutions":71},{"month":"2026-03","qty":183,"eok":29.29,"requests":99,"institutions":74},{"month":"2026-04","qty":71,"eok":10.34,"requests":38,"institutions":33},{"month":"2026-05","qty":52,"eok":10.1,"requests":22,"institutions":21},{"month":"2026-06","qty":52,"eok":6.59,"requests":30,"institutions":20},{"month":"2026-07","qty":13,"eok":1.84,"requests":11,"institutions":9},{"month":"2026-08","qty":26,"eok":3.82,"requests":20,"institutions":18},{"month":"2026-09","qty":34,"eok":4.47,"requests":22,"institutions":20}],"windows":[{"key":"febSep","label":"2~9월 · 주 비교","note":"전환월(1월) 제외","q2025":872,"q2026":597,"pct":-31.5},{"key":"sameDates","label":"1/22~9/30 · 같은 날짜 범위","note":"법정 시행일부터","q2025":930,"q2026":716,"pct":-23},{"key":"janSep","label":"1~9월 · 전환월 포함","note":"1월 전체 포함","q2025":1051,"q2026":928,"pct":-11.7},{"key":"febJun","label":"2~6월 · 중기업 의무 적용 전","note":"7/22 이전 구간","q2025":733,"q2026":524,"pct":-28.5}],"january":[{"year":"2025","early":121,"late":58,"total":179},{"year":"2026","early":212,"late":119,"total":331}],"events":[{"n":1,"date":"2025-01-21","label":"법 제정·공포","role":"anticipation","roleLabel":"공포"},{"n":2,"date":"2025-03-27","label":"기존 지능정보화 기본법의 설치·운영 의무 도입","role":"preceding_policy","roleLabel":"선행 정책"},{"n":3,"date":"2025-10-20","label":"검증기준 개정","role":"competing_event","roleLabel":"경쟁 사건"},{"n":4,"date":"2026-01-22","label":"법 시행, 대기업·중견기업 제조·임대 의무","role":"treatment","roleLabel":"시행"},{"n":5,"date":"2026-01-28","label":"장애인차별금지법의 키오스크 편의 조치 전면 적용","role":"competing_event","roleLabel":"경쟁 사건"},{"n":6,"date":"2026-04-20","label":"구 검증기준 적용 가능한 신청 마감","role":"competing_event","roleLabel":"경쟁 사건"},{"n":7,"date":"2026-04-22","label":"대기업·중견기업 계도 종료","role":"enforcement","roleLabel":"집행 일정"},{"n":8,"date":"2026-07-22","label":"중기업 제조·임대 의무","role":"staggered_treatment","roleLabel":"시차 적용"}]},"cohorts":{"start":872,"end":597,"steps":[{"key":"both","label":"두 해 모두 기록","institutions":101,"diff":-217},{"key":"2025_only","label":"2025년에만 기록","institutions":145,"diff":-260},{"key":"2026_only","label":"2026년에만 기록","institutions":105,"diff":202}]},"institutions":{"decreases":[{"label":"강남구","full":"서울특별시 강남구","q2025":40,"q2026":4},{"label":"영등포구","full":"서울특별시 영등포구","q2025":33,"q2026":5},{"label":"성동구","full":"서울특별시 성동구","q2025":25,"q2026":1},{"label":"마포구","full":"서울특별시 마포구","q2025":24,"q2026":2},{"label":"은평구","full":"서울특별시 은평구","q2025":21,"q2026":2}],"increases":[{"label":"남양주시","full":"경기도 남양주시","q2025":1,"q2026":15},{"label":"성남시 수정구","full":"경기도 성남시 수정구","q2025":0,"q2026":13}]},"products":[{"label":"TAPI-9320B","sub":"한국타피 · 무인민원발급기/시청각장애인겸용","q2025":142,"q2026":69},{"label":"AT-K300E","sub":"에니텍시스 · 무인민원발급기/시청각장애인겸용","q2025":131,"q2026":61},{"label":"AT-K300","sub":"에니텍시스 · 무인민원발급기/시청각장애인겸용","q2025":82,"q2026":39},{"label":"IS-2000L","sub":"에니텍시스 · 통합민원발급기","q2025":195,"q2026":154}],"registry":{"years":[{"label":"2023","value":3,"partial":false},{"label":"2024","value":39,"partial":false},{"label":"2025","value":265,"partial":false},{"label":"2026","value":464,"partial":true}]},"coverage":{"law":{"date":"2026-01-22","label":"디지털포용법 시행 2026-01-22"},"domain":["2016-01-01","2027-01-01"],"rows":[{"label":"KOSIS 디지털정보격차","years":[2016,2017,2018,2019,2020,2021,2022,2023,2024,2025],"span":"조사연도 2016~2025, 연 1회","after":"없음"},{"label":"민간 웹 접근성 실태조사","years":[2019,2020,2021,2022,2023,2024,2025],"span":"조사연도 2019~2025, 연 1회","after":"없음"},{"label":"과거 NIA 검증 목록","start":"2023-01-01","end":"2026-07-30","partial":true,"point":"2026-09-30","span":"등록번호 연도 2023~2026(2026년은 7/30 발급분까지), 2026-09-30 기록","after":"2026년 표기 부분집계, 최초 발급 이력 미검증"},{"label":"조달청 납품요구","start":"2025-01-01","end":"2026-09-30","span":"2025-01~2026-09 접수월","after":"있음 (구매 요청·변경 기록)"},{"label":"행안부 무인민원발급기","point":"2026-10-03","span":"2026-10-03 수집, 현재 상태 1회","after":"현재 상태만, 과거 이력 없음"}]},"hero":{"disabledOverall":[65.4,70,74.6,75.2,81.3,81.7,82.2,82.8,83.5,84.1],"wheelchairNoShare":9.689655172413794,"months":[{"month":"2025-01","qty":179},{"month":"2025-02","qty":207},{"month":"2025-03","qty":262},{"month":"2025-04","qty":155},{"month":"2025-05","qty":68},{"month":"2025-06","qty":41},{"month":"2025-07","qty":49},{"month":"2025-08","qty":21},{"month":"2025-09","qty":69},{"month":"2025-10","qty":47},{"month":"2025-11","qty":58},{"month":"2025-12","qty":360},{"month":"2026-01","qty":331},{"month":"2026-02","qty":166},{"month":"2026-03","qty":183},{"month":"2026-04","qty":71},{"month":"2026-05","qty":52},{"month":"2026-06","qty":52},{"month":"2026-07","qty":13},{"month":"2026-08","qty":26},{"month":"2026-09","qty":34}]},"meta":{"repoUrl":"https://github.com/gonasooc/a11y"}}</script>
+<!--/report:data-->
+    </footer>
+  </body>
+</html>

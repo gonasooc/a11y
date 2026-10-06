@@ -1,0 +1,145 @@
+/*
+ * 디자인 토큰. 글꼴은 Pretendard 하나만 쓴다.
+ * 차트 색은 dataviz 기준 팔레트를 그대로 쓰고 validate_palette.js로 카드 면(#ffffff, #171a1f)에서 검사했다.
+ * 밝은 화면의 3~5번 계열은 3:1 미만이라 모든 차트에 직접 라벨이나 표 보기를 함께 둔다.
+ */
+:root {
+  color-scheme: light;
+
+  --font-sans: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif;
+
+  /* 면 */
+  --page: #f6f7f9;
+  --surface: #ffffff;
+  --surface-sunk: #eef0f3;
+  --surface-raised: #ffffff;
+
+  /* 글자 (모두 --page, --surface, --surface-sunk에서 4.5:1 이상) */
+  --ink: #14171c;
+  --ink-2: #3d4450;
+  --muted: #5c6370;
+
+  /* 선 */
+  --hairline: #e4e7ec;
+  --rule: #c9ced6;
+  --ref: #7d8592;
+
+  /* 상호작용 */
+  --link: #1c5cab;
+  --focus: #0d366b;
+
+  /* 범주형 계열 (고정 순서) */
+  --s1: #2a78d6;
+  --s2: #eb6834;
+  --s3: #1baf7a;
+  --s4: #eda100;
+  --s5: #e87ba4;
+  --deemph: #858d99;
+
+  /* 같은 계열의 두 단계 (전후 비교, 날짜 구분) */
+  --before: #5598e7;
+  --after: #104281;
+
+  /* 순차 (파랑, 적을수록 면에 가깝다) */
+  --seq-1: #cde2fb;
+  --seq-2: #9ec5f4;
+  --seq-3: #5598e7;
+  --seq-4: #1c5cab;
+  --seq-ink-1: #14171c;
+  --seq-ink-2: #14171c;
+  --seq-ink-3: #14171c;
+  --seq-ink-4: #ffffff;
+
+  /* 발산 (감소·증가) */
+  --dec: #e34948;
+  --inc: #2a78d6;
+  --total: #5c6370;
+
+  /* 상태: 출처 불일치처럼 의미가 있을 때만 아이콘·글자와 함께 쓴다 */
+  --warning: #fab219;
+  --warning-ink: #5c3d00;
+
+  --radius: 12px;
+  --radius-sm: 8px;
+  --shadow: 0 1px 2px rgb(20 23 28 / 0.06), 0 6px 20px rgb(20 23 28 / 0.08);
+  --measure: 70ch;
+}
+
+/* 어두운 화면: 같은 색상환의 다른 단계를 #171a1f 면에서 다시 검사했다. */
+@media (prefers-color-scheme: dark) {
+  :root:where(:not([data-theme='light'])) {
+    color-scheme: dark;
+    --page: #0f1115;
+    --surface: #171a1f;
+    --surface-sunk: #1f232a;
+    --surface-raised: #252a32;
+    --ink: #f2f4f7;
+    --ink-2: #c5cad2;
+    --muted: #9aa1ad;
+    --hairline: #2a2f37;
+    --rule: #3d434d;
+    --ref: #868e99;
+    --link: #86b6ef;
+    --focus: #cde2fb;
+    --s1: #3987e5;
+    --s2: #d95926;
+    --s3: #199e70;
+    --s4: #c98500;
+    --s5: #d55181;
+    --deemph: #6e7581;
+    --before: #256abf;
+    --after: #9ec5f4;
+    --seq-1: #102f57;
+    --seq-2: #184f95;
+    --seq-3: #3987e5;
+    --seq-4: #9ec5f4;
+    --seq-ink-1: #f2f4f7;
+    --seq-ink-2: #f2f4f7;
+    --seq-ink-3: #14171c;
+    --seq-ink-4: #14171c;
+    --dec: #e66767;
+    --inc: #3987e5;
+    --total: #9aa1ad;
+    --warning: #fab219;
+    --warning-ink: #1a1408;
+    --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.35);
+  }
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+  --page: #0f1115;
+  --surface: #171a1f;
+  --surface-sunk: #1f232a;
+  --surface-raised: #252a32;
+  --ink: #f2f4f7;
+  --ink-2: #c5cad2;
+  --muted: #9aa1ad;
+  --hairline: #2a2f37;
+  --rule: #3d434d;
+  --ref: #868e99;
+  --link: #86b6ef;
+  --focus: #cde2fb;
+  --s1: #3987e5;
+  --s2: #d95926;
+  --s3: #199e70;
+  --s4: #c98500;
+  --s5: #d55181;
+  --deemph: #6e7581;
+  --before: #256abf;
+  --after: #9ec5f4;
+  --seq-1: #102f57;
+  --seq-2: #184f95;
+  --seq-3: #3987e5;
+  --seq-4: #9ec5f4;
+  --seq-ink-1: #f2f4f7;
+  --seq-ink-2: #f2f4f7;
+  --seq-ink-3: #14171c;
+  --seq-ink-4: #14171c;
+  --dec: #e66767;
+  --inc: #3987e5;
+  --total: #9aa1ad;
+  --warning: #fab219;
+  --warning-ink: #1a1408;
+  --shadow: 0 1px 2px rgb(0 0 0 / 0.4), 0 6px 20px rgb(0 0 0 / 0.35);
+}
