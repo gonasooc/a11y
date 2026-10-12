@@ -2,7 +2,7 @@
 // 일반 스크립트(defer)다. 공통 스크립트가 window.A11y에 올려 둔 함수를 쓴다.
 (function (A11y) {
   'use strict';
-  const { coverageChart, columnChart, dotPlot, dumbbellChart, lineChart, monthlyChart, smallMultiples, sparkBars, sparkLine, sparkMeter, splitBars, waterfallChart } = A11y.charts;
+  const { coverageChart, columnChart, dotPlot, dumbbellChart, lineChart, monthlyChart, refBars, smallMultiples, splitBars, waterfallChart } = A11y.charts;
   const { fmt, fmtSignedPct } = A11y.format;
 
   const data = JSON.parse(document.getElementById('report-data').textContent);
@@ -23,15 +23,29 @@
     }
   }
 
-  const inMainWindow = (month) => {
-    const m = Number(month.slice(5));
-    return m >= 2 && m <= 9;
-  };
 
-  render('heroKosis', (el) => sparkLine(el, data.hero.disabledOverall));
-  render('heroMois', (el) => sparkMeter(el, data.hero.wheelchairNoShare));
-  render('heroPps', (el) => sparkBars(el, data.hero.months.map((m) => m.qty), (i) => inMainWindow(data.hero.months[i].month)));
+  /* 본문 차트 */
+  render('baseline100', (el, ids) =>
+    refBars(el, { items: data.baseline100, domain: [0, 100], ref: { value: 100, label: '일반국민 100' }, ticks: 4, ...ids }),
+  );
+  render('trend', (el, ids) =>
+    lineChart(el, {
+      years: data.trend.years,
+      series: [{ key: 'disabled', label: '장애인 종합', values: data.trend.values }],
+      yDomain: [50, 100],
+      ref: 100,
+      marker: { key: 2026, axisLabel: '2026', label: '2026.1.22 법 시행', note: '이후 통계 아직 없음' },
+      ...ids,
+    }),
+  );
+  render('webItems', (el, ids) =>
+    refBars(el, { items: data.webItems.items, domain: [0, 100], ref: { value: data.webItems.average, label: `평균 ${fmt(data.webItems.average, 1)}점` }, unit: '점', ...ids }),
+  );
+  render('ppsCompare', (el, ids) =>
+    refBars(el, { items: data.ppsCompare, domain: [0, 1000], unit: '대', digits: 0, tooltipNote: '납품요구 순증 수량', ...ids }),
+  );
 
+  /* 분석 노트 차트(노트를 펼치면 폭이 생겨 그려진다) */
   render('coverage', (el, ids) => coverageChart(el, { ...data.coverage, ...ids }));
 
   render('kosisOverall', (el, ids) =>
@@ -142,6 +156,31 @@
       ...ids,
     }),
   );
+
+  /* 주소의 # 대상이 접힌 노트 안에 있으면 바깥 <details>까지 모두 펼친 뒤 그 위치로 이동한다. */
+  const openTarget = () => {
+    const id = decodeURIComponent(location.hash.slice(1));
+    const target = id && document.getElementById(id);
+    if (!target) return;
+    let opened = false;
+    const own = target.matches('.analysis-note') ? target.querySelector(':scope > details.note-details') : null;
+    if (own && !own.open) {
+      own.open = true;
+      opened = true;
+    }
+    for (let el = target; el; el = el.parentElement?.closest('details')) {
+      const details = el.closest('details');
+      if (!details) break;
+      if (!details.open) {
+        details.open = true;
+        opened = true;
+      }
+      el = details;
+    }
+    if (opened) target.scrollIntoView();
+  };
+  openTarget();
+  window.addEventListener('hashchange', openTarget);
 
   /* 목차: 넓은 화면에서는 항상 펼치고, 읽는 위치를 표시한다. */
   const toc = document.querySelector('[data-toc]');

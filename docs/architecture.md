@@ -63,7 +63,7 @@
 
 초기 기준선은 `data/`와 `plan.json` → 입력 검증 → 계산 → `outputs/` 흐름이다. API 분석은 외부 API → 공통 인증 처리 → 서비스별 수집 → 로컬 `raw/`·정규화 CSV·수집 명세 → 오프라인 분석 → `outputs/` 흐름이다. 결과 보고서는 사람이 읽을 수 있도록 별도 작성하며 코드가 자동 생성하지 않는다. 기존 PDF·ODT의 추출·전사는 수동이다.
 
-웹 보고서는 `outputs/`·`data/` → `site/scripts/generate.mjs`가 `site/reports/<주제>/report.config.mjs`로 표·차트 JSON·검사값 계산 → HTML의 생성 구역에 기록하고 본문 숫자를 대조 → 브라우저가 생성 구역의 JSON으로 차트를 그리는 흐름이다. 생성 결과를 HTML에 커밋하므로 사이트를 보는 데는 빌드가 필요 없다. Python 분석 코드는 이 과정에 참여하지 않으며, 웹은 저장소에 커밋된 출력만 읽는다.
+웹 보고서는 `outputs/`·`data/`(조사 문서에서 옮긴 `context_facts_*.csv` 포함) → `site/scripts/generate.mjs`가 `site/reports/<주제>/report.config.mjs`로 표·차트 JSON·검사값 계산 → HTML의 생성 구역에 기록하고 본문 숫자를 대조 → 브라우저가 생성 구역의 JSON으로 차트를 그리는 흐름이다. 생성 결과를 HTML에 커밋하므로 사이트를 보는 데는 빌드가 필요 없다. Python 분석 코드는 이 과정에 참여하지 않으며, 웹은 저장소에 커밋된 출력만 읽는다.
 
 [analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py)는 초기 입력 파일만 해시로 기록하므로 후속 API 데이터 추가가 기준선의 입력 목록에 섞이지 않는다. 수집과 분석은 별도 명령이며, 오프라인 분석에는 인증키가 필요 없다. 데이터베이스와 웹 서버는 없고, 브라우저 코드는 정적 사이트의 차트 그리기뿐이다.
 

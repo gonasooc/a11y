@@ -27,16 +27,8 @@
   padding: clamp(2.25rem, 6vw, 4.5rem) 0 2rem;
 }
 
-@media (min-width: 60rem) {
-  .report-hero {
-    grid-template-columns: minmax(0, 1.65fr) minmax(17rem, 1fr);
-    align-items: start;
-    gap: 3rem;
-  }
-}
-
 .report-hero h1 {
-  margin: 0.75rem 0 1.25rem;
+  margin: 0.75rem 0 0.75rem;
   font-size: clamp(2rem, 1.4rem + 2.4vw, 3rem);
   line-height: 1.25;
 }
@@ -53,161 +45,99 @@
   color: var(--ink);
 }
 
-.hero-meta {
-  margin: 0;
-  color: var(--muted);
-  font-size: 0.875rem;
-}
-
-/* 판정: 장식 없이 상태와 근거만 보여 준다. */
-.verdict {
-  padding: 1.25rem;
-  border: 1px solid var(--hairline);
-  border-radius: var(--radius);
-  background: var(--surface);
-}
-
-.verdict__label {
-  margin: 0 0 0.5rem;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  font-weight: 600;
-}
-
-.verdict__value {
-  display: flex;
-  align-items: center;
-  gap: 0.6rem;
-  margin: 0 0 1rem;
-  color: var(--ink);
-  font-size: clamp(1.6rem, 1.3rem + 1vw, 2rem);
-  font-weight: 700;
-  letter-spacing: -0.02em;
-  line-height: 1.2;
-}
-
-.verdict__icon {
-  flex: none;
-  width: 1.6rem;
-  height: 1.6rem;
-  color: var(--ink-2);
-}
-
-.verdict__scale {
-  display: flex;
-  gap: 0.35rem;
-  margin: 0 0 0.9rem;
-  padding: 0;
-  list-style: none;
-  font-size: 0.8125rem;
-}
-
-.verdict__scale li {
-  flex: 1;
-  margin: 0;
-  padding: 0.4rem;
-  border-radius: 6px;
-  background: var(--surface-sunk);
-  color: var(--muted);
-  text-align: center;
-  line-height: 1.35;
-}
-
-.verdict__scale li[aria-current='true'] {
-  background: var(--ink);
-  color: var(--surface);
-  font-weight: 600;
-}
-
-.verdict__why {
-  margin: 0;
-  color: var(--ink-2);
-  font-size: 0.9375rem;
-  line-height: 1.65;
-}
-
-/* 핵심 수치 카드 */
-.kpis {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17.5rem), 1fr));
-  gap: 1rem;
+.hero-sub {
   margin: 0 0 1.25rem;
+  color: var(--ink-2);
+  font-size: clamp(1.0625rem, 1rem + 0.4vw, 1.3125rem);
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+/* 한눈에 보기 */
+.glance {
+  margin: 0 0 3rem;
+}
+
+.glance__heading {
+  margin: 0 0 1rem;
+  font-size: 1.25rem;
+}
+
+.glance__list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 17rem), 1fr));
+  gap: 1rem;
+  margin: 0;
   padding: 0;
   list-style: none;
 }
 
-.kpis > li + li {
+.glance__list > li + li {
   margin-top: 0;
 }
 
-.kpi {
+.glance__item {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  padding: 1.1rem 1.2rem 1rem;
+  gap: 0.15rem;
+  padding: 1.25rem 1.25rem 1.1rem;
   border: 1px solid var(--hairline);
-  border-radius: var(--radius);
+  border-top: 3px solid var(--ink);
+  border-radius: var(--radius-sm);
   background: var(--surface);
 }
 
-.kpi__label {
+.glance__title {
+  margin: 0 0 0.6rem;
+  font-size: 1.125rem;
+  line-height: 1.45;
+}
+
+.glance__fact {
   margin: 0;
+  color: var(--ink);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+.glance__fact [data-check] {
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+}
+
+.glance__src {
+  margin: 0 0 0.6rem;
   color: var(--muted);
   font-size: 0.8125rem;
-  font-weight: 600;
 }
 
-.kpi__value {
-  margin: 0.4rem 0 0.2rem;
-  font-size: clamp(1.7rem, 1.35rem + 1.2vw, 2.25rem);
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  line-height: 1.15;
-}
-
-.kpi__value .arrow {
-  margin: 0 0.2em;
-  color: var(--muted);
-  font-weight: 400;
-}
-
-.kpi__value .unit {
-  margin-left: 0.1em;
-  color: var(--ink-2);
-  font-size: 0.55em;
-  font-weight: 400;
-}
-
-.kpi__delta {
-  margin: 0;
+.glance__note {
+  margin: 0.25rem 0 0.6rem;
+  padding-top: 0.6rem;
+  border-top: 1px solid var(--hairline);
   color: var(--ink-2);
   font-size: 0.9375rem;
   font-weight: 600;
 }
 
-.kpi__viz {
-  margin: 0.75rem 0 0.25rem;
+/* 휴대폰에서는 첫 화면의 카드 높이를 줄인다. */
+@media (max-width: 40rem) {
+  .glance__item {
+    padding: 1rem;
+  }
+  .glance__fact {
+    font-size: 0.9375rem;
+  }
+  .report-hero {
+    padding-bottom: 1.25rem;
+  }
 }
 
-.kpi__desc {
-  margin: 0.5rem 0 0;
-  color: var(--ink-2);
+.glance__more {
+  margin-top: auto;
+  padding-top: 0.25rem;
   font-size: 0.875rem;
-  line-height: 1.6;
-}
-
-.kpi__caveat {
-  margin: auto 0 0;
-  padding-top: 0.6rem;
-  color: var(--muted);
-  font-size: 0.8125rem;
-  line-height: 1.55;
-}
-
-.hero-note {
-  margin: 0 0 0.5rem;
-  color: var(--muted);
-  font-size: 0.875rem;
+  font-weight: 600;
 }
 
 /* 본문 배치 */
@@ -652,7 +582,7 @@
   background: var(--surface);
 }
 
-.limit h3 {
+.limit :is(h3, h4) {
   margin: 0 0 0.6rem;
   font-family: var(--font-sans);
   font-size: 1rem;
@@ -684,8 +614,310 @@
   border: 2px solid var(--ink);
 }
 
-.limit--key h3 {
+.limit--key :is(h3, h4) {
   color: var(--ink);
+}
+
+/* 절 공통 */
+.section-source {
+  max-width: var(--measure);
+  margin: 1.5rem 0 0;
+  padding-top: 0.75rem;
+  border-top: 1px solid var(--hairline);
+  color: var(--muted);
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.block-title {
+  margin: 2.25rem 0 0.4rem;
+  font-size: 1.1875rem;
+}
+
+.block-lead {
+  max-width: var(--measure);
+  margin: 0 0 1rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+/* 1절·4절: 큰 숫자 */
+.stat-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 13rem), 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.stat-row > li + li {
+  margin-top: 0;
+}
+
+.stat {
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.stat__value {
+  margin: 0 0 0.3rem;
+  font-size: clamp(1.75rem, 1.4rem + 1.2vw, 2.25rem);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.15;
+}
+
+.stat__value--text {
+  font-size: 1.1875rem;
+  letter-spacing: 0;
+  line-height: 1.4;
+}
+
+.stat__unit {
+  margin-left: 0.15rem;
+  color: var(--ink-2);
+  font-size: 0.55em;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.stat__label {
+  margin: 0;
+  color: var(--ink-2);
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+/* 3절: 장애유형별 한 장면 */
+.scenes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 16rem), 1fr));
+  gap: 0.75rem;
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.scenes > li + li {
+  margin-top: 0;
+}
+
+.scene {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 1.1rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.scene__who {
+  margin: 0 0 0.5rem;
+  color: var(--ink-2);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.scene__what {
+  margin: 0 0 0.6rem;
+  color: var(--ink);
+  font-size: 1.0625rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.scene__fact {
+  margin: 0 0 0.6rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.scene__src {
+  margin: auto 0 0;
+  color: var(--muted);
+  font-size: 0.8125rem;
+}
+
+/* 4절: 두 법과 바꾸는 것·못 바꾸는 것 */
+.law-table th[scope='row'] {
+  white-space: nowrap;
+}
+
+.law-table thead th {
+  white-space: normal;
+}
+
+/* 넓은 화면에서만 칸 폭을 확보한다. 좁은 화면에서는 글을 줄바꿈해 표가 화면 안에 들어오게 한다. */
+@media (min-width: 48rem) {
+  .law-table td {
+    min-width: 14rem;
+  }
+}
+
+.change-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0;
+}
+
+.change-col {
+  padding: 1rem 1.2rem;
+  border: 1px solid var(--hairline);
+  border-radius: var(--radius-sm);
+  background: var(--surface);
+}
+
+.change-col--limit {
+  border: 2px solid var(--ink);
+}
+
+.change-col h3 {
+  margin: 0 0 0.6rem;
+  font-size: 1.0625rem;
+}
+
+.change-col ul {
+  margin: 0;
+  padding-left: 1.1rem;
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.65;
+}
+
+.change-col li + li {
+  margin-top: 0.45rem;
+}
+
+.timeline--law .timeline__n {
+  width: 1rem;
+  height: 1rem;
+  margin: 0.3rem 0.5rem 0;
+}
+
+/* 5절: 시행 후 자료 */
+.after-list {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+.after-item {
+  padding: 1.1rem 0 1.25rem;
+  border-top: 1px solid var(--hairline);
+}
+
+.after-item h3 {
+  margin: 0 0 0.5rem;
+  font-size: 1.125rem;
+}
+
+.after-item > p {
+  max-width: var(--measure);
+  margin: 0 0 0.5rem;
+}
+
+.after-item__meaning {
+  padding-left: 0.85rem;
+  border-left: 3px solid var(--rule);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+}
+
+.after-item .figure {
+  margin: 1rem 0;
+}
+
+/* 6절: 기다리는 자료 */
+.watch-list {
+  max-width: var(--measure);
+  margin: 0 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.watch-list li {
+  padding: 0.75rem 0;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-2);
+  font-size: 0.9375rem;
+  line-height: 1.6;
+}
+
+.watch-list strong {
+  display: block;
+  color: var(--ink);
+  font-size: 1rem;
+}
+
+/* 분석 노트: 제목은 보이고 내용은 접어 둔다 */
+.notes .section-lead {
+  font-size: 1rem;
+  color: var(--ink-2);
+}
+
+.analysis-note {
+  padding: 1rem 0 0.75rem;
+  border-top: 1px solid var(--hairline);
+  scroll-margin-top: 4rem;
+}
+
+.analysis-note .section-head {
+  margin-bottom: 0.5rem;
+}
+
+.analysis-note .section-head__n {
+  display: none;
+}
+
+.analysis-note .section-head h3 {
+  flex: 1 1 16rem;
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.note-details > summary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  min-height: 2.25rem;
+  padding: 0.3rem 0.85rem;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  color: var(--ink);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  list-style: none;
+  cursor: pointer;
+}
+
+.note-details > summary::-webkit-details-marker {
+  display: none;
+}
+
+.note-details > summary::before {
+  content: '+';
+  width: 0.8em;
+  text-align: center;
+}
+
+.note-details[open] > summary::before {
+  content: '−';
+}
+
+.note-details[open] > summary {
+  margin-bottom: 1rem;
+}
+
+.note-details--inline {
+  margin: 0.5rem 0 1rem;
+  scroll-margin-top: 4rem;
 }
 
 .cmd {

@@ -51,6 +51,7 @@ site/
 3. 허브 `site/index.html`의 페이지 목록에 항목을 하나 더한다.
 4. 분석 출력이 필요하면 페이지 폴더에 `report.config.mjs`를 두고 `build({ repoRoot, repoUrl })`가 `{ data, tables, fragments, facts }`를 돌려주게 한 뒤 `node site/scripts/generate.mjs`를 실행한다.
 5. 자료 출처와 분석 재현 링크는 페이지 안에 둔다. 허브에는 따로 모으지 않는다. 기준은 [docs/design.md](../docs/design.md)에 있다.
+6. 조사 문서에서 가져오는 숫자는 `analyses/<주제>/data/`의 CSV에 출처·위치·등급과 함께 두고 `report.config.mjs`가 읽어 `facts`에 넣는다. 본문에는 A·B 등급만 쓴다. 예: `analyses/digital-inclusion/data/context_facts_2026-09-29.csv`.
 
 ## 접근성 기준
 

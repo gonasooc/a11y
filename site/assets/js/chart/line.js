@@ -1,16 +1,17 @@
-// 여러 계열의 연도별 선 차트. 끝 라벨은 넓은 화면에서만, 범례는 항상 둔다.
+// 연도별 선 차트. 끝 라벨은 넓은 화면에서만 둔다. 범례는 계열이 둘 이상일 때 둔다.
+// marker를 주면 마지막 조사연도 뒤에 사건 선(예: 법 시행)을 긋고, 첫 값과 끝 값을 점 옆에 직접 쓴다.
 (function (A11y) {
   'use strict';
   const { fmt } = A11y.format;
   const { chartSvg, interact, legend, linear, measure, plotArea, point, responsive, spreadLabels, svgEl, svgText } = A11y.chart;
 
   function lineChart(mount, opts) {
-    const { years, series, yDomain, ref, refLabel = '일반국민 = 100', digits = 1, labelledBy, describedBy } = opts;
-    legend(mount, series.map((s, i) => ({ label: s.label, cls: `s${i + 1}`, shape: 'line' })), { label: '계열' });
+    const { years, series, yDomain, ref, refLabel = '일반국민 = 100', digits = 1, labelledBy, describedBy, marker } = opts;
+    if (series.length > 1) legend(mount, series.map((s, i) => ({ label: s.label, cls: `s${i + 1}`, shape: 'line' })), { label: '계열' });
 
     responsive(mount, (width) => {
       const plot = plotArea(mount);
-      const wide = width >= 560;
+      const wide = width >= 560 && !marker;
       const height = Math.round(Math.max(250, Math.min(360, width * 0.48)));
       const margin = { top: 20, right: 18, bottom: 30, left: 34 };
       const svg = chartSvg(plot, { width, height, labelledBy, describedBy });
@@ -21,7 +22,7 @@
         margin.right = Math.ceil(longest) + 26;
       }
 
-      const x = point(years, [margin.left + 10, width - margin.right]);
+      const x = point(marker ? [...years, marker.key] : years, [margin.left + 10, width - margin.right]);
       const y = linear(yDomain, [height - margin.bottom, margin.top]);
       const right = width - margin.right + 6;
       const deco = svgEl('g', { 'aria-hidden': 'true' }, svg);
@@ -32,7 +33,9 @@
       }
       const every = x.step >= 44 ? 1 : x.step >= 24 ? 2 : 3;
       years.forEach((year, i) => {
-        if (i % every === 0 || i === years.length - 1) {
+        // 사건 선의 연도 글자와 겹치는 연도는 쓰지 않는다.
+        if (marker && Math.abs(x(year) - x(marker.key)) < 34) return;
+        if (i % every === 0 || (!marker && i === years.length - 1)) {
           svgText(deco, x(year), height - 8, String(year), { class: 'axis-label', 'text-anchor': 'middle' });
         }
       });
@@ -40,6 +43,17 @@
       if (ref !== undefined) {
         svgEl('line', { class: 'ref-line', x1: margin.left, x2: right, y1: y(ref), y2: y(ref) }, deco);
         svgText(deco, margin.left + 4, y(ref) - 7, refLabel, { class: 'ref-label' });
+      }
+
+      if (marker) {
+        const mx = x(marker.key);
+        svgEl('line', { class: 'ref-line', x1: mx, x2: mx, y1: margin.top, y2: height - margin.bottom }, deco);
+        svgText(deco, mx, height - 8, marker.axisLabel ?? String(marker.key), { class: 'axis-label', 'text-anchor': 'middle' });
+        svgText(deco, mx - 6, margin.top + 16, marker.label, { class: 'ref-label', 'text-anchor': 'end' });
+        if (marker.note) svgText(deco, mx - 6, margin.top + 32, marker.note, { class: 'label label--note', 'text-anchor': 'end' });
+        const s = series[0];
+        svgText(deco, x(years[0]), y(s.values[0]) - 10, fmt(s.values[0], digits), { class: 'label label--value', 'text-anchor': 'start' });
+        svgText(deco, x(years.at(-1)), y(s.values.at(-1)) - 10, fmt(s.values.at(-1), digits), { class: 'label label--value', 'text-anchor': 'end' });
       }
 
       series.forEach((s, i) => {

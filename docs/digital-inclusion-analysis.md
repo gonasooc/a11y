@@ -4,6 +4,8 @@
 >
 > 분석 성격: 공개 자료의 탐색적 기술통계 · 정책 인과효과 판정: **판단 불가**
 >
+> 비장애인 독자를 위해 이용 실태·법의 한계와 함께 재구성한 웹 페이지: <https://gonasooc.github.io/a11y/reports/digital-inclusion/>. 이 문서는 분석 원문으로 구성을 유지한다.
+>
 > [docs/10-digital-inclusion-api-guide.md](10-digital-inclusion-api-guide.md) · [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md) · [docs/05-policy-effect-case-proposals.md](05-policy-effect-case-proposals.md)
 
 **시행 전 이용자 지수의 상승, 현재 발급기의 기능 차이, 시행 전후 조달 요청의 변화를 확인했다. 그러나 디지털포용법이 접근성을 얼마나 개선했는지는 아직 판단할 수 없다.** 자료마다 관측 단위와 기간이 다르고, 같은 시기에 다른 접근성 정책도 시행됐기 때문이다.

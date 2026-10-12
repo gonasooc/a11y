@@ -28,6 +28,7 @@ const SOURCES = {
   ppsProducts: 'outputs/pps_products_comparison.csv',
   registry: 'outputs/registry_composition.csv',
   summary: 'outputs/summary.json',
+  context: 'data/context_facts_2026-09-29.csv',
 };
 
 const POPULATIONS = [
@@ -93,6 +94,48 @@ const PRODUCT_CLASSES = {
   remaining_classes: '나머지 분류',
 };
 const FOCUS_PRODUCTS = ['24422601', '24362786', '24362785', '25202556'];
+
+// 조사 문서(docs/01·02)에서 가져온 숫자. 본문에는 A·B 등급만 쓴다(docs/work/W-007 결정 2).
+const CTX_GRADES = { research_grade_A: 'A', research_grade_B: 'B' };
+const CTX_UNITS = {
+  persons: '명',
+  percent: '%',
+  index_general_population_100: '(일반국민 = 100)',
+  score_0_100: '점',
+  apps: '곳',
+  items: '가지',
+  ten_thousand_won: '만 원',
+  orders: '건',
+  cases: '건',
+  sites: '개',
+  years: '년',
+};
+// 웹 항목별 준수율. 평균보다 낮은 항목을 낮은 순서로 둔다(docs/01 §4.2).
+const WEB_ITEMS = [
+  { indicator: 'web_item_alt_text', label: '적절한 대체 텍스트', who: '화면낭독기 사용자' },
+  { indicator: 'web_item_skip_nav', label: '반복 영역 건너뛰기', who: '화면낭독기·키보드 사용자' },
+  { indicator: 'web_item_focus', label: '초점 이동과 표시', who: '키보드 사용자, 저시력인' },
+  { indicator: 'web_item_headings', label: '제목 제공', who: '화면낭독기 사용자' },
+  { indicator: 'web_item_keyboard', label: '키보드 사용 보장', who: '마우스를 쓰기 어려운 사람' },
+  { indicator: 'web_item_labels', label: '입력칸 이름(레이블) 제공', who: '화면낭독기 사용자' },
+  { indicator: 'web_item_contrast', label: '글자와 배경의 명도 대비', who: '저시력인, 고령자' },
+];
+// 4절 의무 적용 일정. 날짜는 policy_events.csv와 대조한다. 2025-11-18만 docs/02 §5.1의 복지부 발표가 근거다.
+const LAW_SCHEDULE = [
+  { date: '2025-01-21', law: '디지털포용법', text: () => '법 제정·공포', who: '시행까지 1년의 준비 기간' },
+  { date: '2025-03-27', law: '지능정보화 기본법', text: () => '키오스크를 설치·운영하는 곳의 의무 도입', who: '2026년 1월부터 디지털포용법으로 이어짐' },
+  {
+    date: '2025-11-18',
+    law: '장애인차별금지법 시행령',
+    text: (c) => `키오스크 필수 편의를 ${c.before}가지에서 ${c.after}가지로 줄임`,
+    who: '소상공인 등은 보조인력과 호출벨로 대신할 수 있음',
+    source: 'https://www.mohw.go.kr/board.es?mid=a10503000000&bid=0027&list_no=1487865&act=view',
+  },
+  { date: '2026-01-22', law: '디지털포용법', text: () => '법 시행. 키오스크 제조·임대 의무가 새로 생김', who: '대기업·중견기업부터. 공공기관 접근성 보장 의무는 옛 법에서 옮겨 옴' },
+  { date: '2026-01-28', law: '장애인차별금지법', text: () => '이미 설치된 키오스크까지 편의 제공 의무 적용', who: '민간을 포함한 재화·용역 제공자' },
+  { date: '2026-07-22', law: '디지털포용법', text: () => '키오스크 제조·임대 의무 확대', who: '중기업' },
+  { date: '2027-01-22', law: '디지털포용법', text: () => '키오스크 제조·임대 의무 확대 예정', who: '소기업·소상공인' },
+];
 
 function fail(message) {
   throw new Error(`[digital-inclusion] ${message}`);
@@ -246,6 +289,88 @@ export async function build({ repoRoot, repoUrl }) {
     rows: web.map((w, i) => [String(w.year), fmt(w.value, 1), i ? fmtSigned(w.value - web[i - 1].value, 1) : '—']),
   };
 
+  /* 조사 문서에서 가져온 숫자 (docs/01·02, A·B 등급) */
+  const ctx = new Map();
+  for (const row of src.context) {
+    const grade = CTX_GRADES[row.verification_status];
+    if (!grade) fail(`본문에 쓸 수 없는 등급: ${row.indicator} ${row.population} = ${row.verification_status}`);
+    if (!/^https:\/\//.test(row.source_url)) fail(`출처 주소가 없다: ${row.indicator} ${row.population}`);
+    if (!CTX_UNITS[row.unit]) fail(`알 수 없는 단위: ${row.unit}`);
+    const key = `${row.indicator}.${row.population}.${row.survey_year}`;
+    if (ctx.has(key)) fail(`중복된 조사 숫자: ${key}`);
+    const value = num(row.value, key);
+    ctx.set(key, { ...row, key, value, grade, digits: (row.value.split('.')[1] ?? '').length });
+    facts[`ctx.${key}`] = value;
+  }
+  const cv = (indicator, population, year) => (ctx.get(`${indicator}.${population}.${year}`) ?? fail(`조사 숫자 없음: ${indicator}.${population}.${year}`)).value;
+  const registered = cv('registered_total', 'all', 2025);
+  const byType = (type) => cv('registered_by_type', type, 2025);
+  facts['ctx.registered.total10k'] = registered / 10000;
+  facts['ctx.registered.65plusShare'] = (cv('registered_65plus', 'all', 2025) / registered) * 100;
+  facts['ctx.registered.surveyedShare'] = (sum(['physical', 'brain_lesion', 'hearing', 'speech', 'visual'].map(byType)) / registered) * 100;
+  facts['ctx.registered.devMentalShare'] = (sum(['intellectual', 'autism', 'mental'].map(byType)) / registered) * 100;
+  facts['ctx.registered.visualNotSevereShare'] = (cv('registered_visual_not_severe', 'visual', 2025) / byType('visual')) * 100;
+  facts['ctx.appInstall.gap'] = cv('app_self_install', 'all', 2025) - cv('app_self_install', 'visual', 2025);
+  facts['ctx.capability.visualGap'] = kv('capability', 'disabled', 2025) - cv('capability_index', 'visual', 2025);
+  facts['ctx.pcMain.diff'] = cv('main_device_pc', 'disabled_internet_users', 2025) - cv('main_device_pc', 'disabled_internet_users', 2024);
+  // 조사 문서에 적힌 계산값과 같은지 확인한다.
+  assertClose('65세 이상 비율(docs/01 §2.1)', round(facts['ctx.registered.65plusShare'], 1), 56.9);
+  assertClose('대표 통계가 보는 유형 비율(docs/01 §2.2)', round(facts['ctx.registered.surveyedShare'], 1), 78.5);
+  assertClose('지적·자폐성·정신 비율(docs/01 §2.2)', round(facts['ctx.registered.devMentalShare'], 1), 14.9);
+  assertClose('시각장애 중 심하지 않음 비율(docs/01 §5.1)', round(facts['ctx.registered.visualNotSevereShare'], 1), 82.0);
+  assertClose('앱 설치 차이(docs/01 §1)', round(facts['ctx.appInstall.gap'], 1), 12.4);
+  assertClose('PC 주 이용 변화(docs/01 §3.5)', round(facts['ctx.pcMain.diff'], 1), -9.4);
+  if (kv('capability', 'disabled', 2025) <= cv('capability_index', 'visual', 2025)) fail('시각장애인 역량이 장애인 전체보다 낮지 않다');
+  // 본문의 '8곳 모두'는 점검 대상과 미준수 수가 같을 때만 쓸 수 있다.
+  if (cv('bank_apps_no_alt_text', 'bank_apps', 2023) !== cv('bank_apps_checked', 'bank_apps', 2023)) fail('대체 텍스트 미준수 은행 앱이 점검 대상 전부가 아니다');
+
+  data.baseline100 = [
+    { key: 'access', label: '접근', note: '기기 보유와 인터넷 접속' },
+    { key: 'utilization', label: '활용', note: '실제로 쓰는 양과 질' },
+    { key: 'capability', label: '역량', note: '기기와 서비스를 다루는 능력' },
+  ].map((d) => ({ ...d, value: kv(d.key, 'disabled', 2025) }));
+  data.trend = { years: YEARS, values: YEARS.map((y) => kv('overall', 'disabled', y)) };
+  const webAverage = web.at(-1);
+  if (webAverage.year !== 2025) fail('웹 항목별 준수율과 평균의 연도가 다르다');
+  data.webItems = {
+    average: webAverage.value,
+    items: WEB_ITEMS.map((w) => ({ key: w.indicator, label: w.label, note: w.who, value: cv(w.indicator, 'private_websites', 2025) })),
+  };
+  data.webItems.items.forEach((item, i, all) => {
+    if (item.value >= webAverage.value) fail(`평균보다 낮지 않은 항목: ${item.label}`);
+    if (i && item.value < all[i - 1].value) fail('웹 항목이 낮은 순서가 아니다');
+  });
+  tables['web-items'] = {
+    caption: `민간 웹사이트의 항목별 준수율, 2025년 (평균 ${fmt(webAverage.value, 1)}점보다 낮은 항목)`,
+    columns: [{ label: '항목' }, { label: '주로 막히는 사람' }, { label: '준수율(점)', numeric: true }],
+    rows: data.webItems.items.map((w) => [w.label, w.note, fmt(w.value, 1)]),
+    rowHeader: true,
+  };
+  tables['baseline100'] = {
+    caption: '2025년 장애인의 디지털정보화 수준 (같은 해 일반국민 = 100)',
+    columns: [{ label: '부문' }, { label: '무엇을 보나' }, { label: '장애인', numeric: true }, { label: '일반국민과 차이', numeric: true }],
+    rows: data.baseline100.map((d) => [d.label, d.note, fmt(d.value, 1), fmt(100 - d.value, 1)]),
+    rowHeader: true,
+  };
+  tables['trend'] = {
+    caption: '장애인의 디지털정보화 종합 수준, 2016~2025년 (해당 연도 일반국민 = 100)',
+    columns: [{ label: '조사연도' }, { label: '장애인 종합', numeric: true }],
+    rows: YEARS.map((y, i) => [String(y), fmt(data.trend.values[i], 1)]),
+  };
+  tables['context-facts'] = {
+    caption: '조사 문서에서 가져와 본문에 쓴 숫자와 출처 (A·B 등급만)',
+    columns: [{ label: '내용과 위치' }, { label: '값', numeric: true }, { label: '기준연도', numeric: true }, { label: '출처' }, { label: '등급' }],
+    rows: [...ctx.values()].map((c) => [
+      c.source_locator,
+      `${fmt(c.value, c.digits)}${c.unit === 'index_general_population_100' ? '' : CTX_UNITS[c.unit]}`,
+      c.survey_year,
+      { text: new URL(c.source_url).hostname.replace(/^www\./, ''), href: c.source_url },
+      c.grade,
+    ]),
+    note: '지수의 단위는 같은 해 일반국민을 100으로 둔 상대 수준이다.',
+  };
+  facts['ctx.rows'] = ctx.size;
+
   /* 행안부 무인민원발급기 */
   const flow = src.moisSummary.record_flow;
   facts['mois.received'] = flow.received_rows;
@@ -275,6 +400,7 @@ export async function build({ repoRoot, repoUrl }) {
     facts[`mois.f.${f.key}.pct`] = f.pct;
   }
   facts['mois.f.unknownTotal'] = sum(features.map((f) => f.unknown));
+  facts['mois.featureCount'] = features.length;
   facts['mois.f.full'] = features.filter((f) => f.yes === f.n).length;
   const featureOrder = [...features].sort((a, b) => b.pct - a.pct || a.label.localeCompare(b.label, 'ko'));
   fragments['mois-features'] = meterList(
@@ -427,6 +553,15 @@ export async function build({ repoRoot, repoUrl }) {
     return { key: w.key, label: w.label, note: w.note, q2025, q2026, pct: pctChange(q2025, q2026), requests2025: w.summary.before_2025.request_ids_with_changes, requests2026: w.summary.after_2026.request_ids_with_changes, inst2025: w.summary.before_2025.requesting_institutions, inst2026: w.summary.after_2026.requesting_institutions, a2025, a2026 };
   });
   const main = windows[0];
+  data.ppsCompare = [
+    { key: 'y2025', label: '2025년 2~9월', value: main.q2025, cls: 'before' },
+    { key: 'y2026', label: '2026년 2~9월', value: main.q2026, cls: 'after' },
+  ];
+  tables['pps-compare'] = {
+    caption: '증명발급기·무인안내시스템 납품요구 순증 수량, 2025년과 2026년 2~9월',
+    columns: [{ label: '기간' }, { label: '순증 수량', numeric: true }],
+    rows: [...data.ppsCompare.map((d) => [d.label, `${fmt(d.value)}대`]), ['변화', fmtSignedPct(main.pct, 1)]],
+  };
   facts['pps.febSep.requests2025'] = main.requests2025;
   facts['pps.febSep.requests2026'] = main.requests2026;
   facts['pps.febSep.requestsDiff'] = main.requests2026 - main.requests2025;
@@ -479,6 +614,24 @@ export async function build({ repoRoot, repoUrl }) {
   });
   if (policyEvents.length !== Object.keys(EVENT_TEXT).length) fail('정책 일정 수가 문서 표와 다르다');
   facts['events.count'] = policyEvents.length;
+
+  const kioskRule = { before: cv('kiosk_required_before', 'not_applicable', 2025), after: cv('kiosk_required_after', 'not_applicable', 2025) };
+  fragments['law-schedule'] = `<ol class="timeline timeline--law" role="list">
+${LAW_SCHEDULE.map((s) => {
+  const event = policyEvents.find((e) => e.date === s.date);
+  if (!event && !s.source) fail(`의무 적용 일정의 근거가 없다: ${s.date}`);
+  const href = event?.source ?? s.source;
+  const future = s.date > '2026-10-03';
+  return `<li class="timeline__item${future ? ' timeline__item--planned_treatment' : ''}${s.date === '2026-01-22' ? ' timeline__item--treatment' : ''}">
+  <span class="timeline__n" aria-hidden="true"></span>
+  <div class="timeline__body">
+    <p class="timeline__head"><time datetime="${s.date}">${s.date}</time> <span class="tag">${escapeHtml(s.law)}</span></p>
+    <p class="timeline__event">${escapeHtml(s.text(kioskRule))}</p>
+    <p class="timeline__impact">${escapeHtml(s.who)} · <a href="${escapeHtml(href)}">근거<span class="visually-hidden"> (${s.date} ${escapeHtml(s.law)})</span></a></p>
+  </div>
+</li>`;
+}).join('\n')}
+</ol>`;
 
   data.pps = {
     months: months.map((m) => ({ month: m.month, qty: m.qty, eok: round(toEok(m.amount), 2), requests: m.requests, institutions: m.institutions })),
@@ -729,11 +882,6 @@ ${policyEvents
     rows: data.coverage.rows.map((r) => [r.label, r.span, r.after]),
   };
 
-  data.hero = {
-    disabledOverall: data.kosis.disabled[0].values,
-    wheelchairNoShare: (wheelchair.no / wheelchair.n) * 100,
-    months: months.map((m) => ({ month: m.month, qty: m.qty })),
-  };
   data.meta = { repoUrl };
 
   return { data, tables, fragments, facts };
