@@ -2,7 +2,7 @@
 
 - 상태: 진행 중
 - 최근 갱신: 2026-10-06
-- 관련 문서: [docs/README.md](../README.md), [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md), [site/README.md](../../site/README.md), [docs/design.md](../design.md)
+- 관련 문서: [docs/README.md](../README.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md), [site/README.md](../../site/README.md), [docs/design.md](../design.md)
 
 ## 현재 상황
 
@@ -15,7 +15,7 @@
 
 ### 배경과 범위
 
-사용자 요청(2026-10-06): [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md)를 바탕으로 차트를 활용한 HTML 문서를 만든다. GitHub Pages로 배포하고, 메인 index에서 여러 HTML 문서와 웹 서비스로 들어가며, 한 저장소에 여러 서비스가 함께 있게 될 것을 고려한다. 구성은 [CausalInferenceLab/policy-effect-analytics-agent](https://github.com/CausalInferenceLab/policy-effect-analytics-agent)를 참고해도 된다고 했다.
+사용자 요청(2026-10-06): [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md)를 바탕으로 차트를 활용한 HTML 문서를 만든다. GitHub Pages로 배포하고, 메인 index에서 여러 HTML 문서와 웹 서비스로 들어가며, 한 저장소에 여러 서비스가 함께 있게 될 것을 고려한다. 구성은 [CausalInferenceLab/policy-effect-analytics-agent](https://github.com/CausalInferenceLab/policy-effect-analytics-agent)를 참고해도 된다고 했다.
 
 같은 날 후속 요청: 빌드 도구가 꼭 필요한지 보수적으로 판단하고, 불필요하면 걷어낸다. 메인 index에서 각 HTML로 접근하는 방식이면 충분하다.
 

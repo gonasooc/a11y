@@ -2,7 +2,7 @@
 
 - 상태: 진행 중
 - 최근 갱신: 2026-10-04
-- 관련 문서: [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md), [docs/work/W-003-main-additional-data.md](W-003-main-additional-data.md)
+- 관련 문서: [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md), [docs/work/W-003-main-additional-data.md](W-003-main-additional-data.md)
 
 ## 현재 상황
 
@@ -21,7 +21,7 @@
 
 ### 중요한 시도와 결정
 
-- 2026-10-03 — 사용자가 NIA 배리어프리 키오스크 위치 정보 데이터를 잠시 보류하기로 했다. 해당 API의 후속 조사·문의·연결·수집은 진행하지 않으며, 재개 조건은 사용자의 재개 요청이다. 확인된 연결 정보는 [docs/10-digital-inclusion-api-guide.md](../10-digital-inclusion-api-guide.md)에 남긴다.
+- 2026-10-03 — 사용자가 NIA 배리어프리 키오스크 위치 정보 데이터를 잠시 보류하기로 했다. 해당 API의 후속 조사·문의·연결·수집은 진행하지 않으며, 재개 조건은 사용자의 재개 요청이다. 확인된 연결 정보는 [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)에 남긴다.
 - 2026-10-03 — 기기별 설치·교체·기능 변경·삭제 이력과 과거 스냅샷을 우선 후보로 남겼다.
 - 2026-10-03 — NIA 최초 검증·갱신·철회, 제조사 역할과 시행 당시 기업규모가 필요하다. 현재 중소기업 표기로 중기업·소기업을 임의 분류하지 않는다.
 - 2026-10-03 — KOSIS 새 연간 수치가 공표되면 기존 2016~2025 기준선과 정의·범위를 먼저 대조한다. 출처 간 차이가 난 2021 농어민 접근지수의 공식 정정도 후속 확인 사항이다.
@@ -32,7 +32,7 @@
 - [analyses/digital-inclusion/followup_analyze.py](../../analyses/digital-inclusion/followup_analyze.py)에서 2025·2026년 2~9월 기관 코드·제품 ID별 순증을 분해했다. 동일 기관 101곳의 -217대와 한 해에만 관측된 기관의 순기여 -58대를 구분했다. 기관 코드 변경·상품 대체는 미연결이다.
 - 강남·마포 공식 교체 예정 공지 본문 확인. 영등포·성동 후보는 원문 열람 실패로 확정 근거에서 제외, 은평은 미확보. [analyses/digital-inclusion/data/local_history_sources_2026-10-04.json](../../analyses/digital-inclusion/data/local_history_sources_2026-10-04.json)에 확인 수준을 기록했다. 개별 기기 이력 확보로 표시하지 않는다.
 - 휠체어 조작 불가능·촉각 모니터 미제공의 교집합 551건 확인. 기능 조합을 법 준수 점수로 사용하지 않았다.
-- 결과와 해석 한계: [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md#followup-decomposition). 후속 첫 행동은 확보된 공지의 교체 완료 자료와 조달 식별자 연결 가능성 점검이다. 기관 문의·정기 수집은 설정하지 않았다.
+- 결과와 해석 한계: [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#followup-decomposition). 후속 첫 행동은 확보된 공지의 교체 완료 자료와 조달 식별자 연결 가능성 점검이다. 기관 문의·정기 수집은 설정하지 않았다.
 
 ### 검증
 

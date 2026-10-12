@@ -9,10 +9,10 @@
 | 구성 요소 | 현재 책임 | 근거 |
 |---|---|---|
 | 프로젝트 문서 | 제품 방향·구조·구현 규칙·작업 상태 안내 | [docs/README.md](README.md) |
-| 기존 조사 문서 | 접근성 이용 환경, 법·제도, 연표, 출처와 도구 아이디어 | [docs/01-digital-access-environment.md](01-digital-access-environment.md), [docs/05-policy-effect-case-proposals.md](05-policy-effect-case-proposals.md) |
+| 기존 조사 문서 | 접근성 이용 환경, 법·제도, 연표, 출처와 도구 아이디어 | [docs/digital-inclusion/environment.md](digital-inclusion/environment.md), [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md#부록-a-정책-효과-분석-제안) |
 | 디지털포용법 분석 입력 | 집계 관측, 출처·검증 기록, 정책 일정, API 명세 저장 | [analyses/digital-inclusion/data/source_manifest_baseline.json](../analyses/digital-inclusion/data/source_manifest_baseline.json) |
 | 오프라인 분석 스크립트 | 초기 기준선·행안부 기능·조달청 조달 흐름을 각각 검증·계산 | [analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py), [analyses/digital-inclusion/mois_analyze.py](../analyses/digital-inclusion/mois_analyze.py), [analyses/digital-inclusion/pps_analyze.py](../analyses/digital-inclusion/pps_analyze.py) |
-| 분석 결과 | 계산 출력과 사람이 읽는 결과·한계 설명 | [analyses/digital-inclusion/outputs/summary.json](../analyses/digital-inclusion/outputs/summary.json), [docs/digital-inclusion-analysis.md](digital-inclusion-analysis.md) |
+| 분석 결과 | 계산 출력과 사람이 읽는 결과·한계 설명 | [analyses/digital-inclusion/outputs/summary.json](../analyses/digital-inclusion/outputs/summary.json), [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md) |
 | 외부 API 연동 | 공통 인증·HTTP 처리와 서비스별 페이지·기간 수집, CSV·출처 명세 저장 | [analyses/digital-inclusion/api_common.py](../analyses/digital-inclusion/api_common.py), [analyses/digital-inclusion/mois_collect.py](../analyses/digital-inclusion/mois_collect.py), [analyses/digital-inclusion/pps_collect.py](../analyses/digital-inclusion/pps_collect.py) |
 | KOSIS 연간 통계 | 통계표 메타데이터 기반 전체 셀 수집, 장기 추세·보고서 대조 | [analyses/digital-inclusion/kosis_collect.py](../analyses/digital-inclusion/kosis_collect.py), [analyses/digital-inclusion/kosis_analyze.py](../analyses/digital-inclusion/kosis_analyze.py) |
 | 웹 사이트 | `site/`의 빌드 없는 정적 사이트. 메인 허브, 분석 보고서 페이지, 공통 스타일과 접근 가능한 차트 스크립트 | [site/README.md](../site/README.md) |
@@ -28,14 +28,17 @@
 ├── AGENTS.md                  # 기존 지침과 공통 문서 작업 규칙
 ├── CLAUDE.md                  # AGENTS.md 연결
 ├── docs/
-│   ├── README.md              # 프로젝트 현황·작업 목록·기존 조사 목록
+│   ├── README.md              # 프로젝트 현황·작업 목록·문서 안내
 │   ├── plan.md                # 제품 기획
 │   ├── architecture.md        # 구조와 책임
 │   ├── specs.md               # 기술 구성·실행·검증
-│   ├── 01-*.md … 05-*.md      # 기존 조사·분석 제안
-│   ├── 10-digital-inclusion-api-guide.md # 기존 API 안내
-│   ├── ideas.md              # 도구 아이디어 통합
-│   ├── digital-inclusion-analysis.md # 디지털포용법 통합 보고서
+│   ├── design.md              # 사이트 디자인 기준
+│   ├── ideas.md               # 도구 아이디어 통합(보고서와 무관)
+│   ├── digital-inclusion/     # site/reports/digital-inclusion 보고서의 근거 문서
+│   │   ├── README.md          # 조사 개요·출처와 검증 노트·이전 경로 대응표
+│   │   ├── environment.md     # 장애인의 인터넷·웹·앱 이용 환경
+│   │   ├── law.md             # 민간 기업 법적 의무와 정책 동향, 부록 연표
+│   │   └── analysis.md        # 시행 전후 데이터 분석, 부록 A 분석 제안·부록 B API 안내
 │   ├── work/                 # 작업별 현재 상황·판단·남은 일
 │   └── sessions/             # 필요한 경우에만 상세 세션 기록
 ├── site/                      # GitHub Pages 정적 사이트(빌드 없음)
@@ -70,7 +73,7 @@
 ## 지켜야 할 구조 규칙
 
 - 이번에 적용한 문서 구조에서는 제품 방향은 [docs/plan.md](plan.md), 폴더 책임·의존 관계는 이 문서, 실행·검증 규칙은 [docs/specs.md](specs.md), 작업 진행 상태는 `docs/work/`에 둔다. 근거: [docs/work/W-001-main-docs-starter.md](work/W-001-main-docs-starter.md).
-- 사용자 요청으로 통합한 두 문서는 `docs/ideas.md`와 `docs/digital-inclusion-analysis.md`에 두며 `docs/` 깊이를 유지한다. 다른 조사 문서의 경로는 유지하고 공통 문서에서 연결한다. 근거: [docs/work/W-005-main-docs-consolidation.md](work/W-005-main-docs-consolidation.md).
+- 웹 보고서가 참고하는 문서는 `site/reports/<주제>/`와 같은 이름의 `docs/<주제>/` 폴더에 둔다. 디지털포용법은 [docs/digital-inclusion/README.md](digital-inclusion/README.md)를 안내로 하는 네 문서로 합쳤다. 프로젝트 공통 문서(README·plan·architecture·specs·design), `work/`·`sessions/`, 보고서와 무관한 `ideas.md`는 `docs/` 바로 아래에 둔다. 2026-10-12 사용자 요청으로 W-005의 ‘`docs/` 깊이 유지’ 규칙을 바꿨다. 근거: [docs/work/W-008-main-docs-digital-inclusion.md](work/W-008-main-docs-digital-inclusion.md), 이전 결정: [docs/work/W-005-main-docs-consolidation.md](work/W-005-main-docs-consolidation.md).
 - 현재 분석 구조는 입력·출처·계산 출력·보고서를 별도 파일로 관리한다. 새 수집 자료를 추가할 때 관측 단위·수집일·출처를 보존하고, 과거 집계를 신규 원자료처럼 덮어쓰지 않는다. 근거: [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md).
 - 웹 페이지는 `site/<영역>/<이름>/index.html`에 두고 허브 [site/index.html](../site/index.html)에 링크를 더한다. 분석 결과는 생성 스크립트가 출력 파일에서 읽고 수집 원자료는 읽지 않는다. 빌드 도구는 쓰지 않는다. 근거: [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md).
 - 도구별 서버·클라이언트 책임과, 빌드가 필요한 서비스를 들일 때의 방식은 미정이다.

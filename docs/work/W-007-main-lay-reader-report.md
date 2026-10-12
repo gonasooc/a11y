@@ -2,7 +2,7 @@
 
 - 상태: 진행 중
 - 최근 갱신: 2026-10-12
-- 관련 문서: [docs/README.md](../README.md), [docs/work/W-006-main-pages-site.md](W-006-main-pages-site.md), [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md), [docs/01-digital-access-environment.md](../01-digital-access-environment.md), [docs/02-private-sector-legal-obligations.md](../02-private-sector-legal-obligations.md), [docs/design.md](../design.md)
+- 관련 문서: [docs/README.md](../README.md), [docs/work/W-006-main-pages-site.md](W-006-main-pages-site.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md), [docs/digital-inclusion/environment.md](../digital-inclusion/environment.md), [docs/digital-inclusion/law.md](../digital-inclusion/law.md), [docs/design.md](../design.md)
 
 ## 현재 상황
 
@@ -19,9 +19,9 @@
 
 ### 중요한 시도와 결정
 
-- 2026-10-12 — 진단(사실): 기존 보고서 10개 절 가운데 이용자를 다루는 절은 하나이고, 그마저 장애인 전체의 상대지수 4개뿐이다. 실태 재료는 [docs/01-digital-access-environment.md](../01-digital-access-environment.md), 법의 한계는 [docs/02-private-sector-legal-obligations.md](../02-private-sector-legal-obligations.md)에 있다. 기존 보고서의 ‘한계’는 대부분 분석의 한계다. 시행 후 이용자 통계는 아직 없다(최신은 2026년 3월 발표된 2025년 조사).
+- 2026-10-12 — 진단(사실): 기존 보고서 10개 절 가운데 이용자를 다루는 절은 하나이고, 그마저 장애인 전체의 상대지수 4개뿐이다. 실태 재료는 [docs/digital-inclusion/environment.md](../digital-inclusion/environment.md), 법의 한계는 [docs/digital-inclusion/law.md](../digital-inclusion/law.md)에 있다. 기존 보고서의 ‘한계’는 대부분 분석의 한계다. 시행 후 이용자 통계는 아직 없다(최신은 2026년 3월 발표된 2025년 조사).
 - 2026-10-12 — 질의응답으로 확정한 결정(모두 사용자 선택):
-  1. 내용: docs/01 이용 실태와 docs/02 법 구조·한계를 본문 중심에 둔다. 공공데이터 분석은 시행 전후 근거로 쓰고, 조달 분해·검증 목록·출처 대조·재현은 분석 노트로 접는다.
+  1. 내용: 이용 실태 조사(지금은 docs/digital-inclusion/environment.md)와 법 구조 조사(지금은 docs/digital-inclusion/law.md)를 본문 중심에 둔다. 공공데이터 분석은 시행 전후 근거로 쓰고, 조달 분해·검증 목록·출처 대조·재현은 분석 노트로 접는다.
   2. 근거: 본문 숫자는 A·B 등급만 쓴다. C 등급은 ‘보도에 따르면’을 붙인 맥락 문장으로만 쓴다. 가져온 숫자는 출처·기준일·등급과 함께 데이터 파일로 정리해 생성 스크립트가 본문 숫자를 대조한다.
   3. 첫 화면: ‘한눈에 보기’ 세 가지를 실태 → 법의 한계 → 효과 순서로 둔다. 효과는 ‘아직 판단하기 이르다’로 쓴다.
   4. 목차: 독자 질문 6개(누구의 이야기인가, 인터넷을 얼마나 쓰나, 어디서 막히나, 법은 무엇을 바꾸고 무엇을 못 바꾸나, 시행 후 지금까지 보이는 것, 언제 효과를 알 수 있나)와 접힌 분석 노트.
@@ -64,7 +64,7 @@
 
 ## 남은 일
 
-- [x] docs/01·docs/02에서 쓸 A·B 숫자를 출처·위치·등급과 함께 데이터 파일로 정리하고 `report.config.mjs`의 숫자 대조에 연결한다.
+- [x] 이용 실태·법 구조 조사 문서에서 쓸 A·B 숫자를 출처·위치·등급과 함께 데이터 파일로 정리하고 `report.config.mjs`의 숫자 대조에 연결한다.
 - [x] 첫 화면(제목·부제·한눈에 보기)과 1~6절 본문을 새로 쓴다.
 - [x] 새 차트(일반국민 100 기준선 막대, 웹 항목별 준수율, 의무 적용 일정)를 만들고 추이·발급기·구매 요청 차트를 본문에 배치한다.
 - [x] 기존 분석 절을 접힌 분석 노트로 옮기고, 펼칠 때 차트를 그리게 한다.

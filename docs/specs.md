@@ -29,9 +29,9 @@
 - 기술통계와 인과효과를 구분하고, 자료 부족을 0값으로 대체하지 않는다. 분석별 판정 조건은 [analyses/digital-inclusion/plan.json](../analyses/digital-inclusion/plan.json)에 있다.
 - 현재 분석 코드는 사전 등록 여부와 원자료 재수집 상태를 확인한다. 새 원자료나 새로운 추정 방법을 적용할 때는 계획과 코드 조건을 함께 검토한다.
 - 인증 수집기는 키가 들어간 URL·오류 메시지를 출력하지 않는다. 인증키는 허용된 공식 HTTPS 호스트에만 전송하고 예상치 못한 리다이렉트는 중단한다.
-- 현재 행안부 분석은 고유키 수·수신 행수·API 총건수 일치를 강제한다. 조달청 분석은 변경·취소의 부호와 품목 단위를 보존한다. 세부 기준은 [docs/digital-inclusion-analysis.md](digital-inclusion-analysis.md)에 있다.
+- 현재 행안부 분석은 고유키 수·수신 행수·API 총건수 일치를 강제한다. 조달청 분석은 변경·취소의 부호와 품목 단위를 보존한다. 세부 기준은 [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md)에 있다.
 - KOSIS는 메타데이터의 수록연도·항목·분류 조합과 실제 셀을 대조한다. `PRD_SE=Y`로 요청한 연간 자료가 응답에서 `A`로 표기되는 것을 확인했고 원값을 보존한다. `jsonVD=Y`로 정상 JSON을 요청한다.
-- 웹 보고서의 표·차트 데이터는 생성 스크립트가 분석 출력에서 계산해 HTML의 생성 구역에 넣는다. 본문 숫자는 `data-check`로 그 값과 대조하고, 다르면 스크립트가 실패한다. 수집 원자료(`raw/`)는 읽지 않는다. 조사 문서(docs/01·02)에서 가져온 숫자는 `analyses/digital-inclusion/data/context_facts_2026-09-29.csv`에 출처·위치·등급과 함께 두고, 생성 스크립트가 A·B 등급만 받아 같은 방식으로 대조한다. 다른 등급이 있으면 생성이 실패한다. 방법은 [site/README.md](../site/README.md)에 있다.
+- 웹 보고서의 표·차트 데이터는 생성 스크립트가 분석 출력에서 계산해 HTML의 생성 구역에 넣는다. 본문 숫자는 `data-check`로 그 값과 대조하고, 다르면 스크립트가 실패한다. 수집 원자료(`raw/`)는 읽지 않는다. 조사 문서([docs/digital-inclusion/environment.md](digital-inclusion/environment.md)·[docs/digital-inclusion/law.md](digital-inclusion/law.md))에서 가져온 숫자는 `analyses/digital-inclusion/data/context_facts_2026-09-29.csv`에 출처·위치·등급과 함께 두고, 생성 스크립트가 A·B 등급만 받아 같은 방식으로 대조한다. 다른 등급이 있으면 생성이 실패한다. 방법은 [site/README.md](../site/README.md)에 있다.
 - 웹 페이지 사이 링크와 자산은 상대경로로 쓰고, 페이지 링크는 `index.html`까지 적는다. 파일로 열어도 이동하고 `/<저장소>/` 하위 경로에서도 맞는다.
 - KOSIS와 보고서가 다르면 원문을 재확인하고 양쪽 값을 남긴다. 2016년 지표·고령층 기준 변경 이전 자료는 장기 주 비교에서 분리한다. 기준은 [analyses/digital-inclusion/kosis_analysis_plan.json](../analyses/digital-inclusion/kosis_analysis_plan.json)에 있다.
 
@@ -74,7 +74,7 @@
 
 입력 위치는 저장소 루트 `.env`다. 서비스별로 이름을 나누며, 두 공공데이터포털 서비스에서 같은 키를 사용한다면 각 변수에 같은 값을 넣는다. 명명 결정은 [docs/work/W-002-main-digital-inclusion-api.md](work/W-002-main-digital-inclusion-api.md)에 기록한다.
 
-실제 비밀값은 문서에 기록하지 않는다. NIA 위치 API는 인증 방식을 확정한 뒤 설정을 결정한다. API 명세·발급 안내는 [docs/10-digital-inclusion-api-guide.md](10-digital-inclusion-api-guide.md)에 있다.
+실제 비밀값은 문서에 기록하지 않는다. NIA 위치 API는 인증 방식을 확정한 뒤 설정을 결정한다. API 명세·발급 안내는 [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)에 있다.
 
 공통 HTTP 처리의 인증 매개변수는 공공데이터포털 `serviceKey`, KOSIS `apiKey`다. KOSIS 키는 공식 `kosis.kr/openapi/` 경로로만 전송한다.
 

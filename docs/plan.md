@@ -32,7 +32,7 @@
 | 접근성 도구 | 기존 문서에 아이디어가 있다 | 구체적인 도구와 이용 흐름은 미정 |
 | 후속 데이터 분석 | 조달청·행안부·KOSIS 인증 수집과 기술통계가 있다 | 자료 확보 → 품질·범위·출처 간 차이 점검 → 결과·해석 한계 확인 |
 
-현재 분석 보고서는 [docs/digital-inclusion-analysis.md](digital-inclusion-analysis.md), API 안내는 [docs/10-digital-inclusion-api-guide.md](10-digital-inclusion-api-guide.md)에 있다.
+현재 분석 보고서는 [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md), API 안내는 [docs/digital-inclusion/analysis.md](digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)에 있다.
 
 ## 제품 정책과 제약
 

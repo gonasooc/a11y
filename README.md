@@ -7,8 +7,8 @@
 | 진입점 | 내용 |
 |---|---|
 | [site/README.md](site/README.md) | 웹 사이트: 메인 허브와 디지털포용법 시각화 보고서. `https://gonasooc.github.io/a11y/`에서 열린다 |
-| [docs/digital-inclusion-analysis.md](docs/digital-inclusion-analysis.md) | 디지털포용법 통합 보고서: 이용자 기준선·웹 접근성·기기 현황·조달 변화·해석 한계 |
-| [후속 분석용 API 안내](docs/10-digital-inclusion-api-guide.md) | 발급할 API, 확인한 필드와 호출 방법, 과거 데이터의 한계 |
+| [docs/digital-inclusion/analysis.md](docs/digital-inclusion/analysis.md) | 디지털포용법 통합 보고서: 이용자 기준선·웹 접근성·기기 현황·조달 변화·해석 한계 |
+| [후속 분석용 API 안내](docs/digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api) | 발급할 API, 확인한 필드와 호출 방법, 과거 데이터의 한계 |
 | [분석 재현](analyses/digital-inclusion/README.md) | 입력 CSV, 분석 코드, 기계 판독용 결과 |
 | [docs/README.md](docs/README.md) | 접근성 조사 문서 홈: 장애인 디지털 이용 환경, 민간 웹 접근성 법·제도 조사 |
 

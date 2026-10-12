@@ -2,11 +2,11 @@
 
 - 상태: 완료
 - 최근 갱신: 2026-10-03
-- 관련 문서: [docs/work/W-002-main-digital-inclusion-api.md](W-002-main-digital-inclusion-api.md), [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md), [docs/10-digital-inclusion-api-guide.md](../10-digital-inclusion-api-guide.md)
+- 관련 문서: [docs/work/W-002-main-digital-inclusion-api.md](W-002-main-digital-inclusion-api.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)
 
 ## 현재 상황
 
-KOSIS 실제 인증과 네 통계표의 2014~2025년 240개 관측 수집·분석을 완료했다. 2016년 지표·조사대상 기준 변경을 확인해 장기 주 비교를 2016년 이후로 제한했고, 기존 보고서 100셀 중 99개 일치·1개 원출처 차이를 확인했다. 결과는 [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md#digital-baseline)에 있다. 기기·제품·제조사 이력과 차기 연간 자료는 [docs/work/W-004-main-history-data.md](W-004-main-history-data.md)에서 이어간다.
+KOSIS 실제 인증과 네 통계표의 2014~2025년 240개 관측 수집·분석을 완료했다. 2016년 지표·조사대상 기준 변경을 확인해 장기 주 비교를 2016년 이후로 제한했고, 기존 보고서 100셀 중 99개 일치·1개 원출처 차이를 확인했다. 결과는 [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#digital-baseline)에 있다. 기기·제품·제조사 이력과 차기 연간 자료는 [docs/work/W-004-main-history-data.md](W-004-main-history-data.md)에서 이어간다.
 
 - 완료 조건: 추가로 확보한 자료의 출처·기간·단위·품질을 확인하고, 가능한 분석과 남은 한계를 보고서에 반영한다.
 - 사람이 판단할 사항: 이번 KOSIS 분석에는 없음. 추가 이력 자료 요청 방식·범위는 후속 작업의 미정 사항이다.

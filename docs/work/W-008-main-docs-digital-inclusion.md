@@ -1,0 +1,51 @@
+# W-008 · 디지털포용법 근거 문서를 docs/digital-inclusion으로 정리
+
+- 상태: 진행 중
+- 최근 갱신: 2026-10-12
+- 관련 문서: [docs/README.md](../README.md), [docs/digital-inclusion/README.md](../digital-inclusion/README.md), [docs/architecture.md](../architecture.md), [docs/work/W-005-main-docs-consolidation.md](W-005-main-docs-consolidation.md), [docs/work/W-007-main-lay-reader-report.md](W-007-main-lay-reader-report.md)
+
+## 현재 상황
+
+웹 보고서 `site/reports/digital-inclusion/`이 참고하는 문서를 같은 이름의 `docs/digital-inclusion/` 폴더로 옮기고, 흩어져 있던 조사·분석 문서 일곱 개를 네 문서로 합쳤다. 저장소의 링크와 앵커를 모두 새 경로로 고쳤고 링크 검사와 생성 스크립트 검사를 통과했다. 변경은 아직 커밋하지 않았다.
+
+- 완료 조건: `docs/digital-inclusion/` 아래 네 문서로 정리되고, 저장소 링크·앵커 검사에서 문제가 0건이며, 생성 스크립트 검사를 통과한다. 푸시 뒤 공개 보고서의 GitHub 링크가 새 경로로 열린다.
+- 사람이 판단할 사항: 없음.
+
+## 진행과 판단
+
+### 배경과 범위
+
+사용자 요청(2026-10-12): `docs/` 안에 문서가 여러 개로 나뉘어 있는데, `site/reports/digital-inclusion/`이 참고하는 문서는 따로 구분할 수 있게 `site/reports/` 아래와 같은 구조로 `docs/digital-inclusion` 디렉터리를 둔다. 그 밖에 나뉘어 있는 문서 가운데 합칠 수 있는 것은 가급적 합친다.
+
+### 중요한 시도와 결정
+
+- 2026-10-12 — 확인한 사실: 보고서는 분석 원문, `docs/01`(이용 환경), `docs/02`(법적 강제), `docs/05`(분석 제안)를 링크한다. `docs/03`(연표)·`docs/04`(출처와 검증 노트)는 01·02의 근거이고, `docs/10`(API 안내)은 분석의 자료 확보 안내다. `docs/README.md` 아래쪽에는 옛 조사 문서 홈이 있었고, 그 검증 등급·조사 방법은 04와 겹쳤다.
+- 2026-10-12 — 구성(사용자 선택, 세 안 가운데 ‘4개 문서로 통합’): 안내 [docs/digital-inclusion/README.md](../digital-inclusion/README.md)(옛 조사 문서 홈 + 04 + 이전 경로 대응표), [docs/digital-inclusion/environment.md](../digital-inclusion/environment.md)(01), [docs/digital-inclusion/law.md](../digital-inclusion/law.md)(02 + 부록 연표 03), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md)(분석 원문 + 부록 A 05 + 부록 B 10). `ideas.md`는 보고서와 무관해 `docs/` 바로 아래에 둔다. 다른 두 안(옮기기 위주로 여섯 문서, 조사 문서 01~04를 한 문서로 합치는 최대 통합)은 고르지 않았다.
+- 2026-10-12 — 합친 방법: 부록의 제목은 한 단계 내리고 05는 `A.`, 10은 `B.`를 번호 앞에 붙였다(예: `A.4.2 우선구매 검증 목록 세부`). 04의 절 번호는 안내 문서에서 뺐다. 옛 조사 문서 홈과 04에 겹치던 검증 등급·조사 방법은 04의 자세한 판을 남겼다. 각 문서 머리의 ‘관련 문서’ 줄은 새 구성에 맞춰 다시 썼다.
+- 2026-10-12 — 링크: 원래 문서 위치 기준으로 링크를 해석한 뒤 새 위치 기준 상대경로로 다시 썼다. 합친 문서는 조각마다 따로 해석했다. 앵커는 합친 최종 문서에서 GitHub 규칙으로 계산해 옮겼다(03·04·05·10과 옛 홈의 앵커 49개). 표시 텍스트가 경로였던 링크는 새 경로로, ‘01 문서 4.3’처럼 번호로 가리키던 링크는 새 경로와 `§`로 바꿨다. 05·10은 절 번호가 바뀌어 `§`를 붙이지 않았다. 같은 문서 안이 된 링크는 대상 제목을 표시 텍스트로 썼다. 사이트 보고서의 GitHub 링크, 바닥글, 조사 숫자 데이터 파일의 위치 표기, 생성 설정 주석도 새 경로로 바꿨다.
+- 2026-10-12 — 고치지 않은 것: `analyses/digital-inclusion/data/archived_registry_metadata.json`의 `source_document`와 `archived_registry_counts.csv`의 `docs/05 §4.2`는 이전 경로 그대로 둔다. 두 파일은 `analyze.py`가 해시로 검증하는 입력이라 고치면 분석 출력의 해시가 바뀐다. 이 사실을 안내 문서의 대응표와 [analyses/digital-inclusion/README.md](../../analyses/digital-inclusion/README.md)에 적었다. 작업 기록 W-001~W-006은 링크 대상과 경로 모양의 표시 텍스트만 기계적으로 고쳤고 서술은 그대로 두었다.
+- 2026-10-12 — 문맥을 맞추려 고친 문장: 분석 원문 부록 A의 ‘1~4번 문서의 A·B·C 등급’을 ‘이용 환경·법 구조 문서의 A·B·C 등급’으로, ideas.md의 ‘04 문서는’을 ‘출처와 검증 노트는’으로, W-007의 ‘docs/01·docs/02’를 새 경로로 바꿨다.
+- 2026-10-12 — 구조 규칙 변경: [docs/architecture.md](../architecture.md)의 W-005 규칙 ‘`docs/` 깊이 유지’를 ‘보고서가 참고하는 문서는 `site/reports/<주제>/`와 같은 이름의 `docs/<주제>/`에 둔다’로 바꿨다. 이유는 사용자 요청이며 이전 결정은 W-005에 남아 있다.
+
+### 검증
+
+- 옮기기 스크립트 시험 실행 — 앵커 대응 49개, 링크 고침 218곳, 대상 파일 18개, 찾지 못한 앵커 0건을 확인한 뒤 적용했다.
+- 저장소 링크 검사(모든 `.md`의 Markdown 링크와 사이트 HTML 링크, 코드 블록 제외) — 링크 867개, 문제 0건(이 문서를 만든 뒤). 파일 존재와 앵커(GitHub 규칙 slug와 `id`)를 함께 확인했다.
+- `node site/scripts/generate.mjs --check` — 통과. 생성 구역 33개, 본문 숫자 178곳 일치. 조사 숫자 데이터 파일의 위치 표기가 바뀌어 출처 표와 읽은 파일 해시가 다시 생성됐다.
+- 남은 옛 경로 표기 검색 — 해시를 보존하는 두 데이터 파일, 작업 기록 W-001~W-006의 서술, 안내 문서의 대응표에만 남아 있다.
+- 공개 보고서의 GitHub 링크 — 미확인. 푸시 뒤 확인한다.
+
+### 세션 메모
+
+- 2026-10-12 · Claude Code — 사용자 선택에 따라 네 문서로 합치고 링크·앵커를 옮겼다. 커밋하지 않았다. 다음 행동은 커밋·푸시 뒤 공개 보고서의 GitHub 링크 확인이다.
+
+## 남은 일
+
+- [x] `docs/digital-inclusion/` 폴더를 만들고 보고서가 참고하는 문서와 그 근거 문서를 네 문서로 합친다.
+- [x] 저장소의 링크·앵커를 새 경로로 고치고 링크 검사로 확인한다.
+- [x] 구조 규칙(architecture.md), 문서 홈(docs/README.md), 분석 안내의 데이터 파일 설명을 갱신한다.
+- [ ] 변경을 커밋·푸시하고(사용자) 공개 보고서의 근거 링크가 새 경로로 열리는지 확인한다.
+
+재개에 필요한 코드 상태: `main` 브랜치, `6e64a45`까지 푸시돼 `origin/main`과 같다. 이 작업의 변경(옛 문서 일곱 개 삭제, `docs/digital-inclusion/` 네 문서 추가, 링크를 고친 문서·사이트·데이터 파일)은 모두 미커밋이다. W-007의 배포 확인 기록도 아직 미커밋이다.
+
+완료할 때는 완료 조건과 검증 결과를 확인하고, 후속 작업이 있으면 해당 작업으로 연결합니다. 문서는 삭제하지 않습니다.

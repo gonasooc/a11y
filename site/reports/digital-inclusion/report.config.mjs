@@ -57,7 +57,7 @@ const FEATURE_LABELS = {
   WHCHR_USER_MNPLT: { key: 'wheelchair', label: '휠체어 사용자 조작' },
 };
 
-// 정책 일정의 표시 문구와 비교 영향은 docs/digital-inclusion-analysis.md의 표를 따른다.
+// 정책 일정의 표시 문구와 비교 영향은 docs/digital-inclusion/analysis.md의 표를 따른다.
 const EVENT_TEXT = {
   '2025-01-21': ['법 제정·공포', '시행 전에도 기업이 대응했을 수 있다'],
   '2025-03-27': ['기존 지능정보화 기본법의 설치·운영 의무 도입', '제조·임대 의무와 별도로 이어지는 정책'],
@@ -95,7 +95,7 @@ const PRODUCT_CLASSES = {
 };
 const FOCUS_PRODUCTS = ['24422601', '24362786', '24362785', '25202556'];
 
-// 조사 문서(docs/01·02)에서 가져온 숫자. 본문에는 A·B 등급만 쓴다(docs/work/W-007 결정 2).
+// 조사 문서(docs/digital-inclusion/environment.md·law.md)에서 가져온 숫자. 본문에는 A·B 등급만 쓴다(docs/work/W-007 결정 2).
 const CTX_GRADES = { research_grade_A: 'A', research_grade_B: 'B' };
 const CTX_UNITS = {
   persons: '명',
@@ -110,7 +110,7 @@ const CTX_UNITS = {
   sites: '개',
   years: '년',
 };
-// 웹 항목별 준수율. 평균보다 낮은 항목을 낮은 순서로 둔다(docs/01 §4.2).
+// 웹 항목별 준수율. 평균보다 낮은 항목을 낮은 순서로 둔다(docs/digital-inclusion/environment.md §4.2).
 const WEB_ITEMS = [
   { indicator: 'web_item_alt_text', label: '적절한 대체 텍스트', who: '화면낭독기 사용자' },
   { indicator: 'web_item_skip_nav', label: '반복 영역 건너뛰기', who: '화면낭독기·키보드 사용자' },
@@ -120,7 +120,7 @@ const WEB_ITEMS = [
   { indicator: 'web_item_labels', label: '입력칸 이름(레이블) 제공', who: '화면낭독기 사용자' },
   { indicator: 'web_item_contrast', label: '글자와 배경의 명도 대비', who: '저시력인, 고령자' },
 ];
-// 4절 의무 적용 일정. 날짜는 policy_events.csv와 대조한다. 2025-11-18만 docs/02 §5.1의 복지부 발표가 근거다.
+// 4절 의무 적용 일정. 날짜는 policy_events.csv와 대조한다. 2025-11-18만 docs/digital-inclusion/law.md §5.1의 복지부 발표가 근거다.
 const LAW_SCHEDULE = [
   { date: '2025-01-21', law: '디지털포용법', text: () => '법 제정·공포', who: '시행까지 1년의 준비 기간' },
   { date: '2025-03-27', law: '지능정보화 기본법', text: () => '키오스크를 설치·운영하는 곳의 의무 도입', who: '2026년 1월부터 디지털포용법으로 이어짐' },
@@ -289,7 +289,7 @@ export async function build({ repoRoot, repoUrl }) {
     rows: web.map((w, i) => [String(w.year), fmt(w.value, 1), i ? fmtSigned(w.value - web[i - 1].value, 1) : '—']),
   };
 
-  /* 조사 문서에서 가져온 숫자 (docs/01·02, A·B 등급) */
+  /* 조사 문서에서 가져온 숫자 (docs/digital-inclusion/environment.md·law.md, A·B 등급) */
   const ctx = new Map();
   for (const row of src.context) {
     const grade = CTX_GRADES[row.verification_status];
@@ -314,12 +314,12 @@ export async function build({ repoRoot, repoUrl }) {
   facts['ctx.capability.visualGap'] = kv('capability', 'disabled', 2025) - cv('capability_index', 'visual', 2025);
   facts['ctx.pcMain.diff'] = cv('main_device_pc', 'disabled_internet_users', 2025) - cv('main_device_pc', 'disabled_internet_users', 2024);
   // 조사 문서에 적힌 계산값과 같은지 확인한다.
-  assertClose('65세 이상 비율(docs/01 §2.1)', round(facts['ctx.registered.65plusShare'], 1), 56.9);
-  assertClose('대표 통계가 보는 유형 비율(docs/01 §2.2)', round(facts['ctx.registered.surveyedShare'], 1), 78.5);
-  assertClose('지적·자폐성·정신 비율(docs/01 §2.2)', round(facts['ctx.registered.devMentalShare'], 1), 14.9);
-  assertClose('시각장애 중 심하지 않음 비율(docs/01 §5.1)', round(facts['ctx.registered.visualNotSevereShare'], 1), 82.0);
-  assertClose('앱 설치 차이(docs/01 §1)', round(facts['ctx.appInstall.gap'], 1), 12.4);
-  assertClose('PC 주 이용 변화(docs/01 §3.5)', round(facts['ctx.pcMain.diff'], 1), -9.4);
+  assertClose('65세 이상 비율(docs/digital-inclusion/environment.md §2.1)', round(facts['ctx.registered.65plusShare'], 1), 56.9);
+  assertClose('대표 통계가 보는 유형 비율(docs/digital-inclusion/environment.md §2.2)', round(facts['ctx.registered.surveyedShare'], 1), 78.5);
+  assertClose('지적·자폐성·정신 비율(docs/digital-inclusion/environment.md §2.2)', round(facts['ctx.registered.devMentalShare'], 1), 14.9);
+  assertClose('시각장애 중 심하지 않음 비율(docs/digital-inclusion/environment.md §5.1)', round(facts['ctx.registered.visualNotSevereShare'], 1), 82.0);
+  assertClose('앱 설치 차이(docs/digital-inclusion/environment.md §1)', round(facts['ctx.appInstall.gap'], 1), 12.4);
+  assertClose('PC 주 이용 변화(docs/digital-inclusion/environment.md §3.5)', round(facts['ctx.pcMain.diff'], 1), -9.4);
   if (kv('capability', 'disabled', 2025) <= cv('capability_index', 'visual', 2025)) fail('시각장애인 역량이 장애인 전체보다 낮지 않다');
   // 본문의 '8곳 모두'는 점검 대상과 미준수 수가 같을 때만 쓸 수 있다.
   if (cv('bank_apps_no_alt_text', 'bank_apps', 2023) !== cv('bank_apps_checked', 'bank_apps', 2023)) fail('대체 텍스트 미준수 은행 앱이 점검 대상 전부가 아니다');

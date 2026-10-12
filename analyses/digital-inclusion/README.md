@@ -1,10 +1,10 @@
 # 디지털포용법 분석 재현
 
-**2026-10-02 기준 탐색 분석**이다. [docs/digital-inclusion-analysis.md](../../docs/digital-inclusion-analysis.md)와 [API 안내](../../docs/10-digital-inclusion-api-guide.md)를 함께 읽는다. 법의 인과효과는 현재 자료로 식별하지 못했다.
+**2026-10-02 기준 탐색 분석**이다. [docs/digital-inclusion/analysis.md](../../docs/digital-inclusion/analysis.md)와 [API 안내](../../docs/digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)를 함께 읽는다. 법의 인과효과는 현재 자료로 식별하지 못했다.
 
-2026-10-03에는 조달청·행안부 인증 수집과 추가 분석을 수행했다. 결과는 [docs/digital-inclusion-analysis.md](../../docs/digital-inclusion-analysis.md)에 있다. 아래 첫 실행법은 초기 기준선이며, API 분석 명령은 뒤에 별도로 안내한다.
+2026-10-03에는 조달청·행안부 인증 수집과 추가 분석을 수행했다. 결과는 [docs/digital-inclusion/analysis.md](../../docs/digital-inclusion/analysis.md)에 있다. 아래 첫 실행법은 초기 기준선이며, API 분석 명령은 뒤에 별도로 안내한다.
 
-같은 날 KOSIS 네 통계표에서 2014~2025년 240개 관측을 확보했다. 2016년 이후 추세와 기존 보고서 대조 결과는 [docs/digital-inclusion-analysis.md](../../docs/digital-inclusion-analysis.md#digital-baseline)에 있다.
+같은 날 KOSIS 네 통계표에서 2014~2025년 240개 관측을 확보했다. 2016년 이후 추세와 기존 보고서 대조 결과는 [docs/digital-inclusion/analysis.md](../../docs/digital-inclusion/analysis.md#digital-baseline)에 있다.
 
 ## 실행
 
@@ -21,8 +21,8 @@ python3 analyses/digital-inclusion/analyze.py
 | [plan.json](plan.json) | 탐색적 분석 범위, 기존 데이터 노출, 후속 추정의 조건 |
 | [baseline_indicators.csv](data/baseline_indicators.csv) | 이번에 원문 확인한 107개 관측값. 디지털정보화 100행, 웹 평균 7행 |
 | [source_manifest_baseline.json](data/source_manifest_baseline.json) | 원본 다운로드 URL·해시·쪽수·모집단·측정 한계 |
-| [archived_registry_counts.csv](data/archived_registry_counts.csv) | 기존 05 문서에서 옮긴 14개 집계. 신규 수집 원자료가 아님 |
-| [archived_registry_metadata.json](data/archived_registry_metadata.json) | 05 문서의 Git 리비전·관측일, 이번 재수집 실패 기록 |
+| [archived_registry_counts.csv](data/archived_registry_counts.csv) | 기존 분석 제안 문서(지금은 [docs/digital-inclusion/analysis.md](../../docs/digital-inclusion/analysis.md#a42-우선구매-검증-목록-세부-2026-09-30-조회) 부록 A)에서 옮긴 14개 집계. 신규 수집 원자료가 아님. 파일 안의 `docs/05 §4.2`는 2026-10-12 이전 경로이며, 입력 해시를 보존하려고 고치지 않는다 |
+| [archived_registry_metadata.json](data/archived_registry_metadata.json) | 분석 제안 문서의 Git 리비전·관측일, 이번 재수집 실패 기록. `source_document`는 2026-10-12 이전 경로(`docs/05-policy-effect-case-proposals.md`)이며, 입력 해시를 보존하려고 고치지 않는다 |
 | [policy_events.csv](data/policy_events.csv) | 시행일, 경쟁 정책, 신청 마감, 계도기간 구분 |
 | [api_catalog.json](data/api_catalog.json) | 인증 후 수집할 API의 실제 공개 명세 확인 결과 |
 | [summary.json](outputs/summary.json) | 향후 분석 페이지가 사용할 요약·차이·판정·입력 해시 |
@@ -137,4 +137,4 @@ NIA 목록을 다시 확보하면 과거 집계를 새 원자료로 덮어쓰지
 
 `python3 analyses/digital-inclusion/followup_analyze.py`는 기존 검증 함수를 재사용해 2025·2026년 2~9월 조달을 기관 코드·제품 ID·기관 관측 집합별로 분해하고, 2026-10-03 행안부 자료의 기능 조합을 계산한다. 네트워크와 키가 필요 없다. 기관의 한 해 미관측을 폐쇄·구매 중단으로 해석하지 않으며, 기능 조합을 접근성 점수로 만들지 않는다.
 
-결과는 [analyses/digital-inclusion/outputs/followup_summary.json](outputs/followup_summary.json)과 여기서 해시로 연결한 CSV 5개에 저장한다. 공개 문서 조사의 확인 수준은 [analyses/digital-inclusion/data/local_history_sources_2026-10-04.json](data/local_history_sources_2026-10-04.json), 해석은 [docs/digital-inclusion-analysis.md](../../docs/digital-inclusion-analysis.md#followup-decomposition)에 있다. 변경·취소·미상 경계 검증은 기존 `python3 -m unittest discover -s analyses/digital-inclusion/tests -v`에 포함된다.
+결과는 [analyses/digital-inclusion/outputs/followup_summary.json](outputs/followup_summary.json)과 여기서 해시로 연결한 CSV 5개에 저장한다. 공개 문서 조사의 확인 수준은 [analyses/digital-inclusion/data/local_history_sources_2026-10-04.json](data/local_history_sources_2026-10-04.json), 해석은 [docs/digital-inclusion/analysis.md](../../docs/digital-inclusion/analysis.md#followup-decomposition)에 있다. 변경·취소·미상 경계 검증은 기존 `python3 -m unittest discover -s analyses/digital-inclusion/tests -v`에 포함된다.

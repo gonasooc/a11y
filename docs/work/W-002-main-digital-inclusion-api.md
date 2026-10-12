@@ -2,11 +2,11 @@
 
 - 상태: 완료
 - 최근 갱신: 2026-10-03
-- 관련 문서: [docs/README.md](../README.md), [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md), [docs/10-digital-inclusion-api-guide.md](../10-digital-inclusion-api-guide.md), [analyses/digital-inclusion/plan.json](../../analyses/digital-inclusion/plan.json)
+- 관련 문서: [docs/README.md](../README.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md), [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api), [analyses/digital-inclusion/plan.json](../../analyses/digital-inclusion/plan.json)
 
 ## 현재 상황
 
-조달청·행안부 키의 실제 인증과 가능한 추가 분석을 완료했다. 행안부 고유 기록 5,803건과 조달청 등록 397행·납품요구 상세 1,494행을 수집·검증하고, 현재 기능 현황과 동일 기간 조달 순증을 분석했다. 결과는 [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md)에 있다. KOSIS와 추가 이력 확보는 [docs/work/W-003-main-additional-data.md](W-003-main-additional-data.md)에서 이어간다.
+조달청·행안부 키의 실제 인증과 가능한 추가 분석을 완료했다. 행안부 고유 기록 5,803건과 조달청 등록 397행·납품요구 상세 1,494행을 수집·검증하고, 현재 기능 현황과 동일 기간 조달 순증을 분석했다. 결과는 [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md)에 있다. KOSIS와 추가 이력 확보는 [docs/work/W-003-main-additional-data.md](W-003-main-additional-data.md)에서 이어간다.
 
 - 완료 조건: 인증 데이터의 실제 범위·필드·시점·품질을 확인하고 재현 가능한 수집·분석 결과와 해석 한계를 기록한다. 인과효과 추정은 필요한 조건이 충족되는 경우에만 진행한다.
 - 사람이 판단할 사항: 이번 두 API 분석 범위에는 없음. KOSIS 키·추가 이력 확보는 후속 작업이다.
@@ -25,8 +25,8 @@
 - 2026-10-03 — [analyses/digital-inclusion/pps_collect.py](../../analyses/digital-inclusion/pps_collect.py)에서 월별 완결 조회를 하고 [analyses/digital-inclusion/pps_analyze.py](../../analyses/digital-inclusion/pps_analyze.py)로 변경·취소의 부호를 보존한 납품요구 순증을 계산했다. 주 분석은 증명발급기·무인안내시스템으로 제한했다. 2~9월 872→597대(-31.5%), 법정일과 같은 1/22~9/30 930→716대(-23.0%)를 함께 표시했다.
 - 2026-10-03 — 초기 분석은 [analyses/digital-inclusion/analyze.py](../../analyses/digital-inclusion/analyze.py)에서 실제 초기 입력만 해시로 기록하도록 범위를 좁혔다. 후속 API 파일이 기존 기준선 입력 목록에 섞이지 않으며 숫자는 유지됐다.
 - 2026-10-03 — API 데이터로 현재 상태와 조달 흐름은 확인했지만 설치·기능 변경 이력, 시행 당시 기업규모와 미등록 제조사 모집단은 확보하지 못했다. 인과효과 추정은 진행하지 않고 필요한 자료를 후속 작업으로 남겼다.
-- 2026-10-02 — [docs/digital-inclusion-analysis.md](../digital-inclusion-analysis.md)와 [analyses/digital-inclusion/analyze.py](../../analyses/digital-inclusion/analyze.py)에서 초기 분석의 입력·계산·한계를 확인했다. 2025년 조사치는 시행 전 기준선이며 검증 목록은 신규 재수집이 아닌 과거 집계다.
-- 2026-10-02 — [docs/10-digital-inclusion-api-guide.md](../10-digital-inclusion-api-guide.md)에 조달청·행안부·KOSIS를 우선 확인할 API로 정리한 상태다. NIA 위치 API의 인증 방식·실제 시점 필드는 미확인으로 유지한다.
+- 2026-10-02 — [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md)와 [analyses/digital-inclusion/analyze.py](../../analyses/digital-inclusion/analyze.py)에서 초기 분석의 입력·계산·한계를 확인했다. 2025년 조사치는 시행 전 기준선이며 검증 목록은 신규 재수집이 아닌 과거 집계다.
+- 2026-10-02 — [docs/digital-inclusion/analysis.md](../digital-inclusion/analysis.md#부록-b-디지털포용법-분석에-필요한-api)에 조달청·행안부·KOSIS를 우선 확인할 API로 정리한 상태다. NIA 위치 API의 인증 방식·실제 시점 필드는 미확인으로 유지한다.
 - 2026-10-02 — 행안부 공개 명세에는 접근성 기능 8종이 있으나 설치일은 없다. 인증 첫 수집은 현재 상태 점검으로 시작하고, 시행 전후 분석은 과거 스냅샷·변경 이력 여부를 따로 확인한다.
 - 2026-10-02 — 사용자가 키 저장 위치와 특정 API를 식별할 수 있는 이름을 요청했다. 저장소 루트 `.env`를 입력 위치로 정하고 [.env.example](../../.env.example)에 `PPS_SHOPPING_MALL_SERVICE_KEY`·`MOIS_KIOSK_INFO_SERVICE_KEY`·`KOSIS_DIGITAL_DIVIDE_API_KEY`를 분리했다. [docs/specs.md](../specs.md)와 API 안내·카탈로그를 같은 이름으로 맞춘다. 키 발급 여부나 인증 성공은 이번 변경으로 확인되지 않는다.
 - 2026-10-02 — 기존 `.env`가 없음을 확인해 세 항목이 빈 로컬 파일을 생성했다. 실제 키 값은 입력·조회하지 않았다. API 수집기에서 사용할 이름은 확정했고, 로딩 구현은 후속 작업에 남긴다.
