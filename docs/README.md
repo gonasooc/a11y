@@ -18,7 +18,6 @@
 
 ## 진행 중·예정·보류 작업
 
-- [docs/work/W-008-main-docs-digital-inclusion.md](work/W-008-main-docs-digital-inclusion.md) — 디지털포용법 근거 문서를 docs/digital-inclusion으로 정리 — 진행 중. 일곱 문서를 네 문서로 합치고 링크 검사를 마쳤다. 커밋·푸시 뒤 공개 링크 확인이 남았다.
 - [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md) — 비장애인 독자를 위한 디지털포용법 보고서 개편 — 진행 중. 13개 결정을 구현해 공개 주소에 배포했다. 독자 테스트와 첫 화면 구성 결정이 남았다.
 - [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md) — GitHub Pages 사이트와 디지털포용법 시각화 보고서 — 진행 중. `https://gonasooc.github.io/a11y/`에 배포해 공개 화면을 확인했다. 실제 스크린리더 확인과 디자인 기준 확정 여부가 남았다.
 - [docs/work/W-004-main-history-data.md](work/W-004-main-history-data.md) — 기기·검증 제품 과거 이력 확보 — 진행 중. 기관·제품별 조달 분해·기능 조합 분석 및 공개 교체 공지 조사 완료. 기기별 완료 이력·차기 연간 통계는 미확보.
@@ -29,6 +28,7 @@ NIA 배리어프리 키오스크 위치 API(`15157403`)는 사용자 요청으�
 
 ## 최근 완료
 
+- [docs/work/W-008-main-docs-digital-inclusion.md](work/W-008-main-docs-digital-inclusion.md) — 디지털포용법 근거 문서를 docs/digital-inclusion으로 정리 — 완료. 일곱 문서를 네 문서로 합치고, 저장소 링크와 공개 보고서의 GitHub 링크·앵커를 확인했다.
 - [docs/work/W-005-main-docs-consolidation.md](work/W-005-main-docs-consolidation.md) — 도구 아이디어·디지털포용법 보고서 통합 — 완료. 같은 `docs/` 깊이에서 내용·출처·링크를 통합했다.
 - [docs/work/W-003-main-additional-data.md](work/W-003-main-additional-data.md) — KOSIS 추가 분석 — 완료. 240셀 수집, 2016년 이후 추세·보고서 대조·불일치 원문 확인.
 - [docs/work/W-002-main-digital-inclusion-api.md](work/W-002-main-digital-inclusion-api.md) — 조달청·행안부 추가 분석 — 완료. 인증·수집 완전성·기능 현황·조달 흐름·재현 검증.
