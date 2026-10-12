@@ -18,7 +18,7 @@
 
 ## 진행 중·예정·보류 작업
 
-- [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md) — 비장애인 독자를 위한 디지털포용법 보고서 개편 — 진행 중. 13개 결정을 구현하고 자동 검사를 마쳤다. 독자 테스트와 커밋·배포가 남았다.
+- [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md) — 비장애인 독자를 위한 디지털포용법 보고서 개편 — 진행 중. 13개 결정을 구현해 공개 주소에 배포했다. 독자 테스트와 첫 화면 구성 결정이 남았다.
 - [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md) — GitHub Pages 사이트와 디지털포용법 시각화 보고서 — 진행 중. `https://gonasooc.github.io/a11y/`에 배포해 공개 화면을 확인했다. 실제 스크린리더 확인과 디자인 기준 확정 여부가 남았다.
 - [docs/work/W-004-main-history-data.md](work/W-004-main-history-data.md) — 기기·검증 제품 과거 이력 확보 — 진행 중. 기관·제품별 조달 분해·기능 조합 분석 및 공개 교체 공지 조사 완료. 기기별 완료 이력·차기 연간 통계는 미확보.
 
