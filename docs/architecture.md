@@ -1,6 +1,6 @@
 # 아키텍처
 
-> 초기 작성: 2026-10-02 · 인증 수집 반영: 2026-10-03 · 웹 사이트 추가: 2026-10-06.
+> 초기 작성: 2026-10-02 · 인증 수집 반영: 2026-10-03 · 웹 사이트 추가: 2026-10-06 · 영상 접근성 조사 추가: 2026-10-13.
 
 구성 요소의 책임과 의존 관계를 다룬다. 기술 구성과 실행 방법은 [docs/specs.md](specs.md)에 있다.
 
@@ -18,6 +18,8 @@
 | 웹 사이트 | `site/`의 빌드 없는 정적 사이트. 메인 허브, 분석 보고서 페이지, 공통 스타일과 접근 가능한 차트 스크립트 | [site/README.md](../site/README.md) |
 | 보고서 데이터 생성 | 분석 출력을 읽어 HTML의 생성 구역(표·조각·차트 데이터)을 채우고 본문 숫자를 검사한다 | [site/scripts/generate.mjs](../site/scripts/generate.mjs) |
 | 배포 | GitHub Actions가 생성 구역을 검사한 뒤 `site/`를 그대로 GitHub Pages에 올린다 | [.github/workflows/pages.yml](../.github/workflows/pages.yml) |
+| 영상 접근성 조사 | 방송·OTT·영화관의 자막·수어·화면해설 제도, 이용자와 시청 경험, 방송 편성 실적. 웹 보고서 `site/reports/media-access/`의 근거 문서 | [docs/media-access/README.md](media-access/README.md) |
+| 장애인방송 편성 실적 분석 | 시청자미디어재단 HWPX 수집·해석, 연도별 미달·사업자군 평균, 공식 발표 대조 | [analyses/media-access/README.md](../analyses/media-access/README.md) |
 
 ## 주요 폴더와 흐름
 
@@ -39,6 +41,11 @@
 │   │   ├── environment.md     # 장애인의 인터넷·웹·앱 이용 환경
 │   │   ├── law.md             # 민간 기업 법적 의무와 정책 동향, 부록 연표
 │   │   └── analysis.md        # 시행 전후 데이터 분석, 부록 A 분석 제안·부록 B API 안내
+│   ├── media-access/          # site/reports/media-access 보고서의 근거 문서
+│   │   ├── README.md          # 조사 개요·출처·서로 다른 수치·한계
+│   │   ├── environment.md     # 이용자 규모·소통 방식·시청 경험·품질과 시간대의 공백
+│   │   ├── law.md             # 방송·OTT·영화관 제도, 2026 고시 개정, 연표
+│   │   └── analysis.md        # 2017~2025 장애인방송 편성 실적 분석, OTT를 세지 않은 이유
 │   ├── work/                 # 작업별 현재 상황·판단·남은 일
 │   └── sessions/             # 필요한 경우에만 상세 세션 기록
 ├── site/                      # GitHub Pages 정적 사이트(빌드 없음)
@@ -46,6 +53,14 @@
 │   ├── reports/<주제>/        # 보고서 페이지와 데이터 설정(report.config.mjs)
 │   ├── assets/                # 공통 스타일·차트 스크립트
 │   └── scripts/               # 생성 구역 채우기·숫자 검사(Node)
+├── analyses/media-access/
+│   ├── README.md              # 분석 재현 안내
+│   ├── hwpx_table.py          # HWPX 표 셀·병합 읽기
+│   ├── kcmf_collect.py        # 재단 연도별 HWPX 수집·해시 명세
+│   ├── kcmf_parse.py          # 표 → 방송사·연도별 CSV, 행 수·일련번호 검증
+│   ├── broadcast_analyze.py   # 미달 수·사업자군 평균·공식 발표 대조
+│   ├── data/ · outputs/ · tests/
+│   └── raw/                   # 로컬 원본 HWPX·보도자료·판결문, Git 제외(해시는 data/의 명세)
 └── analyses/digital-inclusion/
     ├── README.md              # 분석 재현 안내
     ├── plan.json              # 분석 범위·해석 조건
@@ -85,4 +100,5 @@
 - Git에서 제외한 로컬 원본은 다른 체크아웃에 포함되지 않는다. 원문 재확인은 출처 명세의 다운로드 주소·해시를 이용한다.
 - 인증 수집기는 명시적으로 실행하는 로컬 명령이다. 정기 갱신은 없다. 결과 게시는 커밋된 출력으로 생성 구역을 다시 채운 HTML을 올리는 방식이며, 출력과 본문 숫자가 어긋나면 검사가 실패해 배포되지 않는다.
 - 행안부는 일반 페이지 순서의 중복을 감지하면 기관·시간 구간을 나눠 완전성을 검증한다. 조달청은 수집일별 응답 캐시를 유지하고 갱신 시 이전 바이트를 해시별로 보존한다. 정규화 CSV·요약은 현재 선택한 수집 결과이므로 새 기간을 적용하기 전에 기존 명세와 원본을 보존한다.
+- 재단 HWPX는 연도마다 표 구성이 다르다(2017년 여러 쪽의 연속 표, 2018년 사업자군 열 없음). 해석기는 머리글과 병합 정보로 열을 찾고, 원문에 표기된 사업자군별 수와 행 수가 다르면 멈춘다. 재단이 파일을 바꾸면 명세의 해시와 달라져 멈춘다.
 - KOSIS는 보고서 기반 초기 CSV와 별도 입력을 유지한다. 출처 간 불일치 셀을 기록하고 계열을 조용히 접합하지 않는다. 연간 이용자 통계는 기기·조달 기록과 관측 단위가 달라 각각 분석한다.

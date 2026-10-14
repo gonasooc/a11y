@@ -1,0 +1,133 @@
+{
+  "source_manifest": "data/kcmf_manifest.json",
+  "years": [
+    {
+      "year": 2017,
+      "sha256": "054c9fa05b727b8fc6cfef40d3c6cd4ceef54afa6f9c9f84b890edd8ceba7930",
+      "operator_rows": 155,
+      "variant_rows": 2,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 84,
+        "PP": 16
+      },
+      "rerun_rows": 0
+    },
+    {
+      "year": 2018,
+      "sha256": "5578f8a8c0100bed56deb724a6b1e4995559254b7e3a18409f38b755e00ee845",
+      "operator_rows": 134,
+      "variant_rows": 0,
+      "group_counts_in_source": null,
+      "rerun_rows": 0
+    },
+    {
+      "year": 2019,
+      "sha256": "7b1f782a453cbf1cc9664fe07cdfc85085da1a10efe6c094748ee6d2054ccffd",
+      "operator_rows": 127,
+      "variant_rows": 2,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 60,
+        "PP": 12
+      },
+      "rerun_rows": 0
+    },
+    {
+      "year": 2020,
+      "sha256": "5d3ba8dbafa296546b19a5007b290d2d60f985c387c1e23fd87ff152635d8f89",
+      "operator_rows": 132,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 65,
+        "PP": 12
+      },
+      "rerun_rows": 0
+    },
+    {
+      "year": 2021,
+      "sha256": "3e971e773dbbb2c5c8edf979091d3344b5180dc53baaaf76882bdd4dfd278683",
+      "operator_rows": 132,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 65,
+        "PP": 12
+      },
+      "rerun_rows": 0
+    },
+    {
+      "year": 2022,
+      "sha256": "de0b81c380ac80bcaf16da23699417d93c072299bd100122c3de84d2683c4f9d",
+      "operator_rows": 131,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 65,
+        "PP": 11
+      },
+      "rerun_rows": 0
+    },
+    {
+      "year": 2023,
+      "sha256": "753075dec1bbfda750c785bb4dc1322f659b954180959515e984f88604c948d8",
+      "operator_rows": 108,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 43,
+        "PP": 10
+      },
+      "rerun_rows": 10
+    },
+    {
+      "year": 2024,
+      "sha256": "516b60cbf56b709b34343300c1d0bd546cd60f6ca72ebfaa56177e122087b44d",
+      "operator_rows": 108,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 43,
+        "PP": 10
+      },
+      "rerun_rows": 10
+    },
+    {
+      "year": 2025,
+      "sha256": "6d1067a38eb1149e04337c334dd79f31fea780fded996bad1ec40e0443eace70",
+      "operator_rows": 108,
+      "variant_rows": 0,
+      "group_counts_in_source": {
+        "지상파": 48,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 43,
+        "PP": 10
+      },
+      "rerun_rows": 10
+    }
+  ]
+}

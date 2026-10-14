@@ -1,8 +1,9 @@
 // 단일 계열 세로 막대(연도별 점수, 등록번호 연도). 값은 막대 끝에 쓴다.
+// 칸이 좁아 축 라벨이 겹치면 항목의 shortLabel(있을 때만)을 쓴다. 값 단위의 이름은 늘 label이다.
 (function (A11y) {
   'use strict';
   const { fmt } = A11y.format;
-  const { band, chartSvg, columnPath, interact, linear, niceDomain, plotArea, responsive, svgEl, svgText } = A11y.chart;
+  const { band, chartSvg, columnPath, interact, linear, measure, niceDomain, plotArea, responsive, svgEl, svgText } = A11y.chart;
 
   function columnChart(mount, opts) {
     const { items, yMax, digits = 0, unit = '', labelledBy, describedBy, tooltipNote } = opts;
@@ -18,6 +19,7 @@
       const barW = Math.min(24, x.bandwidth);
       const deco = svgEl('g', { 'aria-hidden': 'true' }, svg);
       const base = y(0);
+      const crowded = items.some((d) => d.shortLabel && measure(svg, d.label, 'axis-label') > x.step - 4);
 
       for (const t of y.ticks(4)) {
         svgEl('line', { class: t === 0 ? 'baseline' : 'grid', x1: margin.left, x2: width - margin.right, y1: y(t), y2: y(t) }, deco);
@@ -32,7 +34,7 @@
         svgEl('path', { class: `bar ${d.partial ? 'bar--partial' : 's1'}`, d: columnPath(cx - barW / 2, barW, base, y(d.value)) }, g);
         svgEl('rect', { class: 'focus-ring', x: cx - barW / 2 - 6, y: y(d.value) - 24, width: barW + 12, height: base - y(d.value) + 28, rx: 6 }, g);
         svgText(deco, cx, y(d.value) - 8, `${fmt(d.value, digits)}${d.partial ? '*' : ''}`, { class: 'label label--value', 'text-anchor': 'middle' });
-        svgText(deco, cx, height - 12, d.label, { class: 'axis-label', 'text-anchor': 'middle' });
+        svgText(deco, cx, height - 12, crowded ? (d.shortLabel ?? d.label) : d.label, { class: 'axis-label', 'text-anchor': 'middle' });
         return {
           el: g,
           label: `${d.label}: ${fmt(d.value, digits)}${unit}${d.note ? `, ${d.note}` : ''}`,

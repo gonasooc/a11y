@@ -20,6 +20,7 @@
 - 공개 사이트와 저장소 첫 화면([README.md](../README.md))에서 연결하지 않을 것: 도구 아이디어 문서([docs/ideas.md](ideas.md))는 아이디어를 얻기 위한 개인 참고 자료다(사용자 요청, 2026-10-06).
 - 인증 수집 분석: 조달청·행안부 실제 자료로 현재 기능과 동일 기간 조달 순증을 확인했다. KOSIS로 2016년 이후 장기 기준선과 기존 보고서 대조도 완료했다. 결과는 W-002·W-003에 있으며 다음 이력 확보는 [docs/work/W-004-main-history-data.md](work/W-004-main-history-data.md)에서 관리한다.
 - 메인 페이지와 개별 도구·분석 페이지: GitHub Pages로 배포하고, 메인 허브에서 각 HTML 문서와 웹 서비스로 들어가며, 한 저장소에 여러 서비스를 함께 두는 구조는 사용자 요청으로 확정했다(2026-10-06). 첫 페이지로 허브와 디지털포용법 분석 보고서를 만들어 2026-10-06에 `https://gonasooc.github.io/a11y/`로 공개했다. 근거: [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md).
+- 영상 접근성 웹 보고서(`site/reports/media-access/`)도 주 독자를 비장애인 일반 독자로 두고, '의무는 채웠는데, 볼 게 있나'를 이야기 축으로 방송 중심(OTT·영화관은 한 절씩)으로 구성한다(사용자 결정, 2026-10-13). 근거: [docs/work/W-010-main-media-access-report.md](work/W-010-main-media-access-report.md).
 - 디지털포용법 웹 보고서의 주 독자는 장애인의 인터넷 이용 실태를 잘 모르는 비장애인 일반 독자다. 이용 실태 → 법의 한계 → 효과 순서로 보여 주고, 조사 문서에서 가져오는 숫자는 A·B 등급만 쓴다(사용자 결정, 2026-10-12). 근거: [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md).
 - 성공 기준: 현재 분석은 출처와 계산을 확인할 수 있고, 결과의 해석 범위와 필요한 후속 자료가 명시돼 있어야 한다. 웹 서비스의 출시 기준과 이용 지표는 미정.
 

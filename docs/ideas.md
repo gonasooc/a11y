@@ -471,7 +471,7 @@
 
 | 식별자·아이디어 | 근거·등급 | 범위·연결 |
 |---|---|---|
-| <a id="small-06-1"></a>S06-1. 자막 있는 OTT 콘텐츠 찾기 | 국내 OTT의 폐쇄자막 제공은 일부 작품에 그친다(티빙 260여 작품, 웨이브 128작품) [C]. OTT는 장애인차별금지법 제21조④의 폐쇄자막 의무 대상이 아니다([docs/digital-inclusion/environment.md](digital-inclusion/environment.md#72-청각)) [A] | 2026.6 고시 개정으로 OTT 자체 제작물에 노력 의무가 생겨 2026 하반기부터 시행된다는 보도가 있다 [C]. 시행 전후를 비교할 수 있다 |
+| <a id="small-06-1"></a>S06-1. 자막 있는 OTT 콘텐츠 찾기 | 국내 OTT의 폐쇄자막 제공은 일부 작품에 그친다(티빙 260여 작품, 웨이브 128작품) [C]. OTT는 장애인차별금지법 제21조④의 폐쇄자막 의무 대상이 아니다([docs/digital-inclusion/environment.md](digital-inclusion/environment.md#72-청각)) [A] | OTT 자체 제작물의 노력 의무는 전기통신사업법 제22조의10(2023.7.18 신설, 2024.1.19 시행 [B])으로 생겼고, 2026.7.2 장애인방송 고시 개정(제2026-19호)이 OTT를 고시 적용 범위에 넣었다 [A]. 두 시점으로 전후를 비교할 수 있다(2026-10-13 보완, [docs/work/W-009-main-media-access.md](work/W-009-main-media-access.md)) |
 | <a id="small-06-2"></a>S06-2. 쉬운 한국어 자막 | Chrome 실시간 자막은 한국어를 기기 안에서 처리한다 [B] | 자막 생성은 Chrome에 맡기고, 한국어가 제2언어인 농인을 위해 쉽게 다시 쓰는 기능만 만든다. AI 수어는 농인 단체가 비판하고 있어, 함께 설계하지 않는다면 권하지 않는다 [C] |
 | <a id="small-06-3"></a>S06-3. 송금 확인 다시 읽기 | 화면낭독기가 '출금 1원'을 "입금 1원"으로, '연 0.01%'를 "연 0.1%"로 잘못 읽었다([docs/digital-inclusion/environment.md](digital-inclusion/environment.md#43-모바일-앱-이용은-모바일로-옮겨갔는데-데이터는-멈춰-있다)) [A] | 확인 화면의 받는 사람·금액·계좌를 정해진 순서로 다시 읽어 준다. 아이디어 2의 Android 앱 기능으로 둔다 |
 | <a id="small-06-4"></a>S06-4. 시간 제한 알림 | 조작이 느려 신청 시간을 놓친 사례가 있다([docs/digital-inclusion/environment.md](digital-inclusion/environment.md#73-지체뇌병변)) [C] | 인증번호 3분처럼 남은 시간을 음성으로 알리고, 사이트가 제공하는 '연장' 버튼을 안내한다 |

@@ -1,0 +1,118 @@
+{
+  "publisher": "시청자미디어재단",
+  "collection": "사전정보공표 '장애인방송 편성 실적(방송사명, 목표, 실적)'",
+  "list_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do",
+  "snapshot": "2026-10-13",
+  "retrieved_at": "2026-10-13T03:28:50+00:00",
+  "access_note": "robots.txt는 모든 경로를 허용(2026-10-13 확인). 요청 사이 1초 간격, 원본 HWPX는 raw/에 두고 Git에서 제외",
+  "files": [
+    {
+      "year": 2017,
+      "title": "2017년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2019-03-29",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=-MHDky9MmrxpTMLdYclqyg",
+      "file_id": "128851",
+      "file_name": "2017년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 103905,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/pRPmn",
+      "sha256": "054c9fa05b727b8fc6cfef40d3c6cd4ceef54afa6f9c9f84b890edd8ceba7930",
+      "raw_path": "raw/kcmf/kcmf_2017.hwpx"
+    },
+    {
+      "year": 2018,
+      "title": "2018년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2020-03-30",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=sBiTGtsK_-Oea7OvoIlU2g",
+      "file_id": "133574",
+      "file_name": "2018년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 84682,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/vRPmn",
+      "sha256": "5578f8a8c0100bed56deb724a6b1e4995559254b7e3a18409f38b755e00ee845",
+      "raw_path": "raw/kcmf/kcmf_2018.hwpx"
+    },
+    {
+      "year": 2019,
+      "title": "2019년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2021-04-05",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=cUptLRCZKO0p4lXz3OVKAQ",
+      "file_id": "138273",
+      "file_name": "2019년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 83913,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/IRPmn",
+      "sha256": "7b1f782a453cbf1cc9664fe07cdfc85085da1a10efe6c094748ee6d2054ccffd",
+      "raw_path": "raw/kcmf/kcmf_2019.hwpx"
+    },
+    {
+      "year": 2020,
+      "title": "2020년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2021-04-06",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=4_YZ4YP2PowmxhVJ8XidBQ",
+      "file_id": "138304",
+      "file_name": "2020년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 83985,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/BRPmn",
+      "sha256": "5d3ba8dbafa296546b19a5007b290d2d60f985c387c1e23fd87ff152635d8f89",
+      "raw_path": "raw/kcmf/kcmf_2020.hwpx"
+    },
+    {
+      "year": 2021,
+      "title": "2021년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2022-06-09",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=LE7QbVFWpgkAah2Tq4Q8Rg",
+      "file_id": "143736",
+      "file_name": "2021년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 83792,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/mpPmn",
+      "sha256": "3e971e773dbbb2c5c8edf979091d3344b5180dc53baaaf76882bdd4dfd278683",
+      "raw_path": "raw/kcmf/kcmf_2021.hwpx"
+    },
+    {
+      "year": 2022,
+      "title": "2022년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2023-04-04",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=XjaR0kGOsOiOwtV4Rjz8IQ",
+      "file_id": "147134",
+      "file_name": "2022년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 83763,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/npPmn",
+      "sha256": "de0b81c380ac80bcaf16da23699417d93c072299bd100122c3de84d2683c4f9d",
+      "raw_path": "raw/kcmf/kcmf_2022.hwpx"
+    },
+    {
+      "year": 2023,
+      "title": "2023년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2024-03-20",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=ygKzgj0zhtcGQ8lgrlYcZhpKonszEgHXRqlCfZCHO_M",
+      "file_id": "2403205906017186",
+      "file_name": "2023년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 96240,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/LpPmn",
+      "sha256": "753075dec1bbfda750c785bb4dc1322f659b954180959515e984f88604c948d8",
+      "raw_path": "raw/kcmf/kcmf_2023.hwpx"
+    },
+    {
+      "year": 2024,
+      "title": "2024년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2025-04-22",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=AmXaJjVM4mdoDnrVerWGiTXzTaIQpOks-1WYUrq-Sdw",
+      "file_id": "2505284634035157",
+      "file_name": "2024년+장애인방송+편성실적+평가+결과.hwpx",
+      "file_size": 89020,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/gosmn",
+      "sha256": "516b60cbf56b709b34343300c1d0bd546cd60f6ca72ebfaa56177e122087b44d",
+      "raw_path": "raw/kcmf/kcmf_2024.hwpx"
+    },
+    {
+      "year": 2025,
+      "title": "2025년 장애인방송 편성 실적(방송사명, 목표, 실적)",
+      "posted_date": "2026-04-22",
+      "view_url": "https://kcmf.or.kr/KCMF/contents/KCMF040201121.do?schM=view&id=TmZU81TnKR8luDnwGjg78n8ZNxf2wVbmt8AeJkSHfjQ",
+      "file_id": "2606291845305605",
+      "file_name": "2025년도 장애인방송 제공의무 이행실적 평가 결과.hwpx",
+      "file_size": 89520,
+      "download_url": "https://kcmf.or.kr/afile/fileDownload/Gntmn",
+      "sha256": "6d1067a38eb1149e04337c334dd79f31fea780fded996bad1ec40e0443eace70",
+      "raw_path": "raw/kcmf/kcmf_2025.hwpx"
+    }
+  ]
+}

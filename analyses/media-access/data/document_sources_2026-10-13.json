@@ -1,0 +1,61 @@
+{
+  "purpose": "docs/media-access 근거 문서와 site/reports/media-access 본문 숫자의 원문. 원본은 raw/에 두고 Git에서 제외한다.",
+  "documents": [
+    {
+      "title": "대법원 2026. 9. 3. 선고 2022다203507 판결(차별구제청구), 이해하기 쉬운 판결 포함 30쪽",
+      "download_url": "https://www.scourt.go.kr/sjudge/1789000231447_093031.pdf",
+      "local_path": "raw/scourt/2022da203507_20260903.pdf",
+      "bytes": 672392,
+      "sha256": "e664bd55eb75bad0f7cf37fcc82a5d8f4d62383838c9bae822ae294b3c1546a1",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "방송미디어통신위원회 보도자료 '장애인방송 제공 의무 충실히 이행'(2025년도 결과), 2026-06-29",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=70645",
+      "local_path": "raw/kmcc/20260629_2025_results.pdf",
+      "bytes": 185176,
+      "sha256": "03bd4a3825558d6cd0396cc014f3df31f897796f69c8b3e6fde151c9fd3e8b4a",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "방송미디어통신위원회 보도자료 '모든 장애인 대상, 장애인방송 확대…OTT도 제공 노력', 2026-06-29",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=70642",
+      "local_path": "raw/kmcc/20260629_notice_amendment_press.pdf",
+      "bytes": 164327,
+      "sha256": "0036b47b5c00d2ead79897e17135a2e124a8961c85a641eef335c209b559de11",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "방송통신위원회 보도자료 '23년도 장애인방송 제공의무 이행실적 결과 공개', 2024-03-20",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=58028",
+      "local_path": "raw/kmcc/20240320_2023_results.pdf",
+      "bytes": 292875,
+      "sha256": "0e3279de552a7cfb334dcb3fb47eaa37362cf2b8d477869c749795962b60c001",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "방송통신위원회 보도자료 '2012년 장애인방송 제공실적 평가결과', 2013-03-18",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=37204",
+      "local_path": "raw/kmcc/20130318_2012_results.pdf",
+      "bytes": 172818,
+      "sha256": "599d2f64793bc7650771c27e49b8eca26864abcdbf27ef815e4602d06118e948",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "장애인방송 고시 제2026-19호 개정문(신구조문대비표 포함), 2026-07-02",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=70770",
+      "local_path": "raw/kmcc/notice_2026-19_amendment.hwpx",
+      "bytes": 65866,
+      "sha256": "f3dd10fbacf5a5bd2e342b9e0c53730b5ad067adf3c59e39ac775ee64af003f2",
+      "retrieved": "2026-10-13"
+    },
+    {
+      "title": "장애인방송 고시 제2026-19호 일부개정안 전문, 2026-07-02",
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=70771",
+      "local_path": "raw/kmcc/notice_2026-19_full.hwpx",
+      "bytes": 59111,
+      "sha256": "dc5e3eb49e2f98a138e3ce27a48b9e8ca24a4eb4f218511c7363305c97884748",
+      "retrieved": "2026-10-13"
+    }
+  ]
+}

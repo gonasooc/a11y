@@ -1,0 +1,377 @@
+{
+  "inputs": {
+    "broadcast_operator_years.csv": "dced27a844d63e9a96c13a63d42b094ca4317aaad96a24759594b9aec7d77a88",
+    "broadcast_ad_rerun.csv": "639936ce12d1ceb9b8e7d81fb04819041a13b841a2dbf9d70c4d45df7d71a4c6",
+    "kmcc_group_means.csv": "387717319ec40fe9b90d61cd0204a8a8a1bb0385c2d2d9a5160680a0aa3d9e86",
+    "kmcc_compliance_statements.csv": "2a0fcad053921433966602157163564d3d8ea9a3bc913c44eac6bf2861c45dca",
+    "broadcast_parse_notes.json": "1353f509f2da864afcfd0a135aa95a366fcd2f84d30f30f589429623fcb86177",
+    "kcmf_manifest.json": "d150be11b886477ed4eebe2825632cd021e2eafd0d3fa9484e162705483877c1"
+  },
+  "years": [
+    2017,
+    2018,
+    2019,
+    2020,
+    2021,
+    2022,
+    2023,
+    2024,
+    2025
+  ],
+  "compliance": {
+    "2017": {
+      "cc": {
+        "operators": 155,
+        "compared": 155,
+        "below_target": 1,
+        "below_target_100": 1,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.1"
+      },
+      "ad": {
+        "operators": 155,
+        "compared": 155,
+        "below_target": 4,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.8"
+      },
+      "ksl": {
+        "operators": 155,
+        "compared": 155,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2018": {
+      "cc": {
+        "operators": 134,
+        "compared": 134,
+        "below_target": 22,
+        "below_target_100": 20,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 2,
+        "largest_shortfall_pctp": "6.9"
+      },
+      "ad": {
+        "operators": 134,
+        "compared": 134,
+        "below_target": 2,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.4"
+      },
+      "ksl": {
+        "operators": 134,
+        "compared": 134,
+        "below_target": 1,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.3"
+      }
+    },
+    "2019": {
+      "cc": {
+        "operators": 127,
+        "compared": 127,
+        "below_target": 18,
+        "below_target_100": 10,
+        "shortfall_under_0_1pctp": 13,
+        "shortfall_1pctp_or_more": 3,
+        "largest_shortfall_pctp": "9.40"
+      },
+      "ad": {
+        "operators": 127,
+        "compared": 127,
+        "below_target": 3,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 1,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.92"
+      },
+      "ksl": {
+        "operators": 127,
+        "compared": 127,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2020": {
+      "cc": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 25,
+        "below_target_100": 22,
+        "shortfall_under_0_1pctp": 21,
+        "shortfall_1pctp_or_more": 3,
+        "largest_shortfall_pctp": "17.15"
+      },
+      "ad": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 2,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 1,
+        "largest_shortfall_pctp": "1.45"
+      },
+      "ksl": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2021": {
+      "cc": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 12,
+        "below_target_100": 11,
+        "shortfall_under_0_1pctp": 10,
+        "shortfall_1pctp_or_more": 1,
+        "largest_shortfall_pctp": "16.10"
+      },
+      "ad": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 2,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 2,
+        "largest_shortfall_pctp": "4.53"
+      },
+      "ksl": {
+        "operators": 132,
+        "compared": 132,
+        "below_target": 1,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 1,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.06"
+      }
+    },
+    "2022": {
+      "cc": {
+        "operators": 131,
+        "compared": 131,
+        "below_target": 7,
+        "below_target_100": 7,
+        "shortfall_under_0_1pctp": 6,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.29"
+      },
+      "ad": {
+        "operators": 131,
+        "compared": 131,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      },
+      "ksl": {
+        "operators": 131,
+        "compared": 131,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2023": {
+      "cc": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 16,
+        "below_target_100": 14,
+        "shortfall_under_0_1pctp": 12,
+        "shortfall_1pctp_or_more": 2,
+        "largest_shortfall_pctp": "36.95"
+      },
+      "ad": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      },
+      "ksl": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2024": {
+      "cc": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 27,
+        "below_target_100": 26,
+        "shortfall_under_0_1pctp": 26,
+        "shortfall_1pctp_or_more": 1,
+        "largest_shortfall_pctp": "40.53"
+      },
+      "ad": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      },
+      "ksl": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    },
+    "2025": {
+      "cc": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 12,
+        "below_target_100": 12,
+        "shortfall_under_0_1pctp": 12,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": "0.03"
+      },
+      "ad": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      },
+      "ksl": {
+        "operators": 108,
+        "compared": 108,
+        "below_target": 0,
+        "below_target_100": 0,
+        "shortfall_under_0_1pctp": 0,
+        "shortfall_1pctp_or_more": 0,
+        "largest_shortfall_pctp": ""
+      }
+    }
+  },
+  "official_group_means": {
+    "2023": {
+      "checked": 21,
+      "match_truncated": 8,
+      "match_rounded": 1,
+      "differ": 12
+    },
+    "2025": {
+      "checked": 21,
+      "match_truncated": 21,
+      "match_rounded": 0,
+      "differ": 0
+    }
+  },
+  "official_statements": [
+    {
+      "year": 2023,
+      "service": "cc",
+      "scope": "all",
+      "official_below": 16,
+      "computed_below": 16,
+      "status": "match"
+    },
+    {
+      "year": 2023,
+      "service": "ad",
+      "scope": "all",
+      "official_below": 0,
+      "computed_below": 0,
+      "status": "match"
+    },
+    {
+      "year": 2023,
+      "service": "ksl",
+      "scope": "all",
+      "official_below": 0,
+      "computed_below": 0,
+      "status": "match"
+    },
+    {
+      "year": 2025,
+      "service": "cc",
+      "scope": "target_100",
+      "official_below": 12,
+      "computed_below": 12,
+      "status": "match"
+    },
+    {
+      "year": 2025,
+      "service": "ad",
+      "scope": "all",
+      "official_below": 0,
+      "computed_below": 0,
+      "status": "match"
+    },
+    {
+      "year": 2025,
+      "service": "ksl",
+      "scope": "all",
+      "official_below": 0,
+      "computed_below": 0,
+      "status": "match"
+    }
+  ],
+  "ad_rerun": {
+    "2023": {
+      "operators": 10,
+      "max_share_pct": "22.97",
+      "over_limit": 0,
+      "at_least_20_pct": 4,
+      "zero_rerun": 3
+    },
+    "2024": {
+      "operators": 10,
+      "max_share_pct": "24.23",
+      "over_limit": 0,
+      "at_least_20_pct": 5,
+      "zero_rerun": 3
+    },
+    "2025": {
+      "operators": 10,
+      "max_share_pct": "24.57",
+      "over_limit": 0,
+      "at_least_20_pct": 4,
+      "zero_rerun": 3
+    }
+  },
+  "limits": [
+    "편성 비율은 방송시간 대비 비율이다. 시간대, 프로그램 종류, 자막·해설·수어의 품질은 드러나지 않는다.",
+    "미달 사업자 수는 실적이 목표보다 작은 경우를 센 것이다. 공식 평가의 경감·유예·소명 결과는 반영하지 않았다.",
+    "2018년 파일에는 사업자군 열이 없어 사업자군별 요약에서 '표기 없음'으로 둔다.",
+    "보조 행(같은 일련번호의 다른 편성 단위·스마트수어 포함 실적)은 사업자 수와 미달 수에서 뺐다."
+  ]
+}

@@ -9,7 +9,7 @@
 | 항목 | 확인한 내용 | 근거와 미정 사항 |
 |---|---|---|
 | 분석 언어 | Python, 표준 라이브러리 사용 | 초기 기준선과 MOIS·PPS·KOSIS 수집/분석 코드 |
-| Python 버전 | 이번 환경에서 Python 3.14.2 확인 | 기존 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md)는 3.10 이상을 안내한다. 버전 고정 설정·지원 버전별 검증 정책은 미정 |
+| Python 버전 | 이번 환경에서 Python 3.14.2 확인. 장애인방송 분석은 2026-10-13 macOS 기본 Python 3.9.6에서 확인 | 기존 [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md)는 3.10 이상을 안내한다. 버전 고정 설정·지원 버전별 검증 정책은 미정 |
 | 입력·출력 형식 | UTF-8 CSV·JSON, 문서는 Markdown | 코드의 읽기·쓰기와 입력 파일 |
 | 계산 | Decimal 차이 계산, 구성비는 소수점 첫째 자리 ROUND_HALF_UP | [analyses/digital-inclusion/analyze.py](../analyses/digital-inclusion/analyze.py)의 `rounded` |
 | 의존성 관리 | 현재 분석에는 외부 패키지가 필요 없다 | 패키지·잠금·Python 프로젝트 설정 파일은 현재 저장소에서 확인되지 않는다 |
@@ -33,6 +33,8 @@
 - KOSIS는 메타데이터의 수록연도·항목·분류 조합과 실제 셀을 대조한다. `PRD_SE=Y`로 요청한 연간 자료가 응답에서 `A`로 표기되는 것을 확인했고 원값을 보존한다. `jsonVD=Y`로 정상 JSON을 요청한다.
 - 웹 보고서의 표·차트 데이터는 생성 스크립트가 분석 출력에서 계산해 HTML의 생성 구역에 넣는다. 본문 숫자는 `data-check`로 그 값과 대조하고, 다르면 스크립트가 실패한다. 수집 원자료(`raw/`)는 읽지 않는다. 조사 문서([docs/digital-inclusion/environment.md](digital-inclusion/environment.md)·[docs/digital-inclusion/law.md](digital-inclusion/law.md))에서 가져온 숫자는 `analyses/digital-inclusion/data/context_facts_2026-09-29.csv`에 출처·위치·등급과 함께 두고, 생성 스크립트가 A·B 등급만 받아 같은 방식으로 대조한다. 다른 등급이 있으면 생성이 실패한다. 방법은 [site/README.md](../site/README.md)에 있다.
 - 웹 페이지 사이 링크와 자산은 상대경로로 쓰고, 페이지 링크는 `index.html`까지 적는다. 파일로 열어도 이동하고 `/<저장소>/` 하위 경로에서도 맞는다.
+- 웹에서 자료를 받기 전에 robots.txt와 이용약관을 확인한다. 약관이 자동 수집을 금지하면 robots.txt가 허용해도 수집하지 않는다. 근거: [docs/work/W-009-main-media-access.md](work/W-009-main-media-access.md)(티빙 약관 확인).
+- 공식 보도자료의 집계와 원자료 계산이 다르면 오류로 멈추지 않고 양쪽 값과 대조 결과를 남긴다. 원자료 자체의 합계·행 수가 어긋나면 멈춘다. 예: [analyses/media-access/outputs/broadcast_official_check.csv](../analyses/media-access/outputs/broadcast_official_check.csv).
 - KOSIS와 보고서가 다르면 원문을 재확인하고 양쪽 값을 남긴다. 2016년 지표·고령층 기준 변경 이전 자료는 장기 주 비교에서 분리한다. 기준은 [analyses/digital-inclusion/kosis_analysis_plan.json](../analyses/digital-inclusion/kosis_analysis_plan.json)에 있다.
 
 문서 작성·갱신은 [AGENTS.md](../AGENTS.md)를 따른다. Context7에 관한 기존 지침도 보존돼 있다.
@@ -50,6 +52,9 @@
 | 계산 결과 재현 | 실행 전후 `outputs/` 3개 파일의 SHA256 비교 | 같은 입력·코드로 재실행하고 해시가 동일한지 확인 |
 | 문서 검증 | 상대경로 링크 대상 존재 확인, `git diff --check` | 문서 변경 시 수행. 코드블록의 예시와 실제 링크를 구분 |
 | 인증 처리 테스트 | `python3 -m unittest discover -s analyses/digital-inclusion/tests -v` | 가짜 키·모의 응답만 사용, 네트워크 불필요 |
+| 장애인방송 실적 분석 | `python3 analyses/media-access/broadcast_analyze.py` | 저장된 CSV만 읽는다. 키·네트워크 불필요 |
+| 장애인방송 원본 수집·해석 | `python3 analyses/media-access/kcmf_collect.py --snapshot YYYY-MM-DD` 다음 `python3 analyses/media-access/kcmf_parse.py` | `kcmf.or.kr` 접속 필요, 키 불필요. 원본은 `raw/`에 두고 Git 제외 |
+| 영상 접근성 테스트 | `python3 -m unittest discover -s analyses/media-access/tests -v` | 합성 HWPX로 해석·판정을 확인, 네트워크 불필요 |
 | 조달 계산 경계 검증 | `python3 analyses/digital-inclusion/pps_analyze.py --self-test` | 변경·취소·단위·결측 처리, 네트워크 불필요 |
 | KOSIS 수집 경계 검증 | `python3 analyses/digital-inclusion/kosis_collect.py --self-test` | 기호·0·누락·중복·연간 주기 검증, 키·네트워크 불필요 |
 | 정적 검사 | `git diff --check` | 린터는 미정 |

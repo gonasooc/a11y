@@ -1,0 +1,7 @@
+year,service,scope,operators,below_target,source_url,source_locator,statement
+2023,cc,all,108,16,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=60208,보도자료 PDF 2쪽,108개 사업자 중 92개 사업자가 편성의무를 달성하였고 16개 사업자가 편성의무를 미달성
+2023,ad,all,108,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=60208,보도자료 PDF 2쪽,화면해설 및 한국수어방송 편성의무는 모든 사업자가 편성의무를 준수
+2023,ksl,all,108,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=60208,보도자료 PDF 2쪽,화면해설 및 한국수어방송 편성의무는 모든 사업자가 편성의무를 준수
+2025,cc,target_100,108,12,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=68998,보도자료 PDF 1쪽,108개 사업자 중 100% 폐쇄자막방송을 실시해야 하는 12개 사업자가 일부 이행하지 않은 것으로 나타났다
+2025,ad,all,108,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=68998,보도자료 PDF 1쪽,화면해설방송과 한국수어방송은 모든 사업자가 편성의무를 준수
+2025,ksl,all,108,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=68998,보도자료 PDF 1쪽,화면해설방송과 한국수어방송은 모든 사업자가 편성의무를 준수

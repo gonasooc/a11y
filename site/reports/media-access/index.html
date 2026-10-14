@@ -1,0 +1,477 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>TV 자막·수어·화면해설, 의무는 채웠는데 볼 게 있나 · a11y</title>
+    <meta name="description" content="방송사가 공개한 2017~2025년 자막·수어·화면해설 편성 실적과 법령, 이용자 조사로 청각·시각장애인이 TV·OTT·영화관에서 볼 수 있는 영상이 얼마나 되는지 정리했다." />
+    <meta name="color-scheme" content="light" />
+    <link rel="icon" href="../../favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="../../assets/css/tokens.css" />
+    <link rel="stylesheet" href="../../assets/css/base.css" />
+    <link rel="stylesheet" href="../../assets/css/chart.css" />
+    <link rel="stylesheet" href="../../assets/css/report.css" />
+    <!-- 글꼴은 Pretendard 하나만 쓴다. 첫 화면을 막지 않도록 늦게 적용하고, 도착 전에는 시스템 글꼴로 보인다. -->
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+    <link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css" media="print" onload="this.media='all'" />
+    <!-- 일반 스크립트(defer)라서 파일을 더블클릭해 열어도 동작한다. 순서를 바꾸지 않는다. -->
+    <script defer src="../../assets/js/format.js"></script>
+    <script defer src="../../assets/js/chart/core.js"></script>
+    <script defer src="../../assets/js/chart/columns.js"></script>
+    <script defer src="../../assets/js/chart/bars.js"></script>
+    <script defer src="main.js"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">본문 바로가기</a>
+    <header class="site-header">
+      <div class="site-header__inner">
+        <a class="site-mark" href="../../index.html">a11y <span>접근성 도구와 분석</span></a>
+        <ul class="site-nav" role="list">
+          <li><a href="../../index.html">전체 목록</a></li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main" class="report" tabindex="-1">
+      <section class="report-hero" aria-labelledby="page-title">
+        <div>
+          <p class="eyebrow"><span>데이터 분석</span><span>조사·분석 기준 2026-10-13</span></p>
+          <h1 id="page-title">TV <span style="white-space: nowrap">자막·</span><span style="white-space: nowrap">수어·</span>화면해설,<br /> 의무는 채웠는데 볼&nbsp;게&nbsp;있나</h1>
+          <p class="hero-sub">청각·시각장애인이 TV·OTT·영화관에서 볼 수 있는 영상은 얼마나 되나</p>
+          <p class="lede">방송사가 해마다 공개하는 자막·수어·화면해설 편성 실적(2017~2025년)과 법령, 이용자 조사로 정리했다.</p>
+        </div>
+      </section>
+
+      <section class="glance" aria-labelledby="glance-title">
+        <h2 class="glance__heading" id="glance-title">한눈에 보기</h2>
+        <ol class="glance__list" role="list">
+          <li class="glance__item">
+            <h3 class="glance__title">방송사는 의무를 거의 채웠다</h3>
+            <p class="glance__fact">2025년 의무 방송사 <span data-check="bc.operators.latest">108</span>곳 가운데 화면해설·한국수어 의무에 못 미친 곳은 없다.</p>
+            <p class="glance__fact">폐쇄자막에 못 미친 <span data-check="bc.cc.below.2025">12</span>곳도 실적이 <span data-check="bc.cc.missMinActual">99.97</span>~<span data-check="bc.cc.missMaxActual">99.99</span>%다.</p>
+            <p class="glance__src">시청자미디어재단 장애인방송 편성 실적, 2025년</p>
+            <a class="glance__more" href="#compliance">2절에서 자세히<span class="visually-hidden">: 방송사는 의무를 지켰나</span></a>
+          </li>
+          <li class="glance__item">
+            <h3 class="glance__title">의무가 작고, 쓰기도 어렵다</h3>
+            <p class="glance__fact">지상파의 화면해설 의무는 방송시간의 <span data-check="bc.terr.ad.target">10</span>%, 한국수어는 <span data-check="bc.terr.ksl.target">7</span>%다.</p>
+            <p class="glance__src">장애인방송 고시 제6조</p>
+            <p class="glance__fact">20세 이상 심한 청각장애인의 <span data-check="ctx.tv_main_service_none.severe_hearing_20plus.2023">35.8</span>%는 방송을 볼 때 자막도 수어통역도 쓰지 않는다. 가장 큰 이유는 ‘이해할 수 없어서’다.</p>
+            <p class="glance__src">국립국어원 2023 한국수어 활용 조사</p>
+            <a class="glance__more" href="#enough">3절에서 자세히<span class="visually-hidden">: 의무를 채우면 충분한가</span></a>
+          </li>
+          <li class="glance__item">
+            <h3 class="glance__title">OTT는 ‘노력’ 의무뿐이다</h3>
+            <p class="glance__fact">OTT에는 직접 만든 영상에 자막·수어·화면해설을 제공하도록 ‘노력’할 의무만 있고, 실적을 내지 않는다.</p>
+            <p class="glance__src">전기통신사업법 제22조의10</p>
+            <p class="glance__fact">영국은 이용자가 많은 OTT가 작품 재생시간의 <span data-check="ctx.uk_vod_quota_subtitles.tier1_year4.2026">80</span>%에 자막을 달도록 법으로 정했다. 세부 규칙이 확정되지 않아 아직 시행 전이다.</p>
+            <p class="glance__src">영국 Communications Act 2003 s.368HL</p>
+            <a class="glance__more" href="#ott">4절에서 자세히<span class="visually-hidden">: OTT는 어떤가</span></a>
+          </li>
+        </ol>
+      </section>
+
+      <noscript><p class="note">차트는 자바스크립트로 그린다. 본문과 표는 자바스크립트 없이도 읽을 수 있다.</p></noscript>
+
+      <div class="report-body">
+        <details class="toc" open data-toc>
+          <summary>목차</summary>
+          <nav aria-label="보고서 목차">
+            <p class="toc__title" aria-hidden="true">목차</p>
+            <ol>
+              <li><a href="#who"><span class="toc__n">01</span>누구의 이야기인가</a></li>
+              <li><a href="#compliance"><span class="toc__n">02</span>방송사는 의무를 지켰나</a></li>
+              <li><a href="#enough"><span class="toc__n">03</span>의무를 채우면 충분한가</a></li>
+              <li><a href="#ott"><span class="toc__n">04</span>OTT는 어떤가</a></li>
+              <li><a href="#cinema"><span class="toc__n">05</span>영화관은 어떤가</a></li>
+              <li><a href="#next"><span class="toc__n">06</span>앞으로 무엇을 보면 되나</a></li>
+              <li><a href="#notes"><span class="toc__n">노트</span>분석 노트</a></li>
+            </ol>
+          </nav>
+        </details>
+
+        <article class="report-article" aria-labelledby="page-title">
+          <section class="report-section" id="who" aria-labelledby="who-title">
+            <header class="section-head">
+              <span class="section-head__n">01</span>
+              <h2 id="who-title">누구의 이야기인가</h2>
+            </header>
+            <p class="section-lead">영상의 소리를 듣기 어렵거나 화면을 보기 어려운 사람에게는 세 가지 장치가 필요하다. 가장 많이 필요한 사람은 나이 든 청각장애인이다.</p>
+            <ul class="stat-row" role="list">
+              <li class="stat">
+                <p class="stat__value"><span data-check="ctx.hearing10k">44.9</span><span class="stat__unit">만 명</span></p>
+                <p class="stat__label">등록 청각장애인, 2025년 말</p>
+              </li>
+              <li class="stat">
+                <p class="stat__value"><span data-check="ctx.registered_65plus_share.hearing.2025">84.6</span><span class="stat__unit">%</span></p>
+                <p class="stat__label">그중 65세 이상</p>
+              </li>
+              <li class="stat">
+                <p class="stat__value"><span data-check="ctx.visual10k">24.5</span><span class="stat__unit">만 명</span></p>
+                <p class="stat__label">등록 시각장애인, 2025년 말(<span data-check="ctx.registered_65plus_share.visual.2025">59.1</span>%가 65세 이상)</p>
+              </li>
+            </ul>
+            <div class="prose">
+              <p>등록 청각장애인 가운데에는 나이가 들어 청력을 잃은 사람이 많고, 대부분 말과 보청기로 소통한다. 2023년 장애인 실태조사에서 주된 소통 방법으로 말을 꼽은 사람은 <span data-check="ctx.main_communication_speech.hearing.2023">94.7</span>%, 수어를 꼽은 사람은 <span data-check="ctx.main_communication_sign.hearing.2023">3.0</span>%였다. 보청기를 쓰는 사람은 <span data-check="ctx.hearing_aid_use.hearing.2023">84.4</span>%다. 이들에게는 폐쇄자막이 주된 수단일 가능성이 크다.</p>
+              <p>수어가 첫 언어인 농인도 있다. 국립국어원 「2023년 한국수어 활용 조사」에서 20세 이상 심한 청각장애인의 <span data-check="ctx.ksl_main_use.severe_hearing_20plus.2023">30.1</span>%가 수어를 주로 썼다. 60세 이상에서는 <span data-check="ctx.ksl_main_use.severe_hearing_60plus.2023">19.3</span>%였지만 40대에서는 <span data-check="ctx.ksl_main_use.severe_hearing_40s.2023">69.9</span>%였다. 대법원은 2026년 판결에서 한국수어가 “한국어와 동등한 자격을 가진 농인의 고유한 언어”이고, 한국어는 농인에게 “제2, 3언어에 해당할 수 있다”고 적었다. 자막만으로는 충분하지 않은 사람이 있다는 뜻이다.</p>
+              <p>영상은 이들의 일상이다. 지난 1주일 동안 동영상을 본 비율은 청각장애인 <span data-check="ctx.video_watching_week.hearing.2023">98.2</span>%, 시각장애인 <span data-check="ctx.video_watching_week.visual.2023">95.3</span>%였다(2023년 장애인 실태조사).</p>
+              <p><strong>폐쇄자막</strong>은 대사와 소리를 글자로 보여 주는 자막이다. 시청자가 켜고 끌 수 있다. 소리를 듣기 어려운 청각장애인에게 필요하다.</p>
+              <p><strong>화면해설</strong>은 장면과 화면 속 글자를 말로 설명하는 것이다. 화면을 보기 어려운 시각장애인에게 필요하다. 등록 시각장애인의 <span data-check="ctx.visualNotSevereShare">82.0</span>%는 장애정도가 심하지 않은 사람이다.</p>
+              <p><strong>한국수어방송</strong>은 방송의 말과 소리를 한국수어로 통역해 전달하는 방송이다. 수어를 쓰는 농인을 위한 것이다.</p>
+              <p>법에서는 이 세 가지를 묶어 ‘장애인방송’이라고 부른다. 이 보고서에서도 세 가지를 함께 가리킬 때는 이 말을 쓴다.</p>
+            </div>
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/environment.md#2-누구의-이야기인가">이용자 조사 §2</a> · <a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">보건복지부 등록장애인 통계(2025년 말)</a> · <a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">2023년 장애인 실태조사</a> · <a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">2023년 한국수어 활용 조사</a> · <a href="https://www.scourt.go.kr/sjudge/1789000231447_093031.pdf">대법원 판결문</a></p>
+          </section>
+
+          <section class="report-section" id="compliance" aria-labelledby="compliance-title">
+            <header class="section-head">
+              <span class="section-head__n">02</span>
+              <h2 id="compliance-title">방송사는 의무를 지켰나</h2>
+            </header>
+            <p class="section-lead">숫자로는 거의 지켰다. 방송사마다 방송시간 가운데 장애인방송으로 내보낼 비율이 법으로 정해져 있고, 해마다 실적을 평가받는다.</p>
+            <div class="prose">
+              <p>2025년 의무 방송사는 지상파·유료방송을 합쳐 <span data-check="bc.cc.operators.2025">108</span>곳이다. 화면해설과 한국수어는 2022~2025년 목표에 못 미친 방송사가 한 곳도 없었다.</p>
+              <p>폐쇄자막은 2018~2025년 해마다 <span data-check="bc.cc.belowMin1825">7</span>~<span data-check="bc.cc.belowMax1825">27</span>곳이 목표에 못 미쳤다(2017년은 <span data-check="bc.cc.below.2017">1</span>곳). 지상파는 방송시간의 <span data-check="bc.terr.cc.target">100</span>%에 폐쇄자막을 달아야 해서, 잠깐의 송출 사고도 미달로 잡힌다.</p>
+            </div>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 1</p>
+                <h3 class="figure__title" id="fig-ccbelow-title">폐쇄자막 의무에 못 미친 방송사, 2017~2025년</h3>
+                <p class="figure__takeaway" id="fig-ccbelow-desc">2024년 미달 <span data-check="bc.cc.below.2024">27</span>곳 가운데 <span data-check="bc.cc.under01.2024">26</span>곳은 목표와의 차이가 <span data-check="bc.small">0.1</span>%p 미만이었다. 크게 모자란 곳도 있었다. 2024년 가장 큰 차이는 <span data-check="bc.cc.maxGap.2024">40.53</span>%p였다.</p>
+              </figcaption>
+              <div class="viz" data-viz="ccBelow" data-labelledby="fig-ccbelow-title" data-describedby="fig-ccbelow-desc"></div>
+              <div class="figure__foot">
+                <p>출처: 시청자미디어재단 사전정보공표 ‘장애인방송 편성 실적’(방송사별 목표·실적) 2017~2025년분을 직접 계산. 2023·2025년 미달 수는 방송통신위원회·방송미디어통신위원회 발표와 같다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:cc-below-->
+<div class="table-scroll" role="region" aria-label="폐쇄자막 의무에 못 미친 방송사, 2017~2025년" tabindex="0">
+<table class="data-table">
+<caption>폐쇄자막 의무에 못 미친 방송사, 2017~2025년</caption>
+<thead><tr><th scope="col">연도</th><th scope="col" class="num">의무 방송사</th><th scope="col" class="num">미달</th><th scope="col" class="num">그중 0.1%p 미만</th><th scope="col" class="num">그중 1%p 이상</th><th scope="col" class="num">가장 크게 모자란 폭</th></tr></thead>
+<tbody>
+<tr><th scope="row">2017</th><td class="num">155곳</td><td class="num">1곳</td><td class="num">—</td><td class="num">0곳</td><td class="num">0.1%p</td></tr>
+<tr><th scope="row">2018</th><td class="num">134곳</td><td class="num">22곳</td><td class="num">—</td><td class="num">2곳</td><td class="num">6.9%p</td></tr>
+<tr><th scope="row">2019</th><td class="num">127곳</td><td class="num">18곳</td><td class="num">13곳</td><td class="num">3곳</td><td class="num">9.40%p</td></tr>
+<tr><th scope="row">2020</th><td class="num">132곳</td><td class="num">25곳</td><td class="num">21곳</td><td class="num">3곳</td><td class="num">17.15%p</td></tr>
+<tr><th scope="row">2021</th><td class="num">132곳</td><td class="num">12곳</td><td class="num">10곳</td><td class="num">1곳</td><td class="num">16.10%p</td></tr>
+<tr><th scope="row">2022</th><td class="num">131곳</td><td class="num">7곳</td><td class="num">6곳</td><td class="num">0곳</td><td class="num">0.29%p</td></tr>
+<tr><th scope="row">2023</th><td class="num">108곳</td><td class="num">16곳</td><td class="num">12곳</td><td class="num">2곳</td><td class="num">36.95%p</td></tr>
+<tr><th scope="row">2024</th><td class="num">108곳</td><td class="num">27곳</td><td class="num">26곳</td><td class="num">1곳</td><td class="num">40.53%p</td></tr>
+<tr><th scope="row">2025</th><td class="num">108곳</td><td class="num">12곳</td><td class="num">12곳</td><td class="num">0곳</td><td class="num">0.03%p</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">2017·2018년 원문은 실적을 소수 첫째 자리까지만 실어 0.1%p 미만의 미달이 드러나지 않는다(—). 미달은 실적이 목표보다 작은 경우다.</p>
+<!--/table:cc-below--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>2023년 발표는 폐쇄자막 미달 대부분이 “송출장비의 일시적 장애, 폐쇄자막 담당자의 부주의 등 단순 실수”라고 설명했다. 그러나 목표보다 <span data-check="bc.large">1</span>%p 이상 모자란 방송사도 2023년 <span data-check="bc.cc.over1.2023">2</span>곳, 2024년 <span data-check="bc.cc.over1.2024">1</span>곳 있었다. 2023년 가장 큰 차이는 <span data-check="bc.cc.maxGap.2023">36.95</span>%p였다.</p>
+              <p>제도 초기와 비교하면 달라졌다. 첫 평가인 2012년에는 지상파 <span data-check="ctx.evaluated_operators.terrestrial.2012">50</span>곳 가운데 <span data-check="ctx.ad_below_target.terrestrial.2012">23</span>곳이 화면해설 목표에 못 미쳤다. 당시 목표는 방송사가 스스로 제시한 값이었고, 제재 대신 권고로 끝났다.</p>
+            </div>
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md#23-미달-사업자-계산-원자료-a">분석 §2.3</a> · <a href="https://kcmf.or.kr/KCMF/contents/KCMF040201121.do">시청자미디어재단 장애인방송 편성 실적</a> · <a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=60208">2023년도 결과 발표</a> · <a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=36057">2012년 첫 평가 결과</a></p>
+          </section>
+
+          <section class="report-section" id="enough" aria-labelledby="enough-title">
+            <header class="section-head">
+              <span class="section-head__n">03</span>
+              <h2 id="enough-title">의무를 채우면 충분한가</h2>
+            </header>
+            <p class="section-lead">의무 비율 자체가 크지 않고, 재방송으로 채운 몫도 있다. 언제 방송했는지와 얼마나 잘 만들었는지는 숫자에 들어 있지 않다.</p>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 2</p>
+                <h3 class="figure__title" id="fig-terr-title">지상파 방송시간 가운데 장애인방송 비율, 2025년</h3>
+                <p class="figure__takeaway" id="fig-terr-desc">지상파 <span data-check="bc.terr.operators">48</span>곳은 평균적으로 방송시간의 <span data-check="bc.terr.ad.mean">13.71</span>%에 화면해설을, <span data-check="bc.terr.ksl.mean">12.68</span>%에 한국수어를 붙였다. 의무는 각각 <span data-check="bc.terr.ad.target">10</span>%와 <span data-check="bc.terr.ksl.target">7</span>%다. 폐쇄자막은 평균 <span data-check="bc.terr.cc.mean">100.00</span>%다.</p>
+              </figcaption>
+              <div class="viz" data-viz="terrestrial" data-labelledby="fig-terr-title" data-describedby="fig-terr-desc"></div>
+              <div class="figure__foot">
+                <p>출처: 시청자미디어재단 2025년분 방송사별 실적의 단순 평균. 비율은 방송미디어통신위원회가 인정하는 방송시간 대비다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:terrestrial-->
+<div class="table-scroll" role="region" aria-label="지상파 48곳의 장애인방송 의무 비율과 실적 평균, 2025년 (방송시간 대비 %)" tabindex="0">
+<table class="data-table">
+<caption>지상파 48곳의 장애인방송 의무 비율과 실적 평균, 2025년 (방송시간 대비 %)</caption>
+<thead><tr><th scope="col">서비스</th><th scope="col">주로 필요한 사람</th><th scope="col" class="num">의무 비율</th><th scope="col" class="num">실적 평균</th></tr></thead>
+<tbody>
+<tr><th scope="row">폐쇄자막</th><td>청각장애인</td><td class="num">100%</td><td class="num">100.00%</td></tr>
+<tr><th scope="row">화면해설</th><td>시각장애인</td><td class="num">10%</td><td class="num">13.71%</td></tr>
+<tr><th scope="row">한국수어</th><td>수어를 쓰는 농인</td><td class="num">7%</td><td class="num">12.68%</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">실적 평균은 방송사별 실적의 단순 평균이다(소수 둘째 자리 반올림).</p>
+<!--/table:terrestrial--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>목표를 넘겼다는 말은 화면해설이 붙은 방송이 방송시간의 일부라는 뜻이기도 하다. 한국수어 의무는 2022년까지 <span data-check="ctx.ksl_quota.terrestrial_general_news.2022">5</span>%였다가 2023년 <span data-check="bc.terr.ksl.target">7</span>%로 올랐다.</p>
+            </div>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 3</p>
+                <h3 class="figure__title" id="fig-rerun-title">화면해설 의무 편성 가운데 재방송 비율, 2025년</h3>
+                <p class="figure__takeaway" id="fig-rerun-desc">재방송 상한 <span data-check="rr.limit">25</span>%가 적용되는 <span data-check="rr.operators">10</span>곳 가운데 <span data-check="rr.at20">4</span>곳이 화면해설의 <span data-check="rr.threshold">20</span>% 이상을 재방송으로 채웠다. 가장 높은 곳은 <span data-check="rr.max">24.57</span>%였다.</p>
+              </figcaption>
+              <div class="viz" data-viz="rerun" data-labelledby="fig-rerun-title" data-describedby="fig-rerun-desc"></div>
+              <div class="figure__foot">
+                <p>출처: 시청자미디어재단 2025년분 실적 파일의 화면해설 재방송 표. 상한은 장애인방송 고시 제6조⑥이다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:rerun-->
+<div class="table-scroll" role="region" aria-label="화면해설 의무 편성 가운데 재방송 비율, 2025년 (상한 25%)" tabindex="0">
+<table class="data-table">
+<caption>화면해설 의무 편성 가운데 재방송 비율, 2025년 (상한 25%)</caption>
+<thead><tr><th scope="col">방송사</th><th scope="col" class="num">의무 편성(분)</th><th scope="col" class="num">재방송(분)</th><th scope="col" class="num">재방송 비율</th></tr></thead>
+<tbody>
+<tr><th scope="row">MBN</th><td class="num">52,560</td><td class="num">12,915</td><td class="num">24.57%</td></tr>
+<tr><th scope="row">MBC</th><td class="num">46,430</td><td class="num">10,415</td><td class="num">22.43%</td></tr>
+<tr><th scope="row">SBS</th><td class="num">46,841</td><td class="num">10,106</td><td class="num">21.57%</td></tr>
+<tr><th scope="row">채널A</th><td class="num">52,371</td><td class="num">10,976</td><td class="num">20.96%</td></tr>
+<tr><th scope="row">TV조선</th><td class="num">52,508</td><td class="num">8,883</td><td class="num">16.92%</td></tr>
+<tr><th scope="row">KBS</th><td class="num">95,300</td><td class="num">14,290</td><td class="num">14.99%</td></tr>
+<tr><th scope="row">JTBC</th><td class="num">51,385</td><td class="num">6,255</td><td class="num">12.17%</td></tr>
+<tr><th scope="row">EBS1</th><td class="num">44,864</td><td class="num">없음</td><td class="num">0.00%</td></tr>
+<tr><th scope="row">YTN</th><td class="num">52,560</td><td class="num">없음</td><td class="num">0.00%</td></tr>
+<tr><th scope="row">연합뉴스TV</th><td class="num">52,560</td><td class="num">없음</td><td class="num">0.00%</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">상한은 장애인방송 고시 제6조⑥이 지상파 중앙 4사와 종편·보도 PP에 적용한다.</p>
+<!--/table:rerun--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>예를 들어 KBS는 2025년 화면해설 의무 <span data-check="rr.kbs.required">95,300</span>분 가운데 <span data-check="rr.kbs.rerun">14,290</span>분(<span data-check="rr.kbs.share">14.99</span>%)을 재방송으로 채웠다. 상한은 2023년에 <span data-check="ctx.ad_rerun_limit.central_and_news_general.2022">30</span>%에서 <span data-check="ctx.ad_rerun_limit.central_and_news_general.2026">25</span>%로 낮아졌다.</p>
+            </div>
+            <figure class="figure">
+              <figcaption class="figure__head">
+                <p class="figure__kicker">그림 4</p>
+                <h3 class="figure__title" id="fig-tvservice-title">방송을 볼 때 주로 쓰는 서비스, 2023년</h3>
+                <p class="figure__takeaway" id="fig-tvservice-desc">20세 이상 심한 청각장애인의 <span data-check="ctx.tv_main_service_none.severe_hearing_20plus.2023">35.8</span>%는 자막도 수어통역도 쓰지 않았다. 쓰지 않는 이유는 ‘이해할 수 없어서’(<span data-check="ctx.tv_nonuse_reason_cannot_understand.severe_hearing_20plus_nonusers.2023">39.6</span>%)와 ‘도움이 안 되어서’(<span data-check="ctx.tv_nonuse_reason_not_helpful.severe_hearing_20plus_nonusers.2023">32.1</span>%)가 많았다.</p>
+              </figcaption>
+              <div class="viz" data-viz="tvService" data-labelledby="fig-tvservice-title" data-describedby="fig-tvservice-desc"></div>
+              <div class="figure__foot">
+                <p>출처: 국립국어원 「2023년 한국수어 활용 조사」(국가승인통계). 2022년 말 등록한 20세 이상 심한 청각장애인을 방문면접했다. 하나만 고르는 문항이라 세 값의 합이 100%다.</p>
+                <details class="table-view"><summary>표로 보기</summary><!--table:tv-service-->
+<div class="table-scroll" role="region" aria-label="방송을 볼 때 주로 쓰는 서비스, 2023년 (20세 이상 심한 청각장애인, 하나만 응답)" tabindex="0">
+<table class="data-table">
+<caption>방송을 볼 때 주로 쓰는 서비스, 2023년 (20세 이상 심한 청각장애인, 하나만 응답)</caption>
+<thead><tr><th scope="col">서비스</th><th scope="col" class="num">비율</th></tr></thead>
+<tbody>
+<tr><th scope="row">한글 자막</th><td class="num">45.5%</td></tr>
+<tr><th scope="row">수어통역</th><td class="num">18.7%</td></tr>
+<tr><th scope="row">이용 안 함</th><td class="num">35.8%</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">국립국어원 「2023년 한국수어 활용 조사」 표 Ⅱ-163(국가승인통계, 가중치 적용, 응답자 482명). 보고서 본문 237쪽의 32.0%는 2020년 값이 잘못 들어간 것이라 표 값을 쓴다.</p>
+<!--/table:tv-service--></details>
+              </div>
+            </figure>
+            <div class="prose">
+              <p>쓰는 사람도 다 이해하는 것은 아니다. 내용을 모두 또는 거의 이해한다고 답한 사람은 자막 이용자의 <span data-check="ctx.tv_understand_mostly.caption_users.2023">61.7</span>%, 수어통역 이용자의 <span data-check="ctx.tv_understand_mostly.sign_interpretation_users.2023">37.7</span>%였다. 수어를 쓰는 응답자의 <span data-check="ctx.want_more_sign_programs.ksl_users.2023">87.4</span>%는 수어통역이 붙는 프로그램을 늘려 달라고 했다(1~3순위 합산).</p>
+              <p>편성 비율에는 두 가지가 빠져 있다. 하나는 시간대다. 장애인방송이 사람들이 많이 보는 저녁 시간에 얼마나 편성됐는지 보여 주는 공식 자료는 찾지 못했다. 다른 하나는 품질이다. 자막이 늦거나 빨리 사라지고, 수어 화면이 작다는 불만은 2013년 조사부터 2025년 당사자 단체 성명까지 되풀이됐다. 그러나 지연 시간이나 오류율을 잰 공식 자료는 없다.</p>
+              <p>2026-07-02 개정 고시는 두 가지를 처음 다룬다. 주시청시간(평일 19~23시, 주말·공휴일 18~23시)에 장애인방송을 늘리도록 ‘노력’할 의무를 새로 두었고, 장애인방송 품질을 위원회가 심의하게 했다. 둘 다 숫자로 정한 의무는 아니다. 방송미디어통신위원회는 장애인 등이 참여하는 품질평가를 하겠다고 밝혔다(2025년 12월 업무보고).</p>
+            </div>
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md#24-2025년-사업자군-평균-계산-원자료-a">분석 §2.4~§2.7</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/environment.md#3-방송-자막수어를-어떻게-쓰나-b">이용자 조사 §3·§4</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/law.md#3-2026-07-02-고시-개정-a">고시 개정 내용</a> · <a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A02030300&amp;dc=K02030300&amp;boardId=1097&amp;boardSeq=69104">장애인방송 고시 제2026-19호</a></p>
+          </section>
+
+          <section class="report-section" id="ott" aria-labelledby="ott-title">
+            <header class="section-head">
+              <span class="section-head__n">04</span>
+              <h2 id="ott-title">OTT는 어떤가</h2>
+            </header>
+            <p class="section-lead">OTT에는 노력 의무만 있고, 얼마나 하는지 보여 주는 공식 숫자가 없다.</p>
+            <div class="prose">
+              <p>OTT(넷플릭스·티빙처럼 인터넷으로 영상을 보여 주는 서비스)에는 2024-01-19부터 전기통신사업법 제22조의10이 적용된다. 직접 만든 영상에 한국수어·폐쇄자막·화면해설을 제공하도록 ‘노력’하라는 조항이다. 2026-07-02 개정 고시도 OTT를 적용 대상에 넣었다. 그러나 실적을 내고 평가받는 것은 여전히 방송사뿐이다.</p>
+              <p>지금 인용할 수 있는 공식 점검은 2021년 것이다. 한국소비자원의 2021년 점검에서 OTT 앱 <span data-check="ctx.ott_apps_checked.ott_apps.2021">4</span>개 가운데 대부분의 콘텐츠에 폐쇄자막을 제공한 곳은 <span data-check="ctx.ott_apps_mostly_cc.ott_apps.2021">1</span>개였다. 보도에 따르면 주요 OTT는 최근 자체 제작 작품을 중심으로 자막과 화면해설을 늘리고 있고, 수어를 제공하는 곳은 없다.</p>
+              <p>정부 지원으로 만든 실적은 있다. 문화체육관광부와 한국콘텐츠진흥원은 2024년 국내 OTT <span data-check="ctx.ott_mou_platforms.domestic_ott.2024">5</span>곳과 협약을 맺고, 그해 화면해설이 들어간 <span data-check="ctx.ott_ad_works_supported.kocca.2024">39</span>개 작품(약 <span data-check="ctx.ott_ad_hours_supported.kocca.2024">564</span>시간)과 <span data-check="ctx.ott_cc_works_supported.kocca.2024">300</span>여 개 작품의 폐쇄자막 제작을 지원했다. 플랫폼 전체에서 얼마나 제공하는지를 보여 주는 숫자는 아니다.</p>
+              <p>다른 나라는 수치를 정하기도 한다. 영국은 2024년 법을 고쳐, 이용자가 많은 주문형 서비스가 작품 재생시간의 <span data-check="ctx.uk_vod_quota_subtitles.tier1_year4.2026">80</span>%에 자막, <span data-check="ctx.uk_vod_quota_audio_description.tier1_year4.2026">10</span>%에 화면해설, <span data-check="ctx.uk_vod_quota_sign.tier1_year4.2026">5</span>%에 수어를 달도록 했다. 처음 두 해는 자막 <span data-check="ctx.uk_vod_quota_subtitles.tier1_year2.2026">40</span>%부터 시작하고, 세부 규칙이 확정되지 않아 아직 시행 전이다. 미국은 TV에서 자막과 함께 방영한 프로그램을 인터넷으로 내보낼 때 자막을 달도록 의무로 정했다.</p>
+              <p>이 보고서는 OTT 작품을 직접 세지 않았다. 공개 페이지에 자막 정보가 있는 곳도 이용약관이 자동 수집을 금지했고, 다른 서비스는 수집 거부 설정(robots.txt)으로 막혀 있었다.</p>
+            </div>
+            <!--table:foreign-->
+<div class="table-scroll" role="region" aria-label="온라인 영상의 자막·화면해설·수어 의무: 한국·영국·미국 (2026-10-13 기준)" tabindex="0">
+<table class="data-table">
+<caption>온라인 영상의 자막·화면해설·수어 의무: 한국·영국·미국 (2026-10-13 기준)</caption>
+<thead><tr><th scope="col">나라</th><th scope="col">대상</th><th scope="col">요구</th><th scope="col">상태</th></tr></thead>
+<tbody>
+<tr><th scope="row">한국</th><td>OTT가 직접 만든 영상</td><td>한국수어·폐쇄자막·화면해설 제공에 노력. 수치와 실적 제출 없음</td><td>2024년 1월부터 시행</td></tr>
+<tr><th scope="row">영국</th><td>이용자가 많은 주문형 서비스(Tier 1)</td><td>작품 재생시간 기준 자막 80%·화면해설 10%·수어 5% 이상. 처음 두 해는 40%·5%·2.5%</td><td>세부 규칙(Ofcom 코드) 확정 전이라 아직 발효 전</td></tr>
+<tr><th scope="row">미국</th><td>TV에서 자막과 함께 방영한 프로그램의 인터넷 영상</td><td>폐쇄자막 의무. 화면해설·수어 규정 없음</td><td>시행 중</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">근거: 전기통신사업법 제22조의10, 영국 Communications Act 2003 s.368HL(Media Act 2024 별표 5), 미국 47 CFR §79.4.</p>
+<!--/table:foreign-->
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/law.md#4-ott-2024년부터-법률상-노력-의무">제도 §4·§6</a> · <a href="https://www.kocca.kr/kocca/koccanews/reportview.do?nttNo=836">콘진원 보도자료(2024.12.11)</a> · <a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">영국 s.368HL</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md#3-ott는-왜-세지-않았나">OTT를 세지 않은 이유</a> · <a href="https://www.kca.go.kr/home/sub.do?menukey=4002&amp;mode=view&amp;no=1003270069">한국소비자원 점검(2022.2.23)</a></p>
+          </section>
+
+          <section class="report-section" id="cinema" aria-labelledby="cinema-title">
+            <header class="section-head">
+              <span class="section-head__n">05</span>
+              <h2 id="cinema-title">영화관은 어떤가</h2>
+            </header>
+            <p class="section-lead">대형 영화관 사업자가 자막·화면해설을 제공해야 한다는 것은 법원이 확인했다. 얼마나 제공할지는 다시 정한다.</p>
+            <div class="prose">
+              <p>시각·청각장애인들은 2016년 영화관 사업자를 상대로 화면해설과 자막을 요구하는 소송을 냈다. 서울고법은 2021년 영화관이 차별했다고 보고, 좌석이 <span data-check="ctx.cinema_remedy_seats.lower_court.2026">300</span>석이 넘는 큰 상영관에서 전체 상영 횟수의 <span data-check="ctx.cinema_remedy_screening_share.lower_court.2026">3</span>%에만 자막과 화면해설을 제공하라고 했다.</p>
+              <p>대법원은 2026-09-03 영화관이 차별한 것은 맞다고 했다. 그러나 이 방식은 “피고들의 재정적 부담만을 과도하게 고려”한 것이라며 다시 재판하라고 돌려보냈다. 법원은 영화관이 비용을 감당할 수 있는지, 비용을 줄이면서 장애인과 비장애인이 함께 볼 방법이 있는지 살펴야 한다고 했다. 판결문에는 이 내용을 쉬운 말로 풀어 쓴 ‘이해하기 쉬운 판결’이 함께 실렸다.</p>
+              <p>영화관 이용은 적다. 2023년 장애인 실태조사에서 지난 1년 동안 영화관에서 영화를 본 청각장애인은 <span data-check="ctx.cinema_attendance_year.hearing.2023">6.8</span>%로 장애 유형 가운데 가장 낮았다. 다만 65세 이상 장애인의 관람률도 <span data-check="ctx.cinema_attendance_year.age65plus_all_types.2023">4.4</span>%여서 나이의 영향이 크다. 자막이 없어서라고 단정할 수는 없다.</p>
+            </div>
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/law.md#51-2026-09-03-대법원-판결2022다203507-a">제도 §5.1</a> · <a href="https://www.scourt.go.kr/sjudge/1789000231447_093031.pdf">대법원 판결문(2022다203507)</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/environment.md#5-영화관-b">이용자 조사 §5</a></p>
+          </section>
+
+          <section class="report-section" id="next" aria-labelledby="next-title">
+            <header class="section-head">
+              <span class="section-head__n">06</span>
+              <h2 id="next-title">앞으로 무엇을 보면 되나</h2>
+            </header>
+            <p class="section-lead">방송은 해마다 숫자가 나오지만, OTT와 영화관은 숫자가 나오는 구조가 없다.</p>
+            <h3 class="block-title" id="watch-title">무엇이 나오면 알 수 있나</h3>
+            <ul class="watch-list" role="list" aria-labelledby="watch-title">
+              <li><strong>개정 고시를 적용한 첫 평가</strong> 여러 채널을 운영하는 필수지정 방송사가 채널마다 화면해설·한국수어 의무의 <span data-check="ctx.channel_min_share.multichannel_required.2026">80</span>% 이상을 채웠는지 볼 수 있다. 재단은 2025년분 실적을 2026-04-22에 게시했다.</li>
+              <li><strong>주시청시간 편성과 품질 자료</strong> 개정 고시가 노력 의무와 심의를 새로 두었고 품질평가 계획도 나왔지만, 결과가 공개되는지는 아직 알 수 없다.</li>
+              <li><strong>다음 이용자 조사</strong> 한국수어 활용 조사와 장애인 실태조사는 3년마다 한다. 규칙이 바뀐 뒤의 시청 경험을 처음 볼 수 있다.</li>
+              <li><strong>OTT의 공개나 별도 점검</strong> OTT는 실적을 낼 의무가 없어 공식 숫자가 나오지 않는다. 영국의 세부 규칙이 확정되면 비교할 기준이 생긴다.</li>
+              <li><strong>영화관 환송심</strong> 대법원이 돌려보낸 사건에서 상영 횟수와 상영관 범위가 다시 정해진다.</li>
+            </ul>
+            <p class="section-source">이 절의 근거: <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/README.md#다시-확인해야-할-시점">다시 확인할 시점</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/law.md#7-연표">연표</a></p>
+          </section>
+
+          <section class="report-section notes" id="notes" aria-labelledby="notes-title">
+            <header class="section-head">
+              <h2 id="notes-title">분석 노트</h2>
+            </header>
+            <p class="section-lead">자료 범위와 계산 방법, 공식 발표와의 대조, 본문 숫자의 출처를 담았다. 필요한 노트만 펼쳐 읽는다.</p>
+          <section class="analysis-note" id="method" aria-labelledby="method-title">
+            <header class="section-head">
+              <span class="section-head__n">01</span>
+              <h3 id="method-title">자료와 계산 방법</h3>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md#21-자료와-방법">원문 §2.1<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <details class="note-details">
+              <summary>펼쳐 보기<span class="visually-hidden">: 자료와 계산 방법</span></summary>
+            <div class="prose">
+              <p>시청자미디어재단이 공개한 2017~2025년 방송사별 실적 파일(한글 문서 형식) 9개를 내려받아 표를 그대로 읽었다. 원문에 적힌 사업자군별 방송사 수와 읽은 행 수가 9개 연도 모두 같았다.</p>
+              <p><strong>미달</strong>은 실적이 목표보다 작은 경우다. 목표 100%에 99.99%도 미달로 센다. 같은 일련번호를 나눠 쓴 보조 행(다른 편성 단위, 스마트수어 포함 실적)은 방송사 수와 미달 수에서 뺐다. 공식 평가에서 인정된 경감·유예는 반영하지 않았다.</p>
+              <p>수집·계산 코드와 실행 방법은 <a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/README.md">analyses/media-access/README.md</a>에 있다. 이 페이지가 읽은 분석 파일은 아래와 같다.</p>
+            </div>
+            <!--table:provenance-->
+<div class="table-scroll" role="region" aria-label="이 페이지가 읽은 분석 파일" tabindex="0">
+<table class="data-table">
+<caption>이 페이지가 읽은 분석 파일</caption>
+<thead><tr><th scope="col">파일</th><th scope="col">형태</th><th scope="col">SHA-256 앞 12자리</th></tr></thead>
+<tbody>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/outputs/broadcast_compliance_by_year.csv">analyses/media-access/outputs/broadcast_compliance_by_year.csv</a></th><td>27행</td><td>fe2e19a15b75</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/outputs/broadcast_group_summary.csv">analyses/media-access/outputs/broadcast_group_summary.csv</a></th><td>49행</td><td>497f67ce745a</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/outputs/broadcast_official_check.csv">analyses/media-access/outputs/broadcast_official_check.csv</a></th><td>42행</td><td>c76810cc2b26</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/outputs/broadcast_summary.json">analyses/media-access/outputs/broadcast_summary.json</a></th><td>JSON</td><td>bb0f4fe76182</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/data/broadcast_ad_rerun.csv">analyses/media-access/data/broadcast_ad_rerun.csv</a></th><td>30행</td><td>639936ce12d1</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/data/broadcast_operator_years.csv">analyses/media-access/data/broadcast_operator_years.csv</a></th><td>1,139행</td><td>dced27a844d6</td></tr>
+<tr><th scope="row"><a href="https://github.com/gonasooc/a11y/blob/main/analyses/media-access/data/context_facts_2026-10-13.csv">analyses/media-access/data/context_facts_2026-10-13.csv</a></th><td>43행</td><td>b321bc18cf86</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:provenance-->
+            </details>
+          </section>
+          <section class="analysis-note" id="official" aria-labelledby="official-title">
+            <header class="section-head">
+              <span class="section-head__n">02</span>
+              <h3 id="official-title">공식 발표와 맞춰 본 결과</h3>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md#26-공식-발표와-맞지-않는-값">원문 §2.6<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <details class="note-details">
+              <summary>펼쳐 보기<span class="visually-hidden">: 공식 발표와 맞춰 본 결과</span></summary>
+            <div class="prose">
+              <p>2025년 보도자료의 사업자군 평균 <span data-check="oc.2025.checked">21</span>개는 방송사별 파일로 계산한 평균과 <span data-check="oc.2025.match">21</span>개 모두 같았다. 공식 표는 평균을 소수 둘째 자리에서 버린 값이다.</p>
+              <p>2023년은 <span data-check="oc.2023.checked">21</span>개 가운데 <span data-check="oc.2023.differ">12</span>개가 달랐다. 예를 들어 일반 PP의 화면해설은 발표가 <span data-check="oc.2023.ppAd.official">12.49</span>%, 계산이 <span data-check="oc.2023.ppAd.computed">10.81</span>%다. 채널 수로 가중해도 맞지 않아 원인을 확인하지 못했다. 이 페이지는 방송사별 파일을 기준으로 쓴다.</p>
+            </div>
+            <!--table:official-->
+<div class="table-scroll" role="region" aria-label="공식 사업자군 평균과 방송사별 파일 계산의 대조" tabindex="0">
+<table class="data-table">
+<caption>공식 사업자군 평균과 방송사별 파일 계산의 대조</caption>
+<thead><tr><th scope="col">연도</th><th scope="col" class="num">대조한 값</th><th scope="col" class="num">일치</th><th scope="col" class="num">다름</th></tr></thead>
+<tbody>
+<tr><th scope="row">2023</th><td class="num">21</td><td class="num">9</td><td class="num">12</td></tr>
+<tr><th scope="row">2025</th><td class="num">21</td><td class="num">21</td><td class="num">0</td></tr>
+</tbody>
+</table>
+</div><p class="table-note">공식 표는 단순 평균을 소수 둘째 자리에서 버린 값이다. 2023년 차이의 원인은 확인하지 못했다.</p>
+<!--/table:official-->
+            </details>
+          </section>
+          <section class="analysis-note" id="facts" aria-labelledby="facts-title">
+            <header class="section-head">
+              <span class="section-head__n">03</span>
+              <h3 id="facts-title">조사 문서에서 가져온 숫자</h3>
+              <p class="section-head__links"><a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/README.md#검증-등급">등급 기준<span class="visually-hidden"> (GitHub에서 열림)</span></a></p>
+            </header>
+            <details class="note-details">
+              <summary>펼쳐 보기<span class="visually-hidden">: 조사 문서에서 가져온 숫자</span></summary>
+            <div class="prose">
+              <p>방송 실적 계산 밖의 숫자 <span data-check="ctx.rows">43</span>개는 조사 문서에서 출처·위치·등급과 함께 옮겼다. 본문에는 A·B 등급만 쓴다. 이용자·OTT·영화관 숫자는 2026-10-13 보완 조사에서 주장 25개를 검증자 3명이 각각 반박하려 한 뒤 통과한 것이고, 출처 하나만 확인한 것은 B로 둔다.</p>
+            </div>
+            <!--table:context-facts-->
+<div class="table-scroll" role="region" aria-label="조사 문서에서 가져와 본문에 쓴 숫자와 출처 (A·B 등급만)" tabindex="0">
+<table class="data-table">
+<caption>조사 문서에서 가져와 본문에 쓴 숫자와 출처 (A·B 등급만)</caption>
+<thead><tr><th scope="col">내용과 위치</th><th scope="col" class="num">값</th><th scope="col" class="num">기준연도</th><th scope="col">출처</th><th scope="col">등급</th></tr></thead>
+<tbody>
+<tr><th scope="row">docs/digital-inclusion/environment.md §2.1 · 2025년 말 등록장애인 통계(보건복지부 2026.4.20 보도), 청각</th><td class="num">449,269명</td><td class="num">2025</td><td><a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">mohw.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §2.1 · 2025년 말 등록장애인 통계, 시각</th><td class="num">245,361명</td><td class="num">2025</td><td><a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">mohw.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §5.1 · 등록 시각장애인 중 장애정도가 심하지 않은 장애</th><td class="num">201,278명</td><td class="num">2025</td><td><a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">mohw.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §2.2 · 장애인방송 고시 제6조⑥, 화면해설 의무 비율 중 재방송 상한</th><td class="num">25%</td><td class="num">2026</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A02030300&amp;dc=K02030300&amp;boardId=1097&amp;boardSeq=69104">kmcc.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §2.2 · 2023년도 결과 보도자료, 2023년 강화 전 상한</th><td class="num">30%</td><td class="num">2022</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=60208">kmcc.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §2.2 · 2023년도 결과 보도자료, 2023년 상향 전 한국수어 의무</th><td class="num">5%</td><td class="num">2022</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=60208">kmcc.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §2.3 · 2012년 장애인방송 제공실적 평가결과(2013.3.18 보도), 화면해설 미달</th><td class="num">23곳</td><td class="num">2012</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=36057">kmcc.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/law.md §2.3 · 같은 보도, 평가 대상 지상파</th><td class="num">50곳</td><td class="num">2012</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A05030000&amp;dc=K00000200&amp;boardId=1113&amp;boardSeq=36057">kmcc.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §4.4 · 한국소비자원 앱 점검(2021.10~12, 2022.2.23 발표), OTT 앱</th><td class="num">4곳</td><td class="num">2021</td><td><a href="https://www.kca.go.kr/home/sub.do?menukey=4002&amp;mode=view&amp;no=1003270069">kca.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §4.4 · 같은 점검, 대부분의 콘텐츠에 폐쇄자막을 제공한 OTT 앱</th><td class="num">1곳</td><td class="num">2021</td><td><a href="https://www.kca.go.kr/home/sub.do?menukey=4002&amp;mode=view&amp;no=1003270069">kca.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §3 · 개정 고시 제6조③, 2개 이상 채널을 운영하는 필수지정사업자의 채널별 화면해설·한국수어 최소 편성(의무 비율 대비)</th><td class="num">80%</td><td class="num">2026</td><td><a href="https://www.kmcc.go.kr/user.do?mode=view&amp;page=A02030300&amp;dc=K02030300&amp;boardId=1097&amp;boardSeq=69104">kmcc.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §2.1 · 2025년 말 등록 청각장애인 중 65세 이상</th><td class="num">84.6%</td><td class="num">2025</td><td><a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">mohw.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/digital-inclusion/environment.md §2.1 · 2025년 말 등록 시각장애인 중 65세 이상</th><td class="num">59.1%</td><td class="num">2025</td><td><a href="https://www.mohw.go.kr/board.es?mid=a10503010100&amp;bid=0027&amp;act=view&amp;list_no=1490145">mohw.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.2 · 2023년 장애인 실태조사 151쪽 표 5-4-5, 주된 의사소통 방법 말(음성), 1·2순위 중복</th><td class="num">94.7%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.2 · 같은 표, 수어</th><td class="num">3.0%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.2 · 같은 조사 150쪽 표 5-4-3, 보청기 사용</th><td class="num">84.4%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.3 · 국립국어원 2023 한국수어 활용 조사 요약 iii쪽·표 Ⅱ-3, 수어를 주된 의사소통 방법으로 사용</th><td class="num">30.1%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.4 · 2023년 장애인 실태조사 368쪽 표 6-7-13, 지난 1주일 동영상 콘텐츠 시청</th><td class="num">98.2%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.4 · 같은 표, 시각장애인</th><td class="num">95.3%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 국립국어원 2023 표 Ⅱ-163(238쪽), 방송을 볼 때 주로 이용하는 서비스: 한글 자막</th><td class="num">45.5%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 같은 표, 수어통역</th><td class="num">18.7%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 같은 표, 이용 안 함(본문 237쪽의 32.0%는 2020년 값 오기)</th><td class="num">35.8%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 국립국어원 2023 표 Ⅱ-164(239~240쪽), 이용하지 않는 이유: 이해할 수 없어서</th><td class="num">39.6%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 같은 표, 도움이 안 되어서</th><td class="num">32.1%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 국립국어원 2023 표 Ⅱ-169(246쪽), 자막 이용자 중 내용을 모두·거의 이해</th><td class="num">61.7%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 국립국어원 2023 표 Ⅱ-165(241쪽), 수어통역 이용자 중 내용을 모두·거의 이해</th><td class="num">37.7%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §3 · 국립국어원 2023 표 Ⅱ-185(266~267쪽), 수어 사용자 요구 1~3순위 합산: 수어통역 대상 프로그램 확대</th><td class="num">87.4%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/law.md §4.1 · 문체부 보도자료(2024-02-28), 문체부·콘진원과 업무협약을 맺은 국내 OTT</th><td class="num">5곳</td><td class="num">2024</td><td><a href="https://www.mcst.go.kr/site/s_notice/press/pressView.jsp?pSeq=20885">mcst.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §4.1 · 콘진원 보도자료(2024-12-11), 2024년 화면해설 제작 지원 작품(공개 예정)</th><td class="num">39개 작품</td><td class="num">2024</td><td><a href="https://www.kocca.kr/kocca/koccanews/reportview.do?nttNo=836">kocca.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/law.md §4.1 · 같은 보도자료, 화면해설 분량 &#39;약 564시간&#39;</th><td class="num">564시간</td><td class="num">2024</td><td><a href="https://www.kocca.kr/kocca/koccanews/reportview.do?nttNo=836">kocca.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/law.md §4.1 · 같은 보도자료, OTT 라이브러리 강화 지원 사업 폐쇄자막 제작 &#39;300여 개 작품&#39;</th><td class="num">300개 작품</td><td class="num">2024</td><td><a href="https://www.kocca.kr/kocca/koccanews/reportview.do?nttNo=836">kocca.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · Communications Act 2003 s.368HL(5)(a), 기준일 4주년부터 자막(발효 전)</th><td class="num">80%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · 같은 조 (5)(b), 화면해설</th><td class="num">10%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · 같은 조 (5)(c), 수어</th><td class="num">5%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · 같은 조 (4)(a), 기준일 2주년부터 두 해 동안 자막</th><td class="num">40%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · 같은 조 (4)(b), 화면해설</th><td class="num">5%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §6 · 같은 조 (4)(c), 수어</th><td class="num">2.5%</td><td class="num">2026</td><td><a href="https://www.legislation.gov.uk/ukpga/2003/21/section/368HL">legislation.gov.uk</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §5.1 · 대법원 2022다203507 판결 4쪽(이해하기 쉬운 판결), 원심이 정한 상영관 규모(좌석 300석 초과)</th><td class="num">300석</td><td class="num">2026</td><td><a href="https://www.scourt.go.kr/sjudge/1789000231447_093031.pdf">scourt.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/law.md §5.1 · 같은 쪽, 원심이 정한 제공 상영 횟수 비율</th><td class="num">3%</td><td class="num">2026</td><td><a href="https://www.scourt.go.kr/sjudge/1789000231447_093031.pdf">scourt.go.kr</a></td><td>A</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §5 · 2023년 장애인 실태조사 371쪽 표 6-7-16, 지난 1년 영화 관람(극장)</th><td class="num">6.8%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §5 · 같은 조사 부록 669쪽 부표 2-6-19, 65세 이상 장애인</th><td class="num">4.4%</td><td class="num">2023</td><td><a href="https://mohw.go.kr/board.es?act=view&amp;bid=0019&amp;list_no=1483622&amp;mid=a10411010100">mohw.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.3 · 국립국어원 2023 표 Ⅱ-3(35쪽), 40대 중 수어를 주된 의사소통 방법으로 사용</th><td class="num">69.9%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+<tr><th scope="row">docs/media-access/environment.md §2.3 · 같은 표, 60세 이상</th><td class="num">19.3%</td><td class="num">2023</td><td><a href="https://korean.go.kr/front/reportData/reportDataView.do?mn_id=&amp;searchOrder=&amp;report_seq=1172&amp;pageIndex=1">korean.go.kr</a></td><td>B</td></tr>
+</tbody>
+</table>
+</div>
+<!--/table:context-facts-->
+            </details>
+          </section>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="site-footer">
+      <div class="site-footer__inner">
+        <p>근거 문서(<a href="https://github.com/gonasooc/a11y/tree/main/docs/media-access">docs/media-access</a>): <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/README.md">조사 개요와 출처</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/law.md">제도 조사</a> · <a href="https://github.com/gonasooc/a11y/blob/main/docs/media-access/analysis.md">분석 원문</a> · <a href="https://github.com/gonasooc/a11y/tree/main/analyses/media-access">분석 코드와 출력</a></p>
+        <p>공개 자료의 기술통계로, 법률 자문에 해당하지 않음</p>
+        <p><a href="../../index.html">a11y 전체 목록</a> · 소스 코드: <a href="https://github.com/gonasooc/a11y">gonasooc/a11y</a></p>
+      </div>
+      <!--report:data-->
+<script type="application/json" id="report-data">{"ccBelow":[{"key":"2017","label":"2017","shortLabel":"’17","value":1,"note":"원문이 소수 첫째 자리까지만 공개"},{"key":"2018","label":"2018","shortLabel":"’18","value":22,"note":"원문이 소수 첫째 자리까지만 공개"},{"key":"2019","label":"2019","shortLabel":"’19","value":18,"note":"0.1%p 미만 미달 13곳"},{"key":"2020","label":"2020","shortLabel":"’20","value":25,"note":"0.1%p 미만 미달 21곳"},{"key":"2021","label":"2021","shortLabel":"’21","value":12,"note":"0.1%p 미만 미달 10곳"},{"key":"2022","label":"2022","shortLabel":"’22","value":7,"note":"0.1%p 미만 미달 6곳"},{"key":"2023","label":"2023","shortLabel":"’23","value":16,"note":"0.1%p 미만 미달 12곳"},{"key":"2024","label":"2024","shortLabel":"’24","value":27,"note":"0.1%p 미만 미달 26곳"},{"key":"2025","label":"2025","shortLabel":"’25","value":12,"note":"0.1%p 미만 미달 12곳"}],"terrestrial":[{"key":"cc","label":"폐쇄자막","value":100,"cls":"s1"},{"key":"ad","label":"화면해설","value":13.71,"cls":"s1"},{"key":"ksl","label":"한국수어","value":12.68,"cls":"s1"}],"rerun":[{"key":"MBN","label":"MBN","value":24.57,"cls":"s1"},{"key":"MBC","label":"MBC","value":22.43,"cls":"s1"},{"key":"SBS","label":"SBS","value":21.57,"cls":"s1"},{"key":"채널A","label":"채널A","value":20.96,"cls":"s1"},{"key":"TV조선","label":"TV조선","value":16.92,"cls":"muted"},{"key":"KBS","label":"KBS","value":14.99,"cls":"muted"},{"key":"JTBC","label":"JTBC","value":12.17,"cls":"muted"},{"key":"EBS1","label":"EBS1","value":0,"cls":"muted"},{"key":"YTN","label":"YTN","value":0,"cls":"muted"},{"key":"연합뉴스TV","label":"연합뉴스TV","value":0,"cls":"muted"}],"tvService":[{"key":"caption","label":"한글 자막","value":45.5,"cls":"s1"},{"key":"sign","label":"수어통역","value":18.7,"cls":"s1"},{"key":"none","label":"이용 안 함","value":35.8,"cls":"s1"}],"meta":{"repoUrl":"https://github.com/gonasooc/a11y"}}</script>
+<!--/report:data-->
+    </footer>
+  </body>
+</html>
