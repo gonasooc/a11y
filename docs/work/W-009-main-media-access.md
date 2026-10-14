@@ -1,7 +1,7 @@
 # W-009 · 영상 미디어 접근성 조사: 방송·OTT·영화관의 자막·수어·화면해설
 
 - 상태: 완료
-- 최근 갱신: 2026-10-13
+- 최근 갱신: 2026-10-14
 - 관련 문서: [docs/README.md](../README.md), [docs/plan.md](../plan.md), [docs/digital-inclusion/environment.md](../digital-inclusion/environment.md#72-청각), [docs/digital-inclusion/law.md](../digital-inclusion/law.md#65-다른-판례-사법부의-흐름-a), [docs/ideas.md](../ideas.md#small-06-1)
 
 ## 현재 상황
@@ -112,4 +112,4 @@
 
 완료 뒤에도 공개 자료가 나오면 확인할 항목(이 문서의 미완료 항목 포함)은 [docs/media-access/README.md](../media-access/README.md#다시-확인해야-할-시점)에서 관리한다.
 
-재개에 필요한 코드 상태: `main`, `7708c1a` 기준, 모두 미커밋. 조사 결과물은 `docs/media-access/`(4개), `analyses/media-access/`(코드 4개, 테스트, `data/` 8개, `outputs/` 4개)다. 원본(HWPX 9개, 보도자료·고시·판결문 7개)은 로컬 `analyses/media-access/raw/`에만 있다(Git 제외, 해시는 `data/`의 명세). 웹 보고서 변경은 W-010에 적었다.
+재개에 필요한 코드 상태: `main`, 2026-10-14에 W-010 보고서와 함께 `36018bd`로 커밋·푸시했다. 조사 결과물은 `docs/media-access/`(4개), `analyses/media-access/`(코드 4개, 테스트, `data/` 8개, `outputs/` 4개)다. 원본(HWPX 9개, 보도자료·고시·판결문 7개)은 로컬 `analyses/media-access/raw/`에만 있다(Git 제외, 해시는 `data/`의 명세). 웹 보고서 변경은 W-010에 적었다.

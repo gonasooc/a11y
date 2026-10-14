@@ -4,7 +4,7 @@
 
 접근성 도구와 데이터 분석 페이지를 하나씩 추가하고, 메인 페이지에서 각 항목에 접근할 수 있도록 구성하는 프로젝트다. 현재는 조사 문서와 디지털포용법 초기 탐색 분석 코드가 있고, 2026-10-06에 GitHub Pages용 정적 사이트(`site/`)와 시각화 보고서를 만들어 `https://gonasooc.github.io/a11y/`에 배포했다.
 
-2026-10-02에 docs-starter의 한국어 문서 구조를 적용했고, 2026-10-03에는 조달청·행안부·KOSIS 인증 수집과 추가 분석을 완료했다. 결과와 다음 자료 확보 작업은 아래에서 확인한다. 기존 접근성 조사 문서와 디지털포용법 분석 문서는 2026-10-12에 [docs/digital-inclusion/README.md](digital-inclusion/README.md) 아래 네 문서로 모았다. 2026-10-13에는 두 번째 주제로 영상 미디어 접근성 조사를 시작했다.
+2026-10-02에 docs-starter의 한국어 문서 구조를 적용했고, 2026-10-03에는 조달청·행안부·KOSIS 인증 수집과 추가 분석을 완료했다. 결과와 다음 자료 확보 작업은 아래에서 확인한다. 기존 접근성 조사 문서와 디지털포용법 분석 문서는 2026-10-12에 [docs/digital-inclusion/README.md](digital-inclusion/README.md) 아래 네 문서로 모았다. 2026-10-13에는 두 번째 주제로 영상 미디어 접근성 조사를 시작했고, 2026-10-14에 그 웹 보고서를 공개했다.
 
 ## 기본 문서
 
@@ -18,7 +18,6 @@
 
 ## 진행 중·예정·보류 작업
 
-- [docs/work/W-010-main-media-access-report.md](work/W-010-main-media-access-report.md) — 영상 접근성 웹 보고서(제목 ‘TV 자막·수어·화면해설, 의무는 채웠는데 볼 게 있나’) — 진행 중. `site/reports/media-access/`에 그림 4개·질문형 절 6개로 구현했고 생성 검사·axe·320~1440px 확인을 통과했다. 커밋·공개 전이다.
 - [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md) — 비장애인 독자를 위한 디지털포용법 보고서 개편 — 진행 중. 13개 결정을 구현해 공개 주소에 배포했다. 독자 테스트와 첫 화면 구성 결정이 남았다.
 - [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md) — GitHub Pages 사이트와 디지털포용법 시각화 보고서 — 진행 중. `https://gonasooc.github.io/a11y/`에 배포해 공개 화면을 확인했다. 실제 스크린리더 확인과 디자인 기준 확정 여부가 남았다.
 - [docs/work/W-004-main-history-data.md](work/W-004-main-history-data.md) — 기기·검증 제품 과거 이력 확보 — 진행 중. 기관·제품별 조달 분해·기능 조합 분석 및 공개 교체 공지 조사 완료. 기기별 완료 이력·차기 연간 통계는 미확보.
@@ -29,6 +28,7 @@ NIA 배리어프리 키오스크 위치 API(`15157403`)는 사용자 요청으�
 
 ## 최근 완료
 
+- [docs/work/W-010-main-media-access-report.md](work/W-010-main-media-access-report.md) — 영상 접근성 웹 보고서(제목 ‘TV 자막·수어·화면해설, 의무는 채웠는데 볼 게 있나’) — 완료. 2026-10-14 `36018bd`로 `https://gonasooc.github.io/a11y/reports/media-access/index.html`에 공개하고 공개 주소에서 화면·axe·GitHub 링크를 확인했다. 비장애인 독자 테스트(선택)는 하지 않았다.
 - [docs/work/W-009-main-media-access.md](work/W-009-main-media-access.md) — 영상 미디어 접근성 조사(방송·OTT·영화관의 자막·수어·화면해설) — 완료. 2017~2025년 방송 편성 실적 분석과 deep-research 보완 조사로 근거 문서 네 개를 [docs/media-access/README.md](media-access/README.md) 아래에 썼다. 공개 자료로 확인하지 못한 항목은 그 문서의 재확인 목록에 있다.
 - [docs/work/W-008-main-docs-digital-inclusion.md](work/W-008-main-docs-digital-inclusion.md) — 디지털포용법 근거 문서를 docs/digital-inclusion으로 정리 — 완료. 일곱 문서를 네 문서로 합치고, 저장소 링크와 공개 보고서의 GitHub 링크·앵커를 확인했다.
 - [docs/work/W-005-main-docs-consolidation.md](work/W-005-main-docs-consolidation.md) — 도구 아이디어·디지털포용법 보고서 통합 — 완료. 같은 `docs/` 깊이에서 내용·출처·링크를 통합했다.
