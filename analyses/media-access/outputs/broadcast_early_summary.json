@@ -1,0 +1,60 @@
+{
+  "inputs": {
+    "broadcast_operator_years_2012_2016.csv": "60bfdc6a1d52a8682d6b6c9eb42448c6af896e5d80574e1170569df148a769d8",
+    "kmcc_early_statements.csv": "8194040807fead7017dd194f72ba9c72a55906c57a84dd07eac1e806e479c4de",
+    "broadcast_parse_notes_2012_2016.json": "2a521bb062548d878b77d47fe9ea47745689e0ac591807dee5da533cd7b47f12",
+    "kmcc_manifest.json": "3b817746bc5f9901d8b381d91dd45d0503e161947d075163ca7c9f22f12dc0da"
+  },
+  "years": [
+    2012,
+    2013,
+    2014,
+    2015,
+    2016
+  ],
+  "target_basis": {
+    "2012": "broadcaster_proposed",
+    "2013": "phased_by_operator",
+    "2014": "phased_by_operator",
+    "2015": "phased_by_operator",
+    "2016": "phased_by_operator"
+  },
+  "below_any_service": {
+    "2012": {
+      "operators": 50,
+      "below_any": 23,
+      "variant_rows_below_any": 1
+    },
+    "2013": {
+      "operators": 153,
+      "below_any": 58,
+      "variant_rows_below_any": 0
+    },
+    "2014": {
+      "operators": 156,
+      "below_any": 3,
+      "variant_rows_below_any": 0
+    },
+    "2015": {
+      "operators": 145,
+      "below_any": 4,
+      "variant_rows_below_any": 0
+    },
+    "2016": {
+      "operators": 139,
+      "below_any": 6,
+      "variant_rows_below_any": 0
+    }
+  },
+  "official_check": {
+    "match": 43,
+    "differ": 0
+  },
+  "official_differ": [],
+  "limits": [
+    "2012~2016년 목표는 방송사업자별로 해마다 단계적으로 높인 값이다(2012년은 방송사가 제시하고 방송통신위원회가 승인). 2017년 이후의 사업자군별 의무 비율과 기준이 달라 미달 수를 2017년 이후와 한 줄로 잇지 않는다.",
+    "편성 비율의 산정 기준(인정 방송시간 등)이 2017년 이후와 같은지 확인하지 못했다. 실적 평균도 2017년 이후와 바로 잇지 않는다.",
+    "미달은 실적이 목표보다 작은 경우를 센 것이다. 공식 평가의 소명·경감 결과는 반영하지 않았다.",
+    "보조 행(같은 번호 아래 두 번째 편성 단위, 해마다 MBC경남 한 줄)은 사업자 수와 미달 수에서 뺐다."
+  ]
+}

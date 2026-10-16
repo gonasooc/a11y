@@ -1,6 +1,6 @@
 # 아키텍처
 
-> 초기 작성: 2026-10-02 · 인증 수집 반영: 2026-10-03 · 웹 사이트 추가: 2026-10-06 · 영상 접근성 조사 추가: 2026-10-13.
+> 초기 작성: 2026-10-02 · 인증 수집 반영: 2026-10-03 · 웹 사이트 추가: 2026-10-06 · 영상 접근성 조사 추가: 2026-10-13 · 영상 접근성 자료 보강: 2026-10-17.
 
 구성 요소의 책임과 의존 관계를 다룬다. 기술 구성과 실행 방법은 [docs/specs.md](specs.md)에 있다.
 
@@ -19,7 +19,9 @@
 | 보고서 데이터 생성 | 분석 출력을 읽어 HTML의 생성 구역(표·조각·차트 데이터)을 채우고 본문 숫자를 검사한다 | [site/scripts/generate.mjs](../site/scripts/generate.mjs) |
 | 배포 | GitHub Actions가 생성 구역을 검사한 뒤 `site/`를 그대로 GitHub Pages에 올린다 | [.github/workflows/pages.yml](../.github/workflows/pages.yml) |
 | 영상 접근성 조사 | 방송·OTT·영화관의 자막·수어·화면해설 제도, 이용자와 시청 경험, 방송 편성 실적. 웹 보고서 `site/reports/media-access/`의 근거 문서 | [docs/media-access/README.md](media-access/README.md) |
-| 장애인방송 편성 실적 분석 | 시청자미디어재단 HWPX 수집·해석, 연도별 미달·사업자군 평균, 공식 발표 대조 | [analyses/media-access/README.md](../analyses/media-access/README.md) |
+| 장애인방송 편성 실적 분석 | 시청자미디어재단 HWPX(2017~2025) 수집·해석, 연도별 미달·사업자군 평균, 공식 발표 대조. 2012~2016년은 방송통신위원회 보도자료의 구형 HWP를 따로 수집·해석하고 출력도 따로 둔다 | [analyses/media-access/README.md](../analyses/media-access/README.md) |
+| 등록 장애인 통계 | KOSIS 보건복지부 「장애인현황」 연령별 등록 인원 수집, 청각·시각의 연도별 규모와 65세 이상 비율 | [analyses/media-access/README.md](../analyses/media-access/README.md#등록-장애인-통계kosis) |
+| 열린재정 세부사업 예산 | 관련 4개 부처 2024~2026년 세부사업 이름 검색, 장애인방송 지원 세부사업 금액 | [analyses/media-access/README.md](../analyses/media-access/README.md#열린재정-세부사업-예산) |
 
 ## 주요 폴더와 흐름
 
@@ -59,8 +61,15 @@
 │   ├── kcmf_collect.py        # 재단 연도별 HWPX 수집·해시 명세
 │   ├── kcmf_parse.py          # 표 → 방송사·연도별 CSV, 행 수·일련번호 검증
 │   ├── broadcast_analyze.py   # 미달 수·사업자군 평균·공식 발표 대조
+│   ├── hwp5_table.py          # 구형 HWP(OLE) 표 셀·병합 읽기
+│   ├── kmcc_collect.py        # 2012~2016 보도자료 HWP 수집·해시 명세
+│   ├── kmcc_parse.py          # 2012~2016 표 → 방송사·연도별 CSV
+│   ├── broadcast_early_analyze.py # 2012~2016 미달 수·보도자료 집계 대조(2017~ 출력과 분리)
+│   ├── kosis_registry_collect.py  # KOSIS 등록장애인 연령별 수집(digital-inclusion의 api_common 사용)
+│   ├── registry_analyze.py    # 청각·시각 연도별 규모·65세 이상 비율
+│   ├── openfiscal_collect.py  # 열린재정 세부사업 예산 조회(digital-inclusion의 api_common 사용)
 │   ├── data/ · outputs/ · tests/
-│   └── raw/                   # 로컬 원본 HWPX·보도자료·판결문, Git 제외(해시는 data/의 명세)
+│   └── raw/                   # 로컬 원본 HWPX·HWP·보도자료·판결문·KOSIS·열린재정 원응답, Git 제외(해시는 data/의 명세)
 └── analyses/digital-inclusion/
     ├── README.md              # 분석 재현 안내
     ├── plan.json              # 분석 범위·해석 조건
@@ -91,6 +100,8 @@
 - 웹 보고서가 참고하는 문서는 `site/reports/<주제>/`와 같은 이름의 `docs/<주제>/` 폴더에 둔다. 디지털포용법은 [docs/digital-inclusion/README.md](digital-inclusion/README.md)를 안내로 하는 네 문서로 합쳤다. 프로젝트 공통 문서(README·plan·architecture·specs·design), `work/`·`sessions/`, 보고서와 무관한 `ideas.md`는 `docs/` 바로 아래에 둔다. 2026-10-12 사용자 요청으로 W-005의 ‘`docs/` 깊이 유지’ 규칙을 바꿨다. 근거: [docs/work/W-008-main-docs-digital-inclusion.md](work/W-008-main-docs-digital-inclusion.md), 이전 결정: [docs/work/W-005-main-docs-consolidation.md](work/W-005-main-docs-consolidation.md).
 - 현재 분석 구조는 입력·출처·계산 출력·보고서를 별도 파일로 관리한다. 새 수집 자료를 추가할 때 관측 단위·수집일·출처를 보존하고, 과거 집계를 신규 원자료처럼 덮어쓰지 않는다. 근거: [analyses/digital-inclusion/README.md](../analyses/digital-inclusion/README.md).
 - 웹 페이지는 `site/<영역>/<이름>/index.html`에 두고 허브 [site/index.html](../site/index.html)에 링크를 더한다. 분석 결과는 생성 스크립트가 출력 파일에서 읽고 수집 원자료는 읽지 않는다. 빌드 도구는 쓰지 않는다. 근거: [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md).
+- `analyses/media-access/kosis_registry_collect.py`와 `openfiscal_collect.py`는 [analyses/digital-inclusion/api_common.py](../analyses/digital-inclusion/api_common.py)를 경로를 더해 가져다 쓴다. 키 로딩·HTTPS·오류 처리를 한 곳에만 두려는 선택이고(2026-10-17, 에이전트 판단), 분석 폴더 사이의 유일한 의존이다. 공통 폴더로 옮길지는 미정이다. 근거: [docs/work/W-011-main-media-access-supplement.md](work/W-011-main-media-access-supplement.md).
+- 기준이 다른 기간의 실적은 출력 파일을 나눈다. 2012~2016년 장애인방송 실적(사업자별 단계 목표)은 `broadcast_early_*`로 두고 2017~2025년 `broadcast_*` 출력에 섞지 않는다. 웹 보고서도 두 출력을 따로 읽어 그림을 나눈다(그림 2·3). 근거: 같은 작업 문서, [docs/work/W-012-main-media-access-report-update.md](work/W-012-main-media-access-report-update.md).
 - 도구별 서버·클라이언트 책임과, 빌드가 필요한 서비스를 들일 때의 방식은 미정이다.
 
 ## 알려진 구조 제약

@@ -2,7 +2,7 @@
 // 일반 스크립트(defer)다. 공통 스크립트가 window.A11y에 올려 둔 함수를 쓴다.
 (function (A11y) {
   'use strict';
-  const { columnChart, refBars } = A11y.charts;
+  const { columnChart, lineChart, refBars } = A11y.charts;
 
   const data = JSON.parse(document.getElementById('report-data').textContent);
 
@@ -22,8 +22,14 @@
     }
   }
 
+  render('registryAge', (el, ids) =>
+    lineChart(el, { years: data.registryAge.years, series: data.registryAge.series, yDomain: [0, 40], digits: 1, ...ids }),
+  );
   render('ccBelow', (el, ids) =>
     columnChart(el, { items: data.ccBelow, digits: 0, unit: '곳', tooltipNote: '폐쇄자막 실적이 목표보다 작은 방송사', ...ids }),
+  );
+  render('earlyBelow', (el, ids) =>
+    columnChart(el, { items: data.earlyBelow, digits: 0, unit: '곳', tooltipNote: '폐쇄자막·화면해설·한국수어 가운데 하나라도 목표보다 작은 방송사', ...ids }),
   );
   render('terrestrial', (el, ids) =>
     refBars(el, { items: data.terrestrial, domain: [0, 100], unit: '%', digits: 2, ticks: 4, tooltipNote: '지상파 방송사별 실적의 단순 평균', ...ids }),

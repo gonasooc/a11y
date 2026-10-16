@@ -10,7 +10,7 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[2]
-AUTH_PARAMETERS = {"apis.data.go.kr": "serviceKey", "kosis.kr": "apiKey"}
+AUTH_PARAMETERS = {"apis.data.go.kr": "serviceKey", "kosis.kr": "apiKey", "openapi.openfiscaldata.go.kr": "Key"}
 
 
 class ApiError(RuntimeError):
@@ -67,7 +67,7 @@ def request_json(endpoint, params, key, timeout=60):
         raise ApiError("Only approved HTTPS API endpoints without query strings are allowed")
     if parsed.hostname == "kosis.kr" and not parsed.path.startswith("/openapi/"):
         raise ApiError("KOSIS credentials are limited to the official OpenAPI path")
-    if any(name.lower() in {"servicekey", "apikey"} for name in params):
+    if any(name.lower() in {"servicekey", "apikey", "key"} for name in params):
         raise ApiError("Pass credentials through key, not recorded request parameters")
     query = urllib.parse.urlencode({**params, AUTH_PARAMETERS[parsed.hostname]: key})
     request = urllib.request.Request(endpoint + "?" + query, headers={

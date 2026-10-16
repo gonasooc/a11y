@@ -1,0 +1,243 @@
+{
+  "inputs": {
+    "kosis_registry_2026-10-17.csv": "7269876a183b4bac850aad1c251d74a8c7e065cd30ab2ebb78f236be13965543",
+    "kosis_registry_manifest_2026-10-17.json": "8338d605bf35ec4031d6b7d4530e54aab5036161a2667dae9307b381ae405cf6",
+    "context_facts_2026-10-13.csv": "b321bc18cf869a78c00b0ad25dd2633438aebf6fedcb0bd6fc9f4bf2aeca53c6"
+  },
+  "snapshot": "2026-10-17",
+  "years": [
+    "2007",
+    "2025"
+  ],
+  "series": {
+    "all": {
+      "first": {
+        "year": "2007",
+        "type": "all",
+        "registered": 2104889,
+        "age65_plus": 687870,
+        "age65_plus_share_pct": "32.7",
+        "age_under65": 1416005,
+        "age_unknown": 0,
+        "unallocated": 1014,
+        "age65_plus_share_upper_pct": "32.7",
+        "share_of_all_pct": "",
+        "n001_registered": "2104889",
+        "n001_status": "match"
+      },
+      "last": {
+        "year": "2025",
+        "type": "all",
+        "registered": 2627761,
+        "age65_plus": 1496135,
+        "age65_plus_share_pct": "56.9",
+        "age_under65": 1131626,
+        "age_unknown": 0,
+        "unallocated": 0,
+        "age65_plus_share_upper_pct": "56.9",
+        "share_of_all_pct": "",
+        "n001_registered": "2627761",
+        "n001_status": "match"
+      },
+      "peak": {
+        "year": "2022",
+        "registered": 2643696
+      }
+    },
+    "hearing": {
+      "first": {
+        "year": "2007",
+        "type": "hearing",
+        "registered": 203324,
+        "age65_plus": 106382,
+        "age65_plus_share_pct": "52.3",
+        "age_under65": 96775,
+        "age_unknown": 0,
+        "unallocated": 167,
+        "age65_plus_share_upper_pct": "52.4",
+        "share_of_all_pct": "9.7",
+        "n001_registered": "203324",
+        "n001_status": "match"
+      },
+      "last": {
+        "year": "2025",
+        "type": "hearing",
+        "registered": 449269,
+        "age65_plus": 380045,
+        "age65_plus_share_pct": "84.6",
+        "age_under65": 69224,
+        "age_unknown": 0,
+        "unallocated": 0,
+        "age65_plus_share_upper_pct": "84.6",
+        "share_of_all_pct": "17.1",
+        "n001_registered": "449269",
+        "n001_status": "match"
+      },
+      "peak": {
+        "year": "2025",
+        "registered": 449269
+      }
+    },
+    "visual": {
+      "first": {
+        "year": "2007",
+        "type": "visual",
+        "registered": 216881,
+        "age65_plus": 79184,
+        "age65_plus_share_pct": "36.5",
+        "age_under65": 137574,
+        "age_unknown": 0,
+        "unallocated": 123,
+        "age65_plus_share_upper_pct": "36.6",
+        "share_of_all_pct": "10.3",
+        "n001_registered": "216881",
+        "n001_status": "match"
+      },
+      "last": {
+        "year": "2025",
+        "type": "visual",
+        "registered": 245361,
+        "age65_plus": 145086,
+        "age65_plus_share_pct": "59.1",
+        "age_under65": 100275,
+        "age_unknown": 0,
+        "unallocated": 0,
+        "age65_plus_share_upper_pct": "59.1",
+        "share_of_all_pct": "9.3",
+        "n001_registered": "245361",
+        "n001_status": "match"
+      },
+      "peak": {
+        "year": "2013",
+        "registered": 253095
+      }
+    }
+  },
+  "checks": {
+    "n001": {
+      "match": 56,
+      "differ": 1,
+      "unavailable": 0
+    },
+    "n001_differ": [
+      {
+        "year": "2013",
+        "type": "all",
+        "registered": 2500961,
+        "n001_registered": "2501112"
+      }
+    ],
+    "unallocated_years": [
+      "2007",
+      "2008",
+      "2009",
+      "2010",
+      "2011",
+      "2012",
+      "2013",
+      "2014"
+    ],
+    "upper_share_differs": [
+      {
+        "year": "2007",
+        "type": "hearing",
+        "age65_plus_share_pct": "52.3",
+        "age65_plus_share_upper_pct": "52.4"
+      },
+      {
+        "year": "2007",
+        "type": "visual",
+        "age65_plus_share_pct": "36.5",
+        "age65_plus_share_upper_pct": "36.6"
+      },
+      {
+        "year": "2009",
+        "type": "hearing",
+        "age65_plus_share_pct": "57.0",
+        "age65_plus_share_upper_pct": "57.1"
+      },
+      {
+        "year": "2009",
+        "type": "visual",
+        "age65_plus_share_pct": "38.9",
+        "age65_plus_share_upper_pct": "39.0"
+      },
+      {
+        "year": "2010",
+        "type": "hearing",
+        "age65_plus_share_pct": "59.0",
+        "age65_plus_share_upper_pct": "59.1"
+      },
+      {
+        "year": "2011",
+        "type": "hearing",
+        "age65_plus_share_pct": "60.1",
+        "age65_plus_share_upper_pct": "60.2"
+      },
+      {
+        "year": "2011",
+        "type": "visual",
+        "age65_plus_share_pct": "41.7",
+        "age65_plus_share_upper_pct": "41.8"
+      },
+      {
+        "year": "2013",
+        "type": "hearing",
+        "age65_plus_share_pct": "62.6",
+        "age65_plus_share_upper_pct": "62.7"
+      },
+      {
+        "year": "2013",
+        "type": "visual",
+        "age65_plus_share_pct": "44.7",
+        "age65_plus_share_upper_pct": "44.8"
+      },
+      {
+        "year": "2014",
+        "type": "hearing",
+        "age65_plus_share_pct": "63.6",
+        "age65_plus_share_upper_pct": "63.7"
+      }
+    ],
+    "context_facts": [
+      {
+        "year": "2025",
+        "indicator": "registered_by_type",
+        "population": "hearing",
+        "document": "449269",
+        "computed": "449269",
+        "status": "match"
+      },
+      {
+        "year": "2025",
+        "indicator": "registered_by_type",
+        "population": "visual",
+        "document": "245361",
+        "computed": "245361",
+        "status": "match"
+      },
+      {
+        "year": "2025",
+        "indicator": "registered_65plus_share",
+        "population": "hearing",
+        "document": "84.6",
+        "computed": "84.6",
+        "status": "match"
+      },
+      {
+        "year": "2025",
+        "indicator": "registered_65plus_share",
+        "population": "visual",
+        "document": "59.1",
+        "computed": "59.1",
+        "status": "match"
+      }
+    ]
+  },
+  "limits": [
+    "연도 말 등록 인원이다. 등록하지 않은 난청·저시력 인구는 빠진다.",
+    "2007~2014년은 100세 이상 구간과 '해당없음'이 공표되지 않아 연령 구간 합이 합계보다 작다. 65세 이상은 공표된 구간만 더했고, 차이를 모두 65세 이상으로 볼 때의 비율을 upper 열에 따로 둔다.",
+    "등록 인원의 변화에는 장애 발생뿐 아니라 판정 기준·등록 유인의 변화가 함께 들어 있다. 이 자료로 원인을 나누지 않는다.",
+    "65세 이상 비율의 상승에는 인구 전체의 고령화가 함께 들어 있다."
+  ]
+}

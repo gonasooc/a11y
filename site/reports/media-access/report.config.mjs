@@ -18,6 +18,10 @@ const SOURCES = {
   rerun: 'data/broadcast_ad_rerun.csv',
   operators: 'data/broadcast_operator_years.csv',
   context: 'data/context_facts_2026-10-13.csv',
+  registry: 'outputs/registry_by_year.csv',
+  early: 'outputs/broadcast_early_compliance_by_year.csv',
+  earlyGroups: 'outputs/broadcast_early_group_summary.csv',
+  earlySummary: 'outputs/broadcast_early_summary.json',
 };
 const SERVICES = [
   { key: 'cc', label: '폐쇄자막', who: '청각장애인' },
@@ -209,6 +213,104 @@ export async function build({ repoRoot, repoUrl }) {
   facts['ctx.hearing10k'] = cv('registered_by_type.hearing.2025') / 10000;
   facts['ctx.visual10k'] = cv('registered_by_type.visual.2025') / 10000;
   facts['ctx.visualNotSevereShare'] = (cv('registered_visual_not_severe.visual.2025') / cv('registered_by_type.visual.2025')) * 100;
+
+  /* 등록 청각·시각장애인의 나이(KOSIS 「장애인현황」 연령별 표, 2007~2025년 연말) */
+  const REG_YEARS = Array.from({ length: 19 }, (_, i) => 2007 + i);
+  const reg = (year, type) => src.registry.find((r) => r.year === String(year) && r.type === type) ?? fail(`등록 통계 없음: ${year} ${type}`);
+  for (const year of REG_YEARS) {
+    for (const type of ['hearing', 'visual']) {
+      const r = reg(year, type);
+      facts[`reg.${type}.total10k.${year}`] = num(r.registered, `${year} ${type} registered`) / 10000;
+      facts[`reg.${type}.older10k.${year}`] = num(r.age65_plus, `${year} ${type} 65+`) / 10000;
+      facts[`reg.${type}.younger10k.${year}`] = num(r.age_under65, `${year} ${type} under 65`) / 10000;
+      facts[`reg.${type}.olderShare.${year}`] = num(r.age65_plus_share_pct, `${year} ${type} 65+ share`);
+    }
+  }
+  // 1절 첫머리의 2025년 값(보건복지부 발표)과 KOSIS 계산이 같아야 한다.
+  for (const type of ['hearing', 'visual']) {
+    const latest = reg(2025, type);
+    if (num(latest.registered, `${type} 2025`) !== cv(`registered_by_type.${type}.2025`)) fail(`KOSIS 2025년 ${type} 인원이 보건복지부 발표와 다르다`);
+    if (num(latest.age65_plus_share_pct, `${type} 2025 share`) !== cv(`registered_65plus_share.${type}.2025`)) fail(`KOSIS 2025년 ${type} 65세 이상 비율이 보건복지부 발표와 다르다`);
+  }
+  const visualPeak = REG_YEARS.map((y) => reg(y, 'visual')).reduce((a, b) => (num(b.registered, 'visual') > num(a.registered, 'visual') ? b : a));
+  facts['reg.visual.peakYear'] = num(visualPeak.year, 'visual peak year');
+  facts['reg.visual.peak10k'] = num(visualPeak.registered, 'visual peak') / 10000;
+  // 2007~2014년은 100세 이상 구간이 공표되지 않아 합계와 연령 구간 합의 차이가 남는다(analyses/media-access/README.md).
+  const hearingGaps = REG_YEARS.map((y) => num(reg(y, 'hearing').unallocated, 'gap')).filter((v) => v > 0);
+  const hearingUnknown = REG_YEARS.map((y) => [y, num(reg(y, 'hearing').age_unknown, 'unknown')]).filter(([, v]) => v > 0);
+  data.registryAge = {
+    years: REG_YEARS,
+    series: [
+      { label: '65세 이상', values: REG_YEARS.map((y) => facts[`reg.hearing.older10k.${y}`]) },
+      { label: '65세 미만', values: REG_YEARS.map((y) => facts[`reg.hearing.younger10k.${y}`]) },
+    ],
+  };
+  tables['registry-age'] = {
+    caption: '등록 청각장애인의 나이, 2007~2025년 (연말, 명)',
+    columns: [
+      { label: '연도' },
+      { label: '청각 전체', numeric: true },
+      { label: '65세 이상', numeric: true },
+      { label: '65세 미만', numeric: true },
+      { label: '65세 이상 비율', numeric: true },
+      { label: '시각 전체', numeric: true },
+    ],
+    rows: REG_YEARS.map((y) => {
+      const h = reg(y, 'hearing');
+      return [String(y), fmt(num(h.registered, 'h')), fmt(num(h.age65_plus, 'h65')), fmt(num(h.age_under65, 'hu65')), `${h.age65_plus_share_pct}%`, fmt(num(reg(y, 'visual').registered, 'v'))];
+    }),
+    note:
+      `KOSIS 「장애인현황」의 연령별·장애유형별 등록장애인수(DT_11761_N003)로 계산했다. 2007~2014년은 100세 이상 연령 구간이 공표되지 않아 청각은 해마다 ${fmt(Math.min(...hearingGaps))}~${fmt(Math.max(...hearingGaps))}명이 65세 이상과 미만 어디에도 들어가지 않고, 그해 65세 이상 비율은 최대 0.1%p 낮게 잡힐 수 있다.` +
+      (hearingUnknown.length ? ` 나이가 ‘해당없음’인 ${hearingUnknown.map(([y, v]) => `${y}년 ${fmt(v)}명`).join(', ')}도 넣지 않았다.` : ''),
+  };
+
+  /* 2012~2016년 실적(방송통신위원회 보도자료, 사업자별 단계 목표). 2017년 이후 그림과 잇지 않는다. */
+  const EARLY_YEARS = [2012, 2013, 2014, 2015, 2016];
+  const earlyRow = (year, service) => src.early.find((r) => r.year === String(year) && r.service === service) ?? fail(`2012~2016 미달 요약 없음: ${year} ${service}`);
+  for (const year of EARLY_YEARS) {
+    const any = src.earlySummary.below_any_service[String(year)] ?? fail(`한 가지 이상 미달 없음: ${year}`);
+    facts[`early.any.${year}`] = any.below_any;
+    facts[`early.operators.${year}`] = any.operators;
+    for (const s of SERVICES) facts[`early.${s.key}.${year}`] = num(earlyRow(year, s.key).below_target, `${year} ${s.key} early`);
+  }
+  if (src.earlySummary.official_check.differ !== 0) fail('2012~2016년 보도자료 집계와 계산이 다르다. 본문을 다시 쓴다');
+  facts['early.official.match'] = src.earlySummary.official_check.match;
+  // 2절의 2012년 문장은 조사 문서 숫자를 쓴다. 원자료 계산과 같아야 한다.
+  if (facts['early.ad.2012'] !== cv('ad_below_target.terrestrial.2012') || facts['early.operators.2012'] !== cv('evaluated_operators.terrestrial.2012')) {
+    fail('2012년 화면해설 미달·평가 대상이 조사 문서와 다르다');
+  }
+  const later = [2014, 2015, 2016].map((y) => facts[`early.any.${y}`]);
+  facts['early.anyMin1416'] = Math.min(...later);
+  facts['early.anyMax1416'] = Math.max(...later);
+  const so2016 = src.earlyGroups.find((g) => g.year === '2016' && g.group === 'SO') ?? fail('2016년 SO 요약 없음');
+  const soTargets = so2016.cc_targets.split('/').map((v) => num(v, 'SO cc target'));
+  facts['early.so2016.ccTargetMin'] = Math.min(...soTargets);
+  facts['early.so2016.ccTargetMax'] = Math.max(...soTargets);
+  data.earlyBelow = EARLY_YEARS.map((y) => ({
+    key: String(y),
+    label: String(y),
+    value: facts[`early.any.${y}`],
+    partial: y === 2012,
+    note: y === 2012 ? `지상파 ${fmt(facts['early.operators.2012'])}곳만 평가` : `의무 방송사 ${fmt(facts[`early.operators.${y}`])}곳`,
+  }));
+  tables['early-below'] = {
+    caption: '한 가지 이상 목표에 못 미친 방송사, 2012~2016년',
+    columns: [
+      { label: '연도' },
+      { label: '평가 대상', numeric: true },
+      { label: '한 가지 이상 미달', numeric: true },
+      { label: '폐쇄자막 미달', numeric: true },
+      { label: '화면해설 미달', numeric: true },
+      { label: '한국수어 미달', numeric: true },
+    ],
+    rows: EARLY_YEARS.map((y) => [
+      y === 2012 ? '2012(지상파만)' : String(y),
+      `${fmt(facts[`early.operators.${y}`])}곳`,
+      `${fmt(facts[`early.any.${y}`])}곳`,
+      ...SERVICES.map((s) => `${fmt(facts[`early.${s.key}.${y}`])}곳`),
+    ]),
+    note: '미달은 실적이 목표보다 작은 경우다. 목표는 방송사마다 해마다 단계적으로 높인 값이고, 2012년은 방송사가 제시해 방송통신위원회가 승인했다. 한 가지 이상 미달 수는 보도자료 집계와 모두 같고, 서비스별 미달 수는 2012·2014년만 공식 발표와 교차 확인했다.',
+  };
 
   /* 방송 자막·수어를 주로 무엇으로 보나(국립국어원 2023, 하나만 응답) */
   data.tvService = [

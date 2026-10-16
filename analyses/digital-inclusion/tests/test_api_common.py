@@ -32,6 +32,18 @@ class CredentialTests(unittest.TestCase):
         self.assertNotIn("serviceKey", query)
         self.assertEqual(payload[0]["PRD_DE"], "2025")
 
+    def test_openfiscal_uses_key_parameter_and_refuses_it_in_params(self):
+        opener = Mock()
+        opener.open.return_value = io.BytesIO(b'{"TotalExpenditure5": []}')
+        with patch.object(api_common.urllib.request, "build_opener", return_value=opener):
+            api_common.request_json("https://openapi.openfiscaldata.go.kr/TotalExpenditure5",
+                                    {"Type": "json", "FSCL_YY": "2026"}, FAKE_KEY)
+        query = urllib.parse.parse_qs(urllib.parse.urlsplit(opener.open.call_args.args[0].full_url).query)
+        self.assertEqual(query["Key"], [FAKE_KEY])
+        self.assertNotIn("serviceKey", query)
+        with self.assertRaises(api_common.ApiError):
+            api_common.request_json("https://openapi.openfiscaldata.go.kr/TotalExpenditure5", {"Key": FAKE_KEY}, FAKE_KEY)
+
     def test_kosis_rejects_non_api_paths_and_query_credentials(self):
         with self.assertRaises(api_common.ApiError):
             api_common.request_json("https://kosis.kr/statHtml/statHtml.do", {}, FAKE_KEY)

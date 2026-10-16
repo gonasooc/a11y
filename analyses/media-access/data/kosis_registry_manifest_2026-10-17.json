@@ -1,0 +1,239 @@
+{
+  "source": "보건복지부 「장애인현황」 KOSIS orgId=117",
+  "snapshot": "2026-10-17",
+  "key_variable": "KOSIS_DISABILITY_API_KEY",
+  "authentication": "successful",
+  "csv_path": "data/kosis_registry_2026-10-17.csv",
+  "csv_sha256": "7269876a183b4bac850aad1c251d74a8c7e065cd30ab2ebb78f236be13965543",
+  "rows": 1416,
+  "tables": {
+    "DT_11761_N003": {
+      "table_name": "전국 연령별,장애유형별,성별 등록장애인수",
+      "years": [
+        "2007",
+        "2025"
+      ],
+      "age_codes": {
+        "000": "합계",
+        "020": "0-4세",
+        "050": "5-9세",
+        "070": "10-14세",
+        "100": "15-19세",
+        "120": "20-24세",
+        "130": "25-29세",
+        "150": "30-34세",
+        "160": "35-39세",
+        "180": "40-44세",
+        "190": "45-49세",
+        "210": "50-54세",
+        "230": "55-59세",
+        "260": "60-64세",
+        "280": "65-69세",
+        "310": "70-74세",
+        "330": "75-79세",
+        "360": "80-84세",
+        "380": "85-89세",
+        "410": "90-94세",
+        "430": "95-99세",
+        "450": "100-104세",
+        "460": "105-109세",
+        "470": "110-114세",
+        "480": "115-119세",
+        "490": "120-124세",
+        "500": "해당없음"
+      },
+      "type_codes": {
+        "CHUT0": "합계",
+        "CHU03": "시각",
+        "CHU04": "청각"
+      },
+      "sex_code": "1611713103150006A4428",
+      "comments": [
+        {
+          "CMMT_NM": "통계표",
+          "CMMT_DC": "1. 연도말 기준임"
+        },
+        {
+          "CMMT_NM": "통계표",
+          "CMMT_DC": ""
+        },
+        {
+          "CMMT_NM": "통계표",
+          "CMMT_DC": "2. 2007년 부터 연령별통계생산"
+        }
+      ],
+      "observed_cells": 1359,
+      "requested_cells": 1539,
+      "symbol_cells": 3,
+      "unallocated_by_year": {
+        "2007": {
+          "all": 1014,
+          "visual": 123,
+          "hearing": 167
+        },
+        "2008": {
+          "all": 252,
+          "visual": 40,
+          "hearing": 89
+        },
+        "2009": {
+          "all": 270,
+          "visual": 30,
+          "hearing": 108
+        },
+        "2010": {
+          "all": 339,
+          "visual": 40,
+          "hearing": 137
+        },
+        "2011": {
+          "all": 397,
+          "visual": 53,
+          "hearing": 164
+        },
+        "2012": {
+          "all": 434,
+          "visual": 62,
+          "hearing": 177
+        },
+        "2013": {
+          "all": 468,
+          "visual": 65,
+          "hearing": 217
+        },
+        "2014": {
+          "all": 509,
+          "visual": 65,
+          "hearing": 241
+        }
+      }
+    },
+    "DT_11761_N001": {
+      "role": "연령 표의 유형별 합계를 대조하는 표",
+      "sex_code": "TT",
+      "type_codes": {
+        "CHUT0": "합계",
+        "CHU03": "시각",
+        "CHU041": "청각"
+      },
+      "observed_cells": 57,
+      "requested_cells": 57
+    }
+  },
+  "completeness_rule": "연령 표는 해마다 유형별 합계가 있고 5세 구간과 '해당없음'의 합이 합계와 같아야 한다. 100세 이상 구간과 '해당없음'이 모두 없는 해만 합계보다 작을 수 있고, 그 차이는 unallocated_by_year에 남긴다. 응답에 없는 구간은 만들지 않는다.",
+  "requests": [
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "TBL",
+        "orgId": "117",
+        "tblId": "DT_11761_N003",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-16T21:31:17.788496+00:00",
+      "response_sha256": "5176bb48dd87644ed633371ff66bf6f2d0b4f8cefd8253dccb591196df3a4ad6",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N003_TBL_4ca9b0014a62e50371aa.json",
+      "cache_reused": true,
+      "row_count": 1
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "PRD",
+        "orgId": "117",
+        "tblId": "DT_11761_N003",
+        "format": "json",
+        "jsonVD": "Y",
+        "detail": "Y"
+      },
+      "fetched_at_utc": "2026-10-16T21:31:21.592712+00:00",
+      "response_sha256": "c943335c8b07d60156ee5f5bba1300ab47d7fae0b8739f837e9b826059fb6ace",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N003_PRD_456a7572cb641dcd5359.json",
+      "cache_reused": true,
+      "row_count": 20
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "ITM",
+        "orgId": "117",
+        "tblId": "DT_11761_N003",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-16T21:31:24.954894+00:00",
+      "response_sha256": "a8d77f2ba623f2b8af462c65bc87ede3c7548fd58d834bcb30b292a6a676509e",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N003_ITM_60712473f7daf00d7a39.json",
+      "cache_reused": true,
+      "row_count": 171
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/statisticsData.do",
+      "parameters": {
+        "method": "getMeta",
+        "type": "CMMT",
+        "orgId": "117",
+        "tblId": "DT_11761_N003",
+        "format": "json",
+        "jsonVD": "Y"
+      },
+      "fetched_at_utc": "2026-10-16T21:31:28.286867+00:00",
+      "response_sha256": "e4cc9d5c305cb24bb7fccbc44f80733e489b0fe64ea20beddaf517885f460e53",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N003_CMMT_c40d3b5b1611a0c70071.json",
+      "cache_reused": true,
+      "row_count": 3
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "117",
+        "format": "json",
+        "jsonVD": "Y",
+        "itmId": "00",
+        "prdSe": "Y",
+        "startPrdDe": "2007",
+        "endPrdDe": "2025",
+        "tblId": "DT_11761_N003",
+        "objL1": "000+020+050+070+100+120+130+150+160+180+190+210+230+260+280+310+330+360+380+410+430+450+460+470+480+490+500",
+        "objL2": "CHUT0+CHU03+CHU04",
+        "objL3": "1611713103150006A4428"
+      },
+      "fetched_at_utc": "2026-10-16T21:31:32.812181+00:00",
+      "response_sha256": "9bdbddde233a30d68801f5e392455dd1074373ba8c9efa3d42442cc251996a5a",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N003_data_ce7b9df954e683fc80f0.json",
+      "cache_reused": true,
+      "row_count": 1359
+    },
+    {
+      "endpoint": "https://kosis.kr/openapi/Param/statisticsParameterData.do",
+      "parameters": {
+        "method": "getList",
+        "orgId": "117",
+        "format": "json",
+        "jsonVD": "Y",
+        "itmId": "00",
+        "prdSe": "Y",
+        "startPrdDe": "2007",
+        "endPrdDe": "2025",
+        "tblId": "DT_11761_N001",
+        "objL1": "CHUT0+CHU03+CHU041",
+        "objL2": "TT"
+      },
+      "fetched_at_utc": "2026-10-16T21:33:44.327411+00:00",
+      "response_sha256": "cbc1ee3e79da805860ee4089032e98ee0366c82b3ec3acbd950ccd49481613de",
+      "raw_path": "raw/kosis/2026-10-17/DT_11761_N001_data_1efb9b099ae2e0b41d0c.json",
+      "cache_reused": true,
+      "row_count": 57
+    }
+  ],
+  "credentials_excluded": true,
+  "reference_documents": [
+    "https://kosis.kr/openapi/devGuide/devGuide_0201List.do",
+    "https://kosis.kr/openapi/devGuide/devGuide_060103List.do"
+  ]
+}

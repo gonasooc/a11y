@@ -1,0 +1,101 @@
+{
+  "publisher": "방송미디어통신위원회(게시 당시 방송통신위원회)",
+  "collection": "보도자료 'YYYY년(도) 장애인방송 제공실적 평가결과'",
+  "list_url": "https://www.kmcc.go.kr/user.do?page=A05030000&dc=K00000200&boardId=1113",
+  "snapshot": "2026-10-17",
+  "retrieved_at": "2026-10-16T21:46:04+00:00",
+  "access_note": "robots.txt는 Googlebot에만 /user.do 등을 막고 * 규칙이 없다. 누리집 하단에 이용약관은 없고 저작권보호정책에 자동 수집 금지 조항이 없다. 다섯 게시물의 공공누리 유형 칸은 비어 있다(2026-10-17 확인). 게시물을 먼저 열고 Referer를 붙여 첨부를 받는다. 요청 사이 1초, 원본 HWP는 raw/에 두고 Git에서 제외",
+  "files": [
+    {
+      "year": 2012,
+      "role": "body_and_table",
+      "title": "2012년 장애인방송 제공실적 평가결과",
+      "posted_date": "2013-03-18",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057",
+      "file_seq": 37195,
+      "file_name": "2012년 장애인방송 제공실적 평가결과 자료(3.18).hwp",
+      "file_size": 181760,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=37195",
+      "sha256": "dea0dde108e18713d138349b45c8813046b43282d3840cba06e4eea5cfb3cffc",
+      "raw_path": "raw/kmcc/kmcc_2012_37195.hwp"
+    },
+    {
+      "year": 2013,
+      "role": "body_and_table",
+      "title": "2013년 장애인방송 제공실적 평가결과",
+      "posted_date": "2014-08-07",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640",
+      "file_seq": 39231,
+      "file_name": "2013년 장애인방송 제공실적 평가결과 자료(8.7).hwp",
+      "file_size": 190976,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=39231",
+      "sha256": "605b6560a45bf53849a75c5c82aa4fd1a4830688e0b9bb3c08113c97133046b0",
+      "raw_path": "raw/kmcc/kmcc_2013_39231.hwp"
+    },
+    {
+      "year": 2014,
+      "role": "body_and_table",
+      "title": "2014년 장애인방송 제공실적 평가결과",
+      "posted_date": "2015-07-09",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299",
+      "file_seq": 41412,
+      "file_name": "14년 장애인방송 제공실적 평가결과 자료(6.9).hwp",
+      "file_size": 175616,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=41412",
+      "sha256": "ca4ce7f98dfd3a4b17e8b5f98e74e601f4809599d62e42f7b7271263d57eb4f8",
+      "raw_path": "raw/kmcc/kmcc_2014_41412.hwp"
+    },
+    {
+      "year": 2015,
+      "role": "body",
+      "title": "2015년도 장애인방송 제공실적 평가결과",
+      "posted_date": "2016-07-15",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607",
+      "file_seq": 43407,
+      "file_name": "(의결나 보도자료)15년도 장애인방송 제공실적 평가결과 공표 자료(7.15).hwp",
+      "file_size": 42496,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=43407",
+      "sha256": "ba4169ebaeaa831c29a2fdfd6f038b5fc710192d5c1450ceec38e69b3c304a88",
+      "raw_path": "raw/kmcc/kmcc_2015_43407.hwp"
+    },
+    {
+      "year": 2015,
+      "role": "table",
+      "title": "2015년도 장애인방송 제공실적 평가결과",
+      "posted_date": "2016-07-15",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607",
+      "file_seq": 43408,
+      "file_name": "(의결나 붙임)2015년도 장애인방송 편성의무 평가 결과.hwp",
+      "file_size": 72192,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=43408",
+      "sha256": "65a3a9bf8a0aa43b89f24f07b6fda9c41eb5d5be3e472a0524312573106a1f0f",
+      "raw_path": "raw/kmcc/kmcc_2015_43408.hwp"
+    },
+    {
+      "year": 2016,
+      "role": "body",
+      "title": "2016년도 장애인방송 제공실적 평가결과",
+      "posted_date": "2017-08-10",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899",
+      "file_seq": 45170,
+      "file_name": "(의결 마)2016년도 장애인방송 제공실적 평가결과 발표 자료(8.10).hwp",
+      "file_size": 35328,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=45170",
+      "sha256": "e0113c19db614201b64acb54c6c795b9a2fb567f6d2d83eb257a6f0b2e0741ef",
+      "raw_path": "raw/kmcc/kmcc_2016_45170.hwp"
+    },
+    {
+      "year": 2016,
+      "role": "table",
+      "title": "2016년도 장애인방송 제공실적 평가결과",
+      "posted_date": "2017-08-10",
+      "view_url": "https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899",
+      "file_seq": 45172,
+      "file_name": "(의결 마 붙임) 2016년도 장애인방송 편성의무 평가 결과 붙임자료.hwp",
+      "file_size": 33280,
+      "download_url": "https://www.kmcc.go.kr/download.do?fileSeq=45172",
+      "sha256": "32aec0a2c0d0b7499844153cb707876d8658fabfdee966c3efd92a9eaaf52a84",
+      "raw_path": "raw/kmcc/kmcc_2016_45172.hwp"
+    }
+  ]
+}

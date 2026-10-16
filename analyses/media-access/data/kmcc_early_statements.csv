@@ -1,0 +1,44 @@
+year,group,service,operators,below_target,source_url,source_locator,statement
+2012,all,any,50,23,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 계 행,계 27(23)
+2012,all,cc,50,3,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 계 행,자막 47(3)
+2012,all,ad,50,23,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 계 행,화면해설 27(23)
+2012,all,ksl,50,18,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 계 행,수화통역 32(18)
+2012,central,any,4,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 중앙 지상파 행,계 3(1)
+2012,central,cc,4,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 중앙 지상파 행,자막 4(0)
+2012,central,ad,4,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 중앙 지상파 행,화면해설 3(1)
+2012,central,ksl,4,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 중앙 지상파 행,수화통역 3(1)
+2012,regional,any,46,22,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 지역지상파 소계 행,계 24(22)
+2012,regional,cc,46,3,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 지역지상파 소계 행,자막 44(3). 달성 수 44는 지역 46개사와 맞지 않는다(KBS지역 18·지역MBC 15·지역민방 10의 합 43). 미달성 3만 쓴다
+2012,regional,ad,46,22,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 지역지상파 소계 행,화면해설 24(22)
+2012,regional,ksl,46,17,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=36057,보도자료 HWP 37195 본문 표 '장애인방송(유형별) 편성목표 달성 사업자'(달성 수(미달성 수)) 지역지상파 소계 행,수화통역 29(17)
+2013,all,any,153,58,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) 총계 행,"의무사업자 153, 달성 95, 미달성 58"
+2013,central,any,4,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) 중앙지상파 행,"의무사업자 4, 달성 4, 미달성 0"
+2013,regional,any,46,6,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) 지역지상파 행,"의무사업자 46, 달성 40, 미달성 6"
+2013,위성,any,1,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) 위성방송 행,"의무사업자 1, 달성 1, 미달성 0"
+2013,news_general_pp,any,6,2,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) 종편·보도 PP 행,"의무사업자 6, 달성 4, 미달성 2"
+2013,SO,any,75,39,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) SO 행,"의무사업자 75, 달성 36, 미달성 39"
+2013,PP,any,21,11,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=38640,보도자료 HWP 39231 본문 표(단위: 개사) PP 행,"의무사업자 21, 달성 10, 미달성 11"
+2014,all,any,156,3,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) 총계 행,"의무사업자 156, 달성 153, 미달성 3"
+2014,central,any,4,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) 중앙지상파 행,"의무사업자 4, 달성 4, 미달성 0"
+2014,regional,any,46,2,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) 지역지상파 행,"의무사업자 46, 달성 44, 미달성 2"
+2014,위성,any,1,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) 위성방송 행,"의무사업자 1, 달성 1, 미달성 0"
+2014,news_general_pp,any,6,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) 종편·보도 PP 행,"의무사업자 6, 달성 6, 미달성 0"
+2014,SO,any,79,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) SO 행,"의무사업자 79, 달성 79, 미달성 0"
+2014,PP,any,20,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표(단위: 개사) PP 행,"의무사업자 20, 달성 19, 미달성 1"
+2015,all,any,145,4,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) 총계 행,"의무사업자 145, 달성 141, 미달성 4"
+2015,central,any,4,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) 중앙지상파 행,"의무사업자 4, 달성 4, 미달성 0"
+2015,regional,any,46,2,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) 지역지상파 행,"의무사업자 46, 달성 44, 미달성 2"
+2015,위성,any,1,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) 위성방송 행,"의무사업자 1, 달성 1, 미달성 0"
+2015,news_general_pp,any,6,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) 종편·보도 PP 행,"의무사업자 6, 달성 6, 미달성 0"
+2015,SO,any,66,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) SO 행,"의무사업자 66, 달성 65, 미달성 1"
+2015,PP,any,22,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=42607,보도자료 HWP 43407 본문 표(단위: 개사) PP 행,"의무사업자 22, 달성 21, 미달성 1"
+2016,all,any,139,6,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) 총계 행,"의무사업자 139, 달성 133, 미달성 6"
+2016,central,any,4,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) 중앙지상파 행,"의무사업자 4, 달성 4, 미달성 0"
+2016,regional,any,45,3,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) 지역지상파 행,"의무사업자 45, 달성 42, 미달성 3"
+2016,위성,any,1,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) 위성방송 행,"의무사업자 1, 달성 1, 미달성 0"
+2016,news_general_pp,any,6,2,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) 종편·보도 PP 행,"의무사업자 6, 달성 4, 미달성 2"
+2016,SO,any,68,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) SO 행,"의무사업자 68, 달성 68, 미달성 0"
+2016,PP,any,15,1,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=44899,보도자료 HWP 45170 본문 표(단위: 개사) PP 행,"의무사업자 15, 달성 14, 미달성 1"
+2014,all,cc,156,3,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표 비고,※ 미달성은 폐쇄자막 위반 건임
+2014,all,ad,156,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표 비고,※ 미달성은 폐쇄자막 위반 건임(화면해설 미달성 없음)
+2014,all,ksl,156,0,https://www.kmcc.go.kr/user.do?mode=view&page=A05030000&dc=K00000200&boardId=1113&boardSeq=41299,보도자료 HWP 41412 본문 표 비고,※ 미달성은 폐쇄자막 위반 건임(수화통역 미달성 없음)

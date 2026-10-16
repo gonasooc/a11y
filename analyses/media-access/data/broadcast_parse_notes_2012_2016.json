@@ -1,0 +1,106 @@
+{
+  "source_manifest": "data/kmcc_manifest.json",
+  "years": [
+    {
+      "year": 2012,
+      "file_seq": 37195,
+      "sha256": "dea0dde108e18713d138349b45c8813046b43282d3840cba06e4eea5cfb3cffc",
+      "tables": [
+        2
+      ],
+      "operator_rows": 50,
+      "variant_rows": [
+        "㈜MBC경남(진주본부)"
+      ],
+      "group_counts_in_source": {
+        "지상파": 50
+      },
+      "target_basis": "broadcaster_proposed"
+    },
+    {
+      "year": 2013,
+      "file_seq": 39231,
+      "sha256": "605b6560a45bf53849a75c5c82aa4fd1a4830688e0b9bb3c08113c97133046b0",
+      "tables": [
+        2,
+        3
+      ],
+      "operator_rows": 153,
+      "variant_rows": [
+        "경남MBC(진주)"
+      ],
+      "group_counts_in_source": {
+        "지상파": 50,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 75,
+        "PP": 21
+      },
+      "target_basis": "phased_by_operator"
+    },
+    {
+      "year": 2014,
+      "file_seq": 41412,
+      "sha256": "ca4ce7f98dfd3a4b17e8b5f98e74e601f4809599d62e42f7b7271263d57eb4f8",
+      "tables": [
+        3
+      ],
+      "operator_rows": 156,
+      "variant_rows": [
+        "㈜MBC경남(창원본부)"
+      ],
+      "group_counts_in_source": {
+        "지상파": 50,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 79,
+        "PP": 20
+      },
+      "target_basis": "phased_by_operator"
+    },
+    {
+      "year": 2015,
+      "file_seq": 43408,
+      "sha256": "65a3a9bf8a0aa43b89f24f07b6fda9c41eb5d5be3e472a0524312573106a1f0f",
+      "tables": [
+        1
+      ],
+      "operator_rows": 145,
+      "variant_rows": [
+        "㈜MBC경남(창원본부)"
+      ],
+      "group_counts_in_source": {
+        "지상파": 50,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 66,
+        "PP": 22
+      },
+      "target_basis": "phased_by_operator"
+    },
+    {
+      "year": 2016,
+      "file_seq": 45172,
+      "sha256": "32aec0a2c0d0b7499844153cb707876d8658fabfdee966c3efd92a9eaaf52a84",
+      "tables": [
+        1
+      ],
+      "operator_rows": 139,
+      "variant_rows": [
+        "㈜MBC경남(창원본부)"
+      ],
+      "group_counts_in_source": {
+        "지상파": 49,
+        "위성": 1,
+        "보도PP": 2,
+        "종편PP": 4,
+        "SO": 68,
+        "PP": 15
+      },
+      "target_basis": "phased_by_operator"
+    }
+  ]
+}

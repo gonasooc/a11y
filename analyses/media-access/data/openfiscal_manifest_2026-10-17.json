@@ -1,0 +1,458 @@
+{
+  "source": "열린재정(openfiscaldata.go.kr) Open API TotalExpenditure5, 총지출 기준 세부사업 예산",
+  "snapshot": "2026-10-17",
+  "retrieved_at": "2026-10-16T22:15:19+00:00",
+  "key_variable": "OPENFISCAL_BUDGET_API_KEY",
+  "credentials_excluded": true,
+  "csv_path": "data/openfiscal_access_lines_2026-10-17.csv",
+  "csv_sha256": "b4a392ceca518c57bc9b782e02ca7cb5192a152f4fd90252565edb771b6aff57",
+  "rows": 74,
+  "keywords": [
+    "OTT",
+    "장애",
+    "자막",
+    "화면해설",
+    "수어",
+    "수화",
+    "접근권",
+    "배리어",
+    "소외계층"
+  ],
+  "unit": "미디어 다양성 및 공공성 확보",
+  "series_subproject": "소외계층방송접근권보장",
+  "scans": [
+    {
+      "year": "2024",
+      "office": "과학기술정보통신부",
+      "rows_scanned": 875,
+      "keyword_rows": 3
+    },
+    {
+      "year": "2024",
+      "office": "방송통신위원회",
+      "rows_scanned": 30,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2024",
+      "office": "방송미디어통신위원회",
+      "rows_scanned": 0,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2024",
+      "office": "문화체육관광부",
+      "rows_scanned": 387,
+      "keyword_rows": 10
+    },
+    {
+      "year": "2025",
+      "office": "과학기술정보통신부",
+      "rows_scanned": 869,
+      "keyword_rows": 3
+    },
+    {
+      "year": "2025",
+      "office": "방송통신위원회",
+      "rows_scanned": 30,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2025",
+      "office": "방송미디어통신위원회",
+      "rows_scanned": 0,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2025",
+      "office": "문화체육관광부",
+      "rows_scanned": 371,
+      "keyword_rows": 10
+    },
+    {
+      "year": "2026",
+      "office": "과학기술정보통신부",
+      "rows_scanned": 891,
+      "keyword_rows": 5
+    },
+    {
+      "year": "2026",
+      "office": "방송통신위원회",
+      "rows_scanned": 30,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2026",
+      "office": "방송미디어통신위원회",
+      "rows_scanned": 35,
+      "keyword_rows": 0
+    },
+    {
+      "year": "2026",
+      "office": "문화체육관광부",
+      "rows_scanned": 385,
+      "keyword_rows": 10
+    }
+  ],
+  "requests": [
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2024",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "과학기술정보통신부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "5ac5cb44103cba7521906ff138e9c777d01b2945443e8cdcbd288b40e3a2e184",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_9a7676e496d0b9725562.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 875,
+      "row_count": 875
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2024",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "75125e1058b29874ddddc18fb706f83229688fce1d06ad0f408fe231f5882778",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_1600ae1cbd137356af5c.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 30,
+      "row_count": 30
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2024",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송미디어통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "2da591478e54edff4147a92b7468d28153e5a9706e0c22fa3e50aa065eb3e59a",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_ce1f7ef2bb77d6b82502.json",
+      "cache_reused": false,
+      "result_code": "INFO-200",
+      "list_total_count": 0,
+      "row_count": 0
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2024",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "문화체육관광부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "6d881f2eb8a1bbb4b9590fe00b7c24f603d945a1e33ca3a7df84a074962fca9b",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_42da9cb2cdccc7e63309.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 387,
+      "row_count": 387
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2025",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "과학기술정보통신부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "43115fbcf6206b0d38eacb04903cd5af2088b89cf2c8cba3408dffda8b735b1e",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_4a4e3dc5712f85aa81f4.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 869,
+      "row_count": 869
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2025",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "2ca6307b6320907507ba55074768240fd317a91de0d2c9727aa8bfd4fe05ced7",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_5d44201e52344b7dc4e9.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 30,
+      "row_count": 30
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2025",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송미디어통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "2da591478e54edff4147a92b7468d28153e5a9706e0c22fa3e50aa065eb3e59a",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_253c4ce42545bcf7141c.json",
+      "cache_reused": false,
+      "result_code": "INFO-200",
+      "list_total_count": 0,
+      "row_count": 0
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2025",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "문화체육관광부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "402f07c3e99a3caad01b7ae6d530b53c9a8e280a0f48832e4cc5a4192b1f4819",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_207f8ed9002472f67f94.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 371,
+      "row_count": 371
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2026",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "과학기술정보통신부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "2a17ada326b9d8c0779a40cd8d1445b2764701f4b8e94b483f863cfa1f31217e",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_22a0361fee712e8990b0.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 891,
+      "row_count": 891
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2026",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "f4c8a1be228cc4c4041586141359fbaa33eb4feb296b1017cc3cf337f2c28e35",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_90cd1cf108fc3335448e.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 30,
+      "row_count": 30
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2026",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "방송미디어통신위원회",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "04db7110c1c1b11af4434005b4656457614186406c280eaf49d046ec13c815d8",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_f60219049753c63a9b60.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 35,
+      "row_count": 35
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2026",
+        "BDG_FND_DIV_CD": "0",
+        "OFFC_NM": "문화체육관광부",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "ec07becfd15d5166627bb6cf293bac66c4fa8fba2225768f095a1ad796b1b05b",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_ada141b3a57406c56ac8.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 385,
+      "row_count": 385
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2018",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "fc9e9c33e02742f30879d3e676ecca4ea3e63e5ccccc2ac0d1a467282476d19a",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_817bad748deb252305ce.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2019",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "715192ad4ea266a92ef4ccf722b4cf0f1e22a97aad62f2682e73d8bf36167826",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_2c576e1696c978d280d4.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2020",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "3dda955a5881f9413697732d3567e194fa32c4794c784134d716cca6b4e32592",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_8e063f343a50cecbe626.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2021",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "b05e529bf902389a9e99693986b5447ece748331618d50854d8cae5d33ee1e08",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_f79c9e3d005f2a00fc0d.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2022",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "2e99967b8c72744844ebe63dc15d9dc27ea138abb8a01dc2dd8ad0e316bdcb11",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_5889946dbfea001c4efb.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2023",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "535369d0753a66e6ebc8d7b95a9191a8ac1bdc626ca0a600f0e428a2a1321c3b",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_2a39e00a70906ed16f26.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2024",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "bc43c12cc132f79e03a81ce9251fd642ad8fa05e8e4be74dde3481e5190b0997",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_f89f4c42ec9a41ce9da2.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2025",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "c4da4ae303ff756af9846e92d4f1ec45fe93cb83f071c52d494abcf2d95da1ff",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_35dd705c723dd60e12fe.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    },
+    {
+      "parameters": {
+        "ANEXP_INQ_STND_CD": "1",
+        "FSCL_YY": "2026",
+        "BDG_FND_DIV_CD": "5",
+        "SACTV_NM": "소외계층방송접근권보장",
+        "Type": "json",
+        "pIndex": "1",
+        "pSize": "1000"
+      },
+      "response_sha256": "7a5fb1b103c3e5518401c4a2fb7c3a872e820e19f761fd8889dcbff54472a73a",
+      "raw_path": "raw/openfiscal/2026-10-17/TotalExpenditure5_e3054748cfe8bbbcd4d6.json",
+      "cache_reused": false,
+      "result_code": "INFO-000",
+      "list_total_count": 1,
+      "row_count": 1
+    }
+  ],
+  "amount_note": "금액 필드는 원문 이름 그대로 둔다. 단위 표기가 없고 이름의 KCUR로 보아 천원으로 추정한다.",
+  "access_note": "API 호스트(openapi.openfiscaldata.go.kr)에는 robots.txt가 없다. 누리집(www) robots.txt는 일반 로봇에 전체 경로를 막아 약관 페이지를 자동으로 받지 않았다. 열린재정 Open API 약관 원문은 직접 확인하지 못했고, 사용자가 인증키를 발급받으며 동의했다(2026-10-17). 원응답은 raw/에 두고 Git에서 제외한다."
+}
