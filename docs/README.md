@@ -18,7 +18,6 @@
 
 ## 진행 중·예정·보류 작업
 
-- [docs/work/W-012-main-media-access-report-update.md](work/W-012-main-media-access-report-update.md) — 영상 접근성 웹 보고서 보강(등록 청각장애인 나이별 추이, 2012~2016년 미달 사업자) — 진행 중. 그림 두 개와 본문을 넣고 생성 검사·axe·320·390·1440px 확인을 마쳤다. 커밋·푸시 뒤 공개 주소 확인이 남았다.
 - [docs/work/W-007-main-lay-reader-report.md](work/W-007-main-lay-reader-report.md) — 비장애인 독자를 위한 디지털포용법 보고서 개편 — 진행 중. 13개 결정을 구현해 공개 주소에 배포했다. 독자 테스트와 첫 화면 구성 결정이 남았다.
 - [docs/work/W-006-main-pages-site.md](work/W-006-main-pages-site.md) — GitHub Pages 사이트와 디지털포용법 시각화 보고서 — 진행 중. `https://gonasooc.github.io/a11y/`에 배포해 공개 화면을 확인했다. 실제 스크린리더 확인과 디자인 기준 확정 여부가 남았다.
 - [docs/work/W-004-main-history-data.md](work/W-004-main-history-data.md) — 기기·검증 제품 과거 이력 확보 — 진행 중. 기관·제품별 조달 분해·기능 조합 분석 및 공개 교체 공지 조사 완료. 기기별 완료 이력·차기 연간 통계는 미확보.
@@ -29,6 +28,7 @@ NIA 배리어프리 키오스크 위치 API(`15157403`)는 사용자 요청으�
 
 ## 최근 완료
 
+- [docs/work/W-012-main-media-access-report-update.md](work/W-012-main-media-access-report-update.md) — 영상 접근성 웹 보고서 보강(등록 청각장애인 나이별 추이, 2012~2016년 미달 사업자) — 완료. 그림 두 개와 본문을 넣어 `ba0d5b5`로 배포했고, 공개 주소의 화면·axe와 GitHub 링크·앵커를 확인했다.
 - [docs/work/W-011-main-media-access-supplement.md](work/W-011-main-media-access-supplement.md) — 영상 미디어 접근성 자료 보강(키 후보 확인, 청각·시각 등록 통계 추이, 2012~2016 방송 실적, 열린재정 예산) — 완료. KOSIS 2007~2025 추이와 2012~2016 실적을 수집·계산·검증하고, 열린재정으로 2024~2026년 OTT 장애인 접근 지원 세부사업이 따로 없음을 확인해 근거 문서에 반영했다. 웹 보고서는 바꾸지 않았다.
 - [docs/work/W-010-main-media-access-report.md](work/W-010-main-media-access-report.md) — 영상 접근성 웹 보고서(제목 ‘TV 자막·수어·화면해설, 의무는 채웠는데 볼 게 있나’) — 완료. 2026-10-14 `36018bd`로 `https://gonasooc.github.io/a11y/reports/media-access/index.html`에 공개하고 공개 주소에서 화면·axe·GitHub 링크를 확인했다. 비장애인 독자 테스트(선택)는 하지 않았다.
 - [docs/work/W-009-main-media-access.md](work/W-009-main-media-access.md) — 영상 미디어 접근성 조사(방송·OTT·영화관의 자막·수어·화면해설) — 완료. 2017~2025년 방송 편성 실적 분석과 deep-research 보완 조사로 근거 문서 네 개를 [docs/media-access/README.md](media-access/README.md) 아래에 썼다. 공개 자료로 확인하지 못한 항목은 그 문서의 재확인 목록에 있다.

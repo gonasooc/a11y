@@ -63,6 +63,7 @@ W-009의 영상 미디어 조사는 공개 파일(HWPX·PDF)만 내려받아 API
 ### 세션 메모
 
 - 2026-10-17 · Claude Code — 작업 문서를 만들고 주석을 고쳤다. 에이전트 세 개로 열린재정·KOBIS, KOSIS 통계표, 2012~2016년 보도자료를 조사했고, KOSIS와 2012~2016년 파이프라인·테스트·문서 반영을 마쳤다. 커밋은 하지 않았다. 열린재정 키를 받아 OTT 지원 세부사업이 없음을 확인하고 작업을 완료로 바꿨다. 다음 행동은 사용자가 커밋이나 웹 보고서 반영(선택)을 정하는 것이다.
+- 2026-10-17 · Claude Code — 사용자 요청으로 웹 보고서에 반영했고(W-012), 사용자 승인으로 W-012 변경과 함께 `ba0d5b5`로 커밋, 사용자가 푸시했다. 배포 확인은 [docs/work/W-012-main-media-access-report-update.md](W-012-main-media-access-report-update.md)에 있다.
 
 ## 남은 일
 
@@ -81,4 +82,4 @@ W-009의 영상 미디어 조사는 공개 파일(HWPX·PDF)만 내려받아 API
 - [x] (선택) 웹 보고서에 등록 추이나 2012~2016년 실적을 넣을지는 사용자가 정한다. 넣는다면 2017년 이후와 한 줄로 잇지 않는 표시가 필요하다. → 2026-10-17 사용자 요청으로 [docs/work/W-012-main-media-access-report-update.md](W-012-main-media-access-report-update.md)에서 넣었다.
 - [ ] 남은 확인 항목(청각 등록 급증 원인, 2013년 KOSIS 151명 차이, 2016·2017 산정 기준)은 [docs/media-access/README.md](../media-access/README.md#다시-확인해야-할-시점)에서 관리한다.
 
-재개에 필요한 코드 상태: `main`, 모두 미커밋. 수정 11개(`.env.example`, `docs/README.md`, `docs/architecture.md`, `docs/specs.md`, `docs/media-access/` 4개, `analyses/media-access/README.md`, `analyses/digital-inclusion/api_common.py`·`tests/test_api_common.py`)와 새 파일 25개(이 문서, `analyses/media-access/`의 코드 7개·테스트 3개·`data/` 8개·`outputs/` 6개). 원본은 로컬 `analyses/media-access/raw/`의 `kosis/2026-10-17/`(6개), `kmcc/`(7개), `openfiscal/2026-10-17/`(21개)에만 있다(Git 제외, 해시는 `data/`의 명세).
+재개에 필요한 코드 상태: `main`, `ba0d5b5`까지 푸시해 `origin/main`과 같다(2026-10-17). 수정 11개(`.env.example`, `docs/README.md`, `docs/architecture.md`, `docs/specs.md`, `docs/media-access/` 4개, `analyses/media-access/README.md`, `analyses/digital-inclusion/api_common.py`·`tests/test_api_common.py`)와 새 파일 25개(이 문서, `analyses/media-access/`의 코드 7개·테스트 3개·`data/` 8개·`outputs/` 6개). 원본은 로컬 `analyses/media-access/raw/`의 `kosis/2026-10-17/`(6개), `kmcc/`(7개), `openfiscal/2026-10-17/`(21개)에만 있다(Git 제외, 해시는 `data/`의 명세).
