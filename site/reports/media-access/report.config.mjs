@@ -330,11 +330,11 @@ export async function build({ repoRoot, repoUrl }) {
   /* 온라인 영상 의무 비교(법령 원문, docs/media-access/law.md §6) */
   const uk = (kind, phase) => fmt(cv(`uk_vod_quota_${kind}.${phase}.2026`), phase === 'tier1_year2' && kind === 'sign' ? 1 : 0);
   tables['foreign'] = {
-    caption: '온라인 영상의 자막·화면해설·수어 의무: 한국·영국·미국 (2026-10-13 기준)',
+    caption: '온라인 영상의 자막·화면해설·수어 의무: 한국·영국·미국 (2026-10-27 기준)',
     columns: [{ label: '나라' }, { label: '대상' }, { label: '요구' }, { label: '상태' }],
     rows: [
       ['한국', 'OTT가 직접 만든 영상', '한국수어·폐쇄자막·화면해설 제공에 노력. 수치와 실적 제출 없음', '2024년 1월부터 시행'],
-      ['영국', '이용자가 많은 주문형 서비스(Tier 1)', `작품 재생시간 기준 자막 ${uk('subtitles', 'tier1_year4')}%·화면해설 ${uk('audio_description', 'tier1_year4')}%·수어 ${uk('sign', 'tier1_year4')}% 이상. 처음 두 해는 ${uk('subtitles', 'tier1_year2')}%·${uk('audio_description', 'tier1_year2')}%·${uk('sign', 'tier1_year2')}%`, '세부 규칙(Ofcom 코드) 확정 전이라 아직 발효 전'],
+      ['영국', '이용자가 많은 주문형 서비스(Tier 1)', `작품 재생시간 기준 자막 ${uk('subtitles', 'tier1_year4')}%·화면해설 ${uk('audio_description', 'tier1_year4')}%·수어 ${uk('sign', 'tier1_year4')}% 이상(기준일 4년 뒤부터). 기준일 2년 뒤부터 두 해는 ${uk('subtitles', 'tier1_year2')}%·${uk('audio_description', 'tier1_year2')}%·${uk('sign', 'tier1_year2')}%`, '세부 규칙(Ofcom 코드) 확정 전이라 아직 발효 전'],
       ['미국', 'TV에서 자막과 함께 방영한 프로그램의 인터넷 영상', '폐쇄자막 의무. 화면해설·수어 규정 없음', '시행 중'],
     ],
     note: '근거: 전기통신사업법 제22조의10, 영국 Communications Act 2003 s.368HL(Media Act 2024 별표 5), 미국 47 CFR §79.4.',

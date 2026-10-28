@@ -253,7 +253,7 @@ KOSIS 기관 ID는 `127`, 항목은 `1`인 비율, 분류 차원은 `15110BK8`�
 <a id="archived-registry"></a>
 ## 6. 과거 NIA 검증 제품 목록에서 확인한 구성
 
-이 절은 **2026-09-30에 작성된 기존 제안 문서의 집계를 2026-10-02에 재계산한 결과**다. 당시 공식 사이트의 기본·목록·www 주소 재요청이 모두 HTTP 400을 반환했다. 신규 수집 완료나 현재 목록으로 표시하지 않는다. 원본 HTML은 저장소에 없으며 근거는 [A.4.2 우선구매 검증 목록 세부 (2026-09-30 조회)](#a42-우선구매-검증-목록-세부-2026-09-30-조회), [당시 목록 출처](https://kioskui.or.kr/index.do?menu_id=00000830), [analyses/digital-inclusion/data/archived_registry_metadata.json](../../analyses/digital-inclusion/data/archived_registry_metadata.json)에 남겼다.
+이 절은 **2026-09-30에 작성된 기존 제안 문서의 집계를 2026-10-02에 재계산한 결과**다. 당시 공식 사이트의 기본·목록·www 주소 재요청이 모두 HTTP 400을 반환했다. 신규 수집 완료나 현재 목록으로 표시하지 않는다. 원본 HTML은 저장소에 없으며 근거는 [A.4.2 우선구매 검증 목록 세부 (2026-09-30 조회)](#a42-우선구매-검증-목록-세부-2026-09-30-조회), [당시 목록 출처](https://kioskui.or.kr/index.do?menu_id=00000830), [analyses/digital-inclusion/data/archived_registry_metadata.json](../../analyses/digital-inclusion/data/archived_registry_metadata.json)에 남겼다. 2026-10-27에는 원 사이트 목록 첫 쪽에 '전체 834건'이 표시됐다(직접 확인). 기업유형·제품분류 구성은 전체 목록이 있어야 다시 셀 수 있는데, 평범한 요청이 이번에도 'Request Blocked'로 막혀 다시 수집하지 않았다. 이 절의 집계는 2026-09-30 기록 그대로다([docs/work/W-013-main-currency-update.md](../work/W-013-main-currency-update.md)).
 
 | 등록번호의 연도 | 당시 목록의 모델 수 | 전체 771건 중 비중 |
 |---|---:|---:|
